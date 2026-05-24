@@ -341,10 +341,6 @@ footer{
   .skills-grid{grid-template-columns:1fr}
 
   /* slideshow */
-  .slideshow-track{aspect-ratio:4/3}
-  .slide-caption{padding:24px 20px 20px}
-  .slide-caption-title{font-size:18px}
-  .slide-caption-desc{font-size:12px}
   .slideshow-controls{flex-direction:column;align-items:flex-start;gap:14px}
 
   /* projects */
@@ -397,6 +393,7 @@ footer{
   <div class="nav-links">
     <a href="#about">ABOUT</a>
     <a href="#projects">PROJECTS</a>
+    <a href="#casestudies">CASE STUDIES</a>
     <a href="#contact">CONTACT</a>
   </div>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">HIRE ME</button>
@@ -516,6 +513,17 @@ footer{
 .slide-caption-num{font-family:var(--fm);font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:10px}
 .slide-caption-title{font-family:var(--fd);font-size:clamp(22px,3vw,36px);font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--text);margin-bottom:8px;line-height:1.05}
 .slide-caption-desc{font-family:var(--fb);font-size:13px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.65}
+
+/* mobile slideshow fix */
+@media(max-width:768px){
+  .slideshow-track{aspect-ratio:4/3}
+  .slide-overlay{background:linear-gradient(to top,rgba(10,12,16,.97) 0%,rgba(10,12,16,.4) 45%,transparent 100%)}
+  .slide-caption{padding:16px 16px 14px}
+  .slide-caption-num{font-size:9px;margin-bottom:4px}
+  .slide-caption-title{font-size:16px;margin-bottom:4px}
+  .slide-caption-desc{display:none}
+  .slideshow-controls{flex-direction:row;justify-content:space-between;align-items:center;margin-top:14px}
+}
 
 /* controls */
 .slideshow-controls{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
@@ -866,7 +874,7 @@ footer{
 .casestudy-card:hover .casestudy-img-wrap img{transform:scale(1.04);filter:brightness(1)}
 </style>
 
-<section class="casestudy-section">
+<section id="casestudies" class="casestudy-section">
   <div class="section-label">// 04 — DEEP DIVE</div>
   <h2 class="section-title">Full <span>Case Study</span></h2>
 
