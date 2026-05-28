@@ -141,7 +141,7 @@ nav{
   animation:fadeUp .6s .5s ease both;flex-wrap:wrap;
 }
 .hero-stat-num{font-family:var(--fd);font-size:44px;font-weight:800;color:var(--gold);line-height:1}
-.hero-stat-label{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-dim);margin-top:5px}
+.hero-stat-label{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-sec);margin-top:5px}
 
 .accent-bar{height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2) 40%,transparent)}
 
@@ -293,6 +293,19 @@ section{padding:100px 6%}
 .form-input::placeholder{color:var(--text-dim)}
 textarea.form-input{resize:vertical;min-height:110px}
 
+/* ── ACKNOWLEDGEMENTS ── */
+.ack-intro{font-family:var(--fb);font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.8;max-width:600px;margin-bottom:48px}
+.ack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.ack-card{background:var(--surface);border:1px solid var(--border);padding:32px;transition:border-color .2s}
+.ack-card:hover{border-color:var(--gold2)}
+.ack-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.ack-name{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--text);letter-spacing:1px;line-height:1}
+.ack-role{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);margin-top:6px}
+.ack-desc{font-family:var(--fb);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
+.ack-linkedin{font-family:var(--fm);font-size:11px;font-weight:700;color:#0A66C2;border:1px solid #0A66C2;padding:6px 12px;text-decoration:none;transition:background .2s,color .2s;flex-shrink:0;border-radius:2px;display:flex;align-items:center;gap:6px}
+.ack-linkedin:hover{background:#0A66C2;color:#fff}
+@media(max-width:768px){.ack-grid{grid-template-columns:1fr}}
+
 /* ── FOOTER ── */
 footer{
   padding:28px 6%;display:flex;justify-content:space-between;align-items:center;
@@ -438,10 +451,10 @@ footer{
     <div class="about-text">
       <p>I'm a <span class="hl">third-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
       <p>My work has involved end-to-end vehicle development across <span class="hl">electric mobility</span> and <span class="hl">off-road systems</span> — from concept architecture and subsystem design to prototype realization, iterative validation, and physical testing.</p>
-      <p>As the sole mechanical engineering intern at an <span class="hl">EV startup</span>, I led the mechanical development of an electric moped from concept to second prototype, contributing to a fleet of <span class="hl">15 operational vehicles</span> currently running in <span class="hl">Dwarka, Delhi</span>. My responsibilities included vehicle packaging, structural design decisions, subsystem integration, and iterative prototype refinement under real development constraints.</p>
+      <p>As the <span class="hl">sole mechanical engineering intern</span> at an <span class="hl">EV startup</span>, I led the mechanical development of an electric moped from concept to second prototype, contributing to a fleet of <span class="hl">15 operational vehicles</span> currently running in <span class="hl">Dwarka, Delhi</span>. My responsibilities included vehicle packaging, structural design decisions, subsystem integration, and iterative prototype refinement under real development constraints.</p>
       <p>During my <span class="hl">vehicle development internship</span>, I contributed to the complete CAD development of a <span class="hl">4×2 dune buggy platform</span>, focusing on system layout, suspension integration, double wishbone geometry development, and manufacturable packaging.</p>
       <p>Most recently, as <span class="hl">Chief Design Engineer of Team Daedalus Racing</span>, I led the complete development of a BAJA SAE vehicle from scratch. Working closely with <span class="hl">driver feedback</span> and CAE validation, I developed the full chassis architecture and vehicle packaging within <span class="hl">rulebook constraints</span> using SOLIDWORKS, conducted roll cage ergonomic studies in CATIA, and designed suspension geometry around real vehicle-performance objectives such as improved approach angle, increased ground clearance, and better obstacle handling.</p>
-      <p>The <span class="hl">suspension system</span> was iteratively refined through digital validation in Lotus Shark and months of <span class="hl">workshop-floor</span> iteration and physical testing, translating analytical design intent into validated vehicle behavior. This development effort contributed to securing <span class="hl">AIR 2</span> Overall at ATVC 2026.</p>
+      <p>The <span class="hl">suspension system</span> was iteratively refined through digital validation in <span class="hl">Lotus Shark</span> and months of <span class="hl">workshop-floor</span> iteration and physical testing, translating analytical design intent into validated vehicle behavior. This development effort contributed to securing <span class="hl">AIR 2</span> Overall at ATVC 2026.</p>
       <p>My engineering approach begins with understanding why a system behaves the way it does before validating solutions through geometry, analysis, simulation, and physical reasoning. I <span class="hl">document my work</span> as <span class="hl">engineering case studies</span> that capture not only final outcomes, but the design decisions, trade-offs, iterations, and engineering intuition that shaped them.</p>
     </div>
     <div class="about-highlights">
@@ -1367,6 +1380,59 @@ footer{
         <span class="contact-link-text">Download CV / Resume</span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ── ACKNOWLEDGEMENTS ── -->
+<section id="acknowledgements">
+  <div class="section-label">// 09 — ACKNOWLEDGEMENTS</div>
+  <h2 class="section-title">THOSE WHO <span>SHAPED</span> THE WORK</h2>
+  <p class="ack-intro">Engineering is never done in isolation. These are the seniors who gave their time, knowledge, and patience when it mattered most.</p>
+  <div class="ack-grid">
+
+    <div class="ack-card">
+      <div class="ack-header">
+        <div>
+          <div class="ack-name">Kunal Samaniya</div>
+          <div class="ack-role">Mentor — Vehicle Development &amp; Dynamics</div>
+        </div>
+        <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+      </div>
+      <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
+    </div>
+
+    <div class="ack-card">
+      <div class="ack-header">
+        <div>
+          <div class="ack-name">Ananthu Krishna</div>
+          <div class="ack-role">Mentor — Suspension &amp; EV Industry</div>
+        </div>
+        <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+      </div>
+      <p class="ack-desc">Helped a lot with suspension knowledge and current industry knowledge in the EV sector.</p>
+    </div>
+
+    <div class="ack-card">
+      <div class="ack-header">
+        <div>
+          <div class="ack-name">Deepak Thakur</div>
+          <div class="ack-role">First CAD Mentor — Mechanical Design</div>
+        </div>
+      </div>
+      <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
+    </div>
+
+    <div class="ack-card">
+      <div class="ack-header">
+        <div>
+          <div class="ack-name">Anurag Yadav</div>
+          <div class="ack-role">Mentor — CAD Modeling &amp; CAE Simulations</div>
+        </div>
+        <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+      </div>
+      <p class="ack-desc">Support and guidance in CAD modeling and CAE simulations workflow.</p>
+    </div>
+
   </div>
 </section>
 
