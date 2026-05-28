@@ -55,22 +55,95 @@ nav{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
   padding:120px 6% 80px;position:relative;overflow:hidden;
 }
-.hero-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:64px}
+.hero-inner{display:grid;grid-template-columns:640px 1fr;align-items:center;gap:80px}
 .hero-content{display:flex;flex-direction:column}
+
+/* ── HERO IMAGE FRAME ── */
 .hero-photo-wrap{
   position:relative;flex-shrink:0;
-  width:clamp(220px,22vw,320px);
-  aspect-ratio:3/4;
-  border:1px solid var(--border2);
-  overflow:hidden;
-  animation:fadeUp .6s .5s ease both;
+  width:100%;
+  aspect-ratio:1280/934;
+  animation:fadeUp .7s .5s ease both;
 }
+
+/* outer technical frame lines */
 .hero-photo-wrap::before{
-  content:'';position:absolute;inset:0;
-  border:1px solid rgba(224,160,32,.3);
+  content:'';position:absolute;
+  inset:-8px;
+  border:1px solid rgba(224,160,32,0.18);
+  z-index:3;pointer-events:none;
+}
+/* inner accent corner lines */
+.hero-photo-wrap::after{
+  content:'';position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to right, rgba(224,160,32,0.6) 24px, transparent 24px) top left / 1px 24px no-repeat,
+    linear-gradient(to bottom, rgba(224,160,32,0.6) 24px, transparent 24px) top left / 24px 1px no-repeat,
+    linear-gradient(to left, rgba(224,160,32,0.6) 24px, transparent 24px) top right / 1px 24px no-repeat,
+    linear-gradient(to bottom, rgba(224,160,32,0.6) 24px, transparent 24px) top right / 24px 1px no-repeat,
+    linear-gradient(to right, rgba(224,160,32,0.6) 24px, transparent 24px) bottom left / 1px 24px no-repeat,
+    linear-gradient(to top, rgba(224,160,32,0.6) 24px, transparent 24px) bottom left / 24px 1px no-repeat,
+    linear-gradient(to left, rgba(224,160,32,0.6) 24px, transparent 24px) bottom right / 1px 24px no-repeat,
+    linear-gradient(to top, rgba(224,160,32,0.6) 24px, transparent 24px) bottom right / 24px 1px no-repeat;
+  z-index:4;pointer-events:none;
+}
+
+.hero-img-inner{
+  position:relative;width:100%;height:100%;
+  overflow:hidden;
+  border:1px solid rgba(224,160,32,0.25);
+  box-shadow:
+    0 0 0 1px rgba(10,12,16,0.8),
+    0 24px 64px rgba(0,0,0,0.6),
+    0 4px 16px rgba(0,0,0,0.4);
+}
+
+.hero-img-inner img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  filter:grayscale(15%) brightness(0.88) contrast(1.05);
+  transition:transform 8s ease, filter .4s ease;
+}
+.hero-photo-wrap:hover .hero-img-inner img{
+  transform:scale(1.03);
+  filter:grayscale(5%) brightness(0.95) contrast(1.05);
+}
+
+/* dark overlay for integration */
+.hero-img-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom, rgba(10,12,16,0.15) 0%, transparent 30%, transparent 60%, rgba(10,12,16,0.5) 100%),
+    linear-gradient(to left, rgba(10,12,16,0.3) 0%, transparent 40%);
+  z-index:1;pointer-events:none;
+}
+
+/* edge fade into background */
+.hero-img-fade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to right, rgba(10,12,16,0.0) 60%, rgba(10,12,16,0.6) 100%);
   z-index:2;pointer-events:none;
 }
-.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(20%)}
+
+/* achievement badge */
+.hero-img-badge{
+  position:absolute;bottom:20px;left:20px;z-index:5;
+  font-family:var(--fm);font-size:9px;letter-spacing:2.5px;
+  color:var(--gold);background:rgba(10,12,16,0.85);
+  border:1px solid rgba(224,160,32,0.4);
+  padding:7px 14px;
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;gap:8px;
+}
+.hero-img-badge::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;
+  animation:pulse 2s infinite;
+}
+
 .hero-photo-placeholder{
   width:100%;height:100%;
   background:var(--surface2);
@@ -78,7 +151,21 @@ nav{
   font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-dim);text-align:center;padding:20px;
 }
 .hero-photo-placeholder span{font-size:28px;color:var(--border2)}
-@media(max-width:860px){.hero-inner{grid-template-columns:1fr}.hero-photo-wrap{display:none}}
+
+@media(max-width:1100px){.hero-inner{grid-template-columns:1fr 1fr;gap:56px}}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-photo-wrap{
+    width:min(600px,100%);
+    aspect-ratio:1280/934;
+    margin:40px auto 0;
+    order:1;
+  }
+  .hero-content{order:0}
+}
+@media(max-width:600px){
+  .hero-photo-wrap{aspect-ratio:4/3}
+}
 .hero-grid{
   position:absolute;inset:0;pointer-events:none;
   background-image:
@@ -115,9 +202,10 @@ nav{
   animation:fadeUp .6s .2s ease both;
 }
 .hero-desc{
-  font-size:16px;font-weight:300;color:var(--text-sec);
-  max-width:540px;line-height:1.75;margin-bottom:44px;
+  font-size:15.5px;font-weight:400;color:#C8CDD8;
+  max-width:460px;line-height:1.85;margin-bottom:44px;
   animation:fadeUp .6s .3s ease both;
+  letter-spacing:0.015em;
 }
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .6s .4s ease both}
 .btn-primary{
@@ -410,7 +498,7 @@ footer{
     <a href="#casestudies">CASE STUDIES</a>
     <a href="#contact">CONTACT</a>
   </div>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">HIRE ME</button>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">LET'S CONNECT</button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -418,12 +506,20 @@ footer{
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <div class="hero-img-inner">
+        <img src="me.jpeg" alt="AIR 2 — ATVC 2026 · Team Daedalus Racing">
+        <div class="hero-img-overlay"></div>
+        <div class="hero-img-fade"></div>
+      </div>
+      <div class="hero-img-badge">AIR 2 OVERALL · ATVC 2026</div>
+    </div>
     <div class="hero-content">
       <div class="hero-label"><span class="hero-label-dot"></span>VEHICLE SYSTEMS DEVELOPMENT ENGINEER</div>
       <h1 class="hero-name">ARPIT<br><span class="gold">MALIK</span></h1>
       <div class="hero-title">Systems · Powertrain · Integration</div>
       <p class="hero-desc">
-        Third-Year Mechanical Engineering Student specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.
+        Third-Year Mechanical Engineering Student focused on vehicle systems development through analytical validation, iterative design, physical testing, and first-principles engineering reasoning.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">VIEW PROJECTS</a>
@@ -433,11 +529,8 @@ footer{
         <div><div class="hero-stat-num">3</div><div class="hero-stat-label">VEHICLE DEVELOPMENT PROGRAMMES</div></div>
         <div><div class="hero-stat-num">15</div><div class="hero-stat-label">EVs DEPLOYED</div></div>
         <div><div class="hero-stat-num">AIR 2</div><div class="hero-stat-label">ATVC 2026</div></div>
+        <div><div class="hero-stat-num">300<span style="font-size:28px">+hrs</span></div><div class="hero-stat-label">WORKSHOP FABRICATION</div></div>
       </div>
-    </div>
-    <div class="hero-photo-wrap">
-      <!-- Replace src with your photo path e.g. src="photo.jpg" -->
-      <img src="me.jpeg" alt="Arpit Malik" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
   </div>
 </section>
@@ -455,6 +548,7 @@ footer{
       <p>During my <span class="hl">vehicle development internship</span>, I contributed to the complete CAD development of a <span class="hl">4×2 dune buggy platform</span>, focusing on system layout, suspension integration, double wishbone geometry development, and manufacturable packaging.</p>
       <p>Most recently, as <span class="hl">Chief Design Engineer of Team Daedalus Racing</span>, I led the complete development of a BAJA SAE vehicle from scratch. Working closely with <span class="hl">driver feedback</span> and CAE validation, I developed the full chassis architecture and vehicle packaging within <span class="hl">rulebook constraints</span> using SOLIDWORKS, conducted roll cage ergonomic studies in CATIA, and designed suspension geometry around real vehicle-performance objectives such as improved approach angle, increased ground clearance, and better obstacle handling.</p>
       <p>The <span class="hl">suspension system</span> was iteratively refined through digital validation in <span class="hl">Lotus Shark</span> and months of <span class="hl">workshop-floor</span> iteration and physical testing, translating analytical design intent into validated vehicle behavior. This development effort contributed to securing <span class="hl">AIR 2</span> Overall at ATVC 2026.</p>
+      <p>More recently, my work has expanded into <span class="hl">EV subsystem R&D</span> involving <span class="hl">swappable battery systems</span>, thermal safety considerations, and integration-focused mechanical development for electric mobility platforms.</p>
       <p>My engineering approach begins with understanding why a system behaves the way it does before validating solutions through geometry, analysis, simulation, and physical reasoning. I <span class="hl">document my work</span> as <span class="hl">engineering case studies</span> that capture not only final outcomes, but the design decisions, trade-offs, iterations, and engineering intuition that shaped them.</p>
     </div>
     <div class="about-highlights">
@@ -883,8 +977,9 @@ footer{
 .proj-header-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:16px}
 .proj-header-title{font-family:var(--fd);font-size:clamp(48px,7vw,90px);font-weight:800;color:var(--text);line-height:.95;text-transform:uppercase;letter-spacing:-2px}
 .proj-header-sub{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--text-dim);margin-top:18px}
-.proj-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
-@media(max-width:1200px){.proj-cards{grid-template-columns:repeat(2,1fr)}}
+.proj-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
+@media(max-width:1400px){.proj-cards{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1000px){.proj-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.proj-cards{grid-template-columns:1fr}}
 .proj-card{
   background:var(--bg);display:flex;flex-direction:column;
@@ -931,7 +1026,7 @@ footer{
         <img src="BajaBuggy.cover.jpeg" alt="BAJA ATV 2026">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 01 <span>/ 04</span></div>
+        <div class="proj-num">— 01 <span>/ 05</span></div>
         <div class="proj-name">BAJA ATV 2026</div>
         <p class="proj-blurb">Designed and developed a complete BAJA SAE vehicle from scratch as Chief Design Engineer. Analytical validation, geometric iteration, and system-level refinement contributed to AIR 2 Overall at ATVC 2026.</p>
         <div class="proj-tags">
@@ -951,7 +1046,7 @@ footer{
         <img src="EMopedpage.cover.jpeg" alt="Electric Delivery Moped">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 02 <span>/ 04</span></div>
+        <div class="proj-num">— 02 <span>/ 05</span></div>
         <div class="proj-name">Electric Delivery Moped ⚡</div>
         <p class="proj-blurb">Sole mechanical engineer on an EV moped programme — concept to 2nd prototype under real cost and time constraints. Chassis design, suspension integration, battery packaging, fabrication support, and real-world validation. 15 vehicles operational in Dwarka, Delhi.</p>
         <div class="proj-tags">
@@ -971,7 +1066,7 @@ footer{
         <img src="hero-buggy.png" alt="Dune Buggy OFF-ROAD">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 03 <span>/ 04</span></div>
+        <div class="proj-num">— 03 <span>/ 05</span></div>
         <div class="proj-name">Dune Buggy OFF-ROAD</div>
         <p class="proj-blurb">Complete CAD development of a 4×2 dune buggy platform from first principles — system layout, double wishbone suspension geometry, and manufacturable packaging.</p>
         <div class="proj-tags">
@@ -984,13 +1079,33 @@ footer{
       </div>
     </a>
 
-    <!-- CARD 04 -->
+    <!-- CARD 04 — GridXenergy Intern -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_evtechnology-batterytechnology-electricvehicles-ugcPost-7461096426559950848-Vbp2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="proj-card">
+      <div class="proj-img-wrap">
+        <img src="GridxEnergy.cover.png" alt="GridXenergy — Mechanical Design Intern">
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">— 04 <span>/ 05</span></div>
+        <div class="proj-name">GridXenergy — Mech. Design Intern 🔋</div>
+        <p class="proj-blurb">Swappable battery pack R&D at GridXenergy — focusing on mechanical design, structural packaging, and thermal management for EV energy systems. Working directly with founders on real-world product development in the EV space.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">BATTERY PACKAGING</span>
+          <span class="proj-tag">THERMAL MANAGEMENT</span>
+          <span class="proj-tag">SWAPPABLE PACKS</span>
+          <span class="proj-tag">EV SYSTEMS</span>
+          <span class="proj-tag">CURRENT</span>
+        </div>
+        <span class="proj-cta">View on LinkedIn →</span>
+      </div>
+    </a>
+
+    <!-- CARD 05 -->
     <a href="#" class="proj-card">
       <div class="proj-img-wrap">
         <img src="upcoming.project.cover.jpeg" alt="Electric Scooter — Chassis Design">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 04 <span>/ 04</span></div>
+        <div class="proj-num">— 05 <span>/ 05</span></div>
         <div class="proj-name">Electric Scooter — Chassis Design</div>
         <p class="proj-blurb">Self-initiated electric scooter project focused on chassis stiffness, suspension mounting geometry, and impact load resistance. Frame is being developed in CAD and validated using FEA before fabrication. Currently in chassis design and structural validation phase.</p>
         <div class="proj-tags">
@@ -1006,8 +1121,6 @@ footer{
 
   </div>
 </section>
-
-<!-- ── FULL CASE STUDY ── -->
 <style>
 .casestudy-section{padding:100px 6%;background:var(--surface)}
 .casestudy-card{
@@ -1311,50 +1424,6 @@ footer{
   </div>
 </section>
 
-<!-- ── CERTIFICATIONS ── -->
-<section class="surface-section">
-  <div class="section-label">// 07 — CREDENTIALS</div>
-
-  <h2 class="section-title">CERTIFICATIONS <span>&</span> EDUCATION</h2>
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">ISO 26262 Functional Safety Engineer</div>
-      <div class="cert-issuer">TÜV SÜD AUTOMOTIVE</div>
-      <div class="cert-year">2022</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">ASPICE Provisional Assessor</div>
-      <div class="cert-issuer">INTACS — CERTIFIED</div>
-      <div class="cert-year">2021</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">AUTOSAR Classic Platform</div>
-      <div class="cert-issuer">VECTOR INFORMATIK</div>
-      <div class="cert-year">2020</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">Certified MBD Engineer</div>
-      <div class="cert-issuer">THE MATHWORKS — SIMULINK</div>
-      <div class="cert-year">2019</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">MEng Mechanical Engineering</div>
-      <div class="cert-issuer">UNIVERSITY OF BATH — 1ST CLASS</div>
-      <div class="cert-year">2015</div>
-    </div>
-    <div class="cert-card">
-      <div class="cert-icon">◈</div>
-      <div class="cert-name">IMechE Chartered Engineer</div>
-      <div class="cert-issuer">INSTITUTION OF MECHANICAL ENGINEERS</div>
-      <div class="cert-year">2021</div>
-    </div>
-  </div>
-</section>
 
 <!-- ── CONTACT ── -->
 <section id="contact">
@@ -1409,7 +1478,7 @@ footer{
         </div>
         <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
       </div>
-      <p class="ack-desc">Helped a lot with suspension knowledge and current industry knowledge in the EV sector.</p>
+      <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
     </div>
 
     <div class="ack-card">
@@ -1430,7 +1499,7 @@ footer{
         </div>
         <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
       </div>
-      <p class="ack-desc">Support and guidance in CAD modeling and CAE simulations workflow.</p>
+      <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
     </div>
 
   </div>
