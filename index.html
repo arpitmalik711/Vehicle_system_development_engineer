@@ -517,7 +517,7 @@ footer{
     <div class="hero-content">
       <div class="hero-label"><span class="hero-label-dot"></span>VEHICLE SYSTEMS DEVELOPMENT ENGINEER</div>
       <h1 class="hero-name">ARPIT<br><span class="gold">MALIK</span></h1>
-      <div class="hero-title">Systems · Powertrain · Integration</div>
+      <div class="hero-title">Vehicle Systems · Validation · Integration</div>
       <p class="hero-desc">
         Third-Year Mechanical Engineering Student focused on vehicle systems development through analytical validation, iterative design, physical testing, and first-principles engineering reasoning.
       </p>
@@ -1150,141 +1150,109 @@ footer{
   <div class="section-label">// 04 — DEEP DIVE</div>
   <h2 class="section-title">Full <span>Case Study</span></h2>
 
-  <a href="https://arpitmalik711.github.io/Memberbend.casestudy/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
-    <div class="casestudy-img-wrap">
-      <img src="Full_Casestudy_1.png" alt="Chassis Member Failure at Damper Mount">
-    </div>
-    <div class="proj-body">
-      <div class="proj-num">— 01 <span>/ 01</span></div>
-      <div class="proj-name">Chassis Member Failure at Damper Mount</div>
-      <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">STRUCTURAL FAILURE ANALYSIS</span>
-        <span class="proj-tag">FEA</span>
-        <span class="proj-tag">ANSYS</span>
-        <span class="proj-tag">CHASSIS ENGINEERING</span>
-        <span class="proj-tag">BAJA SAE</span>
+  <style>
+  .casestudy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:var(--border)}
+  .casestudy-card{max-width:none}
+  .casestudy-progress-bar{display:flex;flex-direction:column;gap:4px;margin-bottom:20px}
+  .casestudy-progress-track{height:2px;background:var(--border2);position:relative;overflow:hidden}
+  .casestudy-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+  .casestudy-progress-label{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-dim);display:flex;justify-content:space-between;margin-bottom:4px}
+  .casestudy-milestones{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+  .casestudy-milestone{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-sec);line-height:1.55;font-weight:300}
+  .casestudy-milestone-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:8px}
+  .casestudy-milestone-dot.done{background:rgba(224,160,32,0.12);border:1px solid rgba(224,160,32,0.45);color:var(--gold)}
+  .casestudy-status-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(224,160,32,0.3);padding:5px 12px;margin-bottom:16px;background:var(--gold-dim)}
+  .casestudy-status-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+  </style>
+
+  <div class="casestudy-grid">
+
+    <a href="https://arpitmalik711.github.io/Memberbend.casestudy/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
+      <div class="casestudy-img-wrap">
+        <img src="Full_Casestudy_1.png" alt="Chassis Member Failure at Damper Mount">
       </div>
-      <span class="proj-cta">Open Full Case Study →</span>
-    </div>
-  </a>
-</section>
-
-<!-- ── MINI CASE STUDIES ── -->
-<style>
-.mini-section{padding:100px 6%;background:var(--bg)}
-.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2px;background:var(--border)}
-.mini-card{
-  background:var(--surface);padding:36px 32px;
-  position:relative;overflow:hidden;
-  transition:background .25s;
-  display:flex;flex-direction:column;
-}
-.mini-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.mini-card:hover{background:var(--surface2)}
-.mini-card:hover::after{opacity:1}
-.mini-card-tag{
-  font-family:var(--fm);font-size:9px;letter-spacing:2px;
-  color:var(--gold);margin-bottom:18px;
-  display:flex;align-items:center;gap:8px;
-}
-.mini-card-tag::before{content:'//';color:var(--text-dim)}
-.mini-card-title{
-  font-family:var(--fd);font-size:clamp(18px,2vw,24px);font-weight:800;
-  color:var(--text);text-transform:uppercase;letter-spacing:.5px;
-  margin-bottom:12px;line-height:1.05;
-}
-.mini-card-desc{
-  font-size:13px;color:var(--text-sec);line-height:1.7;
-  font-weight:300;flex:1;margin-bottom:24px;
-}
-.mini-card-footer{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:18px;border-top:1px solid var(--border2);
-}
-.mini-card-stat{font-family:var(--fm);font-size:10px;color:var(--text-dim);letter-spacing:1px}
-.mini-card-stat strong{display:block;font-family:var(--fd);font-size:22px;color:var(--gold);font-weight:800;line-height:1}
-.mini-card-link{
-  font-family:var(--fm);font-size:10px;letter-spacing:2px;
-  color:var(--text-sec);text-decoration:none;
-  display:inline-flex;align-items:center;gap:6px;
-  transition:color .2s,gap .2s;
-}
-.mini-card:hover .mini-card-link{color:var(--gold);gap:12px}
-</style>
-
-<section class="mini-section">
-  <div class="section-label">// 05 — FOCUSED ANALYSIS</div>
-  <h2 class="section-title">Mini <span>Case Studies</span></h2>
-
-  <div class="mini-grid">
-
-    <div class="mini-card">
-      <div class="mini-card-tag">SUSPENSION GEOMETRY</div>
-      <div class="mini-card-title">Roll Centre Migration Under Droop</div>
-      <p class="mini-card-desc">Analysis of roll centre height variation through full suspension travel on the dune buggy platform. Iterative wishbone geometry adjustment to limit RC migration within ±18 mm of design target.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>±18mm</strong>RC MIGRATION TARGET</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
+      <div class="proj-body">
+        <div class="proj-num">— 01 <span>/ 02</span></div>
+        <div class="proj-name">Chassis Member Failure at Damper Mount</div>
+        <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">STRUCTURAL FAILURE ANALYSIS</span>
+          <span class="proj-tag">FEA</span>
+          <span class="proj-tag">ANSYS</span>
+          <span class="proj-tag">CHASSIS ENGINEERING</span>
+          <span class="proj-tag">BAJA SAE</span>
+        </div>
+        <span class="proj-cta">Open Full Case Study →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="mini-card">
-      <div class="mini-card-tag">STRUCTURAL ANALYSIS</div>
-      <div class="mini-card-title">Rollcage Torsional Stiffness Study</div>
-      <p class="mini-card-desc">FEA-based torsional stiffness evaluation of the BAJA SAE roll cage. Triangulation node placement optimised to improve chassis rigidity while staying within rulebook mass budget.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>FEA</strong>ANSYS STATIC</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
+    <!-- CASE STUDY 02 — Mahindra 265 Steering -->
+    <a href="#" class="casestudy-card">
+      <div class="casestudy-img-wrap">
+        <img src="265 Steering Investigation Cover Photo.jpeg" alt="Mahindra 265 Steering Geometry Investigation">
       </div>
-    </div>
+      <div class="proj-body">
+        <div class="proj-num">— 02 <span>/ 02</span></div>
 
-    <div class="mini-card">
-      <div class="mini-card-tag">EV PACKAGING</div>
-      <div class="mini-card-title">Battery Pack CG Optimisation</div>
-      <p class="mini-card-desc">Centre-of-gravity analysis for battery module placement on the electric moped. Trade-off study between low CG for stability and forward weight bias for traction at the rear wheel.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>CG</strong>PACKAGING STUDY</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
-      </div>
-    </div>
+        <div class="casestudy-status-badge">
+          <span class="casestudy-status-dot"></span>IN PROGRESS
+        </div>
 
-    <div class="mini-card">
-      <div class="mini-card-tag">VEHICLE DYNAMICS</div>
-      <div class="mini-card-title">Approach Angle vs Ground Clearance Trade-off</div>
-      <p class="mini-card-desc">Geometric study on the BAJA ATV platform optimising approach and departure angles alongside minimum ground clearance for obstacle negotiation events at ATVC.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>ATVC</strong>EVENT DRIVEN</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
-      </div>
-    </div>
+        <div class="proj-name">Mahindra 265 Steering Geometry Investigation</div>
+        <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
 
-    <div class="mini-card">
-      <div class="mini-card-tag">FABRICATION ENGINEERING</div>
-      <div class="mini-card-title">Weld Joint Failure at Suspension Pickup</div>
-      <p class="mini-card-desc">Root cause analysis of a weld joint failure at a lower wishbone pickup on the BAJA vehicle during testing. Load path reassessment and gusset reinforcement resolved the failure before competition.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>RCA</strong>FAILURE ANALYSIS</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
-      </div>
-    </div>
+        <div class="casestudy-progress-bar">
+          <div class="casestudy-progress-label">
+            <span>INVESTIGATION PROGRESS</span>
+            <span style="color:var(--gold)">85%</span>
+          </div>
+          <div class="casestudy-progress-track">
+            <div class="casestudy-progress-fill" style="width:85%"></div>
+          </div>
+        </div>
 
-    <div class="mini-card">
-      <div class="mini-card-tag">PROTOTYPE VALIDATION</div>
-      <div class="mini-card-title">Moped Suspension Bottoming Under Load</div>
-      <p class="mini-card-desc">Field observation of rear suspension bottoming on the electric moped under full delivery load. Spring rate recalculation, preload adjustment, and bump stop repositioning resolved the issue on prototype 2.</p>
-      <div class="mini-card-footer">
-        <div class="mini-card-stat"><strong>P2</strong>PROTOTYPE ITERATION</div>
-        <a href="#" class="mini-card-link">READ MORE →</a>
+        <div class="casestudy-milestones">
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Measured KPI (≈7.5°) and positive camber (≈+3°) on 2013 Mahindra 265; identified kingpin–tyre clearance constraint via physical inspection</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Full front axle and steering assembly reverse-engineered in SolidWorks; KPI, camber, steering arm angles, and pivot geometry faithfully recreated</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Ackermann geometry verified by extending steering arm projections toward rear axle in CAD</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Inner/outer steering angles recorded experimentally using smartphones mounted on front wheels; behavior validated against CAD model</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Scrub radius calculated from CAD; hypothesis developed — positive camber provides kingpin clearance while maintaining a controlled scrub radius</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Comparison reference collected from 2005 Mahindra 265 — appears to carry little or no positive camber; comparison analysis planned</span>
+          </div>
+        </div>
+
+        <div class="proj-tags">
+          <span class="proj-tag">REVERSE ENGINEERING</span>
+          <span class="proj-tag">STEERING GEOMETRY</span>
+          <span class="proj-tag">SOLIDWORKS</span>
+          <span class="proj-tag">KPI · CAMBER · SCRUB</span>
+          <span class="proj-tag">ACKERMANN</span>
+          <span class="proj-tag">PRODUCTION VEHICLE</span>
+        </div>
+        <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
-    </div>
+    </a>
 
   </div>
 </section>
+
 
 <!-- ── AWARDS & ACHIEVEMENTS ── -->
 <style>
