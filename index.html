@@ -446,7 +446,7 @@ footer{
   .slideshow-controls{flex-direction:column;align-items:flex-start;gap:14px}
 
   /* projects */
-  .proj-cards{grid-template-columns:1fr}
+  .proj-cards{grid-template-columns:repeat(2,1fr)}
   .proj-body{padding:20px 20px 24px}
 
   /* full case study */
@@ -980,7 +980,6 @@ footer{
 .proj-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
 @media(max-width:1400px){.proj-cards{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:1000px){.proj-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.proj-cards{grid-template-columns:1fr}}
 .proj-card{
   background:var(--bg);display:flex;flex-direction:column;
   cursor:pointer;position:relative;overflow:hidden;
@@ -1010,6 +1009,16 @@ footer{
   transition:color .2s,gap .2s;text-decoration:none;
 }
 .proj-card:hover .proj-cta{color:var(--gold);gap:14px}
+@media(max-width:600px){
+  .proj-body{padding:14px 14px 18px}
+  .proj-num{font-size:8px;margin-bottom:8px}
+  .proj-num span{font-size:8px}
+  .proj-name{font-size:14px;margin-bottom:8px;line-height:1.2}
+  .proj-blurb{font-size:11px;line-height:1.5;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .proj-tags{gap:4px;margin-bottom:14px}
+  .proj-tag{font-size:8px;letter-spacing:1px;padding:3px 7px}
+  .proj-cta{font-size:9px;letter-spacing:1.5px}
+}
 </style>
 
 <section id="projects" class="proj-section">
