@@ -1172,6 +1172,14 @@ footer{
   .casestudy-milestone-dot.done{background:rgba(224,160,32,0.12);border:1px solid rgba(224,160,32,0.45);color:var(--gold)}
   .casestudy-status-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(224,160,32,0.3);padding:5px 12px;margin-bottom:16px;background:var(--gold-dim)}
   .casestudy-status-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+  @media(max-width:600px){
+    .casestudy-grid{grid-template-columns:repeat(2,1fr);align-items:start}
+    .casestudy-status-badge{font-size:7px;letter-spacing:1px;padding:4px 8px;margin-bottom:10px}
+    .casestudy-status-dot{width:4px;height:4px}
+    .casestudy-progress-bar{margin-bottom:12px}
+    .casestudy-progress-label{font-size:7px;letter-spacing:1px}
+    .casestudy-milestones{display:none}
+  }
   </style>
 
   <div class="casestudy-grid">
@@ -1319,6 +1327,17 @@ footer{
 }
 .award-doc-link:active{transform:translateY(0)}
 .award-doc-link-icon{font-size:13px;line-height:1}
+@media(max-width:600px){
+  .awards-list{display:grid;grid-template-columns:repeat(2,1fr);align-items:start}
+  .awards-list .award-item{flex-direction:column;padding:14px 12px 16px;gap:0}
+  .awards-list .award-icon{font-size:16px;top:12px;right:12px}
+  .awards-list .award-title{font-size:12.5px;padding-right:26px;margin-bottom:4px;line-height:1.2}
+  .awards-list .award-meta{font-size:6.5px;letter-spacing:.5px;margin-bottom:8px}
+  .awards-list .award-desc{font-size:10px;line-height:1.45;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .awards-list .award-badge{font-size:7px;letter-spacing:.5px;padding:4px 7px;gap:5px}
+  .awards-list .award-docs{flex-direction:column;gap:6px;margin-top:10px}
+  .awards-list .award-doc-link{font-size:8px;letter-spacing:.5px;padding:7px 8px;width:100%}
+}
 </style>
 
 <section class="awards-section">
