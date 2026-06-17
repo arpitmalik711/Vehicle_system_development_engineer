@@ -1017,6 +1017,51 @@ footer{
   transition:color .2s,gap .2s;text-decoration:none;
 }
 .proj-card:hover .proj-cta{color:var(--gold);gap:14px}
+
+/* ── INTERNSHIP RIBBON ── */
+.proj-card.internship-ribbon{overflow:hidden}
+.proj-card.internship-ribbon::after{
+  content:'INTERNSHIP';
+  position:absolute;
+  top:18px;right:-28px;
+  width:120px;
+  background:var(--gold);
+  color:var(--bg);
+  font-family:var(--fm);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-align:center;
+  padding:5px 0;
+  transform:rotate(35deg);
+  transform-origin:center;
+  z-index:10;
+  pointer-events:none;
+  box-shadow:0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── SELF-INITIATED RIBBON ── */
+.proj-card.self-ribbon{overflow:hidden}
+.proj-card.self-ribbon::after{
+  content:'SELF-INITIATED';
+  position:absolute;
+  top:18px;right:-32px;
+  width:138px;
+  background:#3a9e4a;
+  color:#fff;
+  font-family:var(--fm);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-align:center;
+  padding:5px 0;
+  transform:rotate(35deg);
+  transform-origin:center;
+  z-index:10;
+  pointer-events:none;
+  box-shadow:0 2px 8px rgba(0,0,0,0.4);
+}
+
 @media(max-width:600px){
   .proj-body{padding:14px 14px 18px}
   .proj-num{font-size:8px;margin-bottom:8px}
@@ -1058,7 +1103,7 @@ footer{
     </a>
 
     <!-- CARD 02 -->
-    <a href="https://www.notion.so/E-Moped-Case-Study-As-Design-Engineer-intern-2d77cb4169a880d5832cc70cce382235?source=copy_link" target="_blank" rel="noopener noreferrer" class="proj-card">
+    <a href="https://www.notion.so/E-Moped-Case-Study-As-Design-Engineer-intern-2d77cb4169a880d5832cc70cce382235?source=copy_link" target="_blank" rel="noopener noreferrer" class="proj-card internship-ribbon">
       <div class="proj-img-wrap">
         <img src="EMopedpage.cover.jpeg" alt="Electric Delivery Moped">
       </div>
@@ -1078,7 +1123,7 @@ footer{
     </a>
 
     <!-- CARD 03 -->
-    <a href="https://arpitmalik711.github.io/Dunebuggy.Arpit/" target="_blank" rel="noopener noreferrer" class="proj-card">
+    <a href="https://arpitmalik711.github.io/Dunebuggy.Arpit/" target="_blank" rel="noopener noreferrer" class="proj-card internship-ribbon">
       <div class="proj-img-wrap">
         <img src="hero-buggy.png" alt="Dune Buggy OFF-ROAD">
       </div>
@@ -1097,7 +1142,7 @@ footer{
     </a>
 
     <!-- CARD 04 — GridXenergy Intern -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_evtechnology-batterytechnology-electricvehicles-ugcPost-7461096426559950848-Vbp2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="proj-card">
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_evtechnology-batterytechnology-electricvehicles-ugcPost-7461096426559950848-Vbp2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="proj-card internship-ribbon">
       <div class="proj-img-wrap">
         <img src="GridxEnergy.cover.png" alt="GridXenergy — Mechanical Design Intern">
       </div>
@@ -1117,7 +1162,7 @@ footer{
     </a>
 
     <!-- CARD 05 -->
-    <a href="#" class="proj-card">
+    <a href="#" class="proj-card self-ribbon">
       <div class="proj-img-wrap">
         <img src="upcoming.project.cover.jpeg" alt="Electric Scooter — Chassis Design">
       </div>
