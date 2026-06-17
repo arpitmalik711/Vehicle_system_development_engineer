@@ -392,7 +392,15 @@ textarea.form-input{resize:vertical;min-height:110px}
 .ack-desc{font-family:var(--fb);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
 .ack-linkedin{font-family:var(--fm);font-size:11px;font-weight:700;color:#0A66C2;border:1px solid #0A66C2;padding:6px 12px;text-decoration:none;transition:background .2s,color .2s;flex-shrink:0;border-radius:2px;display:flex;align-items:center;gap:6px}
 .ack-linkedin:hover{background:#0A66C2;color:#fff}
-@media(max-width:768px){.ack-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .ack-grid{align-items:start}
+  .ack-card{padding:14px 14px 18px}
+  .ack-header{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:12px}
+  .ack-name{font-size:15px}
+  .ack-role{font-size:7px;letter-spacing:1px;margin-top:4px}
+  .ack-desc{font-size:10px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .ack-linkedin{font-size:8px;padding:5px 8px;gap:4px}
+}
 
 /* ── FOOTER ── */
 footer{
@@ -1421,36 +1429,9 @@ footer{
 </section>
 
 
-<!-- ── CONTACT ── -->
-<section id="contact">
-  <div class="section-label">// 08 — LET'S TALK</div>
-  <h2 class="section-title">GET IN <span>TOUCH</span></h2>
-  <div>
-    <p class="contact-intro">Available for vehicle systems engineering roles, consulting engagements, and technical collaborations across EV, off-road, and motorsport domains. Based in Delhi — open to relocation and hybrid/remote arrangements.</p>
-    <div class="contact-links">
-      <a href="mailto:arpit.malik.ug23@nsut.ac.in" class="contact-link">
-        <span class="contact-link-icon">@</span>
-        <span class="contact-link-text">arpit.malik.ug23@nsut.ac.in</span>
-      </a>
-      <a href="https://www.linkedin.com/in/arpit-malik-bb6939303/" target="_blank" rel="noopener noreferrer" class="contact-link">
-        <span class="contact-link-icon">in</span>
-        <span class="contact-link-text">linkedin.com/in/arpit-malik-bb6939303</span>
-      </a>
-      <a href="https://wa.me/917056470711" target="_blank" rel="noopener noreferrer" class="contact-link">
-        <span class="contact-link-icon">wa</span>
-        <span class="contact-link-text">+91 70564 70711</span>
-      </a>
-      <a href="#" class="contact-link">
-        <span class="contact-link-icon">↓</span>
-        <span class="contact-link-text">Download CV / Resume</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ── ACKNOWLEDGEMENTS ── -->
 <section id="acknowledgements">
-  <div class="section-label">// 09 — ACKNOWLEDGEMENTS</div>
+  <div class="section-label">// 08 — ACKNOWLEDGEMENTS</div>
   <h2 class="section-title">THOSE WHO <span>SHAPED</span> THE WORK</h2>
   <p class="ack-intro">Engineering is never done in isolation. These are the seniors who gave their time, knowledge, and patience when it mattered most.</p>
   <div class="ack-grid">
@@ -1498,6 +1479,33 @@ footer{
       <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
     </div>
 
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-label">// 09 — LET'S TALK</div>
+  <h2 class="section-title">GET IN <span>TOUCH</span></h2>
+  <div>
+    <p class="contact-intro">Available for vehicle systems engineering roles, consulting engagements, and technical collaborations across EV, off-road, and motorsport domains. Based in Delhi — open to relocation and hybrid/remote arrangements.</p>
+    <div class="contact-links">
+      <a href="mailto:arpit.malik.ug23@nsut.ac.in" class="contact-link">
+        <span class="contact-link-icon">@</span>
+        <span class="contact-link-text">arpit.malik.ug23@nsut.ac.in</span>
+      </a>
+      <a href="https://www.linkedin.com/in/arpit-malik-bb6939303/" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">in</span>
+        <span class="contact-link-text">linkedin.com/in/arpit-malik-bb6939303</span>
+      </a>
+      <a href="https://wa.me/917056470711" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">wa</span>
+        <span class="contact-link-text">+91 70564 70711</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span class="contact-link-icon">↓</span>
+        <span class="contact-link-text">Download CV / Resume</span>
+      </a>
+    </div>
   </div>
 </section>
 
