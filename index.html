@@ -494,8 +494,165 @@ footer{
   .award-badge{font-size:8px;padding:4px 8px}
 }
 </style>
+
+<!-- ── INTRO ANIMATION (preload hints — missing files fail silently) ── -->
+<!-- Landscape set: used on screens ≥769px wide -->
+<link rel="preload" as="video" href="vid1.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid2.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid3.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid4.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid5.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid6.mp4" type="video/mp4" media="(min-width: 769px)">
+<!-- Portrait/mobile set: used on screens ≤768px wide -->
+<link rel="preload" as="video" href="vid1-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid2-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid4-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid5-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid6-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+
+<style id="intro-overlay-styles">
+#intro-overlay{
+  position:fixed;inset:0;z-index:99999;
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;font-family:var(--fb);
+}
+#intro-overlay.intro-hidden{display:none}
+#intro-overlay.intro-fading{opacity:0;transition:opacity .65s ease}
+
+#skip-intro-btn{
+  position:absolute;top:24px;right:24px;z-index:20;
+  font-family:var(--fm);font-size:10px;letter-spacing:2.5px;
+  color:var(--text-sec);background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:9px 16px;cursor:pointer;
+  transition:color .2s,border-color .2s,background .2s;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+#skip-intro-btn:hover{color:var(--gold);border-color:rgba(224,160,32,0.5);background:rgba(224,160,32,0.08)}
+
+.intro-stage{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .5s ease;
+  text-align:center;padding:0 24px;
+}
+.intro-stage.is-visible{opacity:1}
+
+/* Stage 1 — name reveal */
+#stage-name{gap:14px}
+#stage-name .intro-name{
+  font-family:var(--fd);font-weight:700;letter-spacing:6px;
+  font-size:clamp(32px,6vw,64px);color:var(--text);
+  opacity:0;transform:translateY(14px);
+  animation:introFadeUp .9s .05s ease forwards;
+}
+#stage-name .intro-subtitle{
+  font-family:var(--fm);font-size:clamp(10px,1.6vw,13px);
+  letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  opacity:0;transform:translateY(10px);
+  animation:introFadeUp .9s .3s ease forwards;
+}
+@keyframes introFadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* Stage 2 — video montage */
+#stage-montage{inset:0;padding:0}
+.video-layer{position:absolute;inset:0;background:#06070a}
+.video-layer video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;opacity:0;
+  transition:opacity .6s ease;
+  will-change:opacity,transform;
+  backface-visibility:hidden;
+}
+.video-layer video.active{opacity:1}
+.video-layer video.kenburns{animation-name:kenburn;animation-timing-function:ease-out;animation-fill-mode:forwards}
+@keyframes kenburn{from{transform:scale(1)}to{transform:scale(1.08)}}
+.montage-dark-overlay{position:absolute;inset:0;background:rgba(6,7,10,0.27);z-index:2;pointer-events:none}
+.montage-vignette{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.55) 100%);
+}
+#keyword-display{
+  position:relative;z-index:3;
+  font-family:var(--fd);font-weight:600;letter-spacing:4px;
+  font-size:clamp(20px,4vw,40px);color:var(--text);
+  text-transform:uppercase;
+  opacity:0;transition:opacity .35s ease;
+  text-shadow:0 2px 24px rgba(0,0,0,0.6);
+}
+#keyword-display.visible{opacity:1}
+
+/* Stage 3 — outro */
+#stage-outro .intro-name{
+  font-family:var(--fd);font-weight:700;letter-spacing:6px;
+  font-size:clamp(30px,5.5vw,56px);color:var(--text);
+}
+#stage-outro .intro-tagline{
+  font-family:var(--fb);font-weight:300;font-size:clamp(13px,2vw,18px);
+  color:var(--text-sec);letter-spacing:1px;margin-top:8px;
+}
+#stage-outro .intro-subtitle2{
+  font-family:var(--fm);font-size:clamp(9px,1.4vw,11px);
+  letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:14px;
+}
+
+@media(max-width:600px){
+  #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
+}
+</style>
 </head>
 <body>
+
+<!-- ── INTRO ANIMATION ── -->
+<!-- Landscape clips (laptop/desktop, ≥769px):  vid1.mp4 … vid6.mp4
+     Portrait clips (mobile, ≤768px):           vid1-mobile.mp4 … vid6-mobile.mp4
+     Any subset of either set works — if a device's preferred set is missing entirely,
+     it automatically falls back to the other set. -->
+<div id="intro-overlay">
+  <button id="skip-intro-btn" type="button">SKIP INTRO →</button>
+
+  <div class="intro-stage is-visible" id="stage-name">
+    <h1 class="intro-name">ARPIT MALIK</h1>
+    <p class="intro-subtitle">Vehicle Development Engineer</p>
+  </div>
+
+  <div class="intro-stage" id="stage-montage">
+    <div class="video-layer">
+      <video id="vidLayerA" muted playsinline preload="auto"></video>
+      <video id="vidLayerB" muted playsinline preload="auto"></video>
+    </div>
+    <div class="montage-dark-overlay"></div>
+    <div class="montage-vignette"></div>
+    <div id="keyword-display"></div>
+  </div>
+
+  <div class="intro-stage" id="stage-outro">
+    <h1 class="intro-name">ARPIT MALIK</h1>
+    <p class="intro-tagline">Designing Beyond CAD</p>
+    <p class="intro-subtitle2">Vehicle Development Portfolio</p>
+  </div>
+</div>
+
+<script>
+/* Runs immediately, before the rest of the page renders — if the intro already
+   played this session, hide it instantly with zero flash. Refresh-safe via sessionStorage. */
+(function(){
+  var overlay = document.getElementById('intro-overlay');
+  try{
+    if(sessionStorage.getItem('amIntroPlayed') === '1'){
+      overlay.classList.add('intro-hidden');
+    } else {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
+  }catch(e){
+    overlay.classList.add('intro-hidden');
+  }
+})();
+</script>
 
 <!-- ── NAV ── -->
 <nav>
@@ -1162,7 +1319,7 @@ footer{
     </a>
 
     <!-- CARD 05 -->
-    <a href="#" class="proj-card self-ribbon">
+    <a href="https://arpitmalik711.github.io/Escooter/" target="_blank" rel="noopener noreferrer" class="proj-card self-ribbon">
       <div class="proj-img-wrap">
         <img src="upcoming.project.cover.jpeg" alt="Electric Scooter — Chassis Design">
       </div>
@@ -1177,7 +1334,7 @@ footer{
           <span class="proj-tag">FEA</span>
           <span class="proj-tag">IN PROGRESS</span>
         </div>
-        <span class="proj-cta">Project in Progress 🔧</span>
+        <span class="proj-cta">Open Project Site →</span>
       </div>
     </a>
 
@@ -1223,8 +1380,10 @@ footer{
   .casestudy-milestone{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-sec);line-height:1.55;font-weight:300}
   .casestudy-milestone-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:8px}
   .casestudy-milestone-dot.done{background:rgba(224,160,32,0.12);border:1px solid rgba(224,160,32,0.45);color:var(--gold)}
-  .casestudy-status-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(224,160,32,0.3);padding:5px 12px;margin-bottom:16px;background:var(--gold-dim)}
-  .casestudy-status-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+  .casestudy-status-badge{display:none}
+  .casestudy-status-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite}
+  .cs-progress-bar{position:absolute;bottom:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--fm);font-size:8px;font-weight:700;letter-spacing:2.5px;color:#4ade80;background:rgba(10,12,16,0.82);border-top:1px solid rgba(74,222,128,0.3);padding:6px 0;backdrop-filter:blur(4px)}
+  .cs-progress-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;flex-shrink:0}
   @media(max-width:600px){
     .casestudy-grid{grid-template-columns:repeat(2,1fr);align-items:start}
     .casestudy-status-badge{font-size:7px;letter-spacing:1px;padding:4px 8px;margin-bottom:10px}
@@ -1258,15 +1417,12 @@ footer{
 
     <!-- CASE STUDY 02 — Mahindra 265 Steering -->
     <a href="#" class="casestudy-card">
-      <div class="casestudy-img-wrap">
+      <div class="casestudy-img-wrap" style="position:relative;">
         <img src="265 Steering Investigation Cover Photo.jpeg" alt="Mahindra 265 Steering Geometry Investigation">
+        <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
         <div class="proj-num">— 02 <span>/ 02</span></div>
-
-        <div class="casestudy-status-badge">
-          <span class="casestudy-status-dot"></span>IN PROGRESS
-        </div>
 
         <div class="proj-name">Mahindra 265 Steering Geometry Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
@@ -1560,6 +1716,142 @@ footer{
   <div class="footer-copy">© 2026 <strong>ARPIT MALIK</strong> — VEHICLE SYSTEMS DEVELOPMENT ENGINEER</div>
   <a href="#" class="back-top">BACK TO TOP ↑</a>
 </footer>
+
+<!-- ── INTRO ANIMATION ENGINE ── -->
+<script>
+(function(){
+  var overlay = document.getElementById('intro-overlay');
+  if(!overlay || overlay.classList.contains('intro-hidden')) return; // already played this session
+
+  var KEYWORDS_DESKTOP = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigations'];
+  var KEYWORDS_MOBILE  = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigation'];
+  var LANDSCAPE = ['vid1.mp4','vid2.mp4','vid3.mp4','vid4.mp4','vid5.mp4','vid6.mp4'];
+  var PORTRAIT  = ['vid1-mobile.mp4','vid2-mobile.mp4','vid3-mobile.mp4','vid4-mobile.mp4','vid5-mobile.mp4','vid6-mobile.mp4'];
+  var isMobile = window.matchMedia('(max-width: 768px)').matches;
+  var KEYWORDS = isMobile ? KEYWORDS_MOBILE : KEYWORDS_DESKTOP;
+  var PRIMARY  = isMobile ? PORTRAIT : LANDSCAPE;
+  var FALLBACK = isMobile ? LANDSCAPE : PORTRAIT;
+  var MONTAGE_MS = 6000;        // base montage window (6 evenly-split clips)
+  var LAST_CLIP_EXTRA_MS = 1000; // extra time added to the final clip only
+  var OUTRO_AT_MS = 800 + MONTAGE_MS + LAST_CLIP_EXTRA_MS; // 7.8s
+  var END_AT_MS   = OUTRO_AT_MS + 1200;                    // 9.0s
+  var timeouts = [];
+  var finished = false;
+
+  function setTO(fn, ms){ var id = setTimeout(fn, ms); timeouts.push(id); return id; }
+  function clearAllTimers(){ timeouts.forEach(clearTimeout); timeouts = []; }
+
+  // Probe each candidate filename — only files that actually exist get used.
+  function checkVideo(src){
+    return new Promise(function(resolve){
+      var v = document.createElement('video');
+      var settled = false;
+      function done(ok){ if(!settled){ settled = true; resolve(ok ? src : null); } }
+      v.muted = true; v.preload = 'auto';
+      v.addEventListener('loadedmetadata', function(){ done(true); }, { once:true });
+      v.addEventListener('error', function(){ done(false); }, { once:true });
+      v.src = src;
+      setTimeout(function(){ done(false); }, 2500); // don't hang the timeline on a slow/missing file
+    });
+  }
+
+  function detectSet(list){
+    return Promise.all(list.map(checkVideo)).then(function(results){
+      return results.filter(Boolean);
+    });
+  }
+
+  // Try the device's preferred orientation first; if none of those files exist,
+  // fall back to whichever set was actually provided rather than playing nothing.
+  var detectVideos = detectSet(PRIMARY).then(function(found){
+    if(found.length) return found;
+    return detectSet(FALLBACK);
+  });
+
+  function showStage(id){
+    var stages = overlay.querySelectorAll('.intro-stage');
+    for(var i=0;i<stages.length;i++){ stages[i].classList.remove('is-visible'); }
+    var el = document.getElementById(id);
+    if(el) el.classList.add('is-visible');
+  }
+
+  function scheduleKeywords(){
+    var el = document.getElementById('keyword-display');
+    var n = KEYWORDS.length;
+    var base = MONTAGE_MS / n;
+    var fade = 300;
+    var start = 0;
+    KEYWORDS.forEach(function(kw, i){
+      var slot = (i === n - 1) ? base + LAST_CLIP_EXTRA_MS : base; // last keyword stays up as long as the last clip
+      (function(kw, slotStart, slotLen){
+        setTO(function(){ el.textContent = kw; el.classList.add('visible'); }, slotStart);
+        setTO(function(){ el.classList.remove('visible'); }, slotStart + slotLen - fade);
+      })(kw, start, slot);
+      start += slot;
+    });
+  }
+
+  function runMontage(videos){
+    if(!videos.length) return; // no clips found — premium dark background + keywords carry the montage
+    var layers = [document.getElementById('vidLayerA'), document.getElementById('vidLayerB')];
+    var n = videos.length;
+    var base = MONTAGE_MS / n;
+    var durations = [], starts = [0];
+    for(var k=0; k<n; k++){
+      durations.push(k === n - 1 ? base + LAST_CLIP_EXTRA_MS : base); // last clip plays 1s longer
+      if(k > 0) starts.push(starts[k-1] + durations[k-1]);
+    }
+
+    function showClip(i){
+      var layer = layers[i % 2], other = layers[(i + 1) % 2];
+      layer.classList.remove('kenburns');
+      void layer.offsetWidth; // force reflow so the zoom animation restarts cleanly on reused layers
+      layer.src = videos[i];
+      layer.style.animationDuration = durations[i] + 'ms';
+      var p = layer.play();
+      if(p && p.catch) p.catch(function(){});
+      layer.classList.add('active','kenburns');
+      other.classList.remove('active');
+    }
+
+    showClip(0);
+    for(var i=1; i<n; i++){
+      (function(idx){ setTO(function(){ showClip(idx); }, starts[idx]); })(i);
+    }
+  }
+
+  function finishIntro(){
+    if(finished) return;
+    finished = true;
+    clearAllTimers();
+    try{ sessionStorage.setItem('amIntroPlayed','1'); }catch(e){}
+    overlay.classList.add('intro-fading');
+    setTimeout(function(){
+      overlay.classList.add('intro-hidden');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      ['vidLayerA','vidLayerB'].forEach(function(id){
+        var v = document.getElementById(id);
+        if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
+      });
+    }, 650);
+  }
+
+  var skipBtn = document.getElementById('skip-intro-btn');
+  if(skipBtn) skipBtn.addEventListener('click', finishIntro);
+
+  // ── Timeline ──
+  // 0.0–0.8s: name + subtitle (handled purely by CSS animation, already running)
+  setTO(function(){                      // 0.8s
+    showStage('stage-montage');
+    scheduleKeywords();
+    detectVideos.then(runMontage);
+  }, 800);
+
+  setTO(function(){ showStage('stage-outro'); }, OUTRO_AT_MS); // 7.8s
+  setTO(finishIntro, END_AT_MS);                                // 9.0s → fade into homepage
+})();
+</script>
 
 </body>
 </html>
