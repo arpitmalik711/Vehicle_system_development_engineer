@@ -1847,8 +1847,9 @@ footer{
   var CLIP_MS       = 1000;   // each clip shown for 1s (6 clips = 6s montage)
   var LAST_EXTRA_MS = 1000;   // last clip gets +1s
   var MONTAGE_MS    = KEYWORDS.length * CLIP_MS + LAST_EXTRA_MS; // 7s
-  var OUTRO_AT_MS   = 800 + MONTAGE_MS;     // 7.8s
-  var END_AT_MS     = OUTRO_AT_MS + 1300;   // 9.1s
+  var NAME_MS       = 1800;   // name stage duration (was 800ms, +1s extra)
+  var OUTRO_AT_MS   = NAME_MS + MONTAGE_MS;     // 8.8s
+  var END_AT_MS     = OUTRO_AT_MS + 1300;        // 10.1s
 
   /* ── State ───────────────────────────────────────────────── */
   var isMobile  = window.matchMedia('(max-width:768px)').matches;
@@ -1979,12 +1980,12 @@ footer{
   }
 
   /* ── Timeline ────────────────────────────────────────────── */
-  // 0–0.8s  → Stage 1 (name reveal, pure CSS animation, already running)
-  T(function(){                 // 0.8s → montage starts
+  // 0–1.8s  → Stage 1 (name reveal, pure CSS animation, already running)
+  T(function(){                 // 1.8s → montage starts
     showStage('stage-montage');
     scheduleKeywords();
     startMontage();
-  }, 800);
+  }, NAME_MS);
 
   T(function(){ showStage('stage-outro'); }, OUTRO_AT_MS);  // 7.8s
   T(finishIntro, END_AT_MS);                                 // 9.1s
