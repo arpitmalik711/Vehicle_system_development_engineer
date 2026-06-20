@@ -625,8 +625,8 @@ footer{
 
   <div class="intro-stage" id="stage-montage">
     <div class="video-layer">
-      <video id="vidLayerA" autoplay muted playsinline preload="auto"></video>
-      <video id="vidLayerB" autoplay muted playsinline preload="auto"></video>
+      <video id="vidLayerA" autoplay muted playsinline webkit-playsinline preload="auto"></video>
+      <video id="vidLayerB" autoplay muted playsinline webkit-playsinline preload="auto"></video>
     </div>
     <div class="montage-dark-overlay"></div>
     <div class="montage-vignette"></div>
@@ -1752,10 +1752,12 @@ footer{
       var settled = false;
       function done(ok){ if(!settled){ settled = true; resolve(ok ? src : null); } }
       v.muted = true; v.preload = 'auto';
+      v.setAttribute('playsinline','');        // iOS requires this even on probe elements
+      v.setAttribute('webkit-playsinline',''); // older iOS WebKit
       v.addEventListener('loadedmetadata', function(){ done(true); }, { once:true });
       v.addEventListener('error', function(){ done(false); }, { once:true });
       v.src = src;
-      setTimeout(function(){ done(false); }, 2500); // don't hang the timeline on a slow/missing file
+      setTimeout(function(){ done(false); }, 2500);
     });
   }
 
@@ -1812,6 +1814,7 @@ footer{
       void layer.offsetWidth; // force reflow so the zoom animation restarts cleanly on reused layers
       layer.src = videos[i];
       layer.style.animationDuration = durations[i] + 'ms';
+      layer.load(); // iOS Safari requires explicit load() after dynamic src assignment before play() works
       var p = layer.play();
       if(p && p.catch) p.catch(function(){});
       layer.classList.add('active','kenburns');
