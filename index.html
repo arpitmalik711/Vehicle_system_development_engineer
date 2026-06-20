@@ -621,8 +621,8 @@ footer{
 
   <div class="intro-stage" id="stage-montage">
     <div class="video-layer">
-      <video id="vidLayerA" muted playsinline webkit-playsinline autoplay preload="auto"></video>
-      <video id="vidLayerB" muted playsinline webkit-playsinline autoplay preload="auto"></video>
+      <video id="vidLayerA" autoplay muted playsinline preload="auto"></video>
+      <video id="vidLayerB" autoplay muted playsinline preload="auto"></video>
     </div>
     <div class="montage-dark-overlay"></div>
     <div class="montage-vignette"></div>
@@ -1741,20 +1741,17 @@ footer{
   function setTO(fn, ms){ var id = setTimeout(fn, ms); timeouts.push(id); return id; }
   function clearAllTimers(){ timeouts.forEach(clearTimeout); timeouts = []; }
 
-  // Probe each candidate filename — lightweight existence check only (no video data downloaded),
-  // so it resolves fast and reliably even on slow mobile connections.
+  // Probe each candidate filename — only files that actually exist get used.
   function checkVideo(src){
     return new Promise(function(resolve){
-      function done(ok){ resolve(ok ? src : null); }
-      var timer = setTimeout(function(){ done(false); }, 4000);
-      fetch(src, { method:'HEAD', cache:'no-store' })
-        .then(function(res){ clearTimeout(timer); done(res.ok); })
-        .catch(function(){
-          // some static hosts don't like HEAD — retry with a 1-byte ranged GET as a fallback
-          fetch(src, { method:'GET', headers:{ 'Range':'bytes=0-1' }, cache:'no-store' })
-            .then(function(res){ clearTimeout(timer); done(res.ok || res.status === 206); })
-            .catch(function(){ clearTimeout(timer); done(false); });
-        });
+      var v = document.createElement('video');
+      var settled = false;
+      function done(ok){ if(!settled){ settled = true; resolve(ok ? src : null); } }
+      v.muted = true; v.preload = 'auto';
+      v.addEventListener('loadedmetadata', function(){ done(true); }, { once:true });
+      v.addEventListener('error', function(){ done(false); }, { once:true });
+      v.src = src;
+      setTimeout(function(){ done(false); }, 2500); // don't hang the timeline on a slow/missing file
     });
   }
 
@@ -1810,21 +1807,11 @@ footer{
       layer.classList.remove('kenburns');
       void layer.offsetWidth; // force reflow so the zoom animation restarts cleanly on reused layers
       layer.src = videos[i];
-      layer.muted = true; // enforce muted for autoplay policy
-      layer.load(); // iOS Safari can ignore a src swap on a reused <video> without an explicit reload
       layer.style.animationDuration = durations[i] + 'ms';
+      var p = layer.play();
+      if(p && p.catch) p.catch(function(){});
       layer.classList.add('active','kenburns');
       other.classList.remove('active');
-      var p = layer.play();
-      if(p && p.catch){
-        p.catch(function(err){
-          // Autoplay blocked (common on mobile without user interaction)
-          // Skip the intro gracefully rather than showing a stuck play button
-          if(err && err.name === 'NotAllowedError'){
-            finishIntro();
-          }
-        });
-      }
     }
 
     showClip(0);
