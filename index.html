@@ -566,7 +566,11 @@ footer{
   transition:opacity .6s ease;
   will-change:opacity,transform;
   backface-visibility:hidden;
+  -webkit-media-controls:none;
 }
+.video-layer video::-webkit-media-controls,
+.video-layer video::-webkit-media-controls-enclosure,
+.video-layer video::-webkit-media-controls-overlay-play-button{display:none!important}
 .video-layer video.active{opacity:1}
 .video-layer video.kenburns{animation-name:kenburn;animation-timing-function:ease-out;animation-fill-mode:forwards}
 @keyframes kenburn{from{transform:scale(1)}to{transform:scale(1.08)}}
