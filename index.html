@@ -5,6 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — Vehicle Systems Development Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ============================================================
+       GOOGLE ANALYTICS 4 (GA4)
+       Replace G-M6PGBRJXGC with your GA4 Measurement ID
+       Found in: GA4 → Admin → Data Streams → your stream → Measurement ID
+  ============================================================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6PGBRJXGC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M6PGBRJXGC'); /* ← replace both instances with your Measurement ID */
+  </script>
+
+  <!-- ============================================================
+       MICROSOFT CLARITY
+       Replace xg7l99lm1n with your Clarity Project ID
+       Found in: Clarity → Settings → Overview → Project ID
+  ============================================================ -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","xg7l99lm1n"); /* ← replace xg7l99lm1n */
+  </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -495,258 +521,144 @@ footer{
 }
 </style>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     INTRO ANIMATION — mobile-first rewrite
-     Strategy: all <video> elements are in the DOM at parse time with
-     src baked in via <source> tags. This is the ONLY reliable way to
-     get autoplay working on iOS Safari — dynamic src + JS .play() is
-     blocked by the browser's media engagement policy.
-     Desktop uses vid1-6.mp4 | Mobile uses vid1-6-mobile.mp4.
-     CSS classes drive visibility; JS only controls timing + cleanup.
-═══════════════════════════════════════════════════════════════ -->
+<!-- ── INTRO ANIMATION (preload hints — missing files fail silently) ── -->
+<!-- Landscape set: used on screens ≥769px wide -->
+<link rel="preload" as="video" href="vid1.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid2.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid3.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid4.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid5.mp4" type="video/mp4" media="(min-width: 769px)">
+<link rel="preload" as="video" href="vid6.mp4" type="video/mp4" media="(min-width: 769px)">
+<!-- Portrait/mobile set: used on screens ≤768px wide -->
+<link rel="preload" as="video" href="vid1-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid2-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid4-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid5-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+<link rel="preload" as="video" href="vid6-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
 
 <style id="intro-overlay-styles">
-/* ── Overlay shell ── */
 #intro-overlay{
   position:fixed;inset:0;z-index:99999;
-  background:#000;overflow:hidden;
-  font-family:var(--fb);
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;font-family:var(--fb);
 }
-#intro-overlay.intro-hidden{display:none!important}
-#intro-overlay.intro-fading{
-  opacity:0;
-  transition:opacity .65s ease;
-  pointer-events:none;
-}
+#intro-overlay.intro-hidden{display:none}
+#intro-overlay.intro-fading{opacity:0;transition:opacity .65s ease}
 
-/* ── Skip button ── */
 #skip-intro-btn{
-  position:absolute;top:24px;right:24px;z-index:50;
+  position:absolute;top:24px;right:24px;z-index:20;
   font-family:var(--fm);font-size:10px;letter-spacing:2.5px;
-  color:rgba(255,255,255,0.7);
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.2);
-  padding:9px 18px;cursor:pointer;
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  color:var(--text-sec);background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:9px 16px;cursor:pointer;
   transition:color .2s,border-color .2s,background .2s;
-  -webkit-appearance:none;appearance:none;
-  touch-action:manipulation;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
 }
-#skip-intro-btn:hover,
-#skip-intro-btn:active{
-  color:var(--gold);
-  border-color:rgba(224,160,32,0.5);
-  background:rgba(224,160,32,0.08);
-}
+#skip-intro-btn:hover{color:var(--gold);border-color:rgba(224,160,32,0.5);background:rgba(224,160,32,0.08)}
 
-/* ── Shared stage base ── */
 .intro-stage{
   position:absolute;inset:0;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  opacity:0;
-  transition:opacity .55s ease;
-  text-align:center;padding:0 28px;
-  pointer-events:none;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .5s ease;
+  text-align:center;padding:0 24px;
 }
-.intro-stage.is-visible{opacity:1;pointer-events:auto}
+.intro-stage.is-visible{opacity:1}
 
-/* ── Stage 1 — Name reveal ── */
-#stage-name{gap:14px;background:#000}
+/* Stage 1 — name reveal */
+#stage-name{gap:14px}
 #stage-name .intro-name{
   font-family:var(--fd);font-weight:700;letter-spacing:6px;
-  font-size:clamp(34px,8vw,72px);color:#fff;
-  opacity:0;transform:translateY(16px);
-  animation:ifu .9s .08s ease forwards;
+  font-size:clamp(32px,6vw,64px);color:var(--text);
+  opacity:0;transform:translateY(14px);
+  animation:introFadeUp .9s .05s ease forwards;
 }
 #stage-name .intro-subtitle{
-  font-family:var(--fm);
-  font-size:clamp(10px,3vw,13px);
+  font-family:var(--fm);font-size:clamp(10px,1.6vw,13px);
   letter-spacing:3px;color:var(--gold);text-transform:uppercase;
   opacity:0;transform:translateY(10px);
-  animation:ifu .9s .32s ease forwards;
+  animation:introFadeUp .9s .3s ease forwards;
 }
-@keyframes ifu{to{opacity:1;transform:translateY(0)}}
+@keyframes introFadeUp{to{opacity:1;transform:translateY(0)}}
 
-/* ── Stage 2 — Video montage ── */
-#stage-montage{padding:0;background:#06070a}
-
-/*
-  Each clip sits absolutely stacked. Only the one with .clip-active
-  is visible. Transitions are CSS-only — no JS opacity manipulation.
-*/
-.intro-clip{
-  position:absolute;inset:0;
-  opacity:0;
-  transition:opacity .55s ease;
-  overflow:hidden;
+/* Stage 2 — video montage */
+#stage-montage{inset:0;padding:0}
+.video-layer{position:absolute;inset:0;background:#06070a}
+.video-layer video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;opacity:0;
+  transition:opacity .6s ease;
+  will-change:opacity,transform;
+  backface-visibility:hidden;
+  -webkit-media-controls:none;
 }
-.intro-clip.clip-active{opacity:1}
-
-.intro-clip video{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center center;
-  /* iOS MUST-HAVES — all three, no exceptions */
-  autoplay:true;               /* redundant but some old parsers check it */
-  -webkit-playsinline:true;
-  /* Ken-burns driven by JS toggling the class below */
-  will-change:transform;
-  transform:scale(1);
-  transition:transform 0s;     /* overridden per-clip by JS */
+.video-layer video::-webkit-media-controls,
+.video-layer video::-webkit-media-controls-enclosure,
+.video-layer video::-webkit-media-controls-overlay-play-button{display:none!important}
+.video-layer video.active{opacity:1}
+.video-layer video.kenburns{animation-name:kenburn;animation-timing-function:ease-out;animation-fill-mode:forwards}
+@keyframes kenburn{from{transform:scale(1)}to{transform:scale(1.08)}}
+.montage-dark-overlay{position:absolute;inset:0;background:rgba(6,7,10,0.27);z-index:2;pointer-events:none}
+.montage-vignette{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.55) 100%);
 }
-.intro-clip video.kb-active{
-  transform:scale(1.08);
-}
-
-/* Hide every browser-native media UI — iOS Safari ghost play button */
-.intro-clip video::-webkit-media-controls             { display:none!important }
-.intro-clip video::-webkit-media-controls-enclosure   { display:none!important }
-.intro-clip video::-webkit-media-controls-panel       { display:none!important }
-.intro-clip video::-webkit-media-controls-play-button { display:none!important }
-.intro-clip video::-webkit-media-controls-overlay-play-button { display:none!important }
-.intro-clip video::-webkit-media-controls-start-playback-button { display:none!important }
-
-/* dark + vignette overlays sit on top of all clips */
-#montage-overlay{
-  position:absolute;inset:0;z-index:3;pointer-events:none;
-  background:rgba(6,7,10,0.28);
-}
-#montage-vignette{
-  position:absolute;inset:0;z-index:3;pointer-events:none;
-  background:radial-gradient(ellipse at center, transparent 38%, rgba(0,0,0,0.6) 100%);
-}
-
-/* keyword text */
 #keyword-display{
-  position:absolute;inset:0;z-index:4;
-  display:flex;align-items:center;justify-content:center;
-  padding:0 28px;
+  position:relative;z-index:3;
   font-family:var(--fd);font-weight:600;letter-spacing:4px;
-  font-size:clamp(22px,5vw,44px);color:#fff;
-  text-transform:uppercase;text-align:center;
-  opacity:0;transition:opacity .32s ease;
-  text-shadow:0 2px 28px rgba(0,0,0,0.7);
-  pointer-events:none;
+  font-size:clamp(20px,4vw,40px);color:var(--text);
+  text-transform:uppercase;
+  opacity:0;transition:opacity .35s ease;
+  text-shadow:0 2px 24px rgba(0,0,0,0.6);
 }
-#keyword-display.kw-visible{opacity:1}
+#keyword-display.visible{opacity:1}
 
-/* ── Stage 3 — Outro ── */
-#stage-outro{background:#000;gap:10px}
+/* Stage 3 — outro */
 #stage-outro .intro-name{
   font-family:var(--fd);font-weight:700;letter-spacing:6px;
-  font-size:clamp(28px,6vw,58px);color:#fff;
+  font-size:clamp(30px,5.5vw,56px);color:var(--text);
 }
 #stage-outro .intro-tagline{
-  font-family:var(--fb);font-weight:300;
-  font-size:clamp(13px,2.5vw,19px);
-  color:rgba(255,255,255,0.55);letter-spacing:1px;
+  font-family:var(--fb);font-weight:300;font-size:clamp(13px,2vw,18px);
+  color:var(--text-sec);letter-spacing:1px;margin-top:8px;
 }
 #stage-outro .intro-subtitle2{
-  font-family:var(--fm);
-  font-size:clamp(9px,2vw,11px);
-  letter-spacing:3px;color:var(--gold);
-  text-transform:uppercase;margin-top:12px;
+  font-family:var(--fm);font-size:clamp(9px,1.4vw,11px);
+  letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:14px;
 }
 
-/* ── Mobile tweaks ── */
 @media(max-width:600px){
-  #skip-intro-btn{top:14px;right:14px;font-size:9px;padding:7px 13px;letter-spacing:2px}
-  #keyword-display{font-size:clamp(18px,6vw,32px);letter-spacing:3px}
+  #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     INTRO OVERLAY
-     All video elements are in the DOM at parse-time with src
-     via <source> so iOS autoplay policy is satisfied before
-     any JS runs. JS only controls which clip is visible.
-══════════════════════════════════════════════════════════ -->
+<!-- ── INTRO ANIMATION ── -->
+<!-- Landscape clips (laptop/desktop, ≥769px):  vid1.mp4 … vid6.mp4
+     Portrait clips (mobile, ≤768px):           vid1-mobile.mp4 … vid6-mobile.mp4
+     Any subset of either set works — if a device's preferred set is missing entirely,
+     it automatically falls back to the other set. -->
 <div id="intro-overlay">
   <button id="skip-intro-btn" type="button">SKIP INTRO →</button>
 
-  <!-- Stage 1: Name -->
   <div class="intro-stage is-visible" id="stage-name">
     <h1 class="intro-name">ARPIT MALIK</h1>
     <p class="intro-subtitle">Vehicle Development Engineer</p>
   </div>
 
-  <!-- Stage 2: Video montage -->
   <div class="intro-stage" id="stage-montage">
-
-    <!-- Desktop clips (≥769px) — hidden on mobile via JS -->
-    <div class="intro-clip" id="clip-d1" data-set="desktop" data-idx="0">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid1.mp4" type="video/mp4">
-      </video>
+    <div class="video-layer">
+      <video id="vidLayerA" autoplay muted playsinline preload="auto"></video>
+      <video id="vidLayerB" autoplay muted playsinline preload="auto"></video>
     </div>
-    <div class="intro-clip" id="clip-d2" data-set="desktop" data-idx="1">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-d3" data-set="desktop" data-idx="2">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid3.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-d4" data-set="desktop" data-idx="3">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid4.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-d5" data-set="desktop" data-idx="4">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid5.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-d6" data-set="desktop" data-idx="5">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid6.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!-- Mobile clips (≤768px) — hidden on desktop via JS -->
-    <div class="intro-clip" id="clip-m1" data-set="mobile" data-idx="0">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid1-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-m2" data-set="mobile" data-idx="1">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid2-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-m3" data-set="mobile" data-idx="2">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid3-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-m4" data-set="mobile" data-idx="3">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid4-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-m5" data-set="mobile" data-idx="4">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid5-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-clip" id="clip-m6" data-set="mobile" data-idx="5">
-      <video autoplay muted playsinline webkit-playsinline preload="auto" loop>
-        <source src="vid6-mobile.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div id="montage-overlay"></div>
-    <div id="montage-vignette"></div>
+    <div class="montage-dark-overlay"></div>
+    <div class="montage-vignette"></div>
     <div id="keyword-display"></div>
   </div>
 
-  <!-- Stage 3: Outro -->
   <div class="intro-stage" id="stage-outro">
     <h1 class="intro-name">ARPIT MALIK</h1>
     <p class="intro-tagline">Designing Beyond CAD</p>
@@ -755,18 +667,19 @@ footer{
 </div>
 
 <script>
-/* ── Session guard: hide overlay instantly if already played this session ── */
+/* Runs immediately, before the rest of the page renders — if the intro already
+   played this session, hide it instantly with zero flash. Refresh-safe via sessionStorage. */
 (function(){
-  var ol = document.getElementById('intro-overlay');
+  var overlay = document.getElementById('intro-overlay');
   try{
     if(sessionStorage.getItem('amIntroPlayed') === '1'){
-      ol.classList.add('intro-hidden');
+      overlay.classList.add('intro-hidden');
     } else {
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     }
-  } catch(e){
-    ol.classList.add('intro-hidden');
+  }catch(e){
+    overlay.classList.add('intro-hidden');
   }
 })();
 </script>
@@ -1518,7 +1431,7 @@ footer{
         <img src="Full_Casestudy_1.png" alt="Chassis Member Failure at Damper Mount">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 01 <span>/ 02</span></div>
+        <div class="proj-num">— 01 <span>/ 03</span></div>
         <div class="proj-name">Chassis Member Failure at Damper Mount</div>
         <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
         <div class="proj-tags">
@@ -1533,13 +1446,13 @@ footer{
     </a>
 
     <!-- CASE STUDY 02 — Mahindra 265 Steering -->
-    <a href="#" class="casestudy-card">
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledynamics-steeringgeometry-reverseengineering-ugcPost-7469405123719417856-YUJ8/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="casestudy-card">
       <div class="casestudy-img-wrap" style="position:relative;">
         <img src="265 Steering Investigation Cover Photo.jpeg" alt="Mahindra 265 Steering Geometry Investigation">
         <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 02 <span>/ 02</span></div>
+        <div class="proj-num">— 02 <span>/ 03</span></div>
 
         <div class="proj-name">Mahindra 265 Steering Geometry Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
@@ -1590,6 +1503,67 @@ footer{
           <span class="proj-tag">PRODUCTION VEHICLE</span>
         </div>
         <span class="proj-cta">Case Study In Progress 🔧</span>
+      </div>
+    </a>
+
+    <!-- CASE STUDY 03 — Mahindra 265 Front Lift Study -->
+    <a href="Front_Lift_Study.html" target="_blank" rel="noopener noreferrer" class="casestudy-card">
+      <div class="casestudy-img-wrap" style="position:relative;">
+        <video
+          src="reel_observation2.mp4"
+          autoplay muted loop playsinline
+          style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:filter .4s ease;"
+          onmouseenter="this.style.filter='brightness(1)'"
+          onmouseleave="this.style.filter='brightness(.88)'"
+        ></video>
+        <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">— 03 <span>/ 03</span></div>
+        <div class="proj-name">Tractor Front Lift Study</div>
+        <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
+
+        <div class="casestudy-progress-bar">
+          <div class="casestudy-progress-label">
+            <span>STUDY PROGRESS</span>
+            <span style="color:var(--gold)">75%</span>
+          </div>
+          <div class="casestudy-progress-track">
+            <div class="casestudy-progress-fill" style="width:75%"></div>
+          </div>
+        </div>
+
+        <div class="casestudy-milestones">
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Identified front axle unloading phenomenon during rotavator field exit — formulated static equilibrium model</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Case 1 — front and rear tyres on level field; front axle reaction calculated from moment equilibrium</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Case 2 — rear tyres on elevated field surface; N<sub>f</sub> recalculated for split-surface loading condition</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Front ballast CAD modelled with axle-mounted bracket; mass properties used to obtain ballast CG</span>
+          </div>
+          <div class="casestudy-milestone">
+            <div class="casestudy-milestone-dot done">✓</div>
+            <span>Combined CG recalculated — front axle load increased from 197 kg to 502 kg with 108 kg ballast (↑155%)</span>
+          </div>
+        </div>
+
+        <div class="proj-tags">
+          <span class="proj-tag">STATIC EQUILIBRIUM</span>
+          <span class="proj-tag">TRACTOR DYNAMICS</span>
+          <span class="proj-tag">BALLAST ANALYSIS</span>
+          <span class="proj-tag">SOLIDWORKS</span>
+          <span class="proj-tag">AGRICULTURAL MACHINERY</span>
+        </div>
+        <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
 
@@ -1834,162 +1808,139 @@ footer{
   <a href="#" class="back-top">BACK TO TOP ↑</a>
 </footer>
 
-<!-- ── INTRO ANIMATION ENGINE (mobile-safe rewrite) ── -->
+<!-- ── INTRO ANIMATION ENGINE ── -->
 <script>
 (function(){
-  'use strict';
-
   var overlay = document.getElementById('intro-overlay');
-  if(!overlay || overlay.classList.contains('intro-hidden')) return;
+  if(!overlay || overlay.classList.contains('intro-hidden')) return; // already played this session
 
-  /* ── Config ─────────────────────────────────────────────── */
-  var KEYWORDS = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigations'];
-  var CLIP_MS       = 1000;   // each clip shown for 1s (6 clips = 6s montage)
-  var LAST_EXTRA_MS = 1000;   // last clip gets +1s
-  var MONTAGE_MS    = KEYWORDS.length * CLIP_MS + LAST_EXTRA_MS; // 7s
-  var NAME_MS       = 1800;   // name stage duration (was 800ms, +1s extra)
-  var OUTRO_AT_MS   = NAME_MS + MONTAGE_MS;     // 8.8s
-  var END_AT_MS     = OUTRO_AT_MS + 1300;        // 10.1s
+  var KEYWORDS_DESKTOP = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigations'];
+  var KEYWORDS_MOBILE  = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigation'];
+  var LANDSCAPE = ['vid1.mp4','vid2.mp4','vid3.mp4','vid4.mp4','vid5.mp4','vid6.mp4'];
+  var PORTRAIT  = ['vid1-mobile.mp4','vid2-mobile.mp4','vid3-mobile.mp4','vid4-mobile.mp4','vid5-mobile.mp4','vid6-mobile.mp4'];
+  var isMobile = window.matchMedia('(max-width: 768px)').matches;
+  var KEYWORDS = isMobile ? KEYWORDS_MOBILE : KEYWORDS_DESKTOP;
+  var PRIMARY  = isMobile ? PORTRAIT : LANDSCAPE;
+  var FALLBACK = isMobile ? LANDSCAPE : PORTRAIT;
+  var MONTAGE_MS = 6000;        // base montage window (6 evenly-split clips)
+  var LAST_CLIP_EXTRA_MS = 1000; // extra time added to the final clip only
+  var OUTRO_AT_MS = 800 + MONTAGE_MS + LAST_CLIP_EXTRA_MS; // 7.8s
+  var END_AT_MS   = OUTRO_AT_MS + 1200;                    // 9.0s
+  var timeouts = [];
+  var finished = false;
 
-  /* ── State ───────────────────────────────────────────────── */
-  var isMobile  = window.matchMedia('(max-width:768px)').matches;
-  var activeSet = isMobile ? 'mobile' : 'desktop';
-  var tids      = [];
-  var finished  = false;
+  function setTO(fn, ms){ var id = setTimeout(fn, ms); timeouts.push(id); return id; }
+  function clearAllTimers(){ timeouts.forEach(clearTimeout); timeouts = []; }
 
-  function T(fn, ms){ var id = setTimeout(fn, ms); tids.push(id); return id; }
-  function clearAll(){ tids.forEach(clearTimeout); tids = []; }
+  // Probe each candidate filename — only files that actually exist get used.
+  function checkVideo(src){
+    return new Promise(function(resolve){
+      var v = document.createElement('video');
+      var settled = false;
+      function done(ok){ if(!settled){ settled = true; resolve(ok ? src : null); } }
+      v.muted = true; v.preload = 'auto';
+      v.addEventListener('loadedmetadata', function(){ done(true); }, { once:true });
+      v.addEventListener('error', function(){ done(false); }, { once:true });
+      v.src = src;
+      setTimeout(function(){ done(false); }, 2500); // don't hang the timeline on a slow/missing file
+    });
+  }
 
-  /* ── Clip elements ───────────────────────────────────────── */
-  // Grab only the clips for the active device set, sorted by data-idx
-  var allClips = Array.prototype.slice.call(
-    overlay.querySelectorAll('.intro-clip[data-set="' + activeSet + '"]')
-  );
-  allClips.sort(function(a,b){ return +a.dataset.idx - +b.dataset.idx; });
+  function detectSet(list){
+    return Promise.all(list.map(checkVideo)).then(function(results){
+      return results.filter(Boolean);
+    });
+  }
 
-  // Pause + hide all clips from the other set immediately — frees memory
-  var otherClips = Array.prototype.slice.call(
-    overlay.querySelectorAll('.intro-clip[data-set="' + (isMobile ? 'desktop' : 'mobile') + '"]')
-  );
-  otherClips.forEach(function(c){
-    var v = c.querySelector('video');
-    if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
-    c.style.display = 'none';
+  // Try the device's preferred orientation first; if none of those files exist,
+  // fall back to whichever set was actually provided rather than playing nothing.
+  var detectVideos = detectSet(PRIMARY).then(function(found){
+    if(found.length) return found;
+    return detectSet(FALLBACK);
   });
 
-  /* ── Stage switcher ─────────────────────────────────────── */
   function showStage(id){
-    overlay.querySelectorAll('.intro-stage').forEach(function(s){
-      s.classList.remove('is-visible');
-    });
+    var stages = overlay.querySelectorAll('.intro-stage');
+    for(var i=0;i<stages.length;i++){ stages[i].classList.remove('is-visible'); }
     var el = document.getElementById(id);
     if(el) el.classList.add('is-visible');
   }
 
-  /* ── Keyword cycling ─────────────────────────────────────── */
   function scheduleKeywords(){
     var el = document.getElementById('keyword-display');
-    var fade = 280;
-    var t = 0;
+    var n = KEYWORDS.length;
+    var base = MONTAGE_MS / n;
+    var fade = 300;
+    var start = 0;
     KEYWORDS.forEach(function(kw, i){
-      var slot = (i === KEYWORDS.length - 1) ? CLIP_MS + LAST_EXTRA_MS : CLIP_MS;
-      (function(kw, start, len){
-        T(function(){ el.textContent = kw; el.classList.add('kw-visible'); }, start);
-        T(function(){ el.classList.remove('kw-visible'); }, start + len - fade);
-      })(kw, t, slot);
-      t += slot;
+      var slot = (i === n - 1) ? base + LAST_CLIP_EXTRA_MS : base; // last keyword stays up as long as the last clip
+      (function(kw, slotStart, slotLen){
+        setTO(function(){ el.textContent = kw; el.classList.add('visible'); }, slotStart);
+        setTO(function(){ el.classList.remove('visible'); }, slotStart + slotLen - fade);
+      })(kw, start, slot);
+      start += slot;
     });
   }
 
-  /* ── Clip switcher ───────────────────────────────────────── */
-  /*
-   * KEY iOS FIX:
-   * We never call .play() from JS. Instead:
-   *  1. All <video> elements have autoplay+muted+playsinline in HTML — browser
-   *     starts them as soon as they're parsed, no gesture required.
-   *  2. We only toggle CSS visibility (opacity via .clip-active class).
-   *  3. Ken-burns: we swap a CSS transition duration on the video element
-   *     and toggle a class — no JS animation frames needed.
-   */
-  function startMontage(){
-    if(!allClips.length) return; // no clips at all — keywords-only fallback
-
-    var n = allClips.length;
-
-    function activateClip(i){
-      // hide all
-      allClips.forEach(function(c){ c.classList.remove('clip-active'); });
-      var clip = allClips[i];
-      clip.classList.add('clip-active');
-
-      // Ken-burns: set transition duration = slot duration, then trigger scale
-      var slotMs = (i === n - 1) ? CLIP_MS + LAST_EXTRA_MS : CLIP_MS;
-      var vid = clip.querySelector('video');
-      if(vid){
-        vid.classList.remove('kb-active');
-        vid.style.transition = 'transform ' + (slotMs / 1000).toFixed(2) + 's ease-out';
-        // rAF ensures the class removal is painted before we re-add
-        requestAnimationFrame(function(){
-          requestAnimationFrame(function(){
-            vid.classList.add('kb-active');
-          });
-        });
-
-        /*
-         * Resilience: if the video somehow stalled (e.g. slow connection),
-         * nudge it. We only call play() here as a recovery — it's wrapped
-         * in a catch so a NotAllowedError on iOS doesn't break anything.
-         */
-        if(vid.paused){
-          var p = vid.play();
-          if(p && p.catch) p.catch(function(){});
-        }
-      }
+  function runMontage(videos){
+    if(!videos.length) return; // no clips found — premium dark background + keywords carry the montage
+    var layers = [document.getElementById('vidLayerA'), document.getElementById('vidLayerB')];
+    var n = videos.length;
+    var base = MONTAGE_MS / n;
+    var durations = [], starts = [0];
+    for(var k=0; k<n; k++){
+      durations.push(k === n - 1 ? base + LAST_CLIP_EXTRA_MS : base); // last clip plays 1s longer
+      if(k > 0) starts.push(starts[k-1] + durations[k-1]);
     }
 
-    // Show clip 0 immediately, then schedule the rest
-    activateClip(0);
-    for(var i = 1; i < n; i++){
-      (function(idx){ T(function(){ activateClip(idx); }, idx * CLIP_MS); })(i);
+    function showClip(i){
+      var layer = layers[i % 2], other = layers[(i + 1) % 2];
+      layer.classList.remove('kenburns');
+      void layer.offsetWidth; // force reflow so the zoom animation restarts cleanly on reused layers
+      layer.src = videos[i];
+      layer.style.animationDuration = durations[i] + 'ms';
+      var p = layer.play();
+      if(p && p.catch) p.catch(function(){});
+      layer.classList.add('active','kenburns');
+      other.classList.remove('active');
+    }
+
+    showClip(0);
+    for(var i=1; i<n; i++){
+      (function(idx){ setTO(function(){ showClip(idx); }, starts[idx]); })(i);
     }
   }
 
-  /* ── Finish + cleanup ────────────────────────────────────── */
   function finishIntro(){
     if(finished) return;
     finished = true;
-    clearAll();
+    clearAllTimers();
     try{ sessionStorage.setItem('amIntroPlayed','1'); }catch(e){}
     overlay.classList.add('intro-fading');
     setTimeout(function(){
       overlay.classList.add('intro-hidden');
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
-      // Release all video memory
-      overlay.querySelectorAll('video').forEach(function(v){
-        v.pause(); v.removeAttribute('src'); v.load();
+      ['vidLayerA','vidLayerB'].forEach(function(id){
+        var v = document.getElementById(id);
+        if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
       });
-    }, 700);
+    }, 650);
   }
 
-  /* ── Skip button ─────────────────────────────────────────── */
   var skipBtn = document.getElementById('skip-intro-btn');
-  if(skipBtn){
-    skipBtn.addEventListener('click', finishIntro);
-    skipBtn.addEventListener('touchend', function(e){ e.preventDefault(); finishIntro(); });
-  }
+  if(skipBtn) skipBtn.addEventListener('click', finishIntro);
 
-  /* ── Timeline ────────────────────────────────────────────── */
-  // 0–1.8s  → Stage 1 (name reveal, pure CSS animation, already running)
-  T(function(){                 // 1.8s → montage starts
+  // ── Timeline ──
+  // 0.0–0.8s: name + subtitle (handled purely by CSS animation, already running)
+  setTO(function(){                      // 0.8s
     showStage('stage-montage');
     scheduleKeywords();
-    startMontage();
-  }, NAME_MS);
+    detectVideos.then(runMontage);
+  }, 800);
 
-  T(function(){ showStage('stage-outro'); }, OUTRO_AT_MS);  // 7.8s
-  T(finishIntro, END_AT_MS);                                 // 9.1s
-
+  setTO(function(){ showStage('stage-outro'); }, OUTRO_AT_MS); // 7.8s
+  setTO(finishIntro, END_AT_MS);                                // 9.0s → fade into homepage
 })();
 </script>
 
