@@ -221,6 +221,7 @@ nav{
   margin-bottom:18px;animation:fadeUp .6s .1s ease both;
 }
 .hero-name .gold{color:var(--gold)}
+.proj-name .gold{color:var(--gold)}
 .hero-title{
   font-family:var(--fd);font-size:clamp(16px,2.5vw,26px);
   font-weight:400;letter-spacing:6px;color:var(--text-sec);
@@ -1516,11 +1517,10 @@ footer{
           onmouseenter="this.style.filter='brightness(1)'"
           onmouseleave="this.style.filter='brightness(.88)'"
         ></video>
-        <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
         <div class="proj-num">— 03 <span>/ 03</span></div>
-        <div class="proj-name">Tractor Front Lift Study</div>
+        <div class="proj-name">How can a simple change in the tyre <span class="gold">contact patch</span> dramatically alter a vehicle's <span class="gold">load distribution</span>?</div>
         <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
 
         <div class="casestudy-progress-bar">
@@ -1566,6 +1566,193 @@ footer{
         <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
+
+  </div>
+</section>
+
+
+<!-- ── LINKEDIN ACTIVITY ── -->
+<style>
+.linkedin-section{padding:100px 6%;background:var(--bg)}
+.linkedin-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:48px}
+.linkedin-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
+@media(max-width:1400px){.linkedin-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1000px){.linkedin-grid{grid-template-columns:repeat(2,1fr)}}
+.linkedin-card{
+  background:var(--surface);display:block;text-decoration:none;color:inherit;
+  max-width:none;position:relative;
+}
+.linkedin-img-wrap{
+  position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0d0f13;
+}
+.linkedin-img-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  filter:brightness(.9);transition:filter .35s ease,transform .5s ease;
+}
+.linkedin-card:hover .linkedin-img-wrap img{filter:brightness(1);transform:scale(1.03)}
+.linkedin-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,12,16,0) 45%,rgba(10,12,16,.94) 100%);
+  display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity .3s ease;
+}
+.linkedin-card:hover .linkedin-overlay{opacity:1}
+.linkedin-overlay-cta{
+  font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);
+  display:flex;align-items:center;gap:6px;
+}
+.linkedin-badge{
+  position:absolute;top:12px;left:12px;
+  font-family:var(--fm);font-size:8px;letter-spacing:1.5px;color:var(--gold);
+  background:rgba(10,12,16,.75);border:1px solid rgba(224,160,32,.35);
+  padding:5px 10px;backdrop-filter:blur(4px);
+}
+.linkedin-body{padding:20px 22px 26px}
+.linkedin-title{
+  font-family:var(--fd);font-size:17px;font-weight:800;color:var(--text);
+  text-transform:uppercase;letter-spacing:.3px;line-height:1.15;margin-bottom:8px;
+}
+.linkedin-blurb{font-size:12px;color:var(--text-sec);line-height:1.6;font-weight:300;margin-bottom:14px}
+.linkedin-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.linkedin-tag{
+  font-family:var(--fm);font-size:8px;letter-spacing:1px;color:var(--text-dim);
+  border:1px solid var(--border2);padding:4px 8px;
+}
+.linkedin-cta{
+  font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;
+}
+@media(max-width:600px){
+  .linkedin-grid{grid-template-columns:repeat(2,1fr)}
+  .linkedin-body{padding:12px 12px 16px}
+  .linkedin-title{font-size:12px;margin-bottom:5px}
+  .linkedin-blurb{font-size:9.5px;line-height:1.45;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .linkedin-tags{display:none}
+  .linkedin-cta{font-size:8px;letter-spacing:1px}
+  .linkedin-badge{font-size:6.5px;padding:3px 7px;top:8px;left:8px}
+}
+</style>
+
+<section id="linkedin-activity" class="linkedin-section">
+  <div class="section-label">// 05 — LINKEDIN ACTIVITY</div>
+  <h2 class="section-title" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    <svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="#0A66C2" style="flex-shrink:0" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+    Short <span>Studies</span> & Decisions.
+  </h2>
+  <p class="linkedin-intro">Smaller engineering breakdowns and decisions posted as they happened — not full case studies, but the same first-principles thinking in shorter form. Click through to read the full post on LinkedIn.</p>
+
+  <div class="linkedin-grid">
+
+    <!-- LINKEDIN POST 01 — duplicate this block for each new post -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="linkedin_post_1.png" alt="Post title / topic">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Suspension Failure Investigation — Load Path & A-Arm Bending</div>
+        <p class="linkedin-blurb">A mid-competition shock swap altered the suspension load path — and cracked the front A-arm under impact. Post-event, I reconstructed the failure using energy-based impact estimation and transient FEA to trace root cause, not just patch the symptom.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">SUSPENSION DESIGN</span>
+          <span class="linkedin-tag">TRANSIENT FEA</span>
+          <span class="linkedin-tag">FIRST PRINCIPLES</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 02 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-baja-bajasae-ugcPost-7461823122908921856-0SkZ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="linkedin_post_2.png" alt="Post title / topic">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Driveline Geometry Correction — Steering Rack Repositioning Under Deadline</div>
+        <p class="linkedin-blurb">One day before roll cage welding, I found the front CV axles were nearing their articulation limits at full lock. An overnight kinematic rework in Lotus Shark — shifting the rack forward and up — fixed the geometry without delaying fabrication, and held up for 48 laps at ATVC.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">STEERING KINEMATICS</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+          <span class="linkedin-tag">LOTUS SHARK</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 03 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledevelopment-mechanicaldesign-evengineering-ugcPost-7473982816611921920-Qfwj/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="linkedin_post_3.png" alt="Swappable Battery Mount — Structural Integration Without Chassis Rework">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Swappable Battery Mount — Structural Integration Without Chassis Rework</div>
+        <p class="linkedin-blurb">Integrating a swappable battery system into an existing e-two-wheeler without touching the chassis meant building a mounting interface validated against bump, braking, cornering, and combined load cases — then adapting the FEA and even the 3D-print orientation to match how the part would actually be loaded.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">STRUCTURAL FEA</span>
+          <span class="linkedin-tag">VEHICLE INTEGRATION</span>
+          <span class="linkedin-tag">BATTERY PACKAGING</span>
+          <span class="linkedin-tag">FIRST PRINCIPLES</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 04 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-chassisdesign-vehicledynamics-ugcPost-7449126548840013824-ssws/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="linkedin_post_4.png" alt="Damper Mount Failure — Load Path Misassumption, Not Material Limit">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Damper Mount Failure — Load Path Misassumption, Not Material Limit</div>
+        <p class="linkedin-blurb">A Baja SAE damper mount failed not from weak material but a bad assumption — the structure was treated as axially loaded when it was actually bending. Correlating analytical (0.67 FOS) and FEA (0.92 FOS) confirmed the mechanism; redesign brought stress down 33% to a 1.37 FOS.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">FAILURE ANALYSIS</span>
+          <span class="linkedin-tag">LOAD PATH</span>
+          <span class="linkedin-tag">STRUCTURAL FEA</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+          <span class="linkedin-tag">TRANSIENT FEA</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 05 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledynamics-steeringgeometry-reverseengineering-ugcPost-7469405123719417856-YUJ8/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="linkedin_post_5.png" alt="Reverse-Engineering a Steering System with No Design Data">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Reverse-Engineering a Steering System with No Design Data</div>
+        <p class="linkedin-blurb">With no design data available, I reverse-engineered a 2012 Mahindra 265's steering system from physical measurements — KPI, camber, arm geometry — then validated the CAD reconstruction against smartphone-recorded steering angles, landing within ±1° of measured values.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">REVERSE ENGINEERING</span>
+          <span class="linkedin-tag">STEERING GEOMETRY</span>
+          <span class="linkedin-tag">EXPERIMENTAL VALIDATION</span>
+          <span class="linkedin-tag">DIGITAL TWIN</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- Duplicate the <a class="linkedin-card"> block above for each additional post -->
 
   </div>
 </section>
