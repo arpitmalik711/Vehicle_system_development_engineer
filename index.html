@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — Vehicle Systems Development Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://res.cloudinary.com">
 
   <!-- ============================================================
        GOOGLE ANALYTICS 4 (GA4)
@@ -663,6 +664,47 @@ footer{
   #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
 }
 </style>
+
+<style>
+/* ── HIGHLIGHTS / STORY VIEWER ── */
+.highlights-section{padding:70px 6% 20px}
+.highlights-row{display:flex;gap:26px;overflow-x:auto;padding:6px 4px 10px;scrollbar-width:none}
+.highlights-row::-webkit-scrollbar{display:none}
+.highlight-item{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;background:none;border:none;font-family:var(--fm)}
+.highlight-ring{width:78px;height:78px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);transition:transform .18s ease}
+.highlight-item.seen .highlight-ring{background:var(--border)}
+.highlight-item:hover .highlight-ring{transform:scale(1.05)}
+.highlight-ring-inner{width:100%;height:100%;border-radius:50%;background:var(--bg);padding:3px}
+.highlight-ring-inner img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.highlight-item-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-sec);text-align:center;max-width:88px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.story-overlay{position:fixed;inset:0;background:#000;display:none;align-items:center;justify-content:center;z-index:1000;touch-action:none}
+.story-overlay.active{display:flex}
+.story-stage{position:relative;width:100%;max-width:420px;height:100%;background:#000;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;will-change:transform}
+@media(min-width:520px){.story-stage{height:90vh;max-height:760px;border-radius:14px}}
+.story-progress-row{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:4px;z-index:5}
+.story-progress-bar{flex:1;height:2.5px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden}
+.story-progress-fill{height:100%;width:0%;background:var(--gold)}
+.story-progress-bar.done .story-progress-fill{width:100%}
+.story-header{position:absolute;top:24px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;z-index:5;font-family:var(--fd)}
+.story-header .who{display:flex;align-items:center;gap:8px;color:#fff;font-size:17px;letter-spacing:.5px}
+.story-header .who img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.story-close{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;line-height:1;padding:4px 8px}
+.story-media{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#000;transform-origin:center center}
+.story-media img,.story-media video{width:100%;height:100%;object-fit:contain;-webkit-touch-callout:none;pointer-events:none;transition:transform .18s ease,opacity .18s ease}
+.story-media.is-paused img,.story-media.is-paused video{transform:scale(.97);opacity:.9}
+.story-tap-zone{position:absolute;top:0;bottom:0;z-index:4;cursor:pointer}
+.story-tap-left{left:0;width:28%}
+.story-tap-right{left:28%;right:0}
+.story-caption{position:absolute;bottom:74px;left:12px;right:12px;z-index:5;font-size:13px;color:#ddd;font-family:var(--fm);text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.story-reply-bar{position:absolute;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));z-index:6;display:flex;align-items:center;gap:10px}
+.story-reply-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:11px 16px;color:#fff;font-family:var(--fm);font-size:13px;outline:none}
+.story-reply-input::placeholder{color:rgba(255,255,255,.6)}
+.story-reply-send{background:none;border:none;color:var(--gold);font-family:var(--fm);font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;padding:8px 4px;opacity:.5;pointer-events:none;transition:opacity .15s ease}
+.story-reply-send.is-active{opacity:1;pointer-events:auto}
+.story-reply-status{position:absolute;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));z-index:6;color:var(--gold);font-family:var(--fm);font-size:12px;letter-spacing:1px;text-transform:uppercase;display:none}
+.story-reply-status.show{display:block}
+</style>
 </head>
 <body>
 
@@ -760,6 +802,31 @@ footer{
   </div>
 </section>
 <div class="accent-bar"></div>
+
+<!-- ── HIGHLIGHTS (story tabs) ── -->
+<section class="highlights-section">
+  <div class="section-label">// BEHIND THE BUILD</div>
+  <div class="highlights-row" id="highlightsRow"></div>
+</section>
+
+<div class="story-overlay" id="storyOverlay">
+  <div class="story-stage" id="storyStage">
+    <div class="story-progress-row" id="storyProgressRow"></div>
+    <div class="story-header">
+      <div class="who"><img id="storyHeaderAvatar" src="" alt=""><span id="storyHeaderTitle"></span></div>
+      <button class="story-close" id="storyCloseBtn" aria-label="Close">&times;</button>
+    </div>
+    <div class="story-media" id="storyMedia"></div>
+    <div class="story-caption" id="storyCaption"></div>
+    <form class="story-reply-bar" id="storyReplyForm" autocomplete="off">
+      <input class="story-reply-input" id="storyReplyInput" type="text" placeholder="Reply to Arpit..." maxlength="500">
+      <button class="story-reply-send" id="storyReplySend" type="submit">Send</button>
+    </form>
+    <div class="story-reply-status" id="storyReplyStatus">Sent ✓</div>
+    <div class="story-tap-zone story-tap-left" id="storyTapLeft"></div>
+    <div class="story-tap-zone story-tap-right" id="storyTapRight"></div>
+  </div>
+</div>
 
 <!-- ── ABOUT ── -->
 <section id="about" class="surface-section">
@@ -1547,7 +1614,7 @@ footer{
     <a href="https://arpitmalik711.github.io/Tractor_Front_Lift_Study/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
       <div class="casestudy-img-wrap" style="position:relative;">
         <video
-          src="reel_observation2.mp4"
+          src="https://res.cloudinary.com/fvtkc10l/video/upload/v1784382690/reel_observation2_ifj41a.mp4"
           autoplay muted loop playsinline
           style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:filter .4s ease;"
           onmouseenter="this.style.filter='brightness(1)'"
@@ -2242,5 +2309,242 @@ footer{
   });
 </script>
 
+<script>
+/* ── CLOUDINARY ──
+   1. Sign up free at cloudinary.com, note your "cloud name" (dashboard home).
+   2. Upload each photo/clip there (drag-drop in Media Library, or the
+      unsigned upload widget) into a folder called e.g. "highlights".
+   3. Set CLOUD_NAME below. Then reference each asset by its public ID
+      (the filename without extension, e.g. "highlights/garage-1").
+   The helper functions below build the delivery URL and add:
+     - f_auto  → serves WebP/AVIF automatically to browsers that support it
+     - q_auto  → Cloudinary picks the smallest file that still looks sharp
+     - w_800   → caps width so mobile never downloads a full-res image
+   This alone typically cuts image weight 60-80% vs a raw JPG/PNG. */
+const CLOUD_NAME = "fvtkc10l";
+const cldImg = (publicId, width=800) =>
+  `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_${width}/${publicId}`;
+const cldVideo = (publicId) =>
+  `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/f_auto,q_auto/${publicId}`;
+
+/* Replace the publicId strings below with your real uploaded asset IDs. */
+const highlightsData = [
+  { id:"vd", label:"Vehicle Dynamics", cover:cldImg("Tractor_VD3_tsayjg", 200),
+    items:[
+      {type:"video", src:cldVideo("Tractor_VD4_x4tyfq"), caption:"Taking measurement readings for steering reverse engineering"},
+      {type:"video", src:cldVideo("Tractor_VD_ujq3lw"), caption:"Reverse-engineered steering geometry — Mahindra tractor"},
+      {type:"image", src:cldImg("Tractor_VD3_tsayjg"), caption:"Front view showing KPI, camber, scrub radius values"},
+      {type:"image", src:cldImg("Tractor_VD_1_nureor"), caption:"Geometry verification with experimental readings"}
+    ]},
+  { id:"baja", label:"BAJA SAE", cover:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,c_fill,z_1.1,w_200/v1784389293/BajaBuggy.cover_zu3kyq.jpg",
+    items:[
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784386516/Baja_double_wishbone_practice_1_b38mb2.mp4", caption:"Double wishbone geomatry practice"},
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784388198/Baja_2_qou02l.mp4", caption:"Trailing Arm Suspension Shock Absorber Fitting"},
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784388397/Baja_3_fsbbed.mp4", caption:"Testing After Shock Absorber Fitting"}
+    ]}
+];
+const IMAGE_DURATION = 5000;
+
+/* ── STORY REPLIES ──
+   1. Sign up free at formspree.io, create a form, and copy its endpoint
+      URL (looks like https://formspree.io/f/xxxxxxxx).
+   2. Paste it below. Formspree emails you every submission — no backend
+      or server code needed. Free tier covers 50 submissions/month. */
+const REPLY_FORM_ENDPOINT = "https://formspree.io/f/xwvgoloo";
+
+const highlightsRow = document.getElementById('highlightsRow');
+const storyOverlay = document.getElementById('storyOverlay');
+const storyProgressRow = document.getElementById('storyProgressRow');
+const storyMedia = document.getElementById('storyMedia');
+const storyCaption = document.getElementById('storyCaption');
+const storyHeaderAvatar = document.getElementById('storyHeaderAvatar');
+const storyHeaderTitle = document.getElementById('storyHeaderTitle');
+const storyReplyForm = document.getElementById('storyReplyForm');
+const storyReplyInput = document.getElementById('storyReplyInput');
+const storyReplySend = document.getElementById('storyReplySend');
+const storyReplyStatus = document.getElementById('storyReplyStatus');
+const storyCloseBtn = document.getElementById('storyCloseBtn');
+const storyTapLeft = document.getElementById('storyTapLeft');
+const storyTapRight = document.getElementById('storyTapRight');
+
+let activeH = 0, activeI = 0, storyTimer = null, timerStart = 0, timerDuration = 0, paused = false;
+
+highlightsData.forEach((h,i)=>{
+  const btn=document.createElement('button');
+  btn.className='highlight-item';
+  btn.innerHTML=`<div class="highlight-ring"><div class="highlight-ring-inner"><img src="${h.cover}" alt="${h.label}" loading="lazy" width="78" height="78"></div></div><div class="highlight-item-label">${h.label}</div>`;
+  btn.addEventListener('click',()=>openStory(i,0));
+  highlightsRow.appendChild(btn);
+});
+
+function openStory(h,i){activeH=h;activeI=i;storyOverlay.classList.add('active');document.body.style.overflow='hidden';buildProgress();renderItem();}
+function closeStory(){storyOverlay.classList.remove('active');document.body.style.overflow='';clearStoryTimer();const v=storyMedia.querySelector('video');if(v){v.pause();v.src='';v.load();}storyMedia.innerHTML='';highlightsRow.children[activeH]?.classList.add('seen');}
+function buildProgress(){const items=highlightsData[activeH].items;storyProgressRow.innerHTML='';items.forEach(()=>{const b=document.createElement('div');b.className='story-progress-bar';b.innerHTML='<div class="story-progress-fill"></div>';storyProgressRow.appendChild(b);});}
+
+function renderItem(){
+  const h=highlightsData[activeH], item=h.items[activeI];
+  storyHeaderAvatar.src=h.cover; storyHeaderTitle.textContent=h.label; storyCaption.textContent=item.caption||'';
+  storyReplyInput.value=''; storyReplySend.classList.remove('is-active'); storyReplySend.textContent='Send';
+  storyReplyForm.style.display='flex'; storyReplyStatus.classList.remove('show');
+  [...storyProgressRow.children].forEach((bar,i)=>{bar.classList.toggle('done',i<activeI);const f=bar.querySelector('.story-progress-fill');f.style.transition='none';f.style.width=i<activeI?'100%':'0%';});
+  storyMedia.innerHTML=''; clearStoryTimer();
+  if(item.type==='video'){
+    const v=document.createElement('video'); v.src=item.src; v.autoplay=true; v.playsInline=true; storyMedia.appendChild(v);
+    v.addEventListener('loadedmetadata',()=>startProgress(v.duration*1000||IMAGE_DURATION));
+    v.addEventListener('ended',()=>advance(1));
+  } else {
+    const img=document.createElement('img'); img.src=item.src; storyMedia.appendChild(img);
+    startProgress(IMAGE_DURATION);
+  }
+}
+function startProgress(d){timerDuration=d;timerStart=Date.now();paused=false;const bar=storyProgressRow.children[activeI];const f=bar.querySelector('.story-progress-fill');f.style.transition=`width ${d}ms linear`;requestAnimationFrame(()=>{f.style.width='100%';});storyTimer=setTimeout(()=>advance(1),d);}
+function clearStoryTimer(){if(storyTimer){clearTimeout(storyTimer);storyTimer=null;}}
+function pauseStory(){if(paused)return;paused=true;clearStoryTimer();const bar=storyProgressRow.children[activeI];const f=bar.querySelector('.story-progress-fill');f.style.transition='none';f.style.width=getComputedStyle(f).width;const v=storyMedia.querySelector('video');if(v)v.pause();storyMedia.classList.add('is-paused');}
+function resumeStory(){if(!paused)return;paused=false;const remaining=Math.max(timerDuration-(Date.now()-timerStart),200);const bar=storyProgressRow.children[activeI];const f=bar.querySelector('.story-progress-fill');f.style.transition=`width ${remaining}ms linear`;requestAnimationFrame(()=>{f.style.width='100%';});storyTimer=setTimeout(()=>advance(1),remaining);const v=storyMedia.querySelector('video');if(v)v.play();storyMedia.classList.remove('is-paused');}
+function advance(dir){
+  const h=highlightsData[activeH]; const next=activeI+dir;
+  if(next>=h.items.length){const nh=activeH+1; if(nh<highlightsData.length){highlightsRow.children[activeH].classList.add('seen');openStory(nh,0);} else closeStory(); return;}
+  if(next<0){const ph=activeH-1; if(ph>=0){openStory(ph,highlightsData[ph].items.length-1);} return;}
+  activeI=next; renderItem();
+}
+storyCloseBtn.addEventListener('click',closeStory);
+storyTapLeft.addEventListener('click',()=>{if(!wasDragging)advance(-1);});
+storyTapRight.addEventListener('click',()=>{if(!wasDragging)advance(1);});
+
+let pressTimer=null, wasDragging=false;
+[storyTapLeft,storyTapRight].forEach(z=>{
+  z.addEventListener('mousedown',()=>{pressTimer=setTimeout(pauseStory,180);});
+  z.addEventListener('mouseup',()=>{clearTimeout(pressTimer);resumeStory();});
+  z.addEventListener('mouseleave',()=>{clearTimeout(pressTimer);});
+  z.addEventListener('touchstart',()=>{pressTimer=setTimeout(pauseStory,180);},{passive:true});
+  z.addEventListener('touchend',()=>{clearTimeout(pressTimer);resumeStory();});
+  z.addEventListener('contextmenu',e=>e.preventDefault());
+});
+
+/* Drag-to-dismiss + swipe-between-highlights + pinch-to-zoom, matching
+   Instagram's feel: one finger swipes/dismisses, two fingers zoom the
+   photo in place and it snaps back to size when you let go. */
+let tsx=0, tsy=0, dragging=false, dragDX=0, dragDY=0;
+let isPinching=false, pinchStartDist=0, pinchBaseScale=1, currentZoom=1;
+const storyStage=document.getElementById('storyStage');
+
+function touchDist(a,b){ return Math.hypot(b.clientX-a.clientX, b.clientY-a.clientY); }
+
+storyStage.addEventListener('touchstart',e=>{
+  if(e.touches.length>=2){
+    isPinching=true; dragging=false; wasDragging=true;
+    clearTimeout(pressTimer); pauseStory();
+    pinchStartDist=touchDist(e.touches[0],e.touches[1]);
+    pinchBaseScale=currentZoom;
+    storyMedia.style.transition='none';
+    return;
+  }
+  if(isPinching) return;
+  tsx=e.touches[0].clientX; tsy=e.touches[0].clientY;
+  dragging=false; dragDX=0; dragDY=0; wasDragging=false;
+  storyStage.style.transition='none';
+},{passive:true});
+
+storyStage.addEventListener('touchmove',e=>{
+  if(isPinching && e.touches.length>=2){
+    e.preventDefault();
+    const dist=touchDist(e.touches[0],e.touches[1]);
+    currentZoom=Math.min(Math.max((dist/pinchStartDist)*pinchBaseScale,1),4);
+    storyMedia.style.transform=`scale(${currentZoom})`;
+    return;
+  }
+  if(isPinching) return;
+  const dx=e.touches[0].clientX-tsx, dy=e.touches[0].clientY-tsy;
+  if(!dragging && Math.abs(dy)>12 && Math.abs(dy)>Math.abs(dx)){
+    dragging=true; wasDragging=true; clearTimeout(pressTimer); pauseStory();
+  }
+  if(dragging && dy>0){
+    dragDX=dx; dragDY=dy;
+    e.preventDefault();
+    const drag=Math.min(dy,300);
+    const scale=1-Math.min(drag/1200,0.12);
+    const fade=Math.max(1-drag/280,0.35);
+    storyStage.style.transform=`translateY(${drag}px) scale(${scale})`;
+    storyOverlay.style.background=`rgba(0,0,0,${fade})`;
+  }
+},{passive:false});
+
+storyStage.addEventListener('touchend',e=>{
+  if(isPinching){
+    if(e.touches.length<2){
+      isPinching=false;
+      storyMedia.style.transition='transform .25s ease';
+      storyMedia.style.transform='scale(1)';
+      currentZoom=1;
+      setTimeout(()=>{ storyMedia.style.transition=''; },260);
+      if(e.touches.length===0) resumeStory();
+    }
+    return;
+  }
+  storyStage.style.transition='transform .25s ease';
+  if(dragging){
+    if(dragDY>110){
+      storyStage.style.transform=`translateY(100%) scale(0.9)`;
+      setTimeout(()=>{closeStory();storyStage.style.transform='';storyOverlay.style.background='';},180);
+    } else {
+      storyStage.style.transform='';
+      storyOverlay.style.background='';
+      resumeStory();
+    }
+    dragging=false;
+    return;
+  }
+  const dx=e.changedTouches[0].clientX-tsx, dy=e.changedTouches[0].clientY-tsy;
+  if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){dx>0?advance(-1):advance(1);}
+});
+document.addEventListener('keydown',e=>{
+  if(!storyOverlay.classList.contains('active'))return;
+  if(e.key==='ArrowRight')advance(1); if(e.key==='ArrowLeft')advance(-1); if(e.key==='Escape')closeStory();
+});
+
+/* Reply-to-story: pauses the story while typing, and stops the touch
+   events on the input from being read as swipe/hold gestures. */
+storyReplyInput.addEventListener('input',()=>{
+  storyReplySend.classList.toggle('is-active', storyReplyInput.value.trim().length>0);
+});
+storyReplyInput.addEventListener('focus',pauseStory);
+storyReplyInput.addEventListener('blur',()=>{ if(!storyReplyInput.value.trim()) resumeStory(); });
+[storyReplyForm,storyReplyInput,storyReplySend].forEach(el=>{
+  el.addEventListener('touchstart',e=>e.stopPropagation());
+  el.addEventListener('touchmove',e=>e.stopPropagation());
+  el.addEventListener('touchend',e=>e.stopPropagation());
+  el.addEventListener('mousedown',e=>e.stopPropagation());
+});
+
+storyReplyForm.addEventListener('submit', async e=>{
+  e.preventDefault();
+  const message = storyReplyInput.value.trim();
+  if(!message) return;
+  const h = highlightsData[activeH], item = h.items[activeI];
+  storyReplySend.textContent = '...';
+  try{
+    await fetch(REPLY_FORM_ENDPOINT, {
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify({
+        message,
+        highlight: h.label,
+        caption: item.caption || '',
+        source: 'portfolio story reply'
+      })
+    });
+  }catch(err){}
+  storyReplyInput.value='';
+  storyReplySend.textContent='Send';
+  storyReplySend.classList.remove('is-active');
+  storyReplyForm.style.display='none';
+  storyReplyStatus.classList.add('show');
+  setTimeout(()=>{
+    storyReplyStatus.classList.remove('show');
+    storyReplyForm.style.display='flex';
+    resumeStory();
+  },1400);
+});
+</script>
 </body>
 </html>
