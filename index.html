@@ -284,6 +284,30 @@ section{padding:100px 6%}
 .about-item-title{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
 .about-item-text{font-size:12px;color:var(--text-sec)}
 
+/* ── EDUCATION CREDENTIAL STRIP ── */
+.edu-strip{
+  display:flex;align-items:center;gap:18px;
+  background:var(--surface2);border:1px solid var(--border2);
+  padding:16px 20px;margin:8px 0 24px;
+  text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s;
+}
+.edu-strip:hover{border-color:var(--gold2);background:var(--surface)}
+.edu-logo{
+  width:64px;height:64px;flex-shrink:0;
+  background:var(--bg);border:1px solid rgba(224,160,32,0.3);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.edu-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
+.edu-name{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--text);line-height:1.15}
+.edu-meta{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-sec);margin-top:6px}
+@media(max-width:600px){
+  .edu-strip{padding:12px 14px;gap:12px}
+  .edu-logo{width:46px;height:46px}
+  .edu-name{font-size:14px}
+  .edu-meta{font-size:8px;letter-spacing:1px}
+}
+
 /* ── SKILLS ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;background:var(--border)}
 .skill-cat{background:var(--surface);padding:32px}
@@ -414,9 +438,13 @@ textarea.form-input{resize:vertical;min-height:110px}
 .ack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .ack-card{background:var(--surface);border:1px solid var(--border);padding:32px;transition:border-color .2s}
 .ack-card:hover{border-color:var(--gold2)}
+.ack-card.ack-clickable{cursor:pointer}
+.ack-card.ack-clickable:hover .ack-linkedin{background:#0A66C2;color:#fff}
 .ack-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
 .ack-name{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--text);letter-spacing:1px;line-height:1}
-.ack-role{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);margin-top:6px}
+.ack-role{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-sec);margin-top:6px}
+.ack-company-line{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:1px;color:var(--gold);margin-top:2px}
+@media(max-width:600px){.ack-company-line{font-size:12px}}
 .ack-desc{font-family:var(--fb);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
 .ack-linkedin{font-family:var(--fm);font-size:11px;font-weight:700;color:#0A66C2;border:1px solid #0A66C2;padding:6px 12px;text-decoration:none;transition:background .2s,color .2s;flex-shrink:0;border-radius:2px;display:flex;align-items:center;gap:6px}
 .ack-linkedin:hover{background:#0A66C2;color:#fff}
@@ -740,6 +768,13 @@ footer{
   <div class="about-grid">
     <div class="about-text">
       <p>I'm a <span class="hl">third-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
+      <a href="https://nsut.ac.in/en/home" target="_blank" rel="noopener noreferrer" class="edu-strip">
+        <div class="edu-logo"><img src="Nsut_Logo.png" alt="NSUT Logo"></div>
+        <div>
+          <div class="edu-name">Netaji Subhas University of Technology</div>
+          <div class="edu-meta">MECHANICAL ENGINEERING · NEW DELHI</div>
+        </div>
+      </a>
       <p>My work has involved end-to-end vehicle development across <span class="hl">electric mobility</span> and <span class="hl">off-road systems</span> — from concept architecture and subsystem design to prototype realization, iterative validation, and physical testing.</p>
       <p>As the <span class="hl">sole mechanical engineering intern</span> at an <span class="hl">EV startup</span>, I led the mechanical development of an electric moped from concept to second prototype, contributing to a fleet of <span class="hl">15 operational vehicles</span> currently running in <span class="hl">Dwarka, Delhi</span>. My responsibilities included vehicle packaging, structural design decisions, subsystem integration, and iterative prototype refinement under real development constraints.</p>
       <p>During my <span class="hl">vehicle development internship</span>, I contributed to the complete CAD development of a <span class="hl">4×2 dune buggy platform</span>, focusing on system layout, suspension integration, double wishbone geometry development, and manufacturable packaging.</p>
@@ -1913,24 +1948,38 @@ footer{
   <p class="ack-intro">Engineering is never done in isolation. These are the seniors who gave their time, knowledge, and patience when it mattered most.</p>
   <div class="ack-grid">
 
-    <div class="ack-card">
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/kunal-samaniya-21429024a/','_blank','noopener,noreferrer')">
       <div class="ack-header">
         <div>
           <div class="ack-name">Kunal Samaniya</div>
-          <div class="ack-role">Mentor — Vehicle Development &amp; Dynamics</div>
+          <div class="ack-role">Mechanical Design Engineer</div>
+          <div class="ack-company-line">EULER MOTORS</div>
         </div>
-        <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+        <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
       </div>
       <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
     </div>
 
-    <div class="ack-card">
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/aryanmishra/','_blank','noopener,noreferrer')">
+      <div class="ack-header">
+        <div>
+          <div class="ack-name">Aryan Mishra</div>
+          <div class="ack-role">R&amp;D Engineer (Multi Body Dynamics)</div>
+          <div class="ack-company-line">OLA ELECTRIC</div>
+        </div>
+        <a href="https://www.linkedin.com/in/aryanmishra/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
+      </div>
+      <p class="ack-desc">Mentor in vehicle dynamics and simulation discussions — helped shape my understanding of industry R&amp;D workflows.</p>
+    </div>
+
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/ananthu-krishna-4a7175228/','_blank','noopener,noreferrer')">
       <div class="ack-header">
         <div>
           <div class="ack-name">Ananthu Krishna</div>
-          <div class="ack-role">Mentor — Suspension &amp; EV Industry</div>
+          <div class="ack-role">Battery Thermal Management</div>
+          <div class="ack-company-line">MARUTI SUZUKI</div>
         </div>
-        <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+        <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
       </div>
       <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
     </div>
@@ -1939,19 +1988,21 @@ footer{
       <div class="ack-header">
         <div>
           <div class="ack-name">Deepak Thakur</div>
-          <div class="ack-role">First CAD Mentor — Mechanical Design</div>
+          <div class="ack-role">Vehicle Testing</div>
+          <div class="ack-company-line">EULER MOTORS</div>
         </div>
       </div>
       <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
     </div>
 
-    <div class="ack-card">
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/anurag-yadav-35693a267/','_blank','noopener,noreferrer')">
       <div class="ack-header">
         <div>
           <div class="ack-name">Anurag Yadav</div>
-          <div class="ack-role">Mentor — CAD Modeling &amp; CAE Simulations</div>
+          <div class="ack-role">Design Engineer, EV Motor R&amp;D</div>
+          <div class="ack-company-line">EULER MOTORS</div>
         </div>
-        <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn"><span>in</span><span>View Profile →</span></a>
+        <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
       </div>
       <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
     </div>
