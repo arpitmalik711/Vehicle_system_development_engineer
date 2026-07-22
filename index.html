@@ -696,7 +696,7 @@ footer{
 .story-tap-zone{position:absolute;top:0;bottom:0;z-index:4;cursor:pointer}
 .story-tap-left{left:0;width:28%}
 .story-tap-right{left:28%;right:0}
-.story-caption{position:absolute;bottom:74px;left:12px;right:12px;z-index:5;font-size:13px;color:#ddd;font-family:var(--fm);text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.story-caption{position:absolute;top:60px;left:12px;right:12px;z-index:5;font-size:13px;color:#ddd;font-family:var(--fm);text-shadow:0 1px 3px rgba(0,0,0,.8)}
 .story-reply-bar{position:absolute;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));z-index:6;display:flex;align-items:center;gap:10px}
 .story-reply-input{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);border-radius:22px;padding:11px 16px;color:#fff;font-family:var(--fm);font-size:13px;outline:none}
 .story-reply-input::placeholder{color:rgba(255,255,255,.6)}
@@ -765,7 +765,7 @@ footer{
     <a href="#casestudies">CASE STUDIES</a>
     <a href="#contact">CONTACT</a>
   </div>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">LET'S CONNECT</button>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><strong>LET'S CONNECT</strong></button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -786,7 +786,7 @@ footer{
       <h1 class="hero-name">ARPIT<br><span class="gold">MALIK</span></h1>
       <div class="hero-title">Vehicle Systems · Validation · Integration</div>
       <p class="hero-desc">
-        Third-Year Mechanical Engineering Student focused on vehicle systems development through analytical validation, iterative design, physical testing, and first-principles engineering reasoning.
+        Final-Year Mechanical Engineering Student focused on vehicle systems development through analytical validation, iterative design, physical testing, and first-principles engineering reasoning.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">VIEW PROJECTS</a>
@@ -834,7 +834,7 @@ footer{
   <h2 class="section-title">ABOUT <span>ME</span></h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a <span class="hl">third-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
+      <p>I'm a <span class="hl">final-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
       <a href="https://nsut.ac.in/en/home" target="_blank" rel="noopener noreferrer" class="edu-strip">
         <div class="edu-logo"><img src="Nsut_Logo.png" alt="NSUT Logo"></div>
         <div>
@@ -2084,9 +2084,9 @@ footer{
   <div>
     <p class="contact-intro">Available for vehicle systems engineering roles, consulting engagements, and technical collaborations across EV, off-road, and motorsport domains. Based in Delhi — open to relocation and hybrid/remote arrangements.</p>
     <div class="contact-links">
-      <a href="mailto:arpit.malik.ug23@nsut.ac.in" class="contact-link">
+      <a href="mailto:arpitmalik0711@gmail.com" class="contact-link">
         <span class="contact-link-icon">@</span>
-        <span class="contact-link-text">arpit.malik.ug23@nsut.ac.in</span>
+        <span class="contact-link-text">arpitmalik0711@gmail.com</span>
       </a>
       <a href="https://www.linkedin.com/in/arpit-malik-bb6939303/" target="_blank" rel="noopener noreferrer" class="contact-link">
         <span class="contact-link-icon">in</span>
@@ -2332,18 +2332,34 @@ const cldVideo = (publicId) =>
 /* Fallback data — used only if Firestore hasn't been set up yet, or a fetch fails.
    Once the admin panel is used to save, live data comes from Firestore instead. */
 const DEFAULT_HIGHLIGHTS = [
+  { id:"me", label:"Me", cover:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,c_fill,w_200/v1784716735/IMG_2856_u6gbgd.jpg",
+    items:[
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784716735/IMG_2856_u6gbgd.jpg", caption:"Hey, I'm Arpit — welcome to my portfolio"},
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784709456/1_p6ivm4.mp4", caption:"Modal Analysis Setup"},
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784709526/me_2_fbenca.mp4", caption:"Battery Lock Concepts"},
+      {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784710071/me_3_ucua0u.mp4", caption:"Thermal Runaway Test planning"}
+    ]},
   { id:"vd", label:"Vehicle Dynamics", cover:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_200/Tractor_VD3_tsayjg",
     items:[
       {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/f_auto,q_auto/Tractor_VD4_x4tyfq", caption:"Taking measurement readings for steering reverse engineering"},
       {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784390145/Tractor_VD5_dy47bg.mp4", caption:"Reverse-engineered steering geometry — Mahindra tractor"},
       {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/Tractor_VD3_tsayjg", caption:"Front view showing KPI, camber, scrub radius values"},
-      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/Tractor_VD_1_nureor", caption:"Geometry verification with experimental readings"}
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/Tractor_VD_1_nureor", caption:"Geometry verification with experimental readings"},
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784715441/Vd_yw2b9b.png", caption:""}
     ]},
   { id:"baja", label:"BAJA SAE", cover:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,c_fill,z_1.1,w_200/v1784389293/BajaBuggy.cover_zu3kyq.jpg",
     items:[
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784716437/6685b63f-68d8-4953-9312-8893ba24ae2b_qx2mrn.jpg", caption:"Team Photo BAJA 2025"},
       {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784386516/Baja_double_wishbone_practice_1_b38mb2.mp4", caption:"Double wishbone geomatry practice"},
       {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784388198/Baja_2_qou02l.mp4", caption:"Trailing Arm Suspension Shock Absorber Fitting"},
       {type:"video", src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1784388397/Baja_3_fsbbed.mp4", caption:"Testing After Shock Absorber Fitting"}
+    ]},
+  { id:"fea", label:"FEA", cover:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,c_fill,w_200/v1784712001/FEA_9_zhkg86.png",
+    items:[
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784712001/FEA_9_zhkg86.png", caption:"FEA 1"},
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784713258/FEA_10_jint6t.png", caption:"Setup made for Structural Analysis of EScooter (Focussing on real life Load path)"},
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784713630/FEA_11_akjhsq.png", caption:"FEA validation of propeller shaft cover against driver foot-load boundary conditions, following addition of internal rib/gusset reinforcement."},
+      {type:"image", src:"https://res.cloudinary.com/fvtkc10l/image/upload/f_auto,q_auto,w_800/v1784709373/FEA_1_tbj78x.heic", caption:"Mesh convergence — damper mount failure case study"}
     ]}
 ];
 let highlightsData = DEFAULT_HIGHLIGHTS;
@@ -2426,7 +2442,7 @@ function renderItem(){
   [...storyProgressRow.children].forEach((bar,i)=>{bar.classList.toggle('done',i<activeI);const f=bar.querySelector('.story-progress-fill');f.style.transition='none';f.style.width=i<activeI?'100%':'0%';});
   storyMedia.innerHTML=''; clearStoryTimer();
   if(item.type==='video'){
-    const v=document.createElement('video'); v.src=item.src; v.autoplay=true; v.playsInline=true; storyMedia.appendChild(v);
+    const v=document.createElement('video'); v.src=item.src; v.autoplay=true; v.playsInline=true; if(h.id==='me') v.muted=true; storyMedia.appendChild(v);
     v.addEventListener('loadedmetadata',()=>startProgress(v.duration*1000||IMAGE_DURATION));
     v.addEventListener('ended',()=>advance(1));
   } else {
