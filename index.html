@@ -251,6 +251,15 @@ nav{
   transition:background .2s,border-color .2s;
 }
 .btn-secondary:hover{background:var(--gold-dim);border-color:var(--gold)}
+.btn-instagram{
+  font-family:var(--fm);font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  background:linear-gradient(45deg,#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#F77737,#FCAF45,#FFDC80);
+  color:#fff;border:none;
+  padding:14px 30px;cursor:pointer;text-decoration:none;display:inline-block;
+  transition:transform .1s,box-shadow .2s;
+  box-shadow:0 4px 18px rgba(193,53,132,.35);
+}
+.btn-instagram:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(193,53,132,.55)}
 
 .hero-stats{
   display:flex;gap:56px;margin-top:72px;
@@ -496,7 +505,7 @@ footer{
   /* hero */
   .hero-inner{grid-template-columns:1fr;gap:32px}
   .hero-actions{flex-direction:column;gap:12px}
-  .hero-actions .btn-primary,.hero-actions .btn-secondary{text-align:center;width:100%}
+  .hero-actions .btn-primary,.hero-actions .btn-secondary,.hero-actions .btn-instagram{text-align:center;width:100%}
   .hero-stats{gap:20px;flex-wrap:wrap}
   .hero-stat-num{font-size:32px}
 
@@ -791,6 +800,7 @@ footer{
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">VIEW PROJECTS</a>
         <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
+        <a href="https://arpitmalik711.github.io/Journey.Arpit.Malik/index.html" class="btn-instagram">JOURNEY TO MECHANICAL ENGINEERING</a>
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-num">3</div><div class="hero-stat-label">VEHICLE DEVELOPMENT PROGRAMMES</div></div>
