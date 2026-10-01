@@ -79,10 +79,10 @@ nav{
 
 /* ── HERO ── */
 .hero{
-  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  padding:120px 6% 80px;position:relative;overflow:hidden;
+  min-height:0;display:flex;flex-direction:column;justify-content:center;
+  padding:56px 6% 80px;position:relative;overflow:hidden;
 }
-.hero-inner{display:grid;grid-template-columns:640px 1fr;align-items:center;gap:80px}
+.hero-inner{display:grid;grid-template-columns:1fr;align-items:center;gap:80px}
 .hero-content{display:flex;flex-direction:column}
 
 /* ── HERO IMAGE FRAME ── */
@@ -179,7 +179,7 @@ nav{
 }
 .hero-photo-placeholder span{font-size:28px;color:var(--border2)}
 
-@media(max-width:1100px){.hero-inner{grid-template-columns:1fr 1fr;gap:56px}}
+@media(max-width:1100px){.hero-inner{grid-template-columns:1fr;gap:56px}}
 @media(max-width:860px){
   .hero-inner{grid-template-columns:1fr}
   .hero-photo-wrap{
@@ -443,29 +443,29 @@ section{padding:100px 6%}
 .form-input::placeholder{color:var(--text-dim)}
 textarea.form-input{resize:vertical;min-height:110px}
 
-/* ── ACKNOWLEDGEMENTS ── */
-.ack-intro{font-family:var(--fb);font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.8;max-width:600px;margin-bottom:48px}
-.ack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.ack-card{background:var(--surface);border:1px solid var(--border);padding:32px;transition:border-color .2s}
-.ack-card:hover{border-color:var(--gold2)}
+/* ── ACKNOWLEDGEMENTS / MENTORS (Instagram-style list) ── */
+#acknowledgements>*{max-width:935px;margin-left:auto;margin-right:auto}
+.ack-grid{display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.ack-card{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:0 16px;padding:18px 4px;background:none;border:none;border-bottom:1px solid var(--border);transition:background .2s}
 .ack-card.ack-clickable{cursor:pointer}
-.ack-card.ack-clickable:hover .ack-linkedin{background:#0A66C2;color:#fff}
-.ack-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
-.ack-name{font-family:var(--fd);font-size:26px;font-weight:700;color:var(--text);letter-spacing:1px;line-height:1}
-.ack-role{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--text-sec);margin-top:6px}
-.ack-company-line{font-family:var(--fd);font-size:14px;font-weight:800;letter-spacing:1px;color:var(--gold);margin-top:2px}
-@media(max-width:600px){.ack-company-line{font-size:12px}}
-.ack-desc{font-family:var(--fb);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
-.ack-linkedin{font-family:var(--fm);font-size:11px;font-weight:700;color:#0A66C2;border:1px solid #0A66C2;padding:6px 12px;text-decoration:none;transition:background .2s,color .2s;flex-shrink:0;border-radius:2px;display:flex;align-items:center;gap:6px}
-.ack-linkedin:hover{background:#0A66C2;color:#fff}
+.ack-card.ack-clickable:hover{background:rgba(255,255,255,.025)}
+.ack-avatar{width:64px;height:64px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.ack-avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--surface2);border:3px solid var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--fb);font-weight:600;font-size:18px;letter-spacing:1px;color:var(--text)}
+.ack-main{min-width:0}
+.ack-name{font-family:var(--fb);font-size:15px;font-weight:600;color:var(--text);line-height:1.3}
+.ack-role{font-family:var(--fb);font-size:13px;color:var(--text-sec);margin-top:1px;line-height:1.4}
+.ack-company-line{font-family:var(--fb);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.3px}
+.ack-desc{font-family:var(--fb);font-size:13px;color:var(--text-sec);line-height:1.5;font-weight:400;margin-top:6px;opacity:.85}
+.ack-linkedin{font-family:var(--fb);font-size:13px;font-weight:600;color:#fff;background:#0095F6;border:none;padding:8px 18px;border-radius:8px;text-decoration:none;transition:filter .2s;flex-shrink:0;display:inline-flex;align-items:center;white-space:nowrap}
+.ack-linkedin:hover{filter:brightness(1.12)}
 @media(max-width:600px){
-  .ack-grid{align-items:start}
-  .ack-card{padding:14px 14px 18px}
-  .ack-header{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:12px}
-  .ack-name{font-size:15px}
-  .ack-role{font-size:7px;letter-spacing:1px;margin-top:4px}
-  .ack-desc{font-size:10px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-  .ack-linkedin{font-size:8px;padding:5px 8px;gap:4px}
+  .ack-card{grid-template-columns:52px minmax(0,1fr) auto;gap:0 12px;padding:14px 2px}
+  .ack-avatar{width:52px;height:52px}
+  .ack-avatar-inner{font-size:15px}
+  .ack-name{font-size:14px}
+  .ack-role,.ack-company-line{font-size:12px}
+  .ack-desc{font-size:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .ack-linkedin{font-size:12px;padding:7px 12px}
 }
 
 /* ── FOOTER ── */
@@ -495,7 +495,7 @@ footer{
 @media(max-width:768px){
   /* sections */
   section{padding:64px 5%}
-  .hero{padding:100px 5% 64px}
+  .hero{padding:40px 5% 64px}
   .casestudy-section,.awards-section,.mini-section,.proj-section{padding:64px 5%}
   .slideshow-section{padding:64px 5% 48px}
 
@@ -676,9 +676,52 @@ footer{
 
 <style>
 /* ── HIGHLIGHTS / STORY VIEWER ── */
-.highlights-section{padding:70px 6% 20px}
-.highlights-row{display:flex;gap:26px;overflow-x:auto;padding:6px 4px 10px;scrollbar-width:none}
-.highlights-row::-webkit-scrollbar{display:none}
+.highlights-section{padding:96px 6% 8px}
+/* ── PROFILE HEADER (Instagram-style) ── */
+.profile-head{display:flex;align-items:center;gap:56px;max-width:900px;margin:0 0 30px}
+.profile-avatar{flex:0 0 150px;width:150px;height:150px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.profile-avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--bg);padding:4px}
+.profile-avatar-inner img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:var(--surface2)}
+.profile-info{flex:1;min-width:0}
+.profile-actions{display:contents}
+.profile-row1{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.profile-handle{font-family:var(--fb);font-size:22px;font-weight:400}
+.profile-btn{font-family:var(--fb);font-size:13px;font-weight:600;padding:9px 22px;border-radius:8px;background:var(--surface2);color:var(--text);border:1px solid var(--border2);cursor:pointer;text-decoration:none;transition:filter .2s}
+.profile-btn.primary{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.profile-btn:hover{filter:brightness(1.12)}
+.profile-btn.journey{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#4f5bd5,#d62976 50%,#fa7e1e);color:#fff;border-color:transparent;animation:journeyBlink 1.1s ease-in-out infinite}
+.journey-dot{width:7px;height:7px;border-radius:50%;background:#fff;flex-shrink:0;animation:journeyDot 1s steps(2,start) infinite}
+@keyframes journeyBlink{0%,100%{box-shadow:0 0 0 0 rgba(214,41,118,.65);opacity:1}50%{box-shadow:0 0 0 12px rgba(214,41,118,0);opacity:.35}}
+@keyframes journeyDot{to{opacity:.15}}
+.profile-stats{display:flex;gap:36px;margin-bottom:14px;font-size:15px;color:var(--text)}
+.profile-stats b{font-weight:600}
+.profile-name{font-weight:600;font-size:15px}
+.profile-bio{font-size:14px;line-height:1.55;color:var(--text-sec);margin-top:4px}
+.profile-bio .g{color:var(--gold)}
+@media(max-width:600px){
+  .highlights-section .highlights-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 8px;justify-items:center}
+  .highlights-section .highlights-row .highlight-item{width:100%;min-width:0}
+  .highlights-row .highlight-item-label{max-width:100%;text-align:center;letter-spacing:1px;white-space:normal;line-height:1.35;text-overflow:clip;overflow:visible}
+  /* phone layout: avatar + stats on top, bio below the photo, buttons last (Instagram style) */
+  .profile-head{display:grid;grid-template-columns:84px minmax(0,1fr);grid-template-areas:"avatar handle" "avatar stats" "name name" "bio bio" "btns btns";column-gap:20px;row-gap:0;align-items:start;max-width:none}
+  .profile-info,.profile-row1{display:contents}
+  .profile-avatar{grid-area:avatar;width:84px;height:84px;flex:none}
+  .profile-handle{grid-area:handle;align-self:end;font-size:18px;margin-bottom:8px}
+  .profile-stats{grid-area:stats;align-self:start;gap:18px;font-size:12px;margin:0}
+  .profile-stats span{display:flex;flex-direction:column;align-items:center;line-height:1.3}
+  .profile-stats b{font-size:16px}
+  .profile-name{grid-area:name;margin-top:14px}
+  .profile-bio{grid-area:bio}
+  .profile-actions{grid-area:btns;display:flex;gap:8px;margin-top:16px}
+  .profile-actions .profile-btn{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 10px;font-size:12px}
+}
+.highlights-row{display:flex;flex-wrap:wrap;gap:22px 26px;padding:6px 4px 10px}
+/* desktop: centre the Instagram-style profile block in a fixed-width column */
+@media(min-width:601px){
+  .highlights-section{max-width:935px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+  .highlights-section .profile-head{max-width:none;margin:0 0 34px}
+}
+
 .highlight-item{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;background:none;border:none;font-family:var(--fm)}
 .highlight-ring{width:78px;height:78px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);transition:transform .18s ease}
 .highlight-item.seen .highlight-ring{background:var(--border)}
@@ -777,46 +820,30 @@ footer{
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><strong>LET'S CONNECT</strong></button>
 </nav>
 
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-photo-wrap">
-      <div class="hero-img-inner">
-        <img src="me.jpeg" alt="AIR 2 — ATVC 2026 · Team Daedalus Racing">
-        <div class="hero-img-overlay"></div>
-        <div class="hero-img-fade"></div>
-      </div>
-      <div class="hero-img-badge">AIR 2 OVERALL · ATVC 2026</div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-label"><span class="hero-label-dot"></span>VEHICLE SYSTEMS DEVELOPMENT ENGINEER</div>
-      <h1 class="hero-name">ARPIT<br><span class="gold">MALIK</span></h1>
-      <div class="hero-title">Vehicle Systems · Validation · Integration</div>
-      <p class="hero-desc">
-        Final-Year Mechanical Engineering Student focused on vehicle systems development through analytical validation, iterative design, physical testing, and first-principles engineering reasoning.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary">VIEW PROJECTS</a>
-        <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
-        <a href="https://arpitmalik711.github.io/Journey.Arpit.Malik/index.html" class="btn-instagram">JOURNEY TO MECHANICAL ENGINEERING</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">VEHICLE DEVELOPMENT PROGRAMMES</div></div>
-        <div><div class="hero-stat-num">15</div><div class="hero-stat-label">EVs DEPLOYED</div></div>
-        <div><div class="hero-stat-num">AIR 2</div><div class="hero-stat-label">ATVC 2026</div></div>
-        <div><div class="hero-stat-num">300<span style="font-size:28px">+hrs</span></div><div class="hero-stat-label">WORKSHOP FABRICATION</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="accent-bar"></div>
-
 <!-- ── HIGHLIGHTS (story tabs) ── -->
 <section class="highlights-section">
-  <div class="section-label">// BEHIND THE BUILD</div>
+  <div class="profile-head">
+    <div class="profile-avatar" id="avatar-btn" role="button" tabindex="0" aria-label="View profile photo" title="Click to view photo"><div class="profile-avatar-inner"><img src="me.jpeg" alt="Arpit Malik"></div></div>
+    <div class="profile-info">
+      <div class="profile-row1">
+        <span class="profile-handle">arpit.malik</span>
+        <div class="profile-actions">
+          <a href="#contact" class="profile-btn primary">Connect</a>
+          <a href="https://arpitmalik711.github.io/Journey.Arpit.Malik/index.html" class="profile-btn journey"><span class="journey-dot"></span>Click to see my journey</a>
+        </div>
+      </div>
+      <div class="profile-stats">
+        <span><b>5</b> projects</span><span><b>4</b> case studies</span><span><b>5</b> awards</span>
+      </div>
+      <div class="profile-name">Arpit Malik</div>
+      <div class="profile-bio"><span class="g">🎯 Target: Vehicle Dynamics Engineer</span><br>Vehicle Systems · Validation · Integration<br>Chief Design Engineer @ Team Daedalus Racing<br>🎓 Netaji Subhas University of Technology, Delhi<br><span class="g">🏆 AIR 2 Overall · ATVC 2026</span> · Delhi, IN</div>
+    </div>
+  </div>
   <div class="highlights-row" id="highlightsRow"></div>
+  <div class="rl-tabs" role="tablist">
+    <button class="rl-tab active" id="tabMain" type="button" role="tab" aria-selected="true" aria-controls="mainPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>MAIN</span></button>
+    <button class="rl-tab" id="tabReels" type="button" role="tab" aria-selected="false" aria-controls="reelsPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="M10.5 13l4 2.5-4 2.5z"/></svg><span>REELS</span></button>
+  </div>
 </section>
 
 <div class="story-overlay" id="storyOverlay">
@@ -837,6 +864,25 @@ footer{
     <div class="story-tap-zone story-tap-right" id="storyTapRight"></div>
   </div>
 </div>
+
+<!-- ── MAIN PANE ── -->
+<div id="mainPane" role="tabpanel" aria-labelledby="tabMain">
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">VEHICLE DEVELOPMENT PROGRAMMES</div></div>
+        <div><div class="hero-stat-num">15</div><div class="hero-stat-label">EVs DEPLOYED</div></div>
+        <div><div class="hero-stat-num">AIR 2</div><div class="hero-stat-label">ATVC 2026</div></div>
+        <div><div class="hero-stat-num">300<span style="font-size:28px">+hrs</span></div><div class="hero-stat-label">WORKSHOP FABRICATION</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="accent-bar"></div>
 
 <!-- ── ABOUT ── -->
 <section id="about" class="surface-section">
@@ -1917,215 +1963,164 @@ footer{
 </section>
 
 
-<!-- ── AWARDS & ACHIEVEMENTS ── -->
+<!-- ── AWARDS & ACHIEVEMENTS (Instagram profile grid) ── -->
 <style>
 .awards-section{padding:100px 6%;background:var(--bg)}
-.awards-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:64px}
-.awards-list{display:flex;flex-direction:column;gap:2px;background:var(--border)}
-.award-item{
-  background:var(--surface);padding:32px 36px;
-  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
-  transition:background .25s;position:relative;overflow:hidden;
-}
-.award-item::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(180deg,var(--gold),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.award-item:hover{background:var(--surface2)}
-.award-item:hover::before{opacity:1}
-.award-left{flex:1}
-.award-title{
-  font-family:var(--fd);font-size:clamp(18px,2vw,24px);font-weight:800;
-  color:var(--text);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;line-height:1.1;
-}
-.award-meta{
-  font-family:var(--fm);font-size:10px;letter-spacing:2px;
-  color:var(--text-dim);margin-bottom:14px;
-}
-.award-meta span{color:var(--gold);margin:0 6px}
-.award-desc{font-size:13px;color:var(--text-sec);line-height:1.65;font-weight:300;margin-bottom:16px;max-width:760px}
-.award-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--fm);font-size:9px;letter-spacing:1.5px;
-  color:var(--gold);background:var(--gold-dim);
-  padding:5px 12px;border:1px solid rgba(224,160,32,.25);
-}
-.award-badge::before{content:'★';font-size:9px}
-.award-icon{font-size:32px;flex-shrink:0;opacity:.85}
-.award-docs{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.award-doc-link{
-  font-family:var(--fm);font-size:10px;letter-spacing:1.5px;
-  color:var(--gold);text-decoration:none;
-  border:1px solid rgba(224,160,32,.5);
-  background:var(--gold-dim);
-  padding:8px 18px;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:background .2s,border-color .2s,transform .15s,box-shadow .2s;
-  cursor:pointer;
-  box-shadow:0 0 0 0 rgba(224,160,32,0);
-}
-.award-doc-link:hover{
-  background:rgba(224,160,32,.18);
-  border-color:var(--gold);
-  transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(224,160,32,.15);
-}
-.award-doc-link:active{transform:translateY(0)}
-.award-doc-link-icon{font-size:13px;line-height:1}
-@media(max-width:600px){
-  .awards-list{display:grid;grid-template-columns:repeat(2,1fr);align-items:start}
-  .awards-list .award-item{flex-direction:column;padding:14px 12px 16px;gap:0}
-  .awards-list .award-icon{font-size:16px;top:12px;right:12px}
-  .awards-list .award-title{font-size:12.5px;padding-right:26px;margin-bottom:4px;line-height:1.2}
-  .awards-list .award-meta{font-size:6.5px;letter-spacing:.5px;margin-bottom:8px}
-  .awards-list .award-desc{font-size:10px;line-height:1.45;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .awards-list .award-badge{font-size:7px;letter-spacing:.5px;padding:4px 7px;gap:5px}
-  .awards-list .award-docs{flex-direction:column;gap:6px;margin-top:10px}
-  .awards-list .award-doc-link{font-size:8px;letter-spacing:.5px;padding:7px 8px;width:100%}
-}
+.awards-section>*{max-width:935px;margin-left:auto;margin-right:auto}
+.awards-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:36px}
+.aw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.aw-tile{aspect-ratio:1/1;background:linear-gradient(145deg,#1b1508,#0d0f14 65%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;cursor:pointer;overflow:hidden;outline:none}
+.aw-tile:focus-visible{box-shadow:inset 0 0 0 2px var(--gold)}
+.aw-em{position:absolute;top:8px;right:10px;font-size:16px}
+.aw-big{font-family:var(--fb);font-size:clamp(26px,5vw,46px);font-weight:600;color:var(--gold);line-height:1}
+.aw-cap{font-family:var(--fb);font-size:clamp(11px,1.6vw,13px);margin-top:8px;color:var(--text)}
+.aw-ov{position:absolute;inset:0;background:rgba(0,0,0,.74);opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:flex-start;padding:14px;text-align:left;font-family:var(--fb);font-size:13px;line-height:1.4;color:#fff}
+.aw-tile:hover .aw-ov,.aw-tile:focus-visible .aw-ov{opacity:1}
+.aw-ov b{font-weight:600}
+.aw-ovd{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;color:#ddd;margin:6px 0 8px}
+.aw-more{color:#0095F6;font-weight:600}
+@media(hover:none){.aw-ov{display:none}}
+@media(max-width:600px){.awards-section{padding:64px 5%}.aw-grid{gap:3px}.aw-em{font-size:12px;top:6px;right:7px}}
+/* post-style detail window */
+#aw-modal{display:none;position:fixed;inset:0;z-index:9000;align-items:center;justify-content:center;padding:16px}
+#aw-modal.open{display:flex}
+#aw-bd{position:absolute;inset:0;background:rgba(0,0,0,.84)}
+#aw-box{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:min(880px,100%);max-height:90vh;background:var(--surface);border:1px solid var(--border2);border-radius:6px;overflow:hidden}
+#aw-x{position:absolute;top:8px;right:10px;z-index:2;background:none;border:none;color:#fff;font-size:18px;cursor:pointer;line-height:1}
+.aw-media{background:linear-gradient(145deg,#1b1508,#0d0f14 65%);min-height:320px;display:flex;align-items:center;justify-content:center;position:relative}
+.aw-media .aw-big{font-size:clamp(44px,8vw,80px)}
+.aw-media .aw-mem{position:absolute;top:14px;left:16px;font-size:22px}
+.aw-side{padding:18px;display:flex;flex-direction:column;gap:10px;overflow:auto;font-family:var(--fb)}
+.aw-head{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.aw-head .aw-ring{width:36px;height:36px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.aw-head .aw-ring div{width:100%;height:100%;border-radius:50%;border:2px solid var(--bg);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.aw-head b{font-size:14px;font-weight:600}
+#aw-t{font-size:17px;font-weight:600;line-height:1.3;margin-top:6px}
+#aw-m{font-size:13px;color:var(--text-sec)}
+#aw-d{font-size:14px;line-height:1.6;color:#d6d8dd}
+#aw-b{font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.5px}
+#aw-cert{align-self:flex-start;margin-top:auto;background:#0095F6;color:#fff;border:none;font-family:var(--fb);font-size:13px;font-weight:600;padding:8px 18px;border-radius:8px;cursor:pointer;transition:filter .2s}
+#aw-cert:hover{filter:brightness(1.12)}
+@media(max-width:640px){#aw-box{grid-template-columns:1fr;overflow:auto}.aw-media{min-height:160px}}
 </style>
 
 <section class="awards-section">
   <div class="section-label">// 06 — RECOGNITION</div>
   <h2 class="section-title">Awards <span>&</span> Achievements.</h2>
   <p class="awards-intro">Early-career recognition that validates the direction I'm heading — proof that rigorous engineering thinking gets noticed.</p>
-
-  <div class="awards-list">
-
-    <div class="award-item">
-      <div class="award-left">
-        <div class="award-title">3rd Position — CAD Battle (Invictus'25)</div>
-        <div class="award-meta">Technical Council <span>·</span> Delhi Technological University <span>·</span> 2025</div>
-        <div class="award-desc">Secured 3rd position in CAD Battle at Invictus'25. Recognized for strong CAD modelling, precision design, and engineering problem solving.</div>
-        <div class="award-badge">TOP 3 — UNIVERSITY LEVEL COMPETITION</div>
-        <div class="award-docs">
-          <a href="#" class="award-doc-link" onclick="openCertPreview('https://res.cloudinary.com/fvtkc10l/image/upload/v1784392098/certificate_cad_battle_invictus25_rezamj.jpg', '3rd Position — CAD Battle (Invictus'25)'); return false;"><span class="award-doc-link-icon">📄</span> VIEW CERTIFICATE</a>
-        </div>
-      </div>
-      <div class="award-icon">🥉</div>
+  <div class="aw-grid" id="awGrid">
+    <div class="aw-tile" tabindex="0" role="button" aria-label="AIR 2 Overall — ATVC 2026" data-emoji="🥈" data-big="AIR 2" data-title="AIR 2 Overall — ATVC 2026" data-meta="All Terrain Vehicle Challenge · India · 2026" data-desc="As Chief Design Engineer of Team Daedalus Racing, led the complete vehicle design of the BAJA SAE ATV from scratch — chassis architecture, suspension geometry, and system packaging. Team secured All India Rank 2 Overall at ATVC 2026." data-badge="AIR 2 OVERALL — NATIONAL LEVEL EVENT" data-cert="certificate_air2_atvc2026.png">
+      <span class="aw-em">🥈</span><div class="aw-big">AIR 2</div><div class="aw-cap">ATVC 2026</div>
+      <div class="aw-ov"><div><b>AIR 2 Overall — ATVC 2026</b><span class="aw-ovd">As Chief Design Engineer of Team Daedalus Racing, led the complete vehicle design of the BAJA SAE ATV from scratch — chassis architecture, suspension geometry, and system packaging. Team secured All India Rank 2 Overall at ATVC 2026.</span><span class="aw-more">View details</span></div></div>
     </div>
-
-    <div class="award-item">
-      <div class="award-left">
-        <div class="award-title">AIR 1 — Suspension &amp; Traction Test (ATVC 2025)</div>
-        <div class="award-meta">All Terrain Vehicle Challenge <span>·</span> Bhopal <span>·</span> 2025</div>
-        <div class="award-desc">As Steering &amp; Suspension Lead for Baja ATV. Achieved All India Rank 1 in Suspension and Traction Test. Worked on suspension geometry, load calculations, and performance validation.</div>
-        <div class="award-badge">AIR 1 — NATIONAL LEVEL EVENT</div>
-        <div class="award-docs">
-          <a href="#" class="award-doc-link" onclick="openCertPreview('https://res.cloudinary.com/fvtkc10l/image/upload/v1784392101/certificate_air1_atvc2025_sohqsb.png', 'AIR 1 — Suspension &amp; Traction Test (ATVC 2025)'); return false;"><span class="award-doc-link-icon">📄</span> VIEW CERTIFICATE</a>
-        </div>
-      </div>
-      <div class="award-icon">🏆</div>
+    <div class="aw-tile" tabindex="0" role="button" aria-label="AIR 14 — BAJA 2026" data-emoji="🏆" data-big="AIR 14" data-title="AIR 14 — BAJA 2026" data-meta="SAE BAJA · India · 2026" data-desc="Chief Design Engineer for Baja ATV 2026. Led complete vehicle design including chassis, suspension, and packaging. Team secured All India Rank 14 at national BAJA competition." data-badge="NATIONAL LEVEL COMPETITION" data-cert="https://res.cloudinary.com/fvtkc10l/image/upload/v1784392103/certificate_air14_baja2026_z4louu.jpg">
+      <span class="aw-em">🏆</span><div class="aw-big">AIR 14</div><div class="aw-cap">BAJA 2026</div>
+      <div class="aw-ov"><div><b>AIR 14 — BAJA 2026</b><span class="aw-ovd">Chief Design Engineer for Baja ATV 2026. Led complete vehicle design including chassis, suspension, and packaging. Team secured All India Rank 14 at national BAJA competition.</span><span class="aw-more">View details</span></div></div>
     </div>
-
-    <div class="award-item">
-      <div class="award-left">
-        <div class="award-title">AIR 19 — BAJA 2025</div>
-        <div class="award-meta">SAE BAJA India <span>·</span> 100+ Colleges <span>·</span> 2025</div>
-        <div class="award-desc">Member of Baja ATV design team. Team secured All India Rank 19 among 100+ participating colleges. Contributed to suspension and vehicle design validation.</div>
-        <div class="award-badge">NATIONAL LEVEL COMPETITION</div>
-        <div class="award-docs">
-          <a href="#" class="award-doc-link" onclick="openCertPreview('https://res.cloudinary.com/fvtkc10l/image/upload/v1784392105/certificate_air19_baja2025_oiwhs9.jpg', 'AIR 19 — BAJA 2025'); return false;"><span class="award-doc-link-icon">📄</span> VIEW CERTIFICATE</a>
-        </div>
-      </div>
-      <div class="award-icon">🏁</div>
+    <div class="aw-tile" tabindex="0" role="button" aria-label="AIR 19 — BAJA 2025" data-emoji="🏁" data-big="AIR 19" data-title="AIR 19 — BAJA 2025" data-meta="SAE BAJA India · 100+ Colleges · 2025" data-desc="Member of Baja ATV design team. Team secured All India Rank 19 among 100+ participating colleges. Contributed to suspension and vehicle design validation." data-badge="NATIONAL LEVEL COMPETITION" data-cert="https://res.cloudinary.com/fvtkc10l/image/upload/v1784392105/certificate_air19_baja2025_oiwhs9.jpg">
+      <span class="aw-em">🏁</span><div class="aw-big">AIR 19</div><div class="aw-cap">BAJA 2025</div>
+      <div class="aw-ov"><div><b>AIR 19 — BAJA 2025</b><span class="aw-ovd">Member of Baja ATV design team. Team secured All India Rank 19 among 100+ participating colleges. Contributed to suspension and vehicle design validation.</span><span class="aw-more">View details</span></div></div>
     </div>
-
-    <div class="award-item">
-      <div class="award-left">
-        <div class="award-title">AIR 14 — BAJA 2026</div>
-        <div class="award-meta">SAE BAJA <span>·</span> India <span>·</span> 2026</div>
-        <div class="award-desc">Chief Design Engineer for Baja ATV 2026. Led complete vehicle design including chassis, suspension, and packaging. Team secured All India Rank 14 at national BAJA competition.</div>
-        <div class="award-badge">NATIONAL LEVEL COMPETITION</div>
-        <div class="award-docs">
-          <a href="#" class="award-doc-link" onclick="openCertPreview('https://res.cloudinary.com/fvtkc10l/image/upload/v1784392103/certificate_air14_baja2026_z4louu.jpg', 'AIR 14 — BAJA 2026'); return false;"><span class="award-doc-link-icon">📄</span> VIEW CERTIFICATE</a>
-        </div>
-      </div>
-      <div class="award-icon">🏆</div>
+    <div class="aw-tile" tabindex="0" role="button" aria-label="AIR 1 — Suspension &amp; Traction Test (ATVC 2025)" data-emoji="🏆" data-big="AIR 1" data-title="AIR 1 — Suspension &amp; Traction Test (ATVC 2025)" data-meta="All Terrain Vehicle Challenge · Bhopal · 2025" data-desc="As Steering &amp; Suspension Lead for Baja ATV. Achieved All India Rank 1 in Suspension and Traction Test. Worked on suspension geometry, load calculations, and performance validation." data-badge="AIR 1 — NATIONAL LEVEL EVENT" data-cert="https://res.cloudinary.com/fvtkc10l/image/upload/v1784392101/certificate_air1_atvc2025_sohqsb.png">
+      <span class="aw-em">🏆</span><div class="aw-big">AIR 1</div><div class="aw-cap">ATVC 2025</div>
+      <div class="aw-ov"><div><b>AIR 1 — Suspension &amp; Traction Test (ATVC 2025)</b><span class="aw-ovd">As Steering &amp; Suspension Lead for Baja ATV. Achieved All India Rank 1 in Suspension and Traction Test. Worked on suspension geometry, load calculations, and performance validation.</span><span class="aw-more">View details</span></div></div>
     </div>
-
-    <div class="award-item">
-      <div class="award-left">
-        <div class="award-title">AIR 2 Overall — ATVC 2026</div>
-        <div class="award-meta">All Terrain Vehicle Challenge <span>·</span> India <span>·</span> 2026</div>
-        <div class="award-desc">As Chief Design Engineer of Team Daedalus Racing, led the complete vehicle design of the BAJA SAE ATV from scratch — chassis architecture, suspension geometry, and system packaging. Team secured All India Rank 2 Overall at ATVC 2026.</div>
-        <div class="award-badge">AIR 2 OVERALL — NATIONAL LEVEL EVENT</div>
-        <div class="award-docs">
-          <a href="#" class="award-doc-link" onclick="openCertPreview('certificate_air2_atvc2026.png', 'AIR 2 Overall — ATVC 2026'); return false;"><span class="award-doc-link-icon">📄</span> VIEW CERTIFICATE</a>
-        </div>
-      </div>
-      <div class="award-icon">🥈</div>
+    <div class="aw-tile" tabindex="0" role="button" aria-label="3rd Position — CAD Battle (Invictus&#x27;25)" data-emoji="🥉" data-big="3rd" data-title="3rd Position — CAD Battle (Invictus&#x27;25)" data-meta="Technical Council · Delhi Technological University · 2025" data-desc="Secured 3rd position in CAD Battle at Invictus&#x27;25. Recognized for strong CAD modelling, precision design, and engineering problem solving." data-badge="TOP 3 — UNIVERSITY LEVEL COMPETITION" data-cert="https://res.cloudinary.com/fvtkc10l/image/upload/v1784392098/certificate_cad_battle_invictus25_rezamj.jpg">
+      <span class="aw-em">🥉</span><div class="aw-big">3rd</div><div class="aw-cap">Invictus&#x27;25</div>
+      <div class="aw-ov"><div><b>3rd Position — CAD Battle (Invictus&#x27;25)</b><span class="aw-ovd">Secured 3rd position in CAD Battle at Invictus&#x27;25. Recognized for strong CAD modelling, precision design, and engineering problem solving.</span><span class="aw-more">View details</span></div></div>
     </div>
-
   </div>
 </section>
+
+<div id="aw-modal" aria-hidden="true">
+  <div id="aw-bd"></div>
+  <div id="aw-box" role="dialog" aria-modal="true" aria-label="Award details">
+    <button id="aw-x" aria-label="Close">✕</button>
+    <div class="aw-media"><span class="aw-mem" id="aw-em"></span><div class="aw-big" id="aw-big"></div></div>
+    <div class="aw-side">
+      <div class="aw-head"><div class="aw-ring"><div>AM</div></div><b>arpit.malik</b></div>
+      <p id="aw-t"></p><p id="aw-m"></p><p id="aw-d"></p><p id="aw-b"></p>
+      <button id="aw-cert" type="button">View certificate</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('aw-modal'),grid=document.getElementById('awGrid'),cur=null;
+  function open(t){
+    cur=t.dataset;
+    document.getElementById('aw-em').textContent=cur.emoji;
+    document.getElementById('aw-big').textContent=cur.big;
+    document.getElementById('aw-t').textContent=cur.title;
+    document.getElementById('aw-m').textContent=cur.meta;
+    document.getElementById('aw-d').textContent=cur.desc;
+    document.getElementById('aw-b').textContent='★ '+cur.badge;
+    modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  }
+  function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  grid.addEventListener('click',function(e){var t=e.target.closest('.aw-tile');if(t)open(t);});
+  grid.addEventListener('keydown',function(e){var t=e.target.closest('.aw-tile');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(t);}});
+  document.getElementById('aw-x').addEventListener('click',close);
+  document.getElementById('aw-bd').addEventListener('click',close);
+  document.getElementById('aw-cert').addEventListener('click',function(){if(cur&&typeof openCertPreview==='function')openCertPreview(cur.cert,cur.title);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open')&&!document.getElementById('cert-modal').classList.contains('open'))close();});
+})();
+</script>
 
 
 <!-- ── ACKNOWLEDGEMENTS ── -->
 <section id="acknowledgements">
-  <div class="section-label">// 08 — ACKNOWLEDGEMENTS</div>
-  <h2 class="section-title">THOSE WHO <span>SHAPED</span> THE WORK</h2>
-  <p class="ack-intro">Engineering is never done in isolation. These are the seniors who gave their time, knowledge, and patience when it mattered most.</p>
+  <div class="section-label">// 08 — MENTORS</div>
+  <h2 class="section-title" style="margin-bottom:40px">MENTORS</h2>
   <div class="ack-grid">
 
     <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/kunal-samaniya-21429024a/','_blank','noopener,noreferrer')">
-      <div class="ack-header">
-        <div>
-          <div class="ack-name">Kunal Samaniya</div>
-          <div class="ack-role">Mechanical Design Engineer</div>
-          <div class="ack-company-line">EULER MOTORS</div>
-        </div>
-        <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
+      <div class="ack-avatar"><div class="ack-avatar-inner">KS</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Kunal Samaniya</div>
+        <div class="ack-role">Mechanical Design Engineer · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
       </div>
-      <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
+      <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
     </div>
 
     <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/aryanmishra/','_blank','noopener,noreferrer')">
-      <div class="ack-header">
-        <div>
-          <div class="ack-name">Aryan Mishra</div>
-          <div class="ack-role">R&amp;D Engineer (Multi Body Dynamics)</div>
-          <div class="ack-company-line">OLA ELECTRIC</div>
-        </div>
-        <a href="https://www.linkedin.com/in/aryanmishra/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
+      <div class="ack-avatar"><div class="ack-avatar-inner">AM</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Aryan Mishra</div>
+        <div class="ack-role">R&amp;D Engineer (Multi Body Dynamics) · <span class="ack-company-line">OLA ELECTRIC</span></div>
+        <p class="ack-desc">Mentor in vehicle dynamics and simulation discussions — helped shape my understanding of industry R&amp;D workflows.</p>
       </div>
-      <p class="ack-desc">Mentor in vehicle dynamics and simulation discussions — helped shape my understanding of industry R&amp;D workflows.</p>
+      <a href="https://www.linkedin.com/in/aryanmishra/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
     </div>
 
     <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/ananthu-krishna-4a7175228/','_blank','noopener,noreferrer')">
-      <div class="ack-header">
-        <div>
-          <div class="ack-name">Ananthu Krishna</div>
-          <div class="ack-role">Battery Thermal Management</div>
-          <div class="ack-company-line">MARUTI SUZUKI</div>
-        </div>
-        <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
+      <div class="ack-avatar"><div class="ack-avatar-inner">AK</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Ananthu Krishna</div>
+        <div class="ack-role">Battery Thermal Management · <span class="ack-company-line">MARUTI SUZUKI</span></div>
+        <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
       </div>
-      <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
+      <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
     </div>
 
     <div class="ack-card">
-      <div class="ack-header">
-        <div>
-          <div class="ack-name">Deepak Thakur</div>
-          <div class="ack-role">Vehicle Testing</div>
-          <div class="ack-company-line">EULER MOTORS</div>
-        </div>
+      <div class="ack-avatar"><div class="ack-avatar-inner">DT</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Deepak Thakur</div>
+        <div class="ack-role">Vehicle Testing · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
       </div>
-      <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
     </div>
 
     <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/anurag-yadav-35693a267/','_blank','noopener,noreferrer')">
-      <div class="ack-header">
-        <div>
-          <div class="ack-name">Anurag Yadav</div>
-          <div class="ack-role">Design Engineer, EV Motor R&amp;D</div>
-          <div class="ack-company-line">EULER MOTORS</div>
-        </div>
-        <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" title="LinkedIn" onclick="event.stopPropagation()"><span>in</span><span>View Profile →</span></a>
+      <div class="ack-avatar"><div class="ack-avatar-inner">AY</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Anurag Yadav</div>
+        <div class="ack-role">Design Engineer, EV Motor R&amp;D · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
       </div>
-      <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
+      <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
     </div>
 
   </div>
@@ -2157,6 +2152,12 @@ footer{
     </div>
   </div>
 </section>
+</div>
+
+<!-- ── REELS PANE ── -->
+<div id="reelsPane" role="tabpanel" aria-labelledby="tabReels">
+  <div class="rl-wrap"><div class="rl-grid" id="reelGrid"></div></div>
+</div>
 
 <!-- ── FOOTER ── -->
 <div class="accent-bar"></div>
@@ -2665,6 +2666,215 @@ storyReplyForm.addEventListener('submit', async e=>{
     resumeStory();
   },1400);
 });
+</script>
+
+<!-- ── PROFILE PHOTO PREVIEW ── -->
+<div id="avatar-modal" aria-hidden="true">
+  <div id="avatar-backdrop"></div>
+  <div id="avatar-dialog">
+    <button id="avatar-close" aria-label="Close">✕</button>
+    <img id="avatar-img" src="" alt="Arpit Malik">
+  </div>
+</div>
+<style>
+  .profile-avatar{cursor:pointer;transition:transform .2s}
+  .profile-avatar:hover{transform:scale(1.04)}
+  .profile-avatar:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+  #avatar-modal{display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center}
+  #avatar-modal.open{display:flex}
+  #avatar-backdrop{position:absolute;inset:0;background:rgba(5,6,8,.88);backdrop-filter:blur(6px)}
+  #avatar-dialog{position:relative;max-width:min(90vw,520px);max-height:88vh;animation:avZoom .22s ease}
+  #avatar-img{display:block;max-width:100%;max-height:88vh;border-radius:12px;border:1px solid var(--border2);box-shadow:0 20px 60px rgba(0,0,0,.6);object-fit:contain}
+  #avatar-close{position:absolute;top:-14px;right:-14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;font-size:14px;z-index:2}
+  #avatar-close:hover{color:var(--gold);border-color:var(--gold)}
+  @keyframes avZoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+</style>
+<script>
+(function(){
+  var btn=document.getElementById('avatar-btn'),
+      modal=document.getElementById('avatar-modal'),
+      img=document.getElementById('avatar-img');
+  if(!btn||!modal) return;
+  function open(){
+    var src=btn.querySelector('img').getAttribute('src');
+    img.src=src;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  btn.addEventListener('click',open);
+  btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  document.getElementById('avatar-close').addEventListener('click',close);
+  document.getElementById('avatar-backdrop').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+})();
+</script>
+
+<!-- ── REELS FEED ── -->
+<div id="reel-overlay" aria-hidden="true">
+  <button id="reel-close" aria-label="Close reels">✕</button>
+  <button id="reel-up" aria-label="Previous reel">⌃</button>
+  <button id="reel-down" aria-label="Next reel">⌄</button>
+  <div id="reel-scroll"></div>
+</div>
+<style>
+.rl-tabs{display:flex;justify-content:center;border-top:1px solid var(--border);margin-top:18px}
+.rl-tab{display:flex;align-items:center;gap:8px;background:none;border:none;border-top:1px solid transparent;margin-top:-1px;padding:14px 4px;color:var(--text-sec);font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:1.5px;cursor:pointer}
+.rl-tab.active{color:var(--text);border-top-color:var(--text)}
+.rl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:2px}
+.rl-tile{position:relative;aspect-ratio:9/14;background:var(--surface);overflow:hidden;cursor:pointer;border:none;padding:0;outline:none}
+.rl-tile:focus-visible{box-shadow:inset 0 0 0 2px var(--gold)}
+.rl-tile video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.rl-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),transparent 45%)}
+.rl-play{position:absolute;top:8px;right:8px;z-index:2;color:#fff;font-size:14px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.rl-cap{position:absolute;left:8px;right:8px;bottom:8px;z-index:2;color:#fff;font-family:var(--fb);font-size:12px;font-weight:500;line-height:1.3;text-align:left;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#reel-overlay{position:fixed;inset:0;z-index:1100;background:#000;display:none}
+#reel-overlay.open{display:block}
+#reel-scroll{height:100%;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior:contain}
+#reel-scroll::-webkit-scrollbar{display:none}
+.reel{height:100vh;height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center}
+.reel-box{position:relative;height:100%;width:100%;max-width:440px;background:#000;overflow:hidden}
+.reel-box video{width:100%;height:100%;object-fit:contain;display:block;background:#000}
+.reel-box.land{max-width:min(100%,960px)}
+.reel-info{position:absolute;left:0;right:0;bottom:0;padding:48px 16px calc(22px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,rgba(0,0,0,.75),transparent);color:#fff;font-family:var(--fb);pointer-events:none}
+.reel-user{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;margin-bottom:8px}
+.reel-av{width:32px;height:32px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.reel-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #000;display:block;background:#1A1D24}
+.reel-text{font-size:14px;line-height:1.45}
+.reel-sound{position:absolute;right:12px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:16px;cursor:pointer}
+.reel-pause{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:56px;color:#fff;opacity:0;transition:opacity .2s;pointer-events:none;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.reel-box.paused .reel-pause{opacity:.85}
+.reel-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.25)}
+.reel-bar i{display:block;height:100%;width:0;background:#fff}
+#reel-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:14px;z-index:5;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:16px;cursor:pointer}
+#reel-up,#reel-down{display:none;position:absolute;right:24px;z-index:5;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:22px;cursor:pointer}
+#reel-up{top:calc(50% - 54px)}#reel-down{top:calc(50% + 10px)}
+@media(min-width:900px){#reel-up,#reel-down{display:block}.reel-box{height:calc(100% - 32px);border-radius:12px}}
+@media(max-width:600px){.rl-cap{font-size:10.5px}.rl-tile{aspect-ratio:9/15}}
+</style>
+<script>
+(function(){
+  /* ── Add or swap your videos here ── */
+  var REELS=[
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790883973/IMG_8034_fopbpy.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790884005/IMG_8035_eymnif.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790883980/IMG_8036_me5xy2.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790887763/IMG_8043_virrhw.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790887945/IMG_8048_nmrn5n.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790887886/IMG_8041_zzjmw4.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790887825/IMG_8047_w8l0cn.mp4",cap:""},
+    {src:"https://res.cloudinary.com/fvtkc10l/video/upload/v1790888040/IMG_8042_l9vwa9.mp4",cap:""}
+  ];
+  var grid=document.getElementById('reelGrid'),ov=document.getElementById('reel-overlay'),sc=document.getElementById('reel-scroll');
+  var muted=true,io=null;
+  grid.innerHTML=REELS.map(function(r,i){return '<button class="rl-tile" type="button" data-i="'+i+'" aria-label="Play reel '+(i+1)+(r.cap?': '+r.cap.replace(/"/g,'&quot;'):'')+'"><video data-src="'+r.src+'" muted loop playsinline preload="none"></video><span class="rl-play">▶</span>'+(r.cap?'<span class="rl-cap">'+r.cap+'</span>':'')+'</button>'}).join('');
+  function mark(i,v){if(v&&v.videoWidth){var l=v.videoWidth>v.videoHeight;REELS[i].land=l;var b=sc.querySelector('.reel[data-i="'+i+'"] .reel-box');if(b)b.classList.toggle('land',l)}}
+  grid.querySelectorAll('.rl-tile video').forEach(function(v,i){v.addEventListener('loadedmetadata',function(){mark(i,v)})});
+  var tileVids=[].slice.call(grid.querySelectorAll('.rl-tile video'));
+  function playTile(v){if(!v.src)v.src=v.dataset.src;v.muted=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}
+  var tio=new IntersectionObserver(function(es){es.forEach(function(en){
+    var v=en.target;
+    if(en.isIntersecting&&!ov.classList.contains('open'))playTile(v);else v.pause();
+  })},{threshold:.25});
+  tileVids.forEach(function(v){tio.observe(v)});
+  function resumeTiles(){var on=document.getElementById('reelsPane').classList.contains('is-on');tileVids.forEach(function(v){var r=v.getBoundingClientRect();if(on&&r.bottom>0&&r.top<innerHeight)playTile(v)})}
+  function build(){
+    var av=document.querySelector('.profile-avatar-inner img');var avs=av?av.getAttribute('src'):'';
+    sc.innerHTML=REELS.map(function(r,i){return '<div class="reel" data-i="'+i+'"><div class="reel-box'+(r.land?' land':'')+'"><video data-src="'+r.src+'" loop playsinline muted preload="none"></video><div class="reel-pause">▶</div><div class="reel-info"><div class="reel-user"><span class="reel-av"><img src="'+avs+'" alt=""></span>arpit.malik</div><div class="reel-text">'+r.cap+'</div></div><button class="reel-sound" type="button" aria-label="Toggle sound">🔇</button><div class="reel-bar"><i></i></div></div></div>'}).join('');
+    sc.querySelectorAll('.reel-box').forEach(function(box){
+      var v=box.querySelector('video'),bar=box.querySelector('.reel-bar i'),sb=box.querySelector('.reel-sound');
+      v.addEventListener('loadedmetadata',function(){mark(+box.parentNode.dataset.i,v)});
+      v.addEventListener('timeupdate',function(){if(v.duration)bar.style.width=(v.currentTime/v.duration*100)+'%'});
+      box.addEventListener('click',function(e){if(e.target.closest('.reel-sound'))return;if(v.paused){v.play();box.classList.remove('paused')}else{v.pause();box.classList.add('paused')}});
+      sb.addEventListener('click',function(){muted=!muted;sc.querySelectorAll('video').forEach(function(x){x.muted=muted});sc.querySelectorAll('.reel-sound').forEach(function(b){b.textContent=muted?'🔇':'🔊'})});
+    });
+    if(io)io.disconnect();
+    io=new IntersectionObserver(function(es){es.forEach(function(en){
+      var box=en.target,v=box.querySelector('video');
+      if(en.isIntersecting&&en.intersectionRatio>=.6){
+        if(!v.src)v.src=v.dataset.src;v.muted=muted;box.classList.remove('paused');var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});
+      }else{v.pause();if(!en.isIntersecting){try{v.currentTime=0}catch(e){}}}
+    })},{root:sc,threshold:[0,.6]});
+    sc.querySelectorAll('.reel-box').forEach(function(b){io.observe(b)});
+  }
+  function open(i){
+    tileVids.forEach(function(v){v.pause()});build();ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    var t=sc.children[i];if(t){sc.scrollTop=t.offsetTop;}
+  }
+  function close(){
+    if(anim){cancelAnimationFrame(anim);anim=null}sc.style.scrollSnapType='';
+    ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.style.overflow='';
+    if(io){io.disconnect();io=null}
+    sc.querySelectorAll('video').forEach(function(v){v.pause();v.removeAttribute('src');v.load()});sc.innerHTML='';resumeTiles();
+  }
+  var anim=null;
+  function step(d){
+    if(anim)return;
+    var h=sc.clientHeight,n=sc.children.length,i=Math.round(sc.scrollTop/h),j=Math.max(0,Math.min(n-1,i+d));
+    if(j===i)return;
+    var from=sc.scrollTop,to=j*h,dur=520,t0=null;
+    sc.style.scrollSnapType='none';
+    function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+    function tick(ts){
+      if(t0===null)t0=ts;
+      var p=Math.min(1,(ts-t0)/dur);
+      sc.scrollTop=from+(to-from)*ease(p);
+      if(p<1){anim=requestAnimationFrame(tick)}
+      else{sc.scrollTop=to;sc.style.scrollSnapType='';anim=null}
+    }
+    anim=requestAnimationFrame(tick);
+  }
+  grid.addEventListener('click',function(e){var t=e.target.closest('.rl-tile');if(t)open(+t.dataset.i)});
+  document.getElementById('reel-close').addEventListener('click',close);
+  document.getElementById('reel-up').addEventListener('click',function(){step(-1)});
+  document.getElementById('reel-down').addEventListener('click',function(){step(1)});
+  document.addEventListener('keydown',function(e){
+    if(!ov.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowDown'){e.preventDefault();step(1)}
+    if(e.key==='ArrowUp'){e.preventDefault();step(-1)}
+  });
+})();
+</script>
+<style>
+#reelsPane{display:none;padding:2px 6% 80px}
+#reelsPane.is-on{display:block}
+#mainPane.is-off{display:none}
+.rl-wrap{max-width:935px;margin:0 auto}
+.rl-tabs{gap:72px}
+@media(min-width:601px){.highlights-section .rl-tabs{max-width:935px;margin-left:auto;margin-right:auto}}
+@media(max-width:600px){#reelsPane{padding:2px 0 56px}.rl-tabs{gap:0}.rl-tab{flex:1;justify-content:center}}
+</style>
+<script>
+(function(){
+  var mainP=document.getElementById('mainPane'),reelsP=document.getElementById('reelsPane'),
+      tm=document.getElementById('tabMain'),tr=document.getElementById('tabReels'),bar=document.querySelector('.rl-tabs');
+  function show(name,keepScroll){
+    var r=name==='reels';
+    mainP.classList.toggle('is-off',r);reelsP.classList.toggle('is-on',r);
+    tm.classList.toggle('active',!r);tr.classList.toggle('active',r);
+    tm.setAttribute('aria-selected',String(!r));tr.setAttribute('aria-selected',String(r));
+    try{history.replaceState(null,'',r?'#reels':location.pathname+location.search)}catch(e){}
+    if(!keepScroll){var top=bar.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
+  }
+  tm.addEventListener('click',function(){show('main')});
+  tr.addEventListener('click',function(){show('reels')});
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
+    var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
+    var t=document.getElementById(id);
+    if(t&&mainP.contains(t)&&mainP.classList.contains('is-off')){
+      e.preventDefault();e.stopPropagation();show('main',true);
+      setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60);
+    }
+  },true);
+  if(location.hash==='#reels')show('reels',true);
+})();
 </script>
 </body>
 </html>
