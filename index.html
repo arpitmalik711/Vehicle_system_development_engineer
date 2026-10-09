@@ -843,6 +843,7 @@ footer{
   <div class="rl-tabs" role="tablist">
     <button class="rl-tab active" id="tabMain" type="button" role="tab" aria-selected="true" aria-controls="mainPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>MAIN</span></button>
     <button class="rl-tab" id="tabReels" type="button" role="tab" aria-selected="false" aria-controls="reelsPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="M10.5 13l4 2.5-4 2.5z"/></svg><span>REELS</span></button>
+    <button class="rl-tab" id="tabLinkedin" type="button" role="tab" aria-selected="false" aria-controls="linkedinPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg><span>LINKEDIN</span></button>
   </div>
 </section>
 
@@ -1774,195 +1775,6 @@ footer{
 </section>
 
 
-<!-- ── LINKEDIN ACTIVITY ── -->
-<style>
-.linkedin-section{padding:100px 6%;background:var(--bg)}
-.linkedin-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:48px}
-.linkedin-intro .lb-hl{color:#0A66C2}
-.linkedin-intro .lb-hl-yellow{color:#E8C547}
-.linkedin-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
-@media(max-width:1400px){.linkedin-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:1000px){.linkedin-grid{grid-template-columns:repeat(2,1fr)}}
-.linkedin-card{
-  background:var(--surface);display:block;text-decoration:none;color:inherit;
-  max-width:none;position:relative;
-}
-.linkedin-img-wrap{
-  position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0d0f13;
-}
-.linkedin-img-wrap img{
-  width:100%;height:100%;object-fit:cover;object-position:top;
-  filter:brightness(.9);transition:filter .35s ease,transform .5s ease;
-}
-.linkedin-card:hover .linkedin-img-wrap img{filter:brightness(1);transform:scale(1.03)}
-.linkedin-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,12,16,0) 45%,rgba(10,12,16,.94) 100%);
-  display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity .3s ease;
-}
-.linkedin-card:hover .linkedin-overlay{opacity:1}
-.linkedin-overlay-cta{
-  font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);
-  display:flex;align-items:center;gap:6px;
-}
-.linkedin-badge{
-  position:absolute;top:12px;left:12px;
-  font-family:var(--fm);font-size:8px;letter-spacing:1.5px;color:var(--gold);
-  background:rgba(10,12,16,.75);border:1px solid rgba(224,160,32,.35);
-  padding:5px 10px;backdrop-filter:blur(4px);
-}
-.linkedin-body{padding:20px 22px 26px}
-.linkedin-title{
-  font-family:var(--fd);font-size:17px;font-weight:800;color:var(--text);
-  text-transform:uppercase;letter-spacing:.3px;line-height:1.15;margin-bottom:8px;
-}
-.linkedin-blurb{font-size:12px;color:var(--text-sec);line-height:1.6;font-weight:300;margin-bottom:14px}
-.linkedin-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.linkedin-tag{
-  font-family:var(--fm);font-size:8px;letter-spacing:1px;color:var(--text-dim);
-  border:1px solid var(--border2);padding:4px 8px;
-}
-.linkedin-cta{
-  font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);
-  display:inline-flex;align-items:center;gap:6px;
-}
-@media(max-width:600px){
-  .linkedin-grid{grid-template-columns:repeat(2,1fr)}
-  .linkedin-body{padding:12px 12px 16px}
-  .linkedin-title{font-size:12px;margin-bottom:5px}
-  .linkedin-blurb{font-size:9.5px;line-height:1.45;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .linkedin-tags{display:none}
-  .linkedin-cta{font-size:8px;letter-spacing:1px}
-  .linkedin-badge{font-size:6.5px;padding:3px 7px;top:8px;left:8px}
-}
-</style>
-
-<section id="linkedin-activity" class="linkedin-section">
-  <div class="section-label">// 05 — LINKEDIN ACTIVITY</div>
-  <h2 class="section-title" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-    <svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="#0A66C2" style="flex-shrink:0" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-    Short <span>Studies</span> & Decisions.
-  </h2>
-  <p class="linkedin-intro">Smaller engineering breakdowns and decisions posted as they happened — not full case studies, but the same <span class="lb-hl-yellow">first-principles thinking</span> in shorter form. <span class="lb-hl-yellow">Click</span> through to read the <span class="lb-hl-yellow">full post on LinkedIn</span>.</p>
-
-  <div class="linkedin-grid">
-
-    <!-- LINKEDIN POST 01 — duplicate this block for each new post -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
-      <div class="linkedin-img-wrap">
-        <div class="linkedin-badge">LINKEDIN POST</div>
-        <img src="linkedin_post_1.png" alt="Post title / topic">
-        <div class="linkedin-overlay">
-          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
-        </div>
-      </div>
-      <div class="linkedin-body">
-        <div class="linkedin-title">Suspension Failure Investigation — <span class="gold">Load Path</span> & <span class="gold">A-Arm Bending</span></div>
-        <p class="linkedin-blurb">A mid-competition shock swap altered the suspension load path — and cracked the front A-arm under impact. Post-event, I reconstructed the failure using energy-based impact estimation and transient FEA to trace root cause, not just patch the symptom.</p>
-        <div class="linkedin-tags">
-          <span class="linkedin-tag">SUSPENSION DESIGN</span>
-          <span class="linkedin-tag">TRANSIENT FEA</span>
-          <span class="linkedin-tag">FIRST PRINCIPLES</span>
-          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
-        </div>
-        <span class="linkedin-cta">View Post →</span>
-      </div>
-    </a>
-
-    <!-- LINKEDIN POST 02 -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-baja-bajasae-ugcPost-7461823122908921856-0SkZ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
-      <div class="linkedin-img-wrap">
-        <div class="linkedin-badge">LINKEDIN POST</div>
-        <img src="linkedin_post_2.png" alt="Post title / topic">
-        <div class="linkedin-overlay">
-          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
-        </div>
-      </div>
-      <div class="linkedin-body">
-        <div class="linkedin-title"><span class="gold">Driveline Geometry</span> Correction — <span class="gold">Steering Rack</span> Repositioning Under Deadline</div>
-        <p class="linkedin-blurb">One day before roll cage welding, I found the front CV axles were nearing their articulation limits at full lock. An overnight kinematic rework in Lotus Shark — shifting the rack forward and up — fixed the geometry without delaying fabrication, and held up for 48 laps at ATVC.</p>
-        <div class="linkedin-tags">
-          <span class="linkedin-tag">STEERING KINEMATICS</span>
-          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
-          <span class="linkedin-tag">LOTUS SHARK</span>
-        </div>
-        <span class="linkedin-cta">View Post →</span>
-      </div>
-    </a>
-
-    <!-- LINKEDIN POST 03 -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledevelopment-mechanicaldesign-evengineering-ugcPost-7473982816611921920-Qfwj/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
-      <div class="linkedin-img-wrap">
-        <div class="linkedin-badge">LINKEDIN POST</div>
-        <img src="linkedin_post_3.png" alt="Swappable Battery Mount — Structural Integration Without Chassis Rework">
-        <div class="linkedin-overlay">
-          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
-        </div>
-      </div>
-      <div class="linkedin-body">
-        <div class="linkedin-title">Swappable Battery Mount — <span class="gold">Structural Integration</span> Without <span class="gold">Chassis Rework</span></div>
-        <p class="linkedin-blurb">Integrating a swappable battery system into an existing e-two-wheeler without touching the chassis meant building a mounting interface validated against bump, braking, cornering, and combined load cases — then adapting the FEA and even the 3D-print orientation to match how the part would actually be loaded.</p>
-        <div class="linkedin-tags">
-          <span class="linkedin-tag">STRUCTURAL FEA</span>
-          <span class="linkedin-tag">VEHICLE INTEGRATION</span>
-          <span class="linkedin-tag">BATTERY PACKAGING</span>
-          <span class="linkedin-tag">FIRST PRINCIPLES</span>
-        </div>
-        <span class="linkedin-cta">View Post →</span>
-      </div>
-    </a>
-
-    <!-- LINKEDIN POST 04 -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-chassisdesign-vehicledynamics-ugcPost-7449126548840013824-ssws/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
-      <div class="linkedin-img-wrap">
-        <div class="linkedin-badge">LINKEDIN POST</div>
-        <img src="linkedin_post_4.png" alt="Damper Mount Failure — Load Path Misassumption, Not Material Limit">
-        <div class="linkedin-overlay">
-          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
-        </div>
-      </div>
-      <div class="linkedin-body">
-        <div class="linkedin-title">Damper Mount Failure — <span class="gold">Load Path Misassumption</span>, Not Material Limit</div>
-        <p class="linkedin-blurb">A Baja SAE damper mount failed not from weak material but a bad assumption — the structure was treated as axially loaded when it was actually bending. Correlating analytical (0.67 FOS) and FEA (0.92 FOS) confirmed the mechanism; redesign brought stress down 33% to a 1.37 FOS.</p>
-        <div class="linkedin-tags">
-          <span class="linkedin-tag">FAILURE ANALYSIS</span>
-          <span class="linkedin-tag">LOAD PATH</span>
-          <span class="linkedin-tag">STRUCTURAL FEA</span>
-          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
-          <span class="linkedin-tag">TRANSIENT FEA</span>
-        </div>
-        <span class="linkedin-cta">View Post →</span>
-      </div>
-    </a>
-
-    <!-- LINKEDIN POST 05 -->
-    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledynamics-steeringgeometry-reverseengineering-ugcPost-7469405123719417856-YUJ8/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
-      <div class="linkedin-img-wrap">
-        <div class="linkedin-badge">LINKEDIN POST</div>
-        <img src="linkedin_post_5.png" alt="Reverse-Engineering a Steering System with No Design Data">
-        <div class="linkedin-overlay">
-          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
-        </div>
-      </div>
-      <div class="linkedin-body">
-        <div class="linkedin-title"><span class="gold">Reverse-Engineering</span> a <span class="gold">Steering System</span> with No Design Data</div>
-        <p class="linkedin-blurb">With no design data available, I reverse-engineered a 2012 Mahindra 265's steering system from physical measurements — KPI, camber, arm geometry — then validated the CAD reconstruction against smartphone-recorded steering angles, landing within ±1° of measured values.</p>
-        <div class="linkedin-tags">
-          <span class="linkedin-tag">REVERSE ENGINEERING</span>
-          <span class="linkedin-tag">STEERING GEOMETRY</span>
-          <span class="linkedin-tag">EXPERIMENTAL VALIDATION</span>
-          <span class="linkedin-tag">DIGITAL TWIN</span>
-        </div>
-        <span class="linkedin-cta">View Post →</span>
-      </div>
-    </a>
-
-    <!-- Duplicate the <a class="linkedin-card"> block above for each additional post -->
-
-  </div>
-</section>
-
-
 <!-- ── AWARDS & ACHIEVEMENTS (Instagram profile grid) ── -->
 <style>
 .awards-section{padding:100px 6%;background:var(--bg)}
@@ -2157,6 +1969,213 @@ footer{
 <!-- ── REELS PANE ── -->
 <div id="reelsPane" role="tabpanel" aria-labelledby="tabReels">
   <div class="rl-wrap"><div class="rl-grid" id="reelGrid"></div></div>
+</div>
+
+<!-- ── LINKEDIN PANE ── -->
+<div id="linkedinPane" role="tabpanel" aria-labelledby="tabLinkedin">
+<!-- ── LINKEDIN ACTIVITY ── -->
+<style>
+.linkedin-section{padding:100px 6%;background:var(--bg)}
+.linkedin-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:48px}
+.linkedin-intro .lb-hl{color:#0A66C2}
+.linkedin-intro .lb-hl-yellow{color:#E8C547}
+.linkedin-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
+@media(max-width:1400px){.linkedin-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1000px){.linkedin-grid{grid-template-columns:repeat(2,1fr)}}
+.linkedin-card{
+  background:var(--surface);display:block;text-decoration:none;color:inherit;
+  max-width:none;position:relative;
+}
+.linkedin-img-wrap{
+  position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0d0f13;
+}
+.linkedin-img-wrap img,.linkedin-img-wrap video{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  filter:brightness(.9);transition:filter .35s ease,transform .5s ease;
+}
+.linkedin-card:hover .linkedin-img-wrap img,.linkedin-card:hover .linkedin-img-wrap video{filter:brightness(1);transform:scale(1.03)}
+.linkedin-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,12,16,0) 45%,rgba(10,12,16,.94) 100%);
+  display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity .3s ease;
+}
+.linkedin-card:hover .linkedin-overlay{opacity:1}
+.linkedin-overlay-cta{
+  font-family:var(--fm);font-size:10px;font-weight:500;letter-spacing:2px;color:#0A66C2;
+  display:flex;align-items:center;gap:6px;
+}
+.linkedin-impr{
+  position:absolute;left:12px;bottom:12px;z-index:3;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--fm);font-size:10px;font-weight:500;letter-spacing:.5px;color:var(--text);
+  background:rgba(10,12,16,.75);padding:5px 10px;backdrop-filter:blur(4px);
+  pointer-events:none;transition:opacity .3s ease;
+}
+.linkedin-card:hover .linkedin-impr{opacity:0}
+.linkedin-impr svg{flex-shrink:0}
+.linkedin-badge{
+  position:absolute;top:12px;left:12px;
+  font-family:var(--fm);font-size:8px;letter-spacing:1.5px;color:var(--gold);
+  background:rgba(10,12,16,.75);border:1px solid rgba(224,160,32,.35);
+  padding:5px 10px;backdrop-filter:blur(4px);
+}
+.linkedin-body{padding:20px 22px 26px}
+.linkedin-title{
+  font-family:var(--fd);font-size:17px;font-weight:800;color:var(--text);
+  text-transform:uppercase;letter-spacing:.3px;line-height:1.15;margin-bottom:8px;
+}
+.linkedin-blurb{font-size:12px;color:var(--text-sec);line-height:1.6;font-weight:300;margin-bottom:14px}
+.linkedin-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.linkedin-tag{
+  font-family:var(--fm);font-size:8px;letter-spacing:1px;color:var(--text-dim);
+  border:1px solid var(--border2);padding:4px 8px;
+}
+.linkedin-cta{
+  font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;
+}
+@media(max-width:600px){
+  .linkedin-grid{grid-template-columns:repeat(2,1fr)}
+  .linkedin-body{padding:12px 12px 16px}
+  .linkedin-title{font-size:12px;margin-bottom:5px}
+  .linkedin-blurb{font-size:9.5px;line-height:1.45;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .linkedin-tags{display:none}
+  .linkedin-cta{font-size:8px;letter-spacing:1px}
+  .linkedin-badge{font-size:6.5px;padding:3px 7px;top:8px;left:8px}
+  .linkedin-impr{font-size:7.5px;padding:3px 7px;left:8px;bottom:8px;gap:4px}
+  .linkedin-impr svg{width:9px;height:9px}
+}
+</style>
+
+<section id="linkedin-activity" class="linkedin-section">
+  <div class="section-label">// 05 — LINKEDIN ACTIVITY</div>
+  <h2 class="section-title" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    <svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="#0A66C2" style="flex-shrink:0" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+    Short <span>Studies</span> & Decisions.
+  </h2>
+  <p class="linkedin-intro">Smaller engineering breakdowns and decisions posted as they happened — not full case studies, but the same <span class="lb-hl-yellow">first-principles thinking</span> in shorter form. <span class="lb-hl-yellow">Click</span> through to read the <span class="lb-hl-yellow">full post on LinkedIn</span>.</p>
+
+  <div class="linkedin-grid">
+
+    <!-- LINKEDIN POST 01 — duplicate this block for each new post -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <video src="https://res.cloudinary.com/fvtkc10l/video/upload/v1791577156/Screen_Recording_2026-10-10_014855_jlnqmt.mp4" autoplay muted loop playsinline preload="auto" aria-label="Suspension Failure Investigation — Load Path &amp; A-Arm Bending"></video>
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+        <div class="linkedin-impr"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg><span>92K impressions</span></div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Suspension Failure Investigation — <span class="gold">Load Path</span> & <span class="gold">A-Arm Bending</span></div>
+        <p class="linkedin-blurb">A mid-competition shock swap altered the suspension load path — and cracked the front A-arm under impact. Post-event, I reconstructed the failure using energy-based impact estimation and transient FEA to trace root cause, not just patch the symptom.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">SUSPENSION DESIGN</span>
+          <span class="linkedin-tag">TRANSIENT FEA</span>
+          <span class="linkedin-tag">FIRST PRINCIPLES</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 02 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-baja-bajasae-ugcPost-7461823122908921856-0SkZ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <video src="https://res.cloudinary.com/fvtkc10l/video/upload/v1791577397/Screen_Recording_2026-10-10_015236_idvcmh.mp4" autoplay muted loop playsinline preload="auto" aria-label="Driveline Geometry Correction — Steering Rack Repositioning Under Deadline"></video>
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+        <div class="linkedin-impr"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg><span>25K impressions</span></div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title"><span class="gold">Driveline Geometry</span> Correction — <span class="gold">Steering Rack</span> Repositioning Under Deadline</div>
+        <p class="linkedin-blurb">One day before roll cage welding, I found the front CV axles were nearing their articulation limits at full lock. An overnight kinematic rework in Lotus Shark — shifting the rack forward and up — fixed the geometry without delaying fabrication, and held up for 48 laps at ATVC.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">STEERING KINEMATICS</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+          <span class="linkedin-tag">LOTUS SHARK</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 03 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledevelopment-mechanicaldesign-evengineering-ugcPost-7473982816611921920-Qfwj/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <video src="https://res.cloudinary.com/fvtkc10l/video/upload/v1791576946/Screen_Recording_2026-10-10_014446_gedunj.mp4" autoplay muted loop playsinline preload="auto" aria-label="Swappable Battery Mount — Structural Integration Without Chassis Rework"></video>
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+        <div class="linkedin-impr"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg><span>19K impressions</span></div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Swappable Battery Mount — <span class="gold">Structural Integration</span> Without <span class="gold">Chassis Rework</span></div>
+        <p class="linkedin-blurb">Integrating a swappable battery system into an existing e-two-wheeler without touching the chassis meant building a mounting interface validated against bump, braking, cornering, and combined load cases — then adapting the FEA and even the 3D-print orientation to match how the part would actually be loaded.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">STRUCTURAL FEA</span>
+          <span class="linkedin-tag">VEHICLE INTEGRATION</span>
+          <span class="linkedin-tag">BATTERY PACKAGING</span>
+          <span class="linkedin-tag">FIRST PRINCIPLES</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 04 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-chassisdesign-vehicledynamics-ugcPost-7449126548840013824-ssws/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791577550/Screenshot_2026-10-10_015432_glbpi9.png" alt="Damper Mount Failure — Load Path Misassumption, Not Material Limit" style="object-position:center 85%">
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+        <div class="linkedin-impr"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg><span>29K impressions</span></div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title">Damper Mount Failure — <span class="gold">Load Path Misassumption</span>, Not Material Limit</div>
+        <p class="linkedin-blurb">A Baja SAE damper mount failed not from weak material but a bad assumption — the structure was treated as axially loaded when it was actually bending. Correlating analytical (0.67 FOS) and FEA (0.92 FOS) confirmed the mechanism; redesign brought stress down 33% to a 1.37 FOS.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">FAILURE ANALYSIS</span>
+          <span class="linkedin-tag">LOAD PATH</span>
+          <span class="linkedin-tag">STRUCTURAL FEA</span>
+          <span class="linkedin-tag">ROOT CAUSE ANALYSIS</span>
+          <span class="linkedin-tag">TRANSIENT FEA</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- LINKEDIN POST 05 -->
+    <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledynamics-steeringgeometry-reverseengineering-ugcPost-7469405123719417856-YUJ8/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="linkedin-card">
+      <div class="linkedin-img-wrap">
+        <div class="linkedin-badge">LINKEDIN POST</div>
+        <video src="https://res.cloudinary.com/fvtkc10l/video/upload/v1791577267/Screen_Recording_2026-10-10_015049_sv1dle.mp4" autoplay muted loop playsinline preload="auto" aria-label="Reverse-Engineering a Steering System with No Design Data"></video>
+        <div class="linkedin-overlay">
+          <span class="linkedin-overlay-cta">Read on LinkedIn →</span>
+        </div>
+        <div class="linkedin-impr"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg><span>11K impressions</span></div>
+      </div>
+      <div class="linkedin-body">
+        <div class="linkedin-title"><span class="gold">Reverse-Engineering</span> a <span class="gold">Steering System</span> with No Design Data</div>
+        <p class="linkedin-blurb">With no design data available, I reverse-engineered a 2012 Mahindra 265's steering system from physical measurements — KPI, camber, arm geometry — then validated the CAD reconstruction against smartphone-recorded steering angles, landing within ±1° of measured values.</p>
+        <div class="linkedin-tags">
+          <span class="linkedin-tag">REVERSE ENGINEERING</span>
+          <span class="linkedin-tag">STEERING GEOMETRY</span>
+          <span class="linkedin-tag">EXPERIMENTAL VALIDATION</span>
+          <span class="linkedin-tag">DIGITAL TWIN</span>
+        </div>
+        <span class="linkedin-cta">View Post →</span>
+      </div>
+    </a>
+
+    <!-- Duplicate the <a class="linkedin-card"> block above for each additional post -->
+
+  </div>
+</section>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -2847,25 +2866,32 @@ storyReplyForm.addEventListener('submit', async e=>{
 #reelsPane{display:none;padding:2px 6% 80px}
 #reelsPane.is-on{display:block}
 #mainPane.is-off{display:none}
+#tabLinkedin,#tabLinkedin.active{color:#0A66C2}
+#tabLinkedin.active{border-top-color:#0A66C2}
+#linkedinPane{display:none}
+#linkedinPane.is-on{display:block}
+#linkedinPane .linkedin-section{padding:48px 6% 80px}
+@media(max-width:600px){#linkedinPane .linkedin-section{padding:40px 5% 56px}}
 .rl-wrap{max-width:935px;margin:0 auto}
-.rl-tabs{gap:72px}
+.rl-tabs{gap:56px}
 @media(min-width:601px){.highlights-section .rl-tabs{max-width:935px;margin-left:auto;margin-right:auto}}
 @media(max-width:600px){#reelsPane{padding:2px 0 56px}.rl-tabs{gap:0}.rl-tab{flex:1;justify-content:center}}
 </style>
 <script>
 (function(){
-  var mainP=document.getElementById('mainPane'),reelsP=document.getElementById('reelsPane'),
-      tm=document.getElementById('tabMain'),tr=document.getElementById('tabReels'),bar=document.querySelector('.rl-tabs');
+  var mainP=document.getElementById('mainPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
+      tm=document.getElementById('tabMain'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),bar=document.querySelector('.rl-tabs');
   function show(name,keepScroll){
-    var r=name==='reels';
-    mainP.classList.toggle('is-off',r);reelsP.classList.toggle('is-on',r);
-    tm.classList.toggle('active',!r);tr.classList.toggle('active',r);
-    tm.setAttribute('aria-selected',String(!r));tr.setAttribute('aria-selected',String(r));
-    try{history.replaceState(null,'',r?'#reels':location.pathname+location.search)}catch(e){}
+    var r=name==='reels',l=name==='linkedin',m=!r&&!l;
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);
+    tm.classList.toggle('active',m);tr.classList.toggle('active',r);tl.classList.toggle('active',l);
+    tm.setAttribute('aria-selected',String(m));tr.setAttribute('aria-selected',String(r));tl.setAttribute('aria-selected',String(l));
+    try{history.replaceState(null,'',r?'#reels':l?'#linkedin':location.pathname+location.search)}catch(e){}
     if(!keepScroll){var top=bar.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
   tm.addEventListener('click',function(){show('main')});
   tr.addEventListener('click',function(){show('reels')});
+  tl.addEventListener('click',function(){show('linkedin')});
   document.addEventListener('click',function(e){
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
@@ -2876,6 +2902,7 @@ storyReplyForm.addEventListener('submit', async e=>{
     }
   },true);
   if(location.hash==='#reels')show('reels',true);
+  else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
 </script>
 </body>
