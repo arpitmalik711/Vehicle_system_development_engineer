@@ -679,11 +679,12 @@ footer{
 .highlights-section{padding:96px 6% 8px}
 /* ── PROFILE HEADER (Instagram-style) ── */
 .profile-head{display:flex;align-items:center;gap:56px;max-width:900px;margin:0 0 30px}
-.profile-avatar{flex:0 0 150px;width:150px;height:150px;border-radius:50%;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
-.profile-avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--bg);padding:4px}
-.profile-avatar-inner img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:var(--surface2)}
+.profile-avatar{flex:0 0 136px;width:136px;height:170px;border-radius:16px;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.profile-avatar-inner{width:100%;height:100%;border-radius:13px;background:var(--bg);padding:3px;overflow:hidden}
+.profile-avatar-inner img{width:100%;height:100%;border-radius:10px;object-fit:cover;object-position:center top;display:block;background:var(--surface2)}
 .profile-info{flex:1;min-width:0}
 .profile-actions{display:contents}
+.profile-stats-more{display:flex;flex-wrap:wrap;gap:6px 28px;margin:0 0 14px}
 .profile-row1{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
 .profile-handle{font-family:var(--fb);font-size:22px;font-weight:400}
 .profile-btn{font-family:var(--fb);font-size:13px;font-weight:600;padding:9px 22px;border-radius:8px;background:var(--surface2);color:var(--text);border:1px solid var(--border2);cursor:pointer;text-decoration:none;transition:filter .2s}
@@ -693,8 +694,9 @@ footer{
 .journey-dot{width:7px;height:7px;border-radius:50%;background:#fff;flex-shrink:0;animation:journeyDot 1s steps(2,start) infinite}
 @keyframes journeyBlink{0%,100%{box-shadow:0 0 0 0 rgba(214,41,118,.65);opacity:1}50%{box-shadow:0 0 0 12px rgba(214,41,118,0);opacity:.35}}
 @keyframes journeyDot{to{opacity:.15}}
-.profile-stats{display:flex;gap:36px;margin-bottom:14px;font-size:15px;color:var(--text)}
-.profile-stats b{font-weight:600}
+.profile-stats,.profile-stats-more{font-family:var(--fb);font-size:15px;line-height:1.4;color:var(--text)}
+.profile-stats b,.profile-stats-more b{color:var(--gold);font-weight:700}
+.profile-stats{display:flex;flex-wrap:wrap;gap:6px 28px;margin-bottom:8px}
 .profile-name{font-weight:600;font-size:15px}
 .profile-bio{font-size:14px;line-height:1.55;color:var(--text-sec);margin-top:4px}
 .profile-bio .g{color:var(--gold)}
@@ -703,15 +705,19 @@ footer{
   .highlights-section .highlights-row .highlight-item{width:100%;min-width:0}
   .highlights-row .highlight-item-label{max-width:100%;text-align:center;letter-spacing:1px;white-space:normal;line-height:1.35;text-overflow:clip;overflow:visible}
   /* phone layout: avatar + stats on top, bio below the photo, buttons last (Instagram style) */
-  .profile-head{display:grid;grid-template-columns:84px minmax(0,1fr);grid-template-areas:"avatar handle" "avatar stats" "name name" "bio bio" "btns btns";column-gap:20px;row-gap:0;align-items:start;max-width:none}
+  .profile-head{display:grid;grid-template-columns:84px minmax(0,1fr);grid-template-areas:"avatar handle" "avatar stats" "name name" "bio bio" "more more" "btns btns";column-gap:20px;row-gap:0;align-items:start;max-width:none}
   .profile-info,.profile-row1{display:contents}
-  .profile-avatar{grid-area:avatar;width:84px;height:84px;flex:none}
+  .profile-avatar{grid-area:avatar;width:88px;height:110px;flex:none;border-radius:12px}
+  .profile-avatar-inner{border-radius:9px;padding:2px}
+  .profile-avatar-inner img{border-radius:7px}
   .profile-handle{grid-area:handle;align-self:end;font-size:18px;margin-bottom:8px}
-  .profile-stats{grid-area:stats;align-self:start;gap:18px;font-size:12px;margin:0}
+  .profile-stats{grid-area:stats;align-self:start;gap:18px;font-size:12px;margin:0;flex-wrap:nowrap}
   .profile-stats span{display:flex;flex-direction:column;align-items:center;line-height:1.3}
-  .profile-stats b{font-size:16px}
+  .profile-stats b,.profile-stats-more b{font-size:18px;line-height:1.1}
   .profile-name{grid-area:name;margin-top:14px}
   .profile-bio{grid-area:bio}
+  .profile-stats-more{grid-area:more;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 0;font-size:12px}
+  .profile-stats-more span{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;line-height:1.3}
   .profile-actions{grid-area:btns;display:flex;gap:8px;margin-top:16px}
   .profile-actions .profile-btn{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 10px;font-size:12px}
 }
@@ -823,7 +829,7 @@ footer{
 <!-- ── HIGHLIGHTS (story tabs) ── -->
 <section class="highlights-section">
   <div class="profile-head">
-    <div class="profile-avatar" id="avatar-btn" role="button" tabindex="0" aria-label="View profile photo" title="Click to view photo"><div class="profile-avatar-inner"><img src="me.jpeg" alt="Arpit Malik"></div></div>
+    <div class="profile-avatar" id="avatar-btn" role="button" tabindex="0" aria-label="View profile photo" title="Click to view photo"><div class="profile-avatar-inner"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="Arpit Malik"></div></div>
     <div class="profile-info">
       <div class="profile-row1">
         <span class="profile-handle">arpit.malik</span>
@@ -834,6 +840,9 @@ footer{
       </div>
       <div class="profile-stats">
         <span><b>5</b> projects</span><span><b>4</b> case studies</span><span><b>5</b> awards</span>
+      </div>
+      <div class="profile-stats-more">
+        <span><b>3</b> vehicle development programmes</span><span><b>15</b> EVs deployed</span><span><b>AIR 2</b> ATVC 2026</span><span><b>300+ hrs</b> workshop fabrication</span>
       </div>
       <div class="profile-name">Arpit Malik</div>
       <div class="profile-bio"><span class="g">🎯 Target: Vehicle Dynamics Engineer</span><br>Vehicle Systems · Validation · Integration<br>Chief Design Engineer @ Team Daedalus Racing<br>🎓 Netaji Subhas University of Technology, Delhi<br><span class="g">🏆 AIR 2 Overall · ATVC 2026</span> · Delhi, IN</div>
@@ -868,21 +877,6 @@ footer{
 
 <!-- ── MAIN PANE ── -->
 <div id="mainPane" role="tabpanel" aria-labelledby="tabMain">
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-stats">
-        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">VEHICLE DEVELOPMENT PROGRAMMES</div></div>
-        <div><div class="hero-stat-num">15</div><div class="hero-stat-label">EVs DEPLOYED</div></div>
-        <div><div class="hero-stat-num">AIR 2</div><div class="hero-stat-label">ATVC 2026</div></div>
-        <div><div class="hero-stat-num">300<span style="font-size:28px">+hrs</span></div><div class="hero-stat-label">WORKSHOP FABRICATION</div></div>
-      </div>
-    </div>
-  </div>
-</section>
 <div class="accent-bar"></div>
 
 <!-- ── ABOUT ── -->
@@ -1775,6 +1769,65 @@ footer{
 </section>
 
 
+<!-- ── ACKNOWLEDGEMENTS ── -->
+<section id="acknowledgements">
+  <div class="section-label">// 06 — MENTORS</div>
+  <h2 class="section-title" style="margin-bottom:40px">MENTORS</h2>
+  <div class="ack-grid">
+
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/kunal-samaniya-21429024a/','_blank','noopener,noreferrer')">
+      <div class="ack-avatar"><div class="ack-avatar-inner">KS</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Kunal Samaniya</div>
+        <div class="ack-role">Mechanical Design Engineer · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
+    </div>
+
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/aryanmishra/','_blank','noopener,noreferrer')">
+      <div class="ack-avatar"><div class="ack-avatar-inner">AM</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Aryan Mishra</div>
+        <div class="ack-role">R&amp;D Engineer (Multi Body Dynamics) · <span class="ack-company-line">OLA ELECTRIC</span></div>
+        <p class="ack-desc">Mentor in vehicle dynamics and simulation discussions — helped shape my understanding of industry R&amp;D workflows.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/aryanmishra/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
+    </div>
+
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/ananthu-krishna-4a7175228/','_blank','noopener,noreferrer')">
+      <div class="ack-avatar"><div class="ack-avatar-inner">AK</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Ananthu Krishna</div>
+        <div class="ack-role">Battery Thermal Management · <span class="ack-company-line">MARUTI SUZUKI</span></div>
+        <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
+    </div>
+
+    <div class="ack-card">
+      <div class="ack-avatar"><div class="ack-avatar-inner">DT</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Deepak Thakur</div>
+        <div class="ack-role">Vehicle Testing · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
+      </div>
+    </div>
+
+    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/anurag-yadav-35693a267/','_blank','noopener,noreferrer')">
+      <div class="ack-avatar"><div class="ack-avatar-inner">AY</div></div>
+      <div class="ack-main">
+        <div class="ack-name">Anurag Yadav</div>
+        <div class="ack-role">Design Engineer, EV Motor R&amp;D · <span class="ack-company-line">EULER MOTORS</span></div>
+        <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ── AWARDS & ACHIEVEMENTS (Instagram profile grid) ── -->
 <style>
 .awards-section{padding:100px 6%;background:var(--bg)}
@@ -1817,7 +1870,7 @@ footer{
 </style>
 
 <section class="awards-section">
-  <div class="section-label">// 06 — RECOGNITION</div>
+  <div class="section-label">// 08 — RECOGNITION</div>
   <h2 class="section-title">Awards <span>&</span> Achievements.</h2>
   <p class="awards-intro">Early-career recognition that validates the direction I'm heading — proof that rigorous engineering thinking gets noticed.</p>
   <div class="aw-grid" id="awGrid">
@@ -1878,65 +1931,6 @@ footer{
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open')&&!document.getElementById('cert-modal').classList.contains('open'))close();});
 })();
 </script>
-
-
-<!-- ── ACKNOWLEDGEMENTS ── -->
-<section id="acknowledgements">
-  <div class="section-label">// 08 — MENTORS</div>
-  <h2 class="section-title" style="margin-bottom:40px">MENTORS</h2>
-  <div class="ack-grid">
-
-    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/kunal-samaniya-21429024a/','_blank','noopener,noreferrer')">
-      <div class="ack-avatar"><div class="ack-avatar-inner">KS</div></div>
-      <div class="ack-main">
-        <div class="ack-name">Kunal Samaniya</div>
-        <div class="ack-role">Mechanical Design Engineer · <span class="ack-company-line">EULER MOTORS</span></div>
-        <p class="ack-desc">Mentor in vehicle development and vehicle dynamics, with guidance in suspension tuning, systems thinking, and engineering problem-solving.</p>
-      </div>
-      <a href="https://www.linkedin.com/in/kunal-samaniya-21429024a/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
-    </div>
-
-    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/aryanmishra/','_blank','noopener,noreferrer')">
-      <div class="ack-avatar"><div class="ack-avatar-inner">AM</div></div>
-      <div class="ack-main">
-        <div class="ack-name">Aryan Mishra</div>
-        <div class="ack-role">R&amp;D Engineer (Multi Body Dynamics) · <span class="ack-company-line">OLA ELECTRIC</span></div>
-        <p class="ack-desc">Mentor in vehicle dynamics and simulation discussions — helped shape my understanding of industry R&amp;D workflows.</p>
-      </div>
-      <a href="https://www.linkedin.com/in/aryanmishra/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
-    </div>
-
-    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/ananthu-krishna-4a7175228/','_blank','noopener,noreferrer')">
-      <div class="ack-avatar"><div class="ack-avatar-inner">AK</div></div>
-      <div class="ack-main">
-        <div class="ack-name">Ananthu Krishna</div>
-        <div class="ack-role">Battery Thermal Management · <span class="ack-company-line">MARUTI SUZUKI</span></div>
-        <p class="ack-desc">Mentor in suspension engineering and EV industry — shaped how I think about vehicle dynamics and the current electric mobility landscape.</p>
-      </div>
-      <a href="https://www.linkedin.com/in/ananthu-krishna-4a7175228/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
-    </div>
-
-    <div class="ack-card">
-      <div class="ack-avatar"><div class="ack-avatar-inner">DT</div></div>
-      <div class="ack-main">
-        <div class="ack-name">Deepak Thakur</div>
-        <div class="ack-role">Vehicle Testing · <span class="ack-company-line">EULER MOTORS</span></div>
-        <p class="ack-desc">First CAD mentor; helped build strong fundamentals in mechanical design and engineering workflow.</p>
-      </div>
-    </div>
-
-    <div class="ack-card ack-clickable" onclick="window.open('https://www.linkedin.com/in/anurag-yadav-35693a267/','_blank','noopener,noreferrer')">
-      <div class="ack-avatar"><div class="ack-avatar-inner">AY</div></div>
-      <div class="ack-main">
-        <div class="ack-name">Anurag Yadav</div>
-        <div class="ack-role">Design Engineer, EV Motor R&amp;D · <span class="ack-company-line">EULER MOTORS</span></div>
-        <p class="ack-desc">Mentor in CAD modeling and CAE simulations — shaped my FEA workflow and simulation-driven design approach from the ground up.</p>
-      </div>
-      <a href="https://www.linkedin.com/in/anurag-yadav-35693a267/" target="_blank" rel="noopener noreferrer" class="ack-linkedin" onclick="event.stopPropagation()">View Profile</a>
-    </div>
-
-  </div>
-</section>
 
 <!-- ── CONTACT ── -->
 <section id="contact">
