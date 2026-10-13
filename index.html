@@ -851,6 +851,7 @@ footer{
   <div class="highlights-row" id="highlightsRow"></div>
   <div class="rl-tabs" role="tablist">
     <button class="rl-tab active" id="tabMain" type="button" role="tab" aria-selected="true" aria-controls="mainPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>MAIN</span></button>
+    <button class="rl-tab" id="tabStudies" type="button" role="tab" aria-selected="false" aria-controls="studiesPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6"/></svg>Studies</button>
     <button class="rl-tab" id="tabReels" type="button" role="tab" aria-selected="false" aria-controls="reelsPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="M10.5 13l4 2.5-4 2.5z"/></svg><span>REELS</span></button>
     <button class="rl-tab" id="tabLinkedin" type="button" role="tab" aria-selected="false" aria-controls="linkedinPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg><span>LINKEDIN</span></button>
   </div>
@@ -1961,6 +1962,7 @@ footer{
 </div>
 
 <!-- ── REELS PANE ── -->
+<div id="studiesPane" role="tabpanel" aria-labelledby="tabStudies"></div>
 <div id="reelsPane" role="tabpanel" aria-labelledby="tabReels">
   <div class="rl-wrap"><div class="rl-grid" id="reelGrid"></div></div>
 </div>
@@ -2862,6 +2864,9 @@ storyReplyForm.addEventListener('submit', async e=>{
 #mainPane.is-off{display:none}
 #tabLinkedin,#tabLinkedin.active{color:#0A66C2}
 #tabLinkedin.active{border-top-color:#0A66C2}
+#studiesPane{display:none}
+#studiesPane.is-on{display:block}
+@media(max-width:600px){#tabStudies{display:none}}
 #linkedinPane{display:none}
 #linkedinPane.is-on{display:block}
 #linkedinPane .linkedin-section{padding:48px 6% 80px}
@@ -2892,19 +2897,28 @@ storyReplyForm.addEventListener('submit', async e=>{
 </style>
 <script>
 (function(){
-  var mainP=document.getElementById('mainPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
+  var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),ts=document.getElementById('tabStudies'),csec=document.getElementById('casestudies'),csAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       tm=document.getElementById('tabMain'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),bar=document.querySelector('.rl-tabs');
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',m=!r&&!l;
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);
-    tm.classList.toggle('active',m);tr.classList.toggle('active',r);tl.classList.toggle('active',l);
-    tm.setAttribute('aria-selected',String(m));tr.setAttribute('aria-selected',String(r));tl.setAttribute('aria-selected',String(l));
-    try{history.replaceState(null,'',r?'#reels':l?'#linkedin':location.pathname+location.search)}catch(e){}
-    if(!keepScroll){var ref=r?reelsP:l?liP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
+    var r=name==='reels',l=name==='linkedin',s=name==='studies'&&dq.matches,m=!r&&!l&&!s;
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);
+    tm.classList.toggle('active',m);tr.classList.toggle('active',r);tl.classList.toggle('active',l);ts.classList.toggle('active',s);
+    tm.setAttribute('aria-selected',String(m));tr.setAttribute('aria-selected',String(r));tl.setAttribute('aria-selected',String(l));ts.setAttribute('aria-selected',String(s));
+    try{history.replaceState(null,'',r?'#reels':l?'#linkedin':s?'#studies':location.pathname+location.search)}catch(e){}
+    if(!keepScroll){var ref=r?reelsP:l?liP:s?studiesP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
   tm.addEventListener('click',function(){show('main')});
   tr.addEventListener('click',function(){show('reels')});
   tl.addEventListener('click',function(){show('linkedin')});
+  ts.addEventListener('click',function(){show('studies')});
+  /* desktop: case studies live in their own Studies tab; phones keep them inside Main */
+  csec.parentNode.insertBefore(csAnchor,csec);
+  function place(){
+    if(dq.matches){if(csec.parentNode!==studiesP)studiesP.appendChild(csec);}
+    else if(csec.parentNode===studiesP){csAnchor.parentNode.insertBefore(csec,csAnchor.nextSibling);if(studiesP.classList.contains('is-on'))show('main',true);}
+  }
+  place();
+  if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
@@ -2912,9 +2926,13 @@ storyReplyForm.addEventListener('submit', async e=>{
     if(t&&mainP.contains(t)&&mainP.classList.contains('is-off')){
       e.preventDefault();e.stopPropagation();show('main',true);
       setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60);
+    }else if(t&&studiesP.contains(t)&&!studiesP.classList.contains('is-on')){
+      e.preventDefault();e.stopPropagation();show('studies',true);
+      setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60);
     }
   },true);
   if(location.hash==='#reels')show('reels',true);
+  else if((location.hash==='#studies'||location.hash==='#casestudies')&&dq.matches)show('studies',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
 </script>
