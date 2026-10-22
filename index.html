@@ -569,6 +569,62 @@ footer{
 }
 </style>
 
+<!-- ── MOBILE LOGO SPLASH (phones ≤768px only; desktop keeps the video intro) ── -->
+<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" type="image/webp" media="(max-width: 768px)">
+<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" type="image/webp" media="(max-width: 768px)">
+<style id="mobile-splash-styles">
+#mobile-splash{display:none}
+@media(max-width:768px){
+  #mobile-splash{
+    display:flex;position:fixed;inset:0;z-index:100000;
+    align-items:center;justify-content:center;
+    background:var(--bg,#0A0C10);
+    transition:opacity .5s ease,visibility .5s ease;
+    /* CSS-only safety net: self-hides after 10s even if JS fails */
+    animation:msSafety .01s 10s forwards;
+  }
+  #mobile-splash.ms-hide{opacity:0;visibility:hidden}
+
+  .ms-logo{position:relative;width:68.4vw;max-width:324px;aspect-ratio:900/426;transform-origin:50% 85%}
+  .ms-logo img{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+  /* Everything starts hidden. Nothing animates until JS adds .ms-go
+     (after both images have loaded), so slow networks never skip the show. */
+  .ms-wave{
+    filter:drop-shadow(0 0 5px rgba(255,40,50,.75));
+    /* hard straight edge, hidden until the curtain moves (negative insets keep the glow from being clipped) */
+    -webkit-clip-path:inset(-20px 101% -20px -20px);
+            clip-path:inset(-20px 101% -20px -20px);
+  }
+  .ms-base{
+    -webkit-clip-path:inset(-20px 101% -20px -20px);
+            clip-path:inset(-20px 101% -20px -20px);
+  }
+
+  /* 1) wave revealed left→right like a straight curtain   2) base appears instantly when the wave ends   3) tiny jounce settle */
+  #mobile-splash.ms-go .ms-wave{animation:msWave 1.4s cubic-bezier(.5,0,.3,1) .15s forwards}
+  #mobile-splash.ms-go .ms-base{animation:msBase .01s linear 1.55s forwards}
+  #mobile-splash.ms-go .ms-logo{animation:msSettle .7s ease-out 1.6s both}
+
+  @keyframes msWave{
+    from{-webkit-clip-path:inset(-20px 101% -20px -20px);clip-path:inset(-20px 101% -20px -20px)}
+    to  {-webkit-clip-path:inset(-20px -20px -20px -20px);clip-path:inset(-20px -20px -20px -20px)}
+  }
+  @keyframes msBase{
+    from{-webkit-clip-path:inset(-20px 101% -20px -20px);clip-path:inset(-20px 101% -20px -20px)}
+    to  {-webkit-clip-path:inset(-20px -20px -20px -20px);clip-path:inset(-20px -20px -20px -20px)}
+  }
+  @keyframes msSettle{
+    0%{transform:scale(1,1)} 35%{transform:scale(1.02,.96)} 70%{transform:scale(.995,1.015)} 100%{transform:scale(1,1)}
+  }
+  @keyframes msSafety{to{opacity:0;visibility:hidden}}
+}
+@media(prefers-reduced-motion:reduce){
+  /* the curtain wipe is gentle, so it still plays; only the bounce is turned off */
+  .ms-logo{animation:none!important}
+}
+</style>
+
 <!-- ── INTRO ANIMATION (preload hints — missing files fail silently) ── -->
 <!-- Landscape set: used on screens ≥769px wide -->
 <link rel="preload" as="video" href="vid1.mp4" type="video/mp4" media="(min-width: 769px)">
@@ -791,6 +847,48 @@ footer{
 </style>
 </head>
 <body>
+
+<!-- ── MOBILE LOGO SPLASH ── -->
+<div id="mobile-splash" aria-hidden="true">
+  <div class="ms-logo">
+    <img class="ms-base" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" width="900" height="426" alt="Jounce Junkie" decoding="async" fetchpriority="high">
+    <img class="ms-wave" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" width="900" height="426" alt="" decoding="async">
+  </div>
+</div>
+<script>
+(function(){
+  var sp=document.getElementById('mobile-splash');
+  if(!sp) return;
+  var seen=false;
+  try{ seen=sessionStorage.getItem('jjSplashSeen')==='1'; }catch(e){}
+  if(!window.matchMedia('(max-width: 768px)').matches || seen){ sp.remove(); return; }
+  document.documentElement.style.overflow='hidden';
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SHOW_MS = 3000;   // how long the finished animation stays on screen
+  var started=false;
+
+  function hide(){
+    sp.classList.add('ms-hide');
+    document.documentElement.style.overflow='';
+    try{ sessionStorage.setItem('jjSplashSeen','1'); }catch(e){}
+    setTimeout(function(){ sp.remove(); },600);
+  }
+  function go(){
+    if(started) return; started=true;
+    sp.classList.add('ms-go');          // starts the CSS animation only now
+    setTimeout(hide,SHOW_MS);
+  }
+  function ready(img){
+    return new Promise(function(res){
+      if(img.complete && img.naturalWidth) return res();
+      img.addEventListener('load',res); img.addEventListener('error',res);
+    });
+  }
+  Promise.all([].map.call(sp.querySelectorAll('img'),ready)).then(go);
+  setTimeout(go,4000);                  // fallback if an image is very slow
+})();
+</script>
 
 <!-- ── INTRO ANIMATION ── -->
 <!-- Landscape clips (laptop/desktop, ≥769px):  vid1.mp4 … vid6.mp4
