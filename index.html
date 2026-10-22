@@ -871,7 +871,7 @@ footer{
   <div class="highlights-row" id="highlightsRow"></div>
   <div class="rl-tabs" role="tablist">
     <button class="rl-tab active" id="tabMain" type="button" role="tab" aria-selected="true" aria-controls="mainPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Main</span></button>
-    <button class="rl-tab" id="tabStudies" type="button" role="tab" aria-selected="false" aria-controls="studiesPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6"/></svg><span>Investigations</span></button>
+    <button class="rl-tab" id="tabStudies" type="button" role="tab" aria-selected="false" aria-controls="studiesPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5.7"/><path d="M18 12V7a2 2 0 0 0-2-2h-2"/><rect x="8" y="3" width="6" height="4" rx="2"/><path d="M8 11h4M8 15h3"/><circle cx="16.5" cy="17.5" r="2.5"/><path d="m18.5 19.5 2.5 2.5"/></svg><span>Investigations</span></button>
     <button class="rl-tab" id="tabReels" type="button" role="tab" aria-selected="false" aria-controls="reelsPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="igGrad" gradientUnits="userSpaceOnUse" x1="3" y1="21" x2="21" y2="3"><stop offset="0" stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="M10.5 13l4 2.5-4 2.5z"/></svg><span>Clips</span></button>
     <button class="rl-tab" id="tabLinkedin" type="button" role="tab" aria-selected="false" aria-controls="linkedinPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg><span>Decisions</span></button>
     <button class="rl-tab" id="tabAbout" type="button" role="tab" aria-selected="false" aria-controls="aboutPane"><span class="tab-av-wrap"><span class="tab-av"><span class="tab-av-fb">AM</span><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'"></span></span><span>About</span></button>
@@ -2002,9 +2002,10 @@ footer{
 .li-pills{padding:8px 18px 0}
 .li-pills span{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:#1fbf8f;color:#000;font-size:14px;font-weight:600}
 .li-wrap{position:relative}
-.li-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:12px 18px 14px;scroll-padding-left:18px}
+.li-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:12px 18px 26px;scroll-padding-left:18px}
 .li-track::-webkit-scrollbar{display:none}
-.li-post{flex:none;width:280px;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card)}
+.li-post{flex:none;width:280px;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+@media(hover:hover) and (pointer:fine){.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18)}}
 .li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
 .li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
 .li-who{min-width:0;flex:1}
@@ -2026,10 +2027,12 @@ footer{
 .li-impr span{display:inline-flex;align-items:center;gap:8px}
 .li-impr b{font-weight:600;color:var(--li-blue)}
 .li-next{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:#000;color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 1px #38434f}
-.li-next:focus-visible{outline:2px solid var(--li-blue)}
+.li-prev{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:#000;color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 1px #38434f;z-index:2}
+.li-next:focus-visible,.li-prev:focus-visible{outline:2px solid var(--li-blue)}
+.li-next.is-off,.li-prev.is-off{opacity:.35;pointer-events:none}
 .li-all{display:block;width:100%;background:none;border:0;border-top:1px solid var(--li-line);font-family:inherit;cursor:pointer;text-align:center;padding:10px;border-top:1px solid var(--li-line);font-size:14px;font-weight:600;color:var(--li-text);text-decoration:none}
 .li-feed.is-all .li-track{display:grid;grid-template-columns:repeat(2,280px);justify-content:center;overflow:visible;scroll-snap-type:none}
-.li-feed.is-all .li-next{display:none}
+.li-feed.is-all .li-next,.li-feed.is-all .li-prev{display:none}
 .li-all:hover{background:rgba(255,255,255,.06)}
 .li-post:hover .li-name{text-decoration:underline}
 @media(max-width:700px){
@@ -2037,18 +2040,18 @@ footer{
   .li-text{font-size:14px;line-height:20px;min-height:56px}
   .li-track{flex-direction:column;padding:16px;overflow:visible}
   .li-post{width:auto}
-  .li-next,.li-all{display:none}
+  .li-next,.li-prev,.li-all{display:none}
   .li-feed.is-all .li-track{display:flex}
 }
 </style>
 
 <section id="linkedin-activity" class="linkedin-section">
-  <div class="section-label">// 05 — LINKEDIN ACTIVITY</div>
+  <div class="section-label">// 05 — DECISIONS</div>
   <h2 class="section-title" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
     <svg viewBox="0 0 24 24" width="0.85em" height="0.85em" fill="#0A66C2" style="flex-shrink:0" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-    Short <span>Studies</span> &amp; Decisions.
+    Short posts. <span>Real decisions.</span>
   </h2>
-  <p class="linkedin-intro">Smaller engineering breakdowns and decisions posted as they happened — not full case studies, but the same <span class="lb-hl-yellow">first-principles thinking</span> in shorter form. <span class="lb-hl-yellow">Tap</span> a post to read the <span class="lb-hl-yellow">full thing on LinkedIn</span>.</p>
+  <p class="linkedin-intro">Quick breakdowns of engineering calls. Tap a card to read the <span class="lb-hl-yellow">full post</span>.</p>
 
   <div class="li-feed">
     <div class="li-top">
@@ -2116,12 +2119,18 @@ footer{
     
         <!-- Duplicate an <a class="li-post"> block above for each new post -->
       </div>
+      <button class="li-prev is-off" type="button" id="liPrev" aria-label="Previous posts">&#10094;</button>
       <button class="li-next" type="button" id="liNext" aria-label="Next posts">&#10095;</button>
     </div>
     <button class="li-all" type="button" id="liAll" aria-expanded="false">Show all &rarr;</button>
   </div>
   </section>
-<script>(function(){var t=document.getElementById("liTrack"),n=document.getElementById("liNext"),a=document.getElementById("liAll"),f=t&&t.closest(".li-feed");if(!t||!n)return;if(a)a.addEventListener("click",function(){var on=f.classList.toggle("is-all");a.setAttribute("aria-expanded",on);a.innerHTML=on?"Show less &uarr;":"Show all &rarr;";if(on)t.scrollLeft=0;else f.scrollIntoView({block:"nearest"})});n.addEventListener("click",function(){var atEnd=t.scrollLeft+t.clientWidth>=t.scrollWidth-4;t.scrollBy({left:atEnd?-t.scrollWidth:292,behavior:"smooth"})})})();</script>
+<script>(function(){var t=document.getElementById("liTrack"),n=document.getElementById("liNext"),p=document.getElementById("liPrev"),a=document.getElementById("liAll"),f=t&&t.closest(".li-feed");if(!t||!n)return;
+function upd(){if(!t.clientWidth)return;var max=t.scrollWidth-t.clientWidth;if(p)p.classList.toggle("is-off",t.scrollLeft<=4);n.classList.toggle("is-off",t.scrollLeft>=max-4)}
+if(a)a.addEventListener("click",function(){var on=f.classList.toggle("is-all");a.setAttribute("aria-expanded",on);a.innerHTML=on?"Show less &uarr;":"Show all &rarr;";if(on)t.scrollLeft=0;else f.scrollIntoView({block:"nearest"});upd()});
+n.addEventListener("click",function(){t.scrollBy({left:292,behavior:"smooth"})});
+if(p)p.addEventListener("click",function(){t.scrollBy({left:-292,behavior:"smooth"})});
+t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize",upd);window.addEventListener("load",upd);if(window.ResizeObserver)new ResizeObserver(upd).observe(t);upd()})();</script>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -2902,7 +2911,16 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
-  if(location.hash==='#reels')show('reels',true);
+  /* phones always open on Main (no restored tab, hash or scroll position); desktop still honours tab links */
+  if(!dq.matches){
+    try{history.scrollRestoration='manual'}catch(e){}
+    var home=function(){show('main',true);window.scrollTo(0,0)};
+    home();
+    /* re-assert after load (late layout / hash jumps) and when the page is restored from the back-forward cache */
+    window.addEventListener('load',function(){window.scrollTo(0,0)});
+    window.addEventListener('pageshow',function(e){if(e.persisted&&!dq.matches)home()});
+  }
+  else if(location.hash==='#reels')show('reels',true);
   else if(location.hash==='#studies'||location.hash==='#casestudies')show('studies',true);
   else if(location.hash==='#about')show('about',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
