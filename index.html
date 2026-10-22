@@ -577,13 +577,6 @@ footer{
 <link rel="preload" as="video" href="vid4.mp4" type="video/mp4" media="(min-width: 769px)">
 <link rel="preload" as="video" href="vid5.mp4" type="video/mp4" media="(min-width: 769px)">
 <link rel="preload" as="video" href="vid6.mp4" type="video/mp4" media="(min-width: 769px)">
-<!-- Portrait/mobile set: used on screens ≤768px wide -->
-<link rel="preload" as="video" href="vid1-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-<link rel="preload" as="video" href="vid2-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-<link rel="preload" as="video" href="vid3-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-<link rel="preload" as="video" href="vid4-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-<link rel="preload" as="video" href="vid5-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
-<link rel="preload" as="video" href="vid6-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
 
 <style id="intro-overlay-styles">
 #intro-overlay{
@@ -679,6 +672,36 @@ footer{
 
 @media(max-width:600px){
   #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
+}
+
+/* Mobile logo intro (≤768px) — replaces the video montage on phones */
+#stage-logo{display:none}
+#logo-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000000;opacity:0;transition:opacity .35s ease}
+#logo-video.on{opacity:1}
+#logo-slot{width:min(62vw,260px)}
+#logo-slot svg{width:100%;height:auto;display:block;overflow:visible}
+#logo-slot .lg-shape{stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1;fill-opacity:0;
+  }
+#stage-logo.lg-fallback .lg-shape{animation:lgDraw 1.5s .25s cubic-bezier(.65,0,.35,1) forwards,lgFill .6s 1.5s ease forwards}
+#stage-logo.lg-fallback .lg-shape.has-fill{animation:lgDraw 1.5s .25s cubic-bezier(.65,0,.35,1) forwards,lgFill .6s 1.5s ease forwards,lgStrokeOut .5s 1.7s ease forwards}
+@keyframes lgDraw{to{stroke-dashoffset:0}}
+@keyframes lgFill{to{fill-opacity:1}}
+@keyframes lgStrokeOut{to{stroke-opacity:0}}
+#stage-logo .lg-name{margin-top:28px;font-family:var(--fd);font-weight:700;letter-spacing:6px;font-size:clamp(20px,6vw,28px);color:var(--text);
+  opacity:0;transform:translateY(10px)}
+#stage-logo.lg-fallback .lg-name{animation:introFadeUp .8s 1.7s ease forwards}
+#stage-logo .lg-sub{margin-top:10px;font-family:var(--fm);font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  opacity:0;transform:translateY(8px)}
+#stage-logo.lg-fallback .lg-sub{animation:introFadeUp .8s 2s ease forwards}
+@media(max-width:768px){
+  #stage-name,#stage-montage,#stage-outro{display:none}
+  #stage-logo{display:flex;background:#000000}
+  #intro-overlay{background:#000000}
+}
+@media(prefers-reduced-motion:reduce){
+  #logo-slot .lg-shape{animation:none;stroke-dashoffset:0;fill-opacity:1}
+  #stage-logo .lg-name,#stage-logo .lg-sub{animation:none;opacity:1;transform:none}
 }
 </style>
 
@@ -807,6 +830,19 @@ footer{
   <div class="intro-stage is-visible" id="stage-name">
     <h1 class="intro-name">ARPIT MALIK</h1>
     <p class="intro-subtitle">Vehicle Development Engineer</p>
+  </div>
+
+  <!-- Mobile-only logo stage (≤768px). Replace the placeholder <svg> inside #logo-slot with your own SVG. -->
+  <div class="intro-stage" id="stage-logo">
+    <video id="logo-video" muted playsinline autoplay preload="auto"></video>
+    <div id="logo-slot">
+      <svg viewBox="0 0 132 100" fill="none" aria-label="Arpit Malik">
+        <path d="M14 84 L38 16 L62 84 M23 60 H53"/>
+        <path d="M74 84 V16 L98 58 L122 16 V84"/>
+      </svg>
+    </div>
+    <p class="lg-name">ARPIT MALIK</p>
+    <p class="lg-sub">Vehicle Development Engineer</p>
   </div>
 
   <div class="intro-stage" id="stage-montage">
@@ -2189,7 +2225,7 @@ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize"
 
   // Try the device's preferred orientation first; if none of those files exist,
   // fall back to whichever set was actually provided rather than playing nothing.
-  var detectVideos = detectSet(PRIMARY).then(function(found){
+  var detectVideos = isMobile ? Promise.resolve([]) : detectSet(PRIMARY).then(function(found){
     if(found.length) return found;
     return detectSet(FALLBACK);
   });
@@ -2261,6 +2297,43 @@ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize"
         if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
       });
     }, 650);
+  }
+
+
+  // ── Mobile: logo video intro (SVG animation is the fallback if the video can't play) ──
+  if(isMobile){
+    var LOGO_VIDEO = 'logo-intro.mp4';   // <- file name or full URL of your logo animation
+    var stage = document.getElementById('stage-logo');
+    var lv = document.getElementById('logo-video');
+    var started = false;
+
+    function startSvgFallback(){
+      if(started) return; started = true;
+      var shapes = overlay.querySelectorAll('#logo-slot svg path, #logo-slot svg circle, #logo-slot svg rect, #logo-slot svg ellipse, #logo-slot svg line, #logo-slot svg polyline, #logo-slot svg polygon');
+      for(var si=0; si<shapes.length; si++){
+        var sh = shapes[si];
+        sh.setAttribute('pathLength','1');
+        sh.classList.add('lg-shape');
+        var f = sh.getAttribute('fill');
+        if(f && f !== 'none') sh.classList.add('has-fill');
+      }
+      stage.classList.add('lg-fallback');
+      lv.classList.remove('on');
+      clearAllTimers();
+      setTO(finishIntro, 3600);
+    }
+
+    showStage('stage-logo');
+    overlay.style.background = '#000000';
+    document.getElementById('skip-intro-btn').addEventListener('click', finishIntro);
+
+    lv.addEventListener('playing', function(){ started = true; lv.classList.add('on'); clearAllTimers(); setTO(finishIntro, 20000); }, { once:true });
+    lv.addEventListener('ended', function(){ setTO(finishIntro, 250); });
+    lv.addEventListener('error', startSvgFallback);
+    lv.src = LOGO_VIDEO;
+    var pp = lv.play(); if(pp && pp.catch) pp.catch(function(){});
+    setTO(startSvgFallback, 3000);   // video didn't start within 3s → SVG fallback
+    return;
   }
 
   var skipBtn = document.getElementById('skip-intro-btn');
