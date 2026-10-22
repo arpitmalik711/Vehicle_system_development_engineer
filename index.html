@@ -2926,6 +2926,18 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   body{padding-bottom:84px}
 }
 </style>
+<style id="reel-grid-desktop">
+@media(min-width:901px){
+  .rl-wrap{max-width:1400px}
+  .rl-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1px}
+  .rl-tile{aspect-ratio:3/4}
+  .rl-tile::after{background:none;transition:background .15s}
+  .rl-tile:has(.rl-cap)::after{background:linear-gradient(to top,rgba(0,0,0,.6),transparent 40%)}
+  .rl-tile:hover video{filter:brightness(.8)}
+  .rl-play{top:10px;right:10px;width:26px;height:26px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:0;text-shadow:none}
+  .rl-play::before{content:'';display:block;margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0A0C10}
+}
+</style>
 <script>
 (function(){
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
