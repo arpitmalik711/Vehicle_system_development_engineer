@@ -338,6 +338,15 @@ section{padding:100px 6%}
   transition:border-color .2s,color .2s;cursor:default;
 }
 .skill-tag:hover{border-color:var(--gold);color:var(--gold)}
+.sw-block{margin-top:56px}
+.sw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.sw-item{background:var(--surface);padding:20px 22px;transition:background .2s}
+.sw-item:hover{background:var(--surface2)}
+.sw-cat{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
+.sw-name{font-family:var(--fd);font-size:18px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.sw-use{font-size:12px;color:var(--text-sec);line-height:1.5}
+@media(max-width:900px){.sw-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.sw-block{margin-top:40px}.sw-grid{grid-template-columns:1fr}.sw-item{padding:16px 18px}}
 
 /* ── PROJECTS ── */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:var(--border)}
@@ -838,12 +847,6 @@ footer{
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">SYS<span>.</span>ENG</div>
-  <div class="nav-links">
-    <a href="#about">ABOUT</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#casestudies">CASE STUDIES</a>
-    <a href="#contact">CONTACT</a>
-  </div>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><strong>LET'S CONNECT</strong></button>
 </nav>
 
@@ -1516,10 +1519,10 @@ footer{
         <p class="proj-blurb">Swappable battery pack R&D at GridXenergy — focusing on mechanical design, structural packaging, and thermal management for EV energy systems. Working directly with founders on real-world product development in the EV space.</p>
         <div class="proj-tags">
           <span class="proj-tag">BATTERY PACKAGING</span>
-          <span class="proj-tag">THERMAL MANAGEMENT</span>
+          <span class="proj-tag">STATIC STRUCTURAL</span>
           <span class="proj-tag">SWAPPABLE PACKS</span>
           <span class="proj-tag">EV SYSTEMS</span>
-          <span class="proj-tag">CURRENT</span>
+          <span class="proj-tag">MODAL ANALYSIS</span>
         </div>
         <span class="proj-cta">Open Project Site →</span>
       </div>
@@ -2731,6 +2734,20 @@ storyReplyForm.addEventListener('submit', async e=>{
 #reel-up{top:calc(50% - 54px)}#reel-down{top:calc(50% + 10px)}
 @media(min-width:900px){#reel-up,#reel-down{display:block}.reel-box{height:calc(100% - 32px);border-radius:12px}}
 @media(max-width:600px){.rl-cap{font-size:10.5px}.rl-tile{aspect-ratio:9/15}}
+/* swipe-up hint: finger gesture + next clip peek (touch devices, once per visit) */
+#reel-peek{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(440px,100%);height:calc(42px + env(safe-area-inset-bottom,0px));z-index:1;background:#2B3138;border-top:1px solid #3A424C;border-radius:16px 16px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:12px;box-sizing:border-box;color:#d5d9de;font-family:var(--fb);font-size:11px;pointer-events:none}
+#reel-hint{position:absolute;inset:0;z-index:6;pointer-events:none;font-family:var(--fb)}
+#reel-hint .rh-track{position:absolute;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));width:2px;height:130px;margin-left:-1px;border-radius:2px;background:linear-gradient(to top,rgba(255,255,255,0),rgba(255,255,255,.4));opacity:0}
+#reel-hint .rh-fg{position:absolute;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));width:34px;height:34px;margin-left:-12px;opacity:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.55))}
+#reel-hint .rh-txt{position:absolute;left:0;right:0;bottom:calc(56px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;font-weight:500;color:#fff;opacity:0;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+#reel-hint.go .rh-track{animation:rh-tr 3.8s ease both}
+#reel-hint.go .rh-fg{animation:rh-fg 3.8s cubic-bezier(.4,0,.2,1) both}
+#reel-hint.go .rh-txt{animation:rh-tx 3.8s ease both}
+#reel-hint.static .rh-txt{animation:rh-st 2.4s ease both}
+@keyframes rh-fg{0%,6%{opacity:0;transform:translateY(8px)}14%{opacity:1;transform:translateY(0)}46%{opacity:1;transform:translateY(-130px)}58%{opacity:0;transform:translateY(-142px)}100%{opacity:0;transform:translateY(-142px)}}
+@keyframes rh-tr{0%,8%{opacity:0}16%,46%{opacity:1}58%,100%{opacity:0}}
+@keyframes rh-tx{0%,8%{opacity:0;transform:translateY(6px)}20%,60%{opacity:1;transform:translateY(0)}76%,100%{opacity:0;transform:translateY(4px)}}
+@keyframes rh-st{0%{opacity:0}20%,75%{opacity:1}100%{opacity:0}}
 </style>
 <script>
 (function(){
@@ -2779,11 +2796,42 @@ storyReplyForm.addEventListener('submit', async e=>{
     })},{root:sc,threshold:[0,.6]});
     sc.querySelectorAll('.reel-box').forEach(function(b){io.observe(b)});
   }
+  /* ── swipe-up hint (finger gesture + next-clip peek): touch devices, once per visit ── */
+  var hintEl=null,peekEl=null,hintTimer=0,hintEnd=0,hintAnim=null,hintSeen=false,hintEvts=['touchstart','pointerdown','wheel','scroll'];
+  function dismissHint(){
+    clearTimeout(hintTimer);clearTimeout(hintEnd);
+    hintEvts.forEach(function(t){sc.removeEventListener(t,dismissHint)});
+    if(hintAnim){try{hintAnim.cancel()}catch(e){}hintAnim=null}
+    sc.style.position='';sc.style.zIndex='';
+    if(hintEl){hintEl.remove();hintEl=null}
+    if(peekEl){peekEl.remove();peekEl=null}
+  }
+  function showHint(){
+    hintSeen=true;try{sessionStorage.setItem('reelSwipeHint','1')}catch(e){}
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    hintEl=document.createElement('div');hintEl.id='reel-hint';hintEl.setAttribute('aria-hidden','true');
+    hintEl.innerHTML='<div class="rh-track"></div><svg class="rh-fg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><div class="rh-txt">Swipe up for next</div>';
+    hintEvts.forEach(function(t){sc.addEventListener(t,dismissHint,{passive:true})});
+    if(reduce){hintEl.className='static';ov.appendChild(hintEl);hintEnd=setTimeout(dismissHint,2600);return}
+    peekEl=document.createElement('div');peekEl.id='reel-peek';peekEl.setAttribute('aria-hidden','true');peekEl.textContent='Next clip';
+    ov.appendChild(peekEl);ov.appendChild(hintEl);
+    sc.style.position='relative';sc.style.zIndex='2';
+    hintEl.className='go';
+    if(sc.animate){hintAnim=sc.animate([{transform:'translateY(0)',offset:0},{transform:'translateY(0)',offset:.14},{transform:'translateY(-42px)',offset:.46},{transform:'translateY(0)',offset:.72},{transform:'translateY(0)',offset:1}],{duration:3800,easing:'cubic-bezier(.3,.7,.2,1)'})}
+    hintEnd=setTimeout(dismissHint,3900);
+  }
+  function maybeHint(i){
+    if(hintSeen||!window.matchMedia||!window.matchMedia('(pointer:coarse)').matches||i>=REELS.length-1)return;
+    try{if(sessionStorage.getItem('reelSwipeHint'))return}catch(e){}
+    hintTimer=setTimeout(showHint,700);
+  }
   function open(i){
-    tileVids.forEach(function(v){v.pause()});build();ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    dismissHint();tileVids.forEach(function(v){v.pause()});build();ov.classList.add('open');ov.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
     var t=sc.children[i];if(t){sc.scrollTop=t.offsetTop;}
+    maybeHint(i);
   }
   function close(){
+    dismissHint();
     if(anim){cancelAnimationFrame(anim);anim=null}sc.style.scrollSnapType='';
     ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.style.overflow='';
     if(io){io.disconnect();io=null}
@@ -2824,6 +2872,7 @@ storyReplyForm.addEventListener('submit', async e=>{
 #mainPane.is-off{display:none}
 #tabLinkedin,#tabLinkedin.active{color:#0A66C2}
 #tabLinkedin.active{border-top-color:#0A66C2}
+#tabLinkedin svg{stroke:#0A66C2}
 #studiesPane{display:none}
 #studiesPane.is-on{display:block}
 body.not-main .profile-head,body.not-main .highlights-row{display:none}
@@ -2860,7 +2909,9 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
 @media(min-width:601px){
   .highlights-section .rl-tabs{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);width:auto;max-width:none;margin:0;gap:4px;padding:6px;border:1px solid #2A2F3A;border-radius:999px;background:rgba(10,12,16,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.55);z-index:90}
   .rl-tab{padding:10px 18px;margin-top:0;border-top:0;border-radius:999px;text-transform:uppercase;transition:background .2s,color .2s}
-  .rl-tab:hover{color:var(--text)}
+  .rl-tab:not(.active),#tabLinkedin:not(.active),#tabLinkedin:not(.active):hover{color:rgba(255,255,255,.85)}
+  .rl-tab:not(.active) svg{stroke:#FFFFFF}
+  .rl-tab:not(.active):hover{background:rgba(255,255,255,.08)}
   .rl-tab.active{background:var(--gold);color:#0A0C10}
   #tabReels svg{stroke:url(#igGrad)}
   #tabAbout .tab-av-wrap{position:relative;display:block;width:24px;height:24px}
@@ -2871,6 +2922,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   #tabReels.active svg{stroke:currentColor}
   #tabLinkedin:hover{color:#0A66C2}
   #tabLinkedin.active{background:#0A66C2;color:#fff}
+  #tabLinkedin.active svg{stroke:#fff}
   body{padding-bottom:84px}
 }
 </style>
