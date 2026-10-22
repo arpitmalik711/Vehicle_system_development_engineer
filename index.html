@@ -578,8 +578,6 @@ footer{
 <link rel="preload" as="video" href="vid5.mp4" type="video/mp4" media="(min-width: 769px)">
 <link rel="preload" as="video" href="vid6.mp4" type="video/mp4" media="(min-width: 769px)">
 
-<link rel="preload" as="video" href="https://res.cloudinary.com/fvtkc10l/video/upload/v1792696092/IMG_8422_agdpxx.mp4" type="video/mp4" media="(max-width: 768px)">
-
 <style id="intro-overlay-styles">
 #intro-overlay{
   position:fixed;inset:0;z-index:99999;
@@ -676,15 +674,8 @@ footer{
   #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
 }
 
-/* Mobile intro (≤768px) — single full-screen video on pure black */
-#stage-logo{display:none;padding:0;background:#000000}
-#logo-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000000;opacity:0;transition:opacity .35s ease}
-#logo-video.on{opacity:1}
-@media(max-width:768px){
-  #stage-name,#stage-montage,#stage-outro{display:none}
-  #stage-logo{display:flex}
-  #intro-overlay{background:#000000}
-}
+/* Phones (≤768px): no intro at all — site opens directly */
+@media(max-width:768px){#intro-overlay{display:none!important}}
 </style>
 
 <style>
@@ -814,11 +805,6 @@ footer{
     <p class="intro-subtitle">Vehicle Development Engineer</p>
   </div>
 
-  <!-- Mobile-only intro (≤768px): a single video, no text -->
-  <div class="intro-stage" id="stage-logo">
-    <video id="logo-video" muted playsinline autoplay preload="auto"></video>
-  </div>
-
   <div class="intro-stage" id="stage-montage">
     <div class="video-layer">
       <video id="vidLayerA" autoplay muted playsinline preload="auto"></video>
@@ -842,7 +828,7 @@ footer{
 (function(){
   var overlay = document.getElementById('intro-overlay');
   try{
-    if(sessionStorage.getItem('amIntroPlayed') === '1'){
+    if(window.matchMedia('(max-width: 768px)').matches || sessionStorage.getItem('amIntroPlayed') === '1'){
       overlay.classList.add('intro-hidden');
     } else {
       document.documentElement.style.overflow = 'hidden';
@@ -2158,6 +2144,7 @@ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize"
 (function(){
   var overlay = document.getElementById('intro-overlay');
   if(!overlay || overlay.classList.contains('intro-hidden')) return; // already played this session
+  if(window.matchMedia('(max-width: 768px)').matches) return;          // phones: no intro
 
   var KEYWORDS_DESKTOP = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigations'];
   var KEYWORDS_MOBILE  = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigation'];
@@ -2273,23 +2260,6 @@ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize"
     }, 650);
   }
 
-
-  // ── Mobile: single intro video (no text, no other clips) ──
-  if(isMobile){
-    var LOGO_VIDEO = 'https://res.cloudinary.com/fvtkc10l/video/upload/v1792696092/IMG_8422_agdpxx.mp4';
-    var lv = document.getElementById('logo-video');
-    showStage('stage-logo');
-    overlay.style.background = '#000000';
-    document.getElementById('skip-intro-btn').addEventListener('click', finishIntro);
-
-    lv.addEventListener('playing', function(){ lv.classList.add('on'); clearAllTimers(); setTO(finishIntro, 30000); }, { once:true });
-    lv.addEventListener('ended', function(){ setTO(finishIntro, 250); });
-    lv.addEventListener('error', finishIntro);   // video unavailable → go straight to the site
-    lv.src = LOGO_VIDEO;
-    var pp = lv.play(); if(pp && pp.catch) pp.catch(function(){});
-    setTO(finishIntro, 8000);                    // never started within 8s → skip intro
-    return;
-  }
 
   var skipBtn = document.getElementById('skip-intro-btn');
   if(skipBtn) skipBtn.addEventListener('click', finishIntro);
