@@ -66,15 +66,21 @@ nav{
 }
 .nav-logo{font-family:var(--fm);font-size:13px;font-weight:500;color:var(--gold);letter-spacing:3px}
 .nav-logo span{color:var(--text-dim)}
+/* static logo in the nav: fits inside the existing 64px bar, so no nav dimension changes */
+.nav-logo-img{position:relative;height:40px;aspect-ratio:900/426;flex:none;letter-spacing:0}
+.nav-logo-img img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.nav-logo-img .nl-wave{filter:drop-shadow(0 0 3px rgba(255,40,50,.6))}
 .nav-links{display:flex;gap:32px}
 .nav-links a{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--text-sec);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
 .nav-cta{
-  font-family:var(--fm);font-size:11px;letter-spacing:2px;
-  color:var(--bg);background:var(--gold);border:none;
-  padding:9px 20px;cursor:pointer;transition:background .2s;
+  font-family:var(--fb);font-size:11px;font-weight:700;letter-spacing:2px;
+  color:#fff;background:transparent;border:1px solid #E8232B;border-radius:999px;
+  padding:9px 16px;cursor:pointer;transition:background .2s,border-color .2s;
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
 }
-.nav-cta:hover{background:#F0B030}
+.nav-cta svg{flex:none;display:block}
+.nav-cta:hover{background:rgba(232,35,43,.14);border-color:#FF3A42}
 
 /* ── HERO ── */
 .hero{
@@ -281,7 +287,7 @@ section{padding:100px 6%}
 .section-title span{color:var(--gold)}
 
 /* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-grid{display:grid;grid-template-columns:minmax(0,820px);gap:64px;align-items:start}
 .about-text p{font-size:15px;color:var(--text-sec);line-height:1.8;margin-bottom:20px;font-weight:300}
 .hl{color:var(--gold);font-weight:500}
 .about-highlights{display:flex;flex-direction:column;gap:2px;background:var(--border)}
@@ -570,11 +576,11 @@ footer{
 </style>
 
 <!-- ── MOBILE LOGO SPLASH (phones ≤768px only; desktop keeps the video intro) ── -->
-<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" type="image/webp" media="(max-width: 768px)">
-<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" type="image/webp" media="(max-width: 768px)">
+<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" type="image/webp">
+<link rel="preload" as="image" href="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" type="image/webp">
 <style id="mobile-splash-styles">
 #mobile-splash{display:none}
-@media(max-width:768px){
+@media screen{
   #mobile-splash{
     display:flex;position:fixed;inset:0;z-index:100000;
     align-items:center;justify-content:center;
@@ -619,6 +625,8 @@ footer{
   }
   @keyframes msSafety{to{opacity:0;visibility:hidden}}
 }
+/* desktop: same splash, a bit larger (artwork is 900px wide, so 440px stays sharp) */
+@media(min-width:769px){.ms-logo{width:356px;max-width:356px}}
 @media(prefers-reduced-motion:reduce){
   /* the curtain wipe is gentle, so it still plays; only the bounce is turned off */
   .ms-logo{animation:none!important}
@@ -731,7 +739,7 @@ footer{
 }
 
 /* Phones (≤768px): no intro at all — site opens directly */
-@media(max-width:768px){#intro-overlay{display:none!important}}
+#intro-overlay{display:none!important}
 </style>
 
 <style>
@@ -861,7 +869,7 @@ footer{
   if(!sp) return;
   var seen=false;
   try{ seen=sessionStorage.getItem('jjSplashSeen')==='1'; }catch(e){}
-  if(!window.matchMedia('(max-width: 768px)').matches || seen){ sp.remove(); return; }
+  if(seen){ sp.remove(); return; }
   document.documentElement.style.overflow='hidden';
 
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -926,7 +934,7 @@ footer{
 (function(){
   var overlay = document.getElementById('intro-overlay');
   try{
-    if(window.matchMedia('(max-width: 768px)').matches || sessionStorage.getItem('amIntroPlayed') === '1'){
+    if(true){ /* video intro removed on every screen size; the logo splash replaces it */
       overlay.classList.add('intro-hidden');
     } else {
       document.documentElement.style.overflow = 'hidden';
@@ -940,8 +948,11 @@ footer{
 
 <!-- ── NAV ── -->
 <nav>
-  <div class="nav-logo">SYS<span>.</span>ENG</div>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><strong>LET'S CONNECT</strong></button>
+  <div class="nav-logo nav-logo-img" role="img" aria-label="Jounce Junkie">
+    <img class="nl-base" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" width="900" height="426" alt="" decoding="async">
+    <img class="nl-wave" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" width="900" height="426" alt="" decoding="async">
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><polyline points="0,6 4,6 6,1 9,11 12,3 14,8 16,6 22,6" fill="none" stroke="#E8232B" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>LET'S CONNECT</strong></button>
 </nav>
 
 <!-- ── HIGHLIGHTS (story tabs) ── -->
@@ -970,7 +981,7 @@ footer{
     <button class="rl-tab active" id="tabMain" type="button" role="tab" aria-selected="true" aria-controls="mainPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Main</span></button>
     <button class="rl-tab" id="tabStudies" type="button" role="tab" aria-selected="false" aria-controls="studiesPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5.7"/><path d="M18 12V7a2 2 0 0 0-2-2h-2"/><rect x="8" y="3" width="6" height="4" rx="2"/><path d="M8 11h4M8 15h3"/><circle cx="16.5" cy="17.5" r="2.5"/><path d="m18.5 19.5 2.5 2.5"/></svg><span>Investigations</span></button>
     <button class="rl-tab" id="tabReels" type="button" role="tab" aria-selected="false" aria-controls="reelsPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="igGrad" gradientUnits="userSpaceOnUse" x1="3" y1="21" x2="21" y2="3"><stop offset="0" stop-color="#feda75"/><stop offset=".25" stop-color="#fa7e1e"/><stop offset=".5" stop-color="#d62976"/><stop offset=".75" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="M10.5 13l4 2.5-4 2.5z"/></svg><span>Clips</span></button>
-    <button class="rl-tab" id="tabLinkedin" type="button" role="tab" aria-selected="false" aria-controls="linkedinPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg><span>Decisions</span></button>
+    <button class="rl-tab" id="tabLinkedin" type="button" role="tab" aria-selected="false" aria-controls="linkedinPane"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.01M12 16v-3.2a2.3 2.3 0 0 1 4.6 0V16M12 10.5V16"/></svg><span>Decisions</span><span class="tab-new">New</span></button>
     <button class="rl-tab" id="tabAbout" type="button" role="tab" aria-selected="false" aria-controls="aboutPane"><span class="tab-av-wrap"><span class="tab-av"><span class="tab-av-fb">AM</span><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'"></span></span><span>About</span></button>
   </div>
 </section>
@@ -1019,36 +1030,6 @@ footer{
       <p>The <span class="hl">suspension system</span> was iteratively refined through digital validation in <span class="hl">Lotus Shark</span> and months of <span class="hl">workshop-floor</span> iteration and physical testing, translating analytical design intent into validated vehicle behavior. This development effort contributed to securing <span class="hl">AIR 2</span> Overall at ATVC 2026.</p>
       <p>More recently, my work has expanded into <span class="hl">EV subsystem R&D</span> involving <span class="hl">swappable battery systems</span>, thermal safety considerations, and integration-focused mechanical development for electric mobility platforms.</p>
       <p>My engineering approach begins with understanding why a system behaves the way it does before validating solutions through geometry, analysis, simulation, and physical reasoning. I <span class="hl">document my work</span> as <span class="hl">engineering case studies</span> that capture not only final outcomes, but the design decisions, trade-offs, iterations, and engineering intuition that shaped them.</p>
-    </div>
-    <div class="about-highlights">
-      <div class="about-item">
-        <div class="about-item-icon">◈</div>
-        <div>
-          <div class="about-item-title">Electric Mobility</div>
-          <div class="about-item-text">Sole mechanical engineer on an EV moped programme — concept to 2nd prototype, 15 vehicles deployed in Dwarka, Delhi.</div>
-        </div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-icon">◈</div>
-        <div>
-          <div class="about-item-title">Off-Road & Motorsport</div>
-          <div class="about-item-text">Chief Design Engineer, Team Daedalus Racing — complete BAJA SAE vehicle from scratch. AIR 2 Overall, ATVC 2026.</div>
-        </div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-icon">◈</div>
-        <div>
-          <div class="about-item-title">Chassis & Suspension</div>
-          <div class="about-item-text">Double wishbone geometry development, structural packaging, and suspension integration on dune buggy and SAE platforms.</div>
-        </div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-icon">◈</div>
-        <div>
-          <div class="about-item-title">First-Principles Engineering</div>
-          <div class="about-item-text">Design decisions documented as case studies — capturing trade-offs, iterations, and the reasoning behind every solution.</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -3033,14 +3014,29 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   .rl-play{top:10px;right:10px;width:26px;height:26px;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:0;text-shadow:none}
   .rl-play::before{content:'';display:block;margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0A0C10}
 }
+/* "New" badge on the Decisions tab: fades in after the intro, pulses until the visitor opens the tab once */
+#tabLinkedin{position:relative}
+#tabLinkedin .tab-new{position:absolute;top:-9px;right:-4px;background:var(--gold);color:#0A0C10;font-family:var(--fb);font-size:10px;font-weight:700;letter-spacing:.3px;line-height:1.5;text-transform:none;padding:1px 7px;border-radius:999px;pointer-events:none;opacity:0;animation:tnLife 10.95s ease 3.3s forwards,tnBlink 3s ease-in-out 3.3s infinite}
+#tabLinkedin .tab-new::after{content:'';position:absolute;inset:-3px;border-radius:999px;border:1.5px solid var(--gold);opacity:0;animation:tnPulse 1.8s ease-out 3.8s 5,tnRing 3s ease-in-out 3.3s infinite}
+#tabLinkedin.active .tab-new,#tabLinkedin .tab-new.gone{display:none}
+@keyframes tnLife{0%{opacity:0}4.1%{opacity:1}95.4%{opacity:1}100%{opacity:0}}
+@keyframes tnBlink{0%,30%{background:#E0A020;color:#0A0C10}50%,80%{background:#2F80FF;color:#fff}100%{background:#E0A020;color:#0A0C10}}
+@keyframes tnRing{0%,30%{border-color:#E0A020}50%,80%{border-color:#2F80FF}100%{border-color:#E0A020}}
+@keyframes tnPulse{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.55,1.9);opacity:0}}
+@media(max-width:600px){#tabLinkedin .tab-new{top:1px;right:auto;left:calc(50% + 4px)}}
+@media(prefers-reduced-motion:reduce){#tabLinkedin .tab-new{animation:tnLife 10.95s ease 3.3s forwards,tnBlink 3s ease-in-out 3.3s infinite}#tabLinkedin .tab-new::after{display:none}}
 </style>
 <script>
 (function(){
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
+  var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
+  function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
+  try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
   function show(name,keepScroll){
     var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',m=!r&&!l&&!s&&!a;
+    if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
     mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);
     [[tm,m],[tr,r],[tl,l],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
