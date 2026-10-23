@@ -585,11 +585,14 @@ footer{
     display:flex;position:fixed;inset:0;z-index:100000;
     align-items:center;justify-content:center;
     background:var(--bg,#0A0C10);
-    transition:opacity .5s ease,visibility .5s ease;
+    transition:opacity .5s ease,visibility .5s ease,background-color .9s ease;
     /* CSS-only safety net: self-hides after 10s even if JS fails */
     animation:msSafety .01s 10s forwards;
   }
   #mobile-splash.ms-hide{opacity:0;visibility:hidden}
+
+  /* after the hold: backdrop fades away while the logo glides from centre to the nav slot */
+  #mobile-splash.ms-fly{background-color:transparent;pointer-events:none}
 
   .ms-logo{position:relative;width:68.4vw;max-width:324px;aspect-ratio:900/426;transform-origin:50% 85%}
   .ms-logo img{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -627,6 +630,8 @@ footer{
 }
 /* desktop: same splash, a bit larger (artwork is 900px wide, so 440px stays sharp) */
 @media(min-width:769px){.ms-logo{width:356px;max-width:356px}}
+/* the real nav logo stays invisible until the splash logo lands on it */
+html.ms-flying .nav-logo-img{visibility:hidden}
 @media(prefers-reduced-motion:reduce){
   /* the curtain wipe is gentle, so it still plays; only the bounce is turned off */
   .ms-logo{animation:none!important}
@@ -871,16 +876,44 @@ footer{
   try{ seen=sessionStorage.getItem('jjSplashSeen')==='1'; }catch(e){}
   if(seen){ sp.remove(); return; }
   document.documentElement.style.overflow='hidden';
+  document.documentElement.classList.add('ms-flying');   // hides the nav logo until the splash logo arrives
 
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var SHOW_MS = 3000;   // how long the finished animation stays on screen
   var started=false;
 
-  function hide(){
-    sp.classList.add('ms-hide');
+  function finish(){
+    document.documentElement.classList.remove('ms-flying');   // reveal the real nav logo
     document.documentElement.style.overflow='';
     try{ sessionStorage.setItem('jjSplashSeen','1'); }catch(e){}
-    setTimeout(function(){ sp.remove(); },600);
+    sp.remove();
+  }
+  function hide(){
+    var logo=sp.querySelector('.ms-logo');
+    var target=document.querySelector('.nav-logo-img');
+    var tr=target && target.getBoundingClientRect();
+    // only fall back to a plain fade if the browser can't animate or the nav logo can't be found
+    if(!logo || !logo.animate || !tr || !tr.width){
+      sp.classList.add('ms-hide');
+      setTimeout(finish,600);
+      return;
+    }
+    logo.style.animation='none';                       // stop the settle bounce so it can't fight the move
+    logo.style.transformOrigin='0 0';
+    var lr=logo.getBoundingClientRect();               // measure at rest, centred
+    var k=tr.width/lr.width;
+    var dx=tr.left-lr.left, dy=tr.top-lr.top;
+    sp.classList.add('ms-fly');                        // backdrop fades out while the logo travels
+    var done=false;
+    function land(){ if(done) return; done=true; finish(); }
+    // Web Animations API: runs even when the OS has "reduce motion" on (the old CSS rule blocked CSS animations)
+    var anim=logo.animate(
+      [{transform:'translate(0px,0px) scale(1)'},
+       {transform:'translate('+dx+'px,'+dy+'px) scale('+k+')'}],
+      {duration:1150,easing:'cubic-bezier(.65,0,.25,1)',fill:'forwards'}
+    );
+    anim.onfinish=land;
+    setTimeout(land,1600);                             // safety net
   }
   function go(){
     if(started) return; started=true;
