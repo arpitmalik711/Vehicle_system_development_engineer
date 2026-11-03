@@ -590,6 +590,9 @@ footer{
 .tool-logo:hover::after,.tool-logo:focus-visible::after{opacity:1}
 .tool-logo-fb{display:none;font-family:var(--fm);font-size:10px;letter-spacing:.5px;color:var(--text-sec);white-space:nowrap}
 @media(max-width:480px){.tool-strip{gap:12px}.tool-strip-logos{gap:12px}.tool-logo img{height:16px;max-width:44px}}
+/* mobile: tool logos 1.5x larger (height and max-width both scaled) */
+@media(max-width:600px){.tool-logo{height:30px}.tool-logo img{height:27px;max-width:84px}}
+@media(max-width:480px){.tool-logo img{height:24px;max-width:66px}.tool-strip-logos{gap:10px}}
 @media(min-width:601px){.tool-logo{height:39px}.tool-logo img{height:35.6px;max-width:110px}.tool-logo-fb{font-size:15px}}
 </style>
 
@@ -650,6 +653,10 @@ footer{
 @media(min-width:769px){.ms-logo{width:356px;max-width:356px}}
 /* the real nav logo stays invisible until the splash logo lands on it */
 html.ms-flying .nav-logo-img{visibility:hidden}
+/* real tool logos stay hidden until the convoy from the splash lands on them */
+html.ms-flying .tool-logo{visibility:hidden}
+/* mobile: tool logos wait invisibly until the strip scrolls into view, then pop in (see script below the splash) */
+@media(max-width:768px){html.tool-pop .tool-logo{opacity:0}}
 @media(prefers-reduced-motion:reduce){
   /* the curtain wipe is gentle, so it still plays; only the bounce is turned off */
   .ms-logo{animation:none!important}
@@ -930,14 +937,33 @@ html.ms-flying .nav-logo-img{visibility:hidden}
     sp.classList.add('ms-fly');                        // backdrop fades out while the logo travels
     var done=false;
     function land(){ if(done) return; done=true; finish(); }
+    var EASE='cubic-bezier(.65,0,.25,1)';
+    var lastAnim=null;
+    // Option A (convoy), desktop only (≥769px): tool logos start hidden behind the logo, then travel with it and peel off into the TOOLS strip.
+    // On mobile the array is empty, so the splash behaves exactly as before and the real tool logos simply appear.
+    var isDesktop=window.matchMedia('(min-width: 769px)').matches;
+    [].forEach.call(isDesktop ? document.querySelectorAll('.tool-logo img') : [],function(real,i){
+      var r=real.getBoundingClientRect();
+      if(!r.width || r.top>window.innerHeight || r.bottom<0) return;   // strip is off-screen: skip, the real logo just appears
+      var c=document.createElement('img');
+      c.src=real.currentSrc||real.src; c.alt='';
+      c.style.cssText='position:fixed;z-index:0;pointer-events:none;opacity:0;left:'+(lr.left+lr.width/2-r.width/2)+'px;top:'+(lr.top+lr.height/2-r.height/2)+'px;width:'+r.width+'px;height:'+r.height+'px;object-fit:contain';
+      sp.insertBefore(c,logo);                          // sits behind the splash logo
+      var a=c.animate(
+        [{transform:'translate(0px,0px)',opacity:1},
+         {transform:'translate('+(r.left-parseFloat(c.style.left))+'px,'+(r.top-parseFloat(c.style.top))+'px)',opacity:1}],
+        {duration:1150,delay:i*70,easing:EASE,fill:'both'}
+      );
+      lastAnim=a;
+    });
     // Web Animations API: runs even when the OS has "reduce motion" on (the old CSS rule blocked CSS animations)
     var anim=logo.animate(
       [{transform:'translate(0px,0px) scale(1)'},
        {transform:'translate('+dx+'px,'+dy+'px) scale('+k+')'}],
       {duration:1150,easing:'cubic-bezier(.65,0,.25,1)',fill:'forwards'}
     );
-    anim.onfinish=land;
-    setTimeout(land,1600);                             // safety net
+    (lastAnim||anim).onfinish=land;                    // land after the last tool logo arrives
+    setTimeout(land,2000);                             // safety net
   }
   function go(){
     if(started) return; started=true;
@@ -952,6 +978,34 @@ html.ms-flying .nav-logo-img{visibility:hidden}
   }
   Promise.all([].map.call(sp.querySelectorAll('img'),ready)).then(go);
   setTimeout(go,4000);                  // fallback if an image is very slow
+})();
+</script>
+<script>
+/* MOBILE ONLY (<=768px): tool logos pop in one by one when the TOOLS strip scrolls into view */
+(function(){
+  var root=document.documentElement;
+  if(!window.matchMedia('(max-width: 768px)').matches || !('IntersectionObserver' in window)) return;
+  root.classList.add('tool-pop');                     // hides the logos right away (no flash)
+  document.addEventListener('DOMContentLoaded',function(){
+    var strip=document.querySelector('.tool-strip');
+    var logos=[].slice.call(document.querySelectorAll('.tool-logo'));
+    if(!strip || !logos.length || !logos[0].animate){ root.classList.remove('tool-pop'); return; }
+    function pop(){
+      if(root.classList.contains('ms-flying')){ setTimeout(pop,200); return; }   // wait for the splash to finish
+      var anims=logos.map(function(el,i){
+        return el.animate(
+          [{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'scale(1.2)',offset:.7},{opacity:1,transform:'scale(1)'}],
+          {duration:420,delay:i*90,easing:'ease-out',fill:'both'});
+      });
+      var done=function(){ root.classList.remove('tool-pop'); anims.forEach(function(a){a.cancel()}); };
+      anims[anims.length-1].onfinish=done;
+      setTimeout(done,1500);                          // safety net
+    }
+    var io=new IntersectionObserver(function(es){
+      if(es.some(function(e){return e.isIntersecting})){ io.disconnect(); pop(); }
+    },{threshold:0.6});
+    io.observe(strip);
+  });
 })();
 </script>
 
