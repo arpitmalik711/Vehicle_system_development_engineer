@@ -1012,12 +1012,11 @@ html.ms-flying .tool-logo{visibility:hidden}
 })();
 </script>
 <script>
-/* TOOL LOGO HIGHLIGHT (option B, yellow): every 3s each logo swells and glows yellow in turn, left to right.
+/* TOOL LOGO HIGHLIGHT: every 3s each logo swells slightly in turn, left to right (size change only, no glow).
    Starts only after the intro (and the mobile pop-in) is done; pauses while the tab is hidden or the strip is off-screen. */
 (function(){
   var root=document.documentElement;
-  // with the OS "reduce motion" setting on, the yellow glow still plays but the logos don't swell (same approach as the intro)
-  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // plays even with the OS "reduce motion" setting on (same approach as the intro); it is a small, gentle size change
   document.addEventListener('DOMContentLoaded',function(){
     var strip=document.querySelector('.tool-strip');
     var logos=[].slice.call(document.querySelectorAll('.tool-logo'));
@@ -1026,16 +1025,12 @@ html.ms-flying .tool-logo{visibility:hidden}
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(es){ inView=es[es.length-1].isIntersecting; },{threshold:0.3}).observe(strip);
     } else { inView=true; }
-    var OFF='drop-shadow(0 0 0 rgba(224,160,32,0))';
-    var ON='drop-shadow(0 0 7px rgba(224,160,32,.95)) drop-shadow(0 0 2px rgba(255,200,70,.9))';
     function wave(){
       if(document.hidden || !inView) return;
       if(root.classList.contains('ms-flying') || root.classList.contains('tool-pop')) return;   // intro / pop-in still running
       logos.forEach(function(el,i){
         var o={duration:700,delay:i*110,easing:'ease-out'};
-        if(!still) el.animate([{transform:'scale(1)'},{transform:'scale(1.25)',offset:.4},{transform:'scale(1)'}],o);
-        var img=el.querySelector('img');
-        if(img) img.animate([{filter:OFF},{filter:ON,offset:.4},{filter:OFF}],o);
+        el.animate([{transform:'scale(1)'},{transform:'scale(1.25)',offset:.4},{transform:'scale(1)'}],o);
       });
     }
     setInterval(wave,3000);
