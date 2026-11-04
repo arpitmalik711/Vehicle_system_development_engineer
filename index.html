@@ -590,9 +590,9 @@ footer{
 .tool-logo:hover::after,.tool-logo:focus-visible::after{opacity:1}
 .tool-logo-fb{display:none;font-family:var(--fm);font-size:10px;letter-spacing:.5px;color:var(--text-sec);white-space:nowrap}
 @media(max-width:480px){.tool-strip{gap:12px}.tool-strip-logos{gap:12px}.tool-logo img{height:16px;max-width:44px}}
-/* mobile: tool logos 1.5x larger (height and max-width both scaled) */
-@media(max-width:600px){.tool-logo{height:30px}.tool-logo img{height:27px;max-width:84px}}
-@media(max-width:480px){.tool-logo img{height:24px;max-width:66px}.tool-strip-logos{gap:10px}}
+/* mobile: tool logos 1.7x larger than the original sizes (height and max-width both scaled) */
+@media(max-width:600px){.tool-logo{height:34px}.tool-logo img{height:30.6px;max-width:95px}}
+@media(max-width:480px){.tool-logo img{height:27.2px;max-width:75px}.tool-strip-logos{gap:10px}}
 @media(min-width:601px){.tool-logo{height:39px}.tool-logo img{height:35.6px;max-width:110px}.tool-logo-fb{font-size:15px}}
 </style>
 
@@ -1008,6 +1008,37 @@ html.ms-flying .tool-logo{visibility:hidden}
       if(es.some(function(e){return e.isIntersecting})){ io.disconnect(); pop(); }
     },{threshold:0.6});
     io.observe(strip);
+  });
+})();
+</script>
+<script>
+/* TOOL LOGO HIGHLIGHT (option B, yellow): every 3s each logo swells and glows yellow in turn, left to right.
+   Starts only after the intro (and the mobile pop-in) is done; pauses while the tab is hidden or the strip is off-screen. */
+(function(){
+  var root=document.documentElement;
+  // with the OS "reduce motion" setting on, the yellow glow still plays but the logos don't swell (same approach as the intro)
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('DOMContentLoaded',function(){
+    var strip=document.querySelector('.tool-strip');
+    var logos=[].slice.call(document.querySelectorAll('.tool-logo'));
+    if(!strip || !logos.length || !logos[0].animate) return;
+    var inView=false;
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ inView=es[es.length-1].isIntersecting; },{threshold:0.3}).observe(strip);
+    } else { inView=true; }
+    var OFF='drop-shadow(0 0 0 rgba(224,160,32,0))';
+    var ON='drop-shadow(0 0 7px rgba(224,160,32,.95)) drop-shadow(0 0 2px rgba(255,200,70,.9))';
+    function wave(){
+      if(document.hidden || !inView) return;
+      if(root.classList.contains('ms-flying') || root.classList.contains('tool-pop')) return;   // intro / pop-in still running
+      logos.forEach(function(el,i){
+        var o={duration:700,delay:i*110,easing:'ease-out'};
+        if(!still) el.animate([{transform:'scale(1)'},{transform:'scale(1.25)',offset:.4},{transform:'scale(1)'}],o);
+        var img=el.querySelector('img');
+        if(img) img.animate([{filter:OFF},{filter:ON,offset:.4},{filter:OFF}],o);
+      });
+    }
+    setInterval(wave,3000);
   });
 })();
 </script>
