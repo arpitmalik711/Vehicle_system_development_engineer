@@ -280,7 +280,7 @@ nav{
 section{padding:100px 6%}
 .section-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
 .section-title{
-  font-family:var(--fd);font-size:clamp(30px,4vw,48px);
+  font-family:var(--fd);font-size:clamp(38px,5vw,60px);
   font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;
   color:var(--text);margin-bottom:52px;
 }
@@ -563,8 +563,8 @@ footer{
   footer{flex-direction:column;gap:12px;text-align:center;padding:20px 5%}
 
   /* section titles */
-  .section-title{font-size:29px;margin-bottom:36px}
-  .proj-header-title{font-size:38px}
+  .section-title{font-size:36px;margin-bottom:36px}
+  .proj-header-title{font-size:48px}
 }
 
 @media(max-width:480px){
@@ -870,7 +870,7 @@ footer{
     <img class="nl-base" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" width="900" height="426" alt="" decoding="async">
     <img class="nl-wave" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" width="900" height="426" alt="" decoding="async">
   </div>
-  <a class="nav-dl" href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Resume</span><span class="dl-short">Resume</span></a>
+  <a class="nav-dl" href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Download Resume</span><span class="dl-short">Resume</span></a>
 </nav>
 
 <!-- ── PROFILE + TABS ── -->
@@ -902,6 +902,8 @@ footer{
 
 <!-- ── ABOUT ── -->
 <section id="about" class="surface-section">
+  <div class="section-label">// 01 — BACKGROUND</div>
+  <h2 class="section-title">ABOUT <span>ME</span></h2>
   <div class="about-grid">
     <div class="about-text">
       <p>I'm a <span class="hl">final-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
@@ -931,7 +933,7 @@ footer{
 .slideshow-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.3;pointer-events:none}
 .slideshow-header{margin-bottom:48px;position:relative;z-index:1}
 .slideshow-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
-.slideshow-title{font-family:var(--fd);font-size:clamp(30px,4vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text)}
+.slideshow-title{font-family:var(--fd);font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text)}
 .slideshow-title span{color:var(--gold)}
 .slideshow-wrap{position:relative;z-index:1;width:90%;margin:0 auto}
 .slideshow-track{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;border:1px solid var(--border2);touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -1391,7 +1393,7 @@ footer{
 .proj-section{padding:100px 6%;background:var(--bg)}
 .proj-header{margin-bottom:64px}
 .proj-header-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:16px}
-.proj-header-title{font-family:var(--fd);font-size:clamp(38px,5.6vw,72px);font-weight:800;color:var(--text);line-height:.95;text-transform:uppercase;letter-spacing:-2px}
+.proj-header-title{font-family:var(--fd);font-size:clamp(48px,7vw,90px);font-weight:800;color:var(--text);line-height:.95;text-transform:uppercase;letter-spacing:-2px}
 .proj-header-sub{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--text-dim);margin-top:18px}
 .proj-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
 @media(max-width:1400px){.proj-cards{grid-template-columns:repeat(3,1fr)}}
@@ -1499,7 +1501,7 @@ footer{
   <div class="proj-cards">
 
     <!-- CARD 01 -->
-    <a href="#" class="proj-card">
+    <a href="#baja" class="proj-card">
       <div class="proj-img-wrap">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784390861/BajaBuggy.cover_dvnzjn.jpg" alt="BAJA ATV 2026">
       </div>
@@ -1532,7 +1534,7 @@ footer{
     </a>
 
     <!-- CARD 03 -->
-    <a href="https://arpitmalik711.github.io/Dunebuggy.Arpit/" target="_blank" rel="noopener noreferrer" class="proj-card internship-ribbon">
+    <a href="#dune" class="proj-card internship-ribbon">
       <div class="proj-img-wrap">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391027/hero-buggy_y4z8bd.png" alt="Dune Buggy OFF-ROAD">
       </div>
@@ -1667,14 +1669,12 @@ footer{
 </section>
 
 <section id="casestudies" class="casestudy-section">
+  <div class="section-label">// 04 — DEEP DIVE</div>
   <h2 class="section-title">Full <span>Case Study</span></h2>
 
   <style>
   .casestudy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:var(--border)}
   .casestudy-card{max-width:none}
-  /* Investigations headlines use the same font treatment as the LinkedIn "Activity" heading */
-  #casestudies,#casestudies *{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans",Helvetica,Arial,sans-serif}
-  #casestudies .section-title,#casestudies .proj-name{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans",Helvetica,Arial,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.2px}
   .casestudy-progress-bar{display:flex;flex-direction:column;gap:4px;margin-bottom:20px}
   .casestudy-progress-track{height:2px;background:var(--border2);position:relative;overflow:hidden}
   .casestudy-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
@@ -1707,7 +1707,14 @@ footer{
         <div class="proj-num">— 01 <span>/ 04</span></div>
         <div class="proj-name">Chassis Member Failure at <span class="gold">Damper Mount</span></div>
         <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
-         <span class="proj-cta">Open Full Case Study →</span>
+        <div class="proj-tags">
+          <span class="proj-tag">STRUCTURAL FAILURE ANALYSIS</span>
+          <span class="proj-tag">FEA</span>
+          <span class="proj-tag">ANSYS</span>
+          <span class="proj-tag">CHASSIS ENGINEERING</span>
+          <span class="proj-tag">BAJA SAE</span>
+        </div>
+        <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
 
@@ -1723,7 +1730,15 @@ footer{
         <div class="proj-name">Mahindra 265 <span class="gold">Steering Geometry</span> Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
 
-         <span class="proj-cta">Case Study In Progress 🔧</span>
+        <div class="proj-tags">
+          <span class="proj-tag">REVERSE ENGINEERING</span>
+          <span class="proj-tag">STEERING GEOMETRY</span>
+          <span class="proj-tag">SOLIDWORKS</span>
+          <span class="proj-tag">KPI · CAMBER · SCRUB</span>
+          <span class="proj-tag">ACKERMANN</span>
+          <span class="proj-tag">PRODUCTION VEHICLE</span>
+        </div>
+        <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
     </a>
 
@@ -1737,7 +1752,14 @@ footer{
         <div class="proj-name">How can a simple change in the tyre <span class="gold">contact patch</span> dramatically alter a vehicle's <span class="gold">load distribution</span>?</div>
         <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
 
-         <span class="proj-cta">Open Full Case Study →</span>
+        <div class="proj-tags">
+          <span class="proj-tag">STATIC EQUILIBRIUM</span>
+          <span class="proj-tag">TRACTOR DYNAMICS</span>
+          <span class="proj-tag">BALLAST ANALYSIS</span>
+          <span class="proj-tag">SOLIDWORKS</span>
+          <span class="proj-tag">AGRICULTURAL MACHINERY</span>
+        </div>
+        <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
 
@@ -1753,7 +1775,14 @@ footer{
         <div class="proj-name">Avore EX Series <span class="gold">Reverse Engineering</span> & Spring Selection</div>
         <p class="proj-blurb">No factory data existed for the Avore EX series — only a confirmed 17" rim diameter. Reconstructing the full chassis and vehicle geometry from scaled teaser imagery alone, then feeding that geometry into a quarter-car model in MSC Adams to drive spring rate selection.</p>
 
-         <span class="proj-cta">Case Study In Progress 🔧</span>
+        <div class="proj-tags">
+          <span class="proj-tag">SOLIDWORKS</span>
+          <span class="proj-tag">MSC ADAMS</span>
+          <span class="proj-tag">QUARTER CAR MODEL</span>
+          <span class="proj-tag">SPRING DESIGN</span>
+          <span class="proj-tag">REVERSE ENGINEERING</span>
+        </div>
+        <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
     </a>
 
@@ -1854,397 +1883,597 @@ footer{
 <style>
 #journeyPane{display:none}
 #journeyPane.is-on{display:block}
+.jy{min-height:70vh;padding:120px 6% 100px;background:var(--bg)}
+.jy-wrap{max-width:860px;margin:0 auto}
+.jy-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
+.jy-title{font-family:var(--fd);font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text);margin-bottom:14px}
+.jy-title span{color:var(--gold)}
+.jy-sub{font-size:15px;color:var(--text-sec);line-height:1.7;font-weight:300;max-width:640px;margin-bottom:56px}
+.jy-line{position:relative;padding-left:36px}
+.jy-line::before{content:'';position:absolute;left:4px;top:8px;bottom:0;width:1px;background:var(--border2)}
+.jy-item{position:relative;margin-bottom:28px;background:var(--surface);border:1px solid var(--border);padding:26px 28px;transition:border-color .2s,background .2s}
+.jy-item:hover{border-color:var(--border2);background:var(--surface2)}
+.jy-item::before{content:'';position:absolute;left:-36px;top:30px;width:9px;height:9px;border:1px solid var(--gold);background:var(--bg)}
+.jy-item.now::before{background:var(--gold);box-shadow:0 0 0 4px var(--gold-dim)}
+.jy-period{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
+.jy-role{font-family:var(--fd);font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text);margin-bottom:4px}
+.jy-org{font-family:var(--fm);font-size:10px;letter-spacing:1px;color:var(--text-dim);margin-bottom:14px}
+.jy-points{list-style:none;display:flex;flex-direction:column;gap:6px}
+.jy-points li{font-size:13px;color:var(--text-sec);line-height:1.65;padding-left:18px;position:relative}
+.jy-points li::before{content:'›';position:absolute;left:0;color:var(--gold)}
+.jy-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.jy-chip{font-family:var(--fm);font-size:10px;letter-spacing:1px;color:var(--gold);background:var(--gold-dim);border:1px solid rgba(224,160,32,.25);padding:4px 10px;border-radius:999px}
+.jy-close{margin-top:40px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
+@media(max-width:600px){.jy{padding:90px 5% 80px}.jy-item{padding:20px}}
 </style>
-<!-- ARPIT MALIK — JOURNEY SECTION (v2: no buttons, no modals — all project images permanently visible)
-Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
-<section id="arpit-journey" aria-label="Arpit Malik's engineering journey">
-  <style>
-    #arpit-journey{--j-bg:var(--bg);--j-fg:#f5f5f5;--j-muted:#a5a5a5;--j-line:rgba(255,255,255,.85);--j-accent:var(--gold);--j-panel:var(--surface);--j-border:rgba(255,255,255,.13);--j-off:50px;
-      position:relative;isolation:isolate;background:var(--j-bg);color:var(--j-fg);padding:clamp(72px,9vw,132px) clamp(20px,4vw,64px) 100px;overflow:hidden;font-family:inherit}
-    #arpit-journey *{box-sizing:border-box}
-    #arpit-journey .j-intro{max-width:900px;margin:0 auto 64px;text-align:center}
-    #arpit-journey .j-eyebrow{color:var(--j-accent);font-size:14.4px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
-    #arpit-journey h2{font-size:clamp(42px,7vw,82px);line-height:.95;letter-spacing:-.045em;margin:14px 0 18px;font-weight:800}
-    #arpit-journey .j-intro p{max-width:650px;margin:auto;color:var(--j-muted);font-size:clamp(15px,1.5vw,18px);line-height:1.65}
+<section class="jy" aria-label="Journey"></section>
+</div>
+<div id="bajaPane" role="tabpanel" aria-label="BAJA ATV 2026">
+<style>
+#bajaPane{display:none}
+#bajaPane.is-on{display:block}
+.bj-sec{padding:40px 6% 100px}
+@media(max-width:600px){.bj-sec{padding:24px 5% 96px}}
+</style>
+<section class="bj-sec" aria-label="BAJA ATV 2026 — simulations and CAD"><div id="bajaHost"></div></section>
+<template id="bajaTpl"><style>
+:host{display:block;--bg:#0A0C10;--text:#FFFFFF;--muted:#8A8F9A;--line:#2A2F3A;--card:#111318}
+*{box-sizing:border-box}
+.topbar{margin:0 0 4px}
+.bj{margin:0;color:var(--text);font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);line-height:1.5}
+.wrap{max-width:960px;margin:0 auto}
+.back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;transition:border-color .2s,color .2s}
+.back:hover{border-color:var(--text);color:var(--text)}
+button{font:inherit;color:var(--text);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;transition:border-color .2s}
+button:hover{border-color:var(--text)}
+.rt{margin-top:32px}
+.role-text{font-weight:400;font-size:clamp(16px,2.2vw,18px);line-height:1.65;margin:0 0 36px;max-width:62ch}
+.hero{margin-top:22px}
+.when{font-size:12px;color:var(--muted);letter-spacing:.03em;margin:8px 0 0}
+.tl{position:relative;padding-left:28px}
+.tl:before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:1px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:last-child{margin-bottom:0}
+.dot{position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;border:1px solid var(--muted);background:var(--bg)}
+.tl-item.now .dot{background:var(--text);border-color:var(--text)}
+.role{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+.role.prev-role{font-weight:400;font-size:15px;color:var(--muted)}
+.tl .when{margin:4px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{border:1px solid var(--line);font-size:12px;padding:4px 12px;border-radius:999px;color:var(--muted)}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;margin:28px 0 6px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:46ch}
+section{margin-bottom:40px}
+h2{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:10px}
+.frame{aspect-ratio:16/9;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+video{width:100%;height:100%;display:block;background:#000}
+.empty{color:var(--muted);font-size:13px}
+.title{width:100%;background:none;border:0;border-bottom:1px solid transparent;color:var(--text);font:inherit;font-size:15px;padding:2px 0}
+.title:focus{outline:none;border-bottom-color:var(--line)}
+.title::placeholder{color:var(--muted)}
+.actions{display:flex;gap:8px}
+.pair{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.wide{grid-column:1/-1;min-width:0}
+.wide .title{order:1}.wide .desc{order:2;max-width:none}
+.wide .gallery,.wide .pair{order:3;margin-top:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.gallery .frame,.pair .frame{aspect-ratio:4/3;cursor:zoom-in}
+.gallery video{object-fit:cover;pointer-events:none}
+#vd img,#cad img{cursor:zoom-in}
+.grp{grid-column:1/-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:8px}
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);display:flex;flex-direction:column}
+.lbtrack{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.lbslide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:64px 12px}
+.lbslide img,.lbslide video{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;background:none}
+.lb button{color:#fff;border-color:#666;background:rgba(0,0,0,.5)}
+.lbx{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px}
+.lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);display:none;font-size:20px;padding:6px 16px}
+.lbp{left:14px}.lbn{right:14px}
+@media (min-width:641px){.lbp,.lbn{display:block}}
+.gallery img,.pair img{object-fit:cover}
+@media (max-width:640px){.gallery,.pair{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}.gallery .frame,.pair .frame{flex:0 0 78%;scroll-snap-align:start}#cad{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}#cad .card{flex:0 0 78%;scroll-snap-align:start}}
+#vd{row-gap:28px}
+img{width:100%;height:100%;object-fit:contain;display:block}
+.desc{color:var(--muted);font-size:14px;margin:0;max-width:60ch}
+</style>
 
-    #arpit-journey .j-timeline{position:relative;max-width:1400px;margin:0 auto}
-    #arpit-journey .j-path{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
-    #arpit-journey .j-path path{fill:none;vector-effect:non-scaling-stroke}
-    #arpit-journey .j-path .glow{stroke:rgba(255,255,255,.22);stroke-width:13;filter:blur(8px)}
-    #arpit-journey .j-path .line{stroke:var(--j-line);stroke-width:2.2;filter:drop-shadow(0 0 5px rgba(255,255,255,.85))}
-
-    #arpit-journey .j-block{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px minmax(0,1.25fr);column-gap:0;padding:0 0 110px;align-items:start}
-    #arpit-journey .j-block:last-child{padding-bottom:30px}
-    #arpit-journey .j-block[data-side="right"]{grid-template-columns:minmax(0,1.25fr) 190px minmax(0,1fr)}
-    #arpit-journey .j-block[data-side="left"] .j-text{grid-column:1;grid-row:1;padding-right:18px}
-    #arpit-journey .j-block[data-side="left"] .j-gallery{grid-column:3;grid-row:1;padding-left:18px}
-    #arpit-journey .j-block[data-side="right"] .j-text{grid-column:3;grid-row:1;padding-left:18px}
-    #arpit-journey .j-block[data-side="right"] .j-gallery{grid-column:1;grid-row:1;padding-right:18px}
-    #arpit-journey .j-node{position:absolute;top:22px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 8px 3px rgba(255,255,255,.7),0 0 24px 7px rgba(255,255,255,.22);transform:translate(-50%,-50%);z-index:3}
-    #arpit-journey .j-text{position:sticky;top:90px;align-self:start;z-index:2}
-    #arpit-journey .j-kicker{color:var(--j-accent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin:0 0 8px}
-    #arpit-journey .j-date{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
-    #arpit-journey .j-title{font-size:clamp(16px,1.4vw,19px);font-weight:600;margin:0 0 12px;color:#e8e8e8;line-height:1.3}
-    #arpit-journey .j-role{font-size:14px;line-height:1.65;color:var(--j-fg);margin:0 0 10px}
-    #arpit-journey .j-blurb{font-size:13px;line-height:1.65;color:var(--j-muted);margin:0}
-
-    #arpit-journey .j-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;z-index:2;position:relative}
-    #arpit-journey .j-gallery[data-count="1"]{grid-template-columns:minmax(0,440px)}
-    #arpit-journey .j-gallery[data-count="2"],#arpit-journey .j-gallery[data-count="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}
-    #arpit-journey .j-card{margin:0;border:1px solid var(--j-border);background:var(--j-panel);display:flex;flex-direction:column;min-width:0;overflow:hidden}
-    #arpit-journey .j-img{aspect-ratio:4/3;background:#171717;overflow:hidden;position:relative}
-    #arpit-journey .j-img img{display:block;width:100%;height:100%;object-fit:cover}
-    #arpit-journey .j-img.is-broken img{visibility:hidden}
-    #arpit-journey .j-card figcaption{padding:12px 13px 14px}
-    #arpit-journey .j-card .j-event-date{font-size:10px;color:var(--j-accent);letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-    #arpit-journey .j-card h4{font-size:15px;line-height:1.25;margin:5px 0 5px}
-    #arpit-journey .j-card p{font-size:12px;color:var(--j-muted);line-height:1.5;margin:0}
-    #arpit-journey .j-card.no-img{border-style:dashed;background:rgba(255,255,255,.02);justify-content:center;min-height:120px}
-    #arpit-journey .j-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-    #arpit-journey .j-tag{font-size:10px;border:1px solid rgba(255,255,255,.22);padding:4px 7px;color:#ddd}
-    #arpit-journey .j-tag.result{background:var(--j-accent);border-color:var(--j-accent);color:#0A0C10;font-weight:700}
-    #arpit-journey .j-footer{max-width:700px;text-align:center;margin:70px auto 0;color:var(--j-muted);font-size:15px;line-height:1.6}
-    #arpit-journey .j-footer strong{color:#fff}
-
-    #arpit-journey .j-img[data-i]{cursor:zoom-in}
-    #arpit-journey .j-img[data-i]:focus-visible{outline:2px solid var(--j-accent);outline-offset:-2px}
-    #arpit-journey .j-img[data-i]:after{content:"";position:absolute;right:8px;bottom:8px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.2-4.2M11 8.5v5M8.5 11h5'/%3E%3C/svg%3E") center/16px no-repeat;opacity:.85;pointer-events:none}
-    #arpit-journey .j-img.is-broken:after{display:none}
-    .arpit-lb{position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.95);display:none;flex-direction:column;color:#f5f5f5;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    .arpit-lb.open{display:flex}
-    .arpit-lb *{box-sizing:border-box}
-    .arpit-lb-track{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
-    .arpit-lb-track::-webkit-scrollbar{display:none}
-    .arpit-lb-slide{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:64px 72px 24px;min-width:0}
-    .arpit-lb-pic{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
-    .arpit-lb-pic img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-    .arpit-lb-cap{max-width:720px;text-align:center;flex:none}
-    .arpit-lb-cap small{display:block;color:#E0A020;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
-    .arpit-lb-cap b{display:block;font-size:17px;margin-bottom:4px}
-    .arpit-lb-cap span{display:block;font-size:13px;line-height:1.5;color:#a5a5a5}
-    .arpit-lb button{position:absolute;z-index:2;border:1px solid rgba(255,255,255,.25);background:rgba(20,20,20,.8);color:#fff;width:44px;height:44px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
-    .arpit-lb button:hover{background:#E0A020;border-color:#E0A020;color:#0A0C10}
-    .arpit-lb button:focus-visible{outline:2px solid #fff;outline-offset:2px}
-    .arpit-lb-close{top:14px;right:14px}
-    .arpit-lb-prev{left:14px;top:50%;margin-top:-22px}
-    .arpit-lb-next{right:14px;top:50%;margin-top:-22px}
-    .arpit-lb-count{position:absolute;top:24px;left:20px;z-index:2;font-size:13px;letter-spacing:.08em;color:#a5a5a5}
-    @media(max-width:760px){.arpit-lb-slide{padding:60px 12px 20px}.arpit-lb-prev,.arpit-lb-next{display:none}}
-
-    @media(max-width:900px){#arpit-journey{--j-off:30px}#arpit-journey .j-block,#arpit-journey .j-block[data-side="right"]{grid-template-columns:minmax(0,1fr) 110px minmax(0,1.25fr)}}
-    @media(max-width:760px){
-      #arpit-journey{padding-top:76px;padding-left:18px;padding-right:0}
-      #arpit-journey .j-path{display:none}
-      #arpit-journey .j-timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(#fff,rgba(255,255,255,.12))}
-      #arpit-journey .j-block,#arpit-journey .j-block[data-side="right"]{display:block;padding:0 0 54px 30px}
-      #arpit-journey .j-node{left:7px!important;top:10px}
-      #arpit-journey .j-text{position:static;padding:0 18px 16px 0!important}
-      #arpit-journey .j-gallery,#arpit-journey .j-gallery[data-count]{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 18px 12px 0!important;-webkit-overflow-scrolling:touch}
-      #arpit-journey .j-card{flex:0 0 min(78%,290px);scroll-snap-align:start}
-      #arpit-journey .j-footer{padding-right:18px}
-    }
-    @media(prefers-reduced-motion:no-preference){
-      #arpit-journey .j-path path{stroke-dasharray:1;animation:j-draw 2.6s ease forwards}
-      #arpit-journey .j-node{animation:j-pulse 2.8s ease-in-out infinite alternate}
-      @keyframes j-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-      @keyframes j-pulse{from{box-shadow:0 0 5px 2px rgba(255,255,255,.6)}to{box-shadow:0 0 12px 5px rgba(255,255,255,.85),0 0 30px 9px rgba(255,255,255,.2)}}
-    }
-  </style>
-
-  <div class="j-intro">
-    <div class="j-eyebrow">The story behind the engineer</div>
-    <p>From childhood experiments with cardboard, motors and discarded toys to building competition vehicles and exploring vehicle simulation — a timeline of curiosity turning into engineering.</p>
+<div class="bj"><div class="wrap">
+<div class="topbar"><a class="back" id="bjBack" href="#projects">&larr; Projects</a></div>
+<div class="hero">
+  <div class="tl">
+    <div class="tl-item now">
+      <span class="dot"></span>
+      <div class="role">Chief Design Engineer</div>
+      <p class="when">Nov 2025 – Present</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role prev-role">Steering &amp; Suspension Lead</div>
+      <p class="when">Oct 2024 – Nov 2025</p>
+    </div>
   </div>
-
-  <div class="j-timeline" id="j-timeline">
-    <svg class="j-path" aria-hidden="true" preserveAspectRatio="none">
-      <path class="glow" pathLength="1" d=""/>
-      <path class="line" pathLength="1" d=""/>
-    </svg>
-    <!-- milestone blocks are rendered below by the script; all images are visible on load -->
-  </div>
-
-  <div class="j-footer"><strong>Still in motion.</strong><br>Building toward a career in Vehicle Dynamics, CAE and Multi-Body Dynamics simulation.</div>
-
-  <script>
-  (() => {
-    const root = document.getElementById('arpit-journey');
-    if (!root || root.dataset.initialized) return;
-    root.dataset.initialized = 'true';
-
-    const img = {
-      cartoons:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788636221/cartoon_gei5hc.png',
-      discovery:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788636724/discovery_qst3ex.png',
-      shows:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788637914/favourite_shows_zzu9q.png',
-      truck:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402345/Boat_Truck_wl0dnm.png',
-      fan:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402347/More_projects_rllssw.png',
-      speaker:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785400959/Speaker_v7ydah.png',
-      lamp:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402347/Bed_night_Light_c3oojh.png',
-      winch:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785401896/Winch_lbhzjh.gif',
-      tractor:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785404853/Tractor_tyre_rbxtcr.jpg',
-      joystick:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402345/Joy_stick_Remote_v9g383.png',
-      pump:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402349/Pump_1_hewupr.png',
-      dodge:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402346/Dodge_eld1cg.png',
-      tdr:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784716437/6685b63f-68d8-4953-9312-8893ba24ae2b_qx2mrn.jpg',
-      tdrLead:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784391532/slide.img1_d3vlz4.jpg',
-      arc:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785484884/final.cad1_u5g8ud.jpg',
-      e2em:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785485139/Screenshot_2026-07-31_133520_sg2pkh.png',
-      gridx:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785485503/Gridxteam_xveekk.jpg'
-    };
-
-    const milestones = [
-      {side:'left', date:'Class I – IV',
-        role:'Cartoons first — Tom & Jerry and Ninja Hattori set the early screen time.',
-        kicker:'THE BEGINNING · CLASS I–IV', title:'A world of cartoons',
-        intro:'',
-        events:[
-          {date:'Class I – IV',title:'A world of cartoons',desc:'Grew up on a steady diet of Tom & Jerry and Ninja Hattori.',image:img.cartoons}
-        ]},
-      {side:'right', date:'Class IV',
-        role:'Dad blocked cartoon channels and started watching science channels.',
-        kicker:'THE TURNING POINT · CLASS IV', title:'Curiosity before the classroom',
-        intro:'',
-        events:[
-          {date:'Class IV onwards',title:'Science takes over screen time',desc:'Discovery, Discovery Science, History TV18 and National Geographic become the new favourites.',image:img.discovery}
-        ]},
-      {side:'right', date:'Class 4',
-        role:'The first build. A basic circuit and a DC motor turned into a working fan.',
-        kicker:'THE WORKSHOP YEARS · CLASS 4 · 2013', title:'The first circuit',
-        intro:'',
-        events:[
-          {date:'Class 4 · 2013',title:'DIY Fan',desc:'Basic electrical circuit and DC motor.',image:img.fan}
-        ]},
-      {side:'left', date:'Class 5',
-        role:'A year of rapid experiments — drivetrains, reverse engineering, wiring and torque.',
-        kicker:'THE WORKSHOP YEARS · CLASS 5 · 2014', title:'Learning by making',
-        intro:'',
-        events:[
-          {date:'Class 5 · 2014',title:'6-Wheel Cardboard Truck',desc:'Exploring drivetrain, axles and motion.',image:img.truck},
-          {date:'Class 5 · 2014',title:'Upgraded Portable Music Player',desc:'Reverse engineering and battery upgrade. The source journey includes multiple versions, including a fully assembled box version.',image:img.speaker},
-          {date:'Class 5 · 2014',title:'Bedside Night Light',desc:'Human-centred design and electrical wiring.',image:img.lamp},
-          {date:'Class 5 · 2014',title:'Miniature Recovery Winch',desc:'Understanding torque and rotary-to-linear motion.',image:img.winch}
-        ]},
-      {side:'right', date:'Class 7',
-        role:'Material substitution and prototyping, applied to a tractor tyre.',
-        kicker:'THE WORKSHOP YEARS · CLASS 7', title:'Prototyping with what is available',
-        intro:'',
-        events:[
-          {date:'Class 7',title:'Custom Tractor Tyre',desc:'Material substitution and prototyping.',image:img.tractor}
-        ]},
-      {side:'left', date:'Class 8',
-        role:'Control and fluids — reversing motor polarity from a handheld remote and moving water with a diaphragm pump.',
-        kicker:'THE WORKSHOP YEARS · CLASS 8', title:'Control and flow',
-        intro:'',
-        events:[
-          {date:'Class 8',title:'Homemade Joystick Remote',desc:'Motor control and polarity reversal.',image:img.joystick},
-          {date:'Class 8',title:'DIY Diaphragm Pump',desc:'Fluid mechanics and check valves.',image:img.pump}
-        ]},
-      {side:'right', date:'Class 9',
-        role:'The biggest school build — a DIY Dodge Challenger with fabricated bodywork and circular DRL optics.',
-        kicker:'THE WORKSHOP YEARS · CLASS 9', title:'A full vehicle build',
-        intro:'',
-        events:[
-          {date:'Class 9',title:'DIY Dodge Challenger',desc:'Vehicle styling, body fabrication and circular DRL optics. The original project gallery also includes steering and DRL development images.',image:img.dodge},
-          {date:'Class 9',title:'Working Steering for the Dodge Challenger',desc:'A functional steering mechanism built for the DIY Dodge Challenger.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402349/Dodge_Steering_vry6qu.png'}
-        ]},
-      {side:'left', date:'1st Year',
-        role:'Joined NSUT and Team Daedalus Racing (BAJA SAE) — the first foothold on the team, telling the story behind the build.',
-        kicker:'NSUT · TEAM DAEDALUS RACING', title:'Telling the story of the build',
-        intro:'Joined NSUT in 2023 and began on the media side of the team, before moving into suspension engineering.',
-        events:[
-          {date:'2023 · First year',title:'Video Editor · Team Daedalus Racing',desc:'First foothold on the team, telling the story behind the build.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785483565/team-daedalus-racing-12401462_zd8inl.webp',tags:['TDR · Video Editor']}
-        ]},
-      {side:'right', date:'2nd Year',
-        role:'Moved onto the technical side of the team — suspension and steering for the competition vehicle.',
-        kicker:'NSUT · TEAM DAEDALUS RACING', title:'Onto the technical side',
-        intro:'',
-        events:[
-          {date:'2024 · Second year',title:'Suspension & Steering Member',desc:'',image:img.tdr,tags:['TDR · Suspension & Steering']}
-        ]},
-      {side:'left', date:'2nd Year',
-        role:'Led the suspension and steering sub-system through the ATVC 2025 season, and began industry experience in vehicle design.',
-        kicker:'TEAM DAEDALUS RACING · INDUSTRY EXPERIENCE', title:'Leading a sub-system, building beyond the track',
-        intro:'',
-        events:[
-          {date:'2025 · Second year',title:'Suspension & Steering Lead',desc:'Led the suspension and steering sub-system through the ATVC 2025 season.',image:img.tdrLead,tags:['TDR · Suspension & Steering Lead','AIR 1 · Suspension & Traction · ATVC 2025'],result:true},
-          {date:'2025 · Second year · Summer',title:'Design & Development Intern · ARC Global',desc:'Designed a two-seater dune buggy from the ground up as the sole mechanical engineer on the project. Worked on vehicle layout, CAD, ergonomics and suspension development.',image:img.arc,tags:['2-Seater Dune Buggy','CATIA · SolidWorks · Lotus Shark']}
-        ]},
-      {side:'right', date:'3rd Year',
-        role:'Chief Design Engineer at Team Daedalus Racing, electric moped development and swappable battery-pack R&D — building toward Vehicle Dynamics, CAE and MBD.',
-        kicker:'TEAM DAEDALUS RACING · INDUSTRY EXPERIENCE', title:'Taking technical decisions across the vehicle',
-        intro:'',
-        events:[
-          {date:'2025 · Third year',title:'Vehicle Design & Development Engineer Intern · E2EM Technologies',desc:'Worked on the design and development of an electric moped, from concept through detailed vehicle development.',image:img.e2em,tags:['Electric Moped','Vehicle Design & Integration']},
-          {date:'2026 · Third year',title:'Chief Design Engineer',desc:'Took technical decisions across the vehicle and coordinated full-vehicle CAD with chassis, brakes and powertrain teams.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784715844/IMG_2148_qeywnw.jpg',tags:['TDR · Chief Design Engineer','AIR 2 · Overall · ATVC 2026'],result:true},
-          {date:'2026 · Third year · Summer – Present in supplied file',title:'Mechanical Design Engineer Intern · GridX Energy',desc:'Working on swappable battery-pack R&D, including battery-lock development, L1 two-wheeler-to-swappable integration, vent sizing, AIS modal work and bus-bar fixtures.',image:img.gridx,tags:['Swappable Battery Pack R&D','Mechanical Design']}
-        ]}
-    ];
-
-    milestones.forEach((m, i) => { m.side = i % 2 === 0 ? 'left' : 'right'; });
-    const slides = [];
-    milestones.forEach(m => m.events.forEach(e => { if (e.image) { e._i = slides.length; slides.push(e); } }));
-
-    const safe = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const timeline = root.querySelector('#j-timeline');
-    const svg = timeline.querySelector('.j-path');
-    const paths = svg.querySelectorAll('path');
-
-    const card = e => `
-      <figure class="j-card${e.image ? '' : ' no-img'}">
-        ${e.image ? `<div class="j-img" data-i="${e._i}" role="button" tabindex="0" aria-label="Preview image: ${safe(e.title)}"><img src="${safe(e.image)}" alt="${safe(e.title)}" loading="eager" decoding="async"></div>` : ''}
-        <figcaption>
-          <div class="j-event-date">${safe(e.date)}</div>
-          <h4>${safe(e.title)}</h4>
-          ${e.desc ? `<p>${safe(e.desc)}</p>` : ''}
-          ${e.tags ? `<div class="j-tags">${e.tags.map(t => `<span class="j-tag ${e.result && /AIR/.test(t) ? 'result' : ''}">${safe(t)}</span>`).join('')}</div>` : ''}
-        </figcaption>
-      </figure>`;
-
-    timeline.insertAdjacentHTML('beforeend', milestones.map(m => `
-      <article class="j-block" data-side="${m.side}">
-        <span class="j-node"></span>
-        <div class="j-text">
-          <div class="j-kicker">${safe(m.kicker)}</div>
-          <h3 class="j-date">${safe(m.date)}</h3>
-          <div class="j-title">${safe(m.title)}</div>
-          <p class="j-role">${safe(m.role)}</p>
-          ${m.intro ? `<p class="j-blurb">${safe(m.intro)}</p>` : ''}
-        </div>
-        <div class="j-gallery" data-count="${m.events.length}">${m.events.map(card).join('')}</div>
-      </article>`).join(''));
-
-    timeline.querySelectorAll('.j-img img').forEach(im => {
-      im.addEventListener('error', () => im.parentNode.classList.add('is-broken'));
-      im.addEventListener('load', schedule);
-    });
+  <div class="tags"><span>Vehicle dynamics</span><span>CAD</span><span>FEA</span></div>
+</div>
+<h2 class="rt"><span>Role in team</span></h2>
+<p class="role-text">Making the technical decisions on the whole vehicle architecture in collaboration with all subsystem teams, while personally working on the suspension and steering.</p>
 
 
-    // ---- Lightbox: click any project image; scroll / swipe / arrows / wheel move between all project images ----
-    const lb = document.createElement('div');
-    lb.className = 'arpit-lb';
-    lb.setAttribute('role', 'dialog');
-    lb.setAttribute('aria-modal', 'true');
-    lb.setAttribute('aria-label', 'Project image preview');
-    lb.innerHTML = `
-      <div class="arpit-lb-count" aria-live="polite"></div>
-      <button type="button" class="arpit-lb-close" aria-label="Close preview">&times;</button>
-      <button type="button" class="arpit-lb-prev" aria-label="Previous image">&#8249;</button>
-      <button type="button" class="arpit-lb-next" aria-label="Next image">&#8250;</button>
-      <div class="arpit-lb-track">${slides.map(e => `
-        <div class="arpit-lb-slide">
-          <div class="arpit-lb-pic"><img src="${safe(e.image)}" alt="${safe(e.title)}" loading="lazy" decoding="async"></div>
-          <div class="arpit-lb-cap"><small>${safe(e.date)}</small><b>${safe(e.title)}</b><span>${safe(e.desc)}</span></div>
-        </div>`).join('')}
-      </div>`;
-    document.body.appendChild(lb);
-    const track = lb.querySelector('.arpit-lb-track');
-    const count = lb.querySelector('.arpit-lb-count');
-    let cur = 0, lastFocus = null, wheelLock = false;
-
-    const clamp = i => Math.max(0, Math.min(slides.length - 1, i));
-    const setCount = () => { count.textContent = (cur + 1) + ' / ' + slides.length; };
-    function goTo(i, smooth){
-      cur = clamp(i);
-      track.scrollTo({left: cur * track.clientWidth, behavior: smooth ? 'smooth' : 'auto'});
-      setCount();
-    }
-    function openLb(i){
-      lastFocus = document.activeElement;
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      goTo(i, false);
-      lb.querySelector('.arpit-lb-close').focus({preventScroll: true});
-    }
-    function closeLb(){
-      lb.classList.remove('open');
-      document.body.style.overflow = '';
-      if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll: true});
-    }
-
-    timeline.addEventListener('click', ev => {
-      const t = ev.target.closest('.j-img[data-i]');
-      if (t) openLb(+t.dataset.i);
-    });
-    timeline.addEventListener('keydown', ev => {
-      if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('.j-img[data-i]')) {
-        ev.preventDefault(); openLb(+ev.target.dataset.i);
-      }
-    });
-    lb.querySelector('.arpit-lb-close').addEventListener('click', closeLb);
-    lb.querySelector('.arpit-lb-prev').addEventListener('click', () => goTo(cur - 1, true));
-    lb.querySelector('.arpit-lb-next').addEventListener('click', () => goTo(cur + 1, true));
-    // click on the dark area (not the image or caption) closes
-    track.addEventListener('click', ev => {
-      if (ev.target.classList.contains('arpit-lb-slide') || ev.target.classList.contains('arpit-lb-pic')) closeLb();
-    });
-    // swipe / drag-scroll updates the counter
-    let sTimer = 0;
-    track.addEventListener('scroll', () => {
-      clearTimeout(sTimer);
-      sTimer = setTimeout(() => {
-        const i = clamp(Math.round(track.scrollLeft / (track.clientWidth || 1)));
-        if (i !== cur) { cur = i; setCount(); }
-      }, 60);
-    }, {passive: true});
-    // mouse wheel / trackpad: one image per scroll gesture
-    track.addEventListener('wheel', ev => {
-      const d = Math.abs(ev.deltaY) > Math.abs(ev.deltaX) ? ev.deltaY : ev.deltaX;
-      if (!d) return;
-      ev.preventDefault();
-      if (wheelLock || Math.abs(d) < 4) return;
-      wheelLock = true;
-      goTo(cur + (d > 0 ? 1 : -1), true);
-      setTimeout(() => { wheelLock = false; }, 450);
-    }, {passive: false});
-    document.addEventListener('keydown', ev => {
-      if (!lb.classList.contains('open')) return;
-      if (ev.key === 'Escape') closeLb();
-      else if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') { ev.preventDefault(); goTo(cur + 1, true); }
-      else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') { ev.preventDefault(); goTo(cur - 1, true); }
-      else if (ev.key === 'Tab') { // keep focus inside the dialog
-        const f = [...lb.querySelectorAll('button')];
-        const i = f.indexOf(document.activeElement);
-        ev.preventDefault();
-        f[(i + (ev.shiftKey ? -1 : 1) + f.length) % f.length].focus();
-      }
-    });
-    window.addEventListener('resize', () => { if (lb.classList.contains('open')) goTo(cur, false); });
-
-    // Curved glowing path: weaves through the central gutter so image cards never sit on it.
-    function off(){ return parseFloat(getComputedStyle(root).getPropertyValue('--j-off')) || 50; }
-    function layout(){
-      const W = timeline.clientWidth, H = timeline.clientHeight;
-      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-      if (W <= 760) return;
-      const tr = timeline.getBoundingClientRect(), o = off();
-      const pts = [[W/2, 0]];
-      timeline.querySelectorAll('.j-block').forEach((b, i) => {
-        const s = i % 2 === 0 ? -1 : 1;
-        const br = b.getBoundingClientRect(), top = br.top - tr.top;
-        const cols = getComputedStyle(b).gridTemplateColumns.split(' ').map(parseFloat);
-        const cx = cols[0] + cols[1] / 2;
-        const node = b.querySelector('.j-node');
-        node.style.left = (cx + s * o) + 'px';
-        pts.push([cx + s * o, top + 22]);
-        pts.push([cx - s * o, top + br.height * 0.55]);
-      });
-      pts.push([W/2, H]);
-      let d = `M${pts[0][0]} ${pts[0][1]}`;
-      for (let i = 1; i < pts.length; i++){
-        const [x1,y1] = pts[i-1], [x2,y2] = pts[i], my = (y1 + y2) / 2;
-        d += ` C${x1} ${my} ${x2} ${my} ${x2} ${y2}`;
-      }
-      paths.forEach(p => p.setAttribute('d', d));
-    }
-    let raf = 0;
-    function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); }
-    layout();
-    window.addEventListener('resize', schedule);
-    window.addEventListener('load', schedule);
-    if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(timeline);
-  })();
-  </script>
+<section>
+  <h2><span>Vehicle Dynamics Simulations</span></h2>
+  <div class="grid" id="vd"></div>
 </section>
+<section>
+  <h2><span>CAD</span></h2>
+  <div class="grid" id="cad"></div>
+</section>
+<section>
+  <h2><span>Driveline Correction</span></h2>
+  <div class="grid"><div class="card wide" id="drv"></div></div>
+</section>
+<section>
+  <h2><span>Failure Investigation</span></h2>
+  <div class="grid"><div class="card wide" id="inv"></div></div>
+</section>
+<section>
+  <h2><span>FEA &amp; Design</span></h2>
+  <div class="grid"><div class="card wide" id="fea"></div></div>
+</section>
+</div>
+</div>
+</template>
+<script>
+(function(){
+  var host=document.getElementById('bajaHost'),tpl=document.getElementById('bajaTpl'),done=false;
+  window.initBajaPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+(function(){
+  var vd=R.getElementById('vd'),V='https://res.cloudinary.com/fvtkc10l/video/upload/',I='https://res.cloudinary.com/fvtkc10l/image/upload/';
+  function vf(p){
+    var fr=document.createElement('div');fr.className='frame';
+    var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='auto';
+    [p+'.mp4',p+'.mov'].forEach(function(u,k){
+      var s=document.createElement('source');s.src=u;
+      if(k===1)s.onerror=function(){
+        fr.innerHTML='';
+        var b=document.createElement('button');b.textContent='Upload video';
+        var inp=document.createElement('input');inp.type='file';inp.accept='video/*';inp.hidden=true;
+        b.onclick=function(){inp.click()};
+        inp.onchange=function(){if(!inp.files[0])return;var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.autoplay=true;v2.playsInline=true;v2.src=URL.createObjectURL(inp.files[0]);fr.innerHTML='';fr.appendChild(v2)};
+        fr.appendChild(b);fr.appendChild(inp);
+      };
+      v.appendChild(s);
+    });
+    fr.appendChild(v);return fr;
+  }
+  function grp(title,desc,frames){
+    var c=document.createElement('div');c.className='card wide';
+    var t=document.createElement('div');t.className='title';t.textContent=title;
+    var d=document.createElement('p');d.className='desc';d.textContent=desc;
+    var g=document.createElement('div');g.className='gallery';
+    frames.forEach(function(x){g.appendChild(x)});
+    c.appendChild(t);c.appendChild(d);c.appendChild(g);return c;
+  }
+  vd.innerHTML='';
+  vd.appendChild(grp('Double wishbone suspension geometry','11 in wheel travel, 0% anti-dive, roll centre definition.',[vf(V+'v1790883973/IMG_8034_fopbpy')]));
+  vd.appendChild(grp('Lotus Shark simulation','Steering kinematics, hardpoint iterations, bump steer reduction and camber change optimisation.',[vf(V+'v1790884005/IMG_8035_eymnif'),vf(V+'v1795289404/Screen_Recording_2026-11-22_005939_vesgmg')]));
+  vd.appendChild(grp('Altair MotionView','Bump simulation and bump stop check: chassis clears the ground over full wheel travel.',[vf(V+'v1795287348/IMG_8914_xygp2u'),imgFrame(I+'v1795291689/c8c27c09-6899-4bcc-b12f-68de037475e6.png','Altair MotionView'),imgFrame(I+'v1795287597/542d2b1f-c917-42be-b049-541163581126_sgbg6c.jpg','Bump stop and full wheel travel verification'),imgFrame(I+'v1795268400/Black_and_Dark_Space_Photo_YouTube_Thumbnail_n4fbeb.png','Altair MotionView')]));
+})();
+function imgFrame(u,a){
+  var fr=document.createElement('div');fr.className='frame';
+  var im=document.createElement('img');im.alt=a;im.src=u;
+  im.onerror=function(){
+    fr.innerHTML='';
+    var b=document.createElement('button');b.textContent='Upload image';
+    var inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.hidden=true;
+    b.onclick=function(){inp.click()};
+    inp.onchange=function(){if(!inp.files[0])return;var i2=document.createElement('img');i2.alt=a;i2.src=URL.createObjectURL(inp.files[0]);fr.innerHTML='';fr.appendChild(i2)};
+    fr.appendChild(b);fr.appendChild(inp);
+  };
+  fr.appendChild(im);return fr;
+}
+(function(){
+  var cad=R.getElementById('cad'),first=cad.firstChild,I='https://res.cloudinary.com/fvtkc10l/image/upload/';
+  [['v1795290699/Screenshot_2025-07-17_225215_g3yfik.png','Full vehicle CAD isometric'],['v1795290663/Screenshot_2025-07-17_204715_jmuhgn.png','Final front double wishbone suspension CAD'],['v1795290596/Screenshot_2025-07-17_205553_l6exad.png','Final trailing arm suspension CAD']].forEach(function(x){
+    var c=document.createElement('div');c.className='card';
+    var t=document.createElement('div');t.className='title';t.textContent=x[1];
+    c.appendChild(imgFrame(I+x[0],x[1]));c.appendChild(t);
+    cad.insertBefore(c,first);
+  });
+})();
+(function(){
+  var f=R.getElementById('fea'),p=document.createElement('div');p.className='pair';
+  p.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1784709369/FEA_7_hjmchr.jpg','FEA of propeller shaft cover 1'));
+  p.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1784709370/FEA_8_ssf5jt.jpg','FEA of propeller shaft cover 2'));
+  var t=document.createElement('div');t.className='title';t.textContent='Propeller shaft cover';
+  var d=document.createElement('p');d.className='desc';d.textContent='FEA of the propeller shaft cover, reinforced to withstand driver load during entry and exit.';
+  f.appendChild(p);f.appendChild(t);f.appendChild(d);
+})();
+(function(){
+  var f=R.getElementById('inv'),B='https://res.cloudinary.com/fvtkc10l/';
+  function vidFrame(srcs){
+    var fr=document.createElement('div');fr.className='frame';
+    var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='auto';
+    srcs.forEach(function(u,k){
+      var s=document.createElement('source');s.src=u;
+      if(k===srcs.length-1)s.onerror=function(){
+        fr.innerHTML='';
+        var b=document.createElement('button');b.textContent='Upload video';
+        var inp=document.createElement('input');inp.type='file';inp.accept='video/*';inp.hidden=true;
+        b.onclick=function(){inp.click()};
+        inp.onchange=function(){if(!inp.files[0])return;var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.autoplay=true;v2.playsInline=true;v2.src=URL.createObjectURL(inp.files[0]);fr.innerHTML='';fr.appendChild(v2)};
+        fr.appendChild(b);fr.appendChild(inp);
+      };
+      v.appendChild(s);
+    });
+    fr.appendChild(v);return fr;
+  }
+  var vf=document.createElement('div');vf.className='frame';
+  var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='auto';v.src=B+'video/upload/v1795285534/1_ygnkuq.mp4';
+  v.onerror=function(){
+    vf.innerHTML='';
+    var b=document.createElement('button');b.textContent='Upload video';
+    var inp=document.createElement('input');inp.type='file';inp.accept='video/*';inp.hidden=true;
+    b.onclick=function(){inp.click()};
+    inp.onchange=function(){if(!inp.files[0])return;var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.autoplay=true;v2.playsInline=true;v2.src=URL.createObjectURL(inp.files[0]);vf.innerHTML='';vf.appendChild(v2)};
+    vf.appendChild(b);vf.appendChild(inp);
+  };
+  vf.appendChild(v);
+  var g=document.createElement('div');g.className='gallery';g.appendChild(vf);
+  [['1795285407','2_ddrnxn'],['1795285407','3_p9sq9s'],['1795285407','4_qndmli'],['1795285408','5_phii4y'],['1795285408','6_kitbdy'],['1795285408','7_na5cnx'],['1795285408','8_t2ujyy'],['1795285407','10_pxsix3']].forEach(function(x,i){
+    g.appendChild(imgFrame(B+'image/upload/v'+x[0]+'/'+x[1]+'.jpg','Failure investigation photo '+(i+1)));
+    if(i===5)g.appendChild(vidFrame([B+'video/upload/v1790887893/IMG_8043_hfajth.mp4',B+'video/upload/v1790887893/IMG_8043_hfajth.mov']));
+  });
+  f.appendChild(g);
+  var t=document.createElement('div');t.className='title';t.textContent='Suspension and traction A-arm failure';
+  var d=document.createElement('p');d.className='desc';d.textContent='A leaking rear AFCO shock before mBAJA 2026 forced a last-minute suspension reconfiguration: front 21-inch AFCO shocks were moved to the rear and sourced 16-inch FOX shocks added to the front. Following a severe obstacle impact, the front upper A-arm bent. I reconstructed the impact condition, estimated loads using an energy-based approach and performed transient FEA to investigate the failure. The analysis revealed that the revised shock configuration altered the suspension load path, increasing the A-arm bending moment. These findings were used to update the design and improve its structural robustness.';
+  f.appendChild(t);f.appendChild(d);
+})();
+(function(){
+  var f=R.getElementById('drv'),B='https://res.cloudinary.com/fvtkc10l/image/upload/',g=document.createElement('div');g.className='gallery';
+  [['v1792658465/driveline_correction_post_linkedin_cover_fcgqtp'],['v1795286638/11_b4zqhl'],['v1795286639/22_ujmpzt'],['v1795286641/33_xwcxhu'],['v1795286642/44_gnfsu8'],['v1795286643/55_pcgz5z'],['v1795286644/66_lrzmqf']].forEach(function(x,i){g.appendChild(imgFrame(B+x[0]+'.jpg'.replace('.jpg',i===0?'.png':'.jpg'),'Driveline correction image '+(i+1)))});
+  (function(){
+    var V='https://res.cloudinary.com/fvtkc10l/video/upload/v1791031735/IMG_8105_abuexv.',fr=document.createElement('div');fr.className='frame';
+    var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.controls=true;v.preload='auto';
+    ['mp4','mov'].forEach(function(e,k){
+      var so=document.createElement('source');so.src=V+e;
+      if(k===1)so.onerror=function(){
+        fr.innerHTML='';
+        var b=document.createElement('button');b.textContent='Upload video';
+        var inp=document.createElement('input');inp.type='file';inp.accept='video/*';inp.hidden=true;
+        b.onclick=function(){inp.click()};
+        inp.onchange=function(){if(!inp.files[0])return;var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.autoplay=true;v2.playsInline=true;v2.controls=true;v2.src=URL.createObjectURL(inp.files[0]);fr.innerHTML='';fr.appendChild(v2)};
+        fr.appendChild(b);fr.appendChild(inp);
+      };
+      v.appendChild(so);
+    });
+    fr.appendChild(v);g.appendChild(fr);
+  })();
+  var t=document.createElement('div');t.className='title';t.textContent='Front driveline correction';
+  var d=document.createElement('p');d.className='desc';
+  d.textContent='A day before final chassis welding, assembly validation revealed excessive front CV axle articulation at full steering lock due to the rearward differential position. The objective was to reduce axle angularity without compromising steering kinematics. Using LOTUS Shark, I repositioned the rack ~2 inches forward and upward, preserving toe behaviour and minimising bump steer across 11 inches of wheel travel, with increased steering effort as a trade-off. The revised geometry was validated, and new mounts were CAD-designed, templated 1:1 and fabricated before welding. The correction contributed to 48 endurance laps and AIR 2 overall at ATVC.';
+  f.appendChild(g);f.appendChild(t);f.appendChild(d);
+})();
+(function(){
+  var ov,track,items;
+  function close(){if(ov){ov.remove();ov=null}document.removeEventListener('keydown',key)}
+  function cur(){return Math.round(track.scrollLeft/track.clientWidth)}
+  function go(n){n=Math.max(0,Math.min(items.length-1,n));track.scrollTo({left:n*track.clientWidth,behavior:'smooth'})}
+  function key(e){if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(cur()+1);else if(e.key==='ArrowLeft')go(cur()-1)}
+  function mk(txt,cls,fn){var b=document.createElement('button');b.textContent=txt;b.className=cls;b.onclick=function(e){e.stopPropagation();fn()};return b}
+  R.addEventListener('click',function(e){
+    var fr=e.target.closest('.gallery .frame,.pair .frame,#vd .frame,#cad .frame');
+    if(!fr||!fr.querySelector('img,video')||(e.target.tagName==='VIDEO'&&fr.closest('#vd,#cad')))return;
+    items=[].filter.call(fr.closest('.gallery,.pair,#vd,#cad').querySelectorAll('.frame'),function(x){return x.querySelector('img,video')});
+    var start=items.indexOf(fr);
+    ov=document.createElement('div');ov.className='lb';
+    track=document.createElement('div');track.className='lbtrack';
+    items.forEach(function(x){
+      var m=x.querySelector('img,video'),s=document.createElement('div'),c;s.className='lbslide';
+      if(m.tagName==='VIDEO'){c=document.createElement('video');c.controls=true;c.loop=true;c.muted=true;c.autoplay=true;c.playsInline=true}
+      else{c=document.createElement('img');c.alt=m.alt}
+      c.src=m.currentSrc||m.src;c.onclick=function(ev){ev.stopPropagation()};
+      s.onclick=close;s.appendChild(c);track.appendChild(s);
+    });
+    ov.appendChild(track);
+    ov.appendChild(mk('Close','lbx',close));
+    ov.appendChild(mk('\u2039','lbp',function(){go(cur()-1)}));
+    ov.appendChild(mk('\u203a','lbn',function(){go(cur()+1)}));
+    R.appendChild(ov);
+    track.scrollLeft=start*track.clientWidth;
+    document.addEventListener('keydown',key);
+  });
+})();
+(function(){
+  var vis=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.25});
+  function setup(v){
+    if(v._ak)return;v._ak=1;
+    v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;v.setAttribute('muted','');v.setAttribute('loop','');v.setAttribute('playsinline','');
+    v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){})});
+    vis.observe(v);
+  }
+  function scan(){R.querySelectorAll('.frame video').forEach(setup)}
+  scan();
+  new MutationObserver(scan).observe(R,{childList:true,subtree:true});
+  ['touchstart','click','scroll'].forEach(function(ev){document.addEventListener(ev,function(){R.querySelectorAll('.frame video').forEach(function(v){if(v.paused){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){var p=v.play();if(p&&p.catch)p.catch(function(){})}}})},{passive:true})});
+})();
+
+    var back=R.getElementById('bjBack');
+    if(back)back.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('baja-back'))});
+  };
+})();
+</script>
+</div>
+<div id="dunePane" role="tabpanel" aria-label="Dune Buggy — ARC Global Internship">
+<style>
+#dunePane{display:none}
+#dunePane.is-on{display:block}
+.dn-sec{padding:40px 6% 100px}
+@media(max-width:600px){.dn-sec{padding:24px 5% 96px}}
+</style>
+<section class="dn-sec" aria-label="Dune Buggy — ARC Global internship case study"><div id="duneHost"></div></section>
+<template id="duneTpl"><style>
+:host{display:block;--bg:#0A0C10;--text:#FFFFFF;--muted:#8A8F9A;--line:#2A2F3A;--card:#111318}
+*{box-sizing:border-box}
+.topbar{margin:0 0 4px}
+.bj{margin:0;color:var(--text);font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);line-height:1.5}
+.wrap{max-width:960px;margin:0 auto}
+.back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;transition:border-color .2s,color .2s}
+.back:hover{border-color:var(--text);color:var(--text)}
+button{font:inherit;color:var(--text);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;transition:border-color .2s}
+button:hover{border-color:var(--text)}
+.rt{margin-top:32px}
+.role-text{font-weight:400;font-size:clamp(16px,2.2vw,18px);line-height:1.65;margin:0 0 36px;max-width:62ch}
+.hero{margin-top:22px}
+.when{font-size:12px;color:var(--muted);letter-spacing:.03em;margin:8px 0 0}
+.tl{position:relative;padding-left:28px}
+.tl:before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:1px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:last-child{margin-bottom:0}
+.dot{position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;border:1px solid var(--muted);background:var(--bg)}
+.tl-item.now .dot{background:var(--text);border-color:var(--text)}
+.role{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+.role.prev-role{font-weight:400;font-size:15px;color:var(--muted)}
+.tl .when{margin:4px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{border:1px solid var(--line);font-size:12px;padding:4px 12px;border-radius:999px;color:var(--muted)}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;margin:28px 0 6px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:46ch}
+section{margin-bottom:40px}
+h2{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:10px}
+.frame{aspect-ratio:16/9;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+video{width:100%;height:100%;display:block;background:#000}
+.empty{color:var(--muted);font-size:13px}
+.title{width:100%;background:none;border:0;border-bottom:1px solid transparent;color:var(--text);font:inherit;font-size:15px;padding:2px 0}
+.title:focus{outline:none;border-bottom-color:var(--line)}
+.title::placeholder{color:var(--muted)}
+.actions{display:flex;gap:8px}
+.pair{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.wide{grid-column:1/-1;min-width:0}
+.wide .title{order:1}.wide .desc{order:2;max-width:none}
+.wide .gallery,.wide .pair{order:3;margin-top:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.gallery .frame,.pair .frame{aspect-ratio:4/3;cursor:zoom-in}
+.gallery video{object-fit:cover;pointer-events:none}
+#vd img,#cad img{cursor:zoom-in}
+.grp{grid-column:1/-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:8px}
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);display:flex;flex-direction:column}
+.lbtrack{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.lbslide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:64px 12px}
+.lbslide img,.lbslide video{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;background:none}
+.lb button{color:#fff;border-color:#666;background:rgba(0,0,0,.5)}
+.lbx{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px}
+.lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);display:none;font-size:20px;padding:6px 16px}
+.lbp{left:14px}.lbn{right:14px}
+@media (min-width:641px){.lbp,.lbn{display:block}}
+.gallery img,.pair img{object-fit:cover}
+@media (max-width:640px){.gallery,.pair{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}.gallery .frame,.pair .frame{flex:0 0 78%;scroll-snap-align:start}#cad{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}#cad .card{flex:0 0 78%;scroll-snap-align:start}}
+#vd{row-gap:28px}
+img{width:100%;height:100%;object-fit:contain;display:block}
+.desc{color:var(--muted);font-size:14px;margin:0;max-width:60ch}
+.back{display:inline-block}
+.role.sm{font-size:15px;font-weight:400}
+.wide .tags{order:3;margin-top:2px}
+.wide .gallery{order:4}
+.wide .after{order:5}
+.wide .grades{order:3}
+.tags.hero-tags span{white-space:nowrap}
+.quote{margin:0 0 14px}
+.sec-sub{color:var(--muted);font-size:14px;margin:-4px 0 18px;max-width:60ch}
+.stat-num{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+.stat-label{font-size:15px;margin:2px 0 6px}
+.grades{display:flex;flex-direction:column;max-width:460px;margin-top:6px}
+.grade-row{display:flex;justify-content:space-between;gap:16px;font-size:14px;padding:8px 0;border-bottom:1px solid var(--line)}
+.grade-row span:last-child{font-weight:500}
+.grade-row.overall{color:var(--text);font-weight:500;border-bottom:0}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);letter-spacing:.03em}
+.learn-num{font-size:12px;color:var(--muted);letter-spacing:.03em}
+
+</style>
+
+<div class="bj"><div class="wrap">
+<div class="topbar"><a class="back" id="dnBack" href="#projects">&larr; Projects</a></div>
+<div class="hero">
+  <div class="tl">
+    <div class="tl-item now">
+      <span class="dot"></span>
+      <div class="role">Design &amp; Development Intern</div>
+      <p class="when">ARC Global · 15 Jun 2025 – 15 Jul 2025</p>
+    </div>
+  </div>
+  <div class="tags hero-tags"><span>SolidWorks CAD</span><span>CATIA Ergonomics</span><span>Suspension Design</span><span>Lotus Shark</span><span>Steering Geometry</span><span>Chain Drive Packaging</span><span>Roll Cage Design</span></div>
+</div>
+<h2 class="rt"><span>Role in team</span></h2>
+<p class="role-text">Sole mechanical engineer intern at ARC Global, a pre-product startup. End-to-end design of a 4×2 dune buggy — from a blank slate to one complete, manufacturable CAD prototype in 30 days. System layout, double wishbone suspension geometry, and packaging, built entirely from first principles.</p>
+
+<section>
+  <h2><span>The Problem</span></h2>
+  <div class="role quote">ARC Global had zero products. Zero benchmark data. Zero prior R&amp;D.</div>
+  <p class="role-text" style="margin-bottom:16px">As the sole mechanical engineer intern — joining ARC Global during the summer break after 4th semester — the brief wasn't to optimize a vehicle. It was to prove one could exist at all. No legacy platform to adapt. No in-house data to anchor decisions.</p>
+  <p class="role-text" style="margin-bottom:0">Priority: close the loop from concept to a real, manufacturable CAD prototype. Refinement — weight, cost, performance — was deliberately deferred. It can only happen once something exists to refine.</p>
+</section>
+
+<section>
+  <h2><span>Key Milestones</span></h2>
+  <p class="sec-sub">Six phases, one month. Each phase fed directly into the next.</p>
+  <div class="grid">
+    <div class="card wide">
+      <div class="title">01 — Reverse Engineering a Reference Product</div>
+      <p class="desc">No physical vehicle. No spec sheet. Working entirely from images of a reference dune buggy sourced online, I systematically extracted all key dimensions — wheelbase, track width, seat position, roll cage proportions — using image scaling and reference-object estimation. This became the benchmark dataset for every downstream design decision.</p>
+      <div class="tags"><span>Image-Based RE</span><span>Dimensional Estimation</span><span>Benchmarking</span></div>
+      <div class="gallery"><div class="frame"><img src="rev1.jpeg" alt="Reverse engineering reference image 1" loading="lazy"></div><div class="frame"><img src="rev2.png" alt="Reverse engineering reference image 2" loading="lazy"></div></div>
+      
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> Benchmark dimension spec sheet derived from image analysis</p>
+    </div>
+    <div class="card wide">
+      <div class="title">02 — Initial Sketches</div>
+      <p class="desc">Proportional concept studies translated the benchmark dataset into a viable layout — establishing wheelbase, roll cage silhouette, and seating position before any CAD work began.</p>
+      <div class="tags"><span>Concept Sketching</span><span>Proportional Studies</span></div>
+      <div class="gallery"><div class="frame"><img src="rev3.png" alt="Concept sketches 1" loading="lazy"></div><div class="frame"><img src="sketch2.jpeg" alt="Concept sketches 2" loading="lazy"></div></div>
+      
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> Concept sketches + hand-calc summary</p>
+    </div>
+    <div class="card wide">
+      <div class="title">03 — SolidWorks CAD Development</div>
+      <p class="desc">The concept sketches were built out into an initial parametric assembly, establishing the roll cage layout and core structural envelope of the buggy.</p>
+      <div class="tags"><span>SolidWorks</span><span>Parametric Modelling</span><span>Assembly Management</span><span>Roll Cage Design</span></div>
+      <div class="gallery"><div class="frame"><img src="initial.cad1.jpeg" alt="Initial CAD development 1" loading="lazy"></div><div class="frame"><img src="initial.cad2.jpeg" alt="Initial CAD development 2" loading="lazy"></div></div>
+      
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> Initial CAD prototype with roll cage layout established</p>
+    </div>
+    <div class="card wide">
+      <div class="title">04 — CATIA Ergonomics</div>
+      <p class="desc">H-point and package analysis in CATIA V5 verified driver reach, visibility, and seating geometry against the evolving structural envelope.</p>
+      <div class="tags"><span>CATIA V5</span><span>Ergonomic Packaging</span><span>H-Point Analysis</span></div>
+      <div class="gallery"><div class="frame"><img src="cat.erg.jpeg" alt="CATIA ergonomics package 1" loading="lazy"></div><div class="frame"><img src="cat.erg2.jpeg" alt="CATIA ergonomics package 2" loading="lazy"></div></div>
+      
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> Ergonomic package drawing set</p>
+    </div>
+    <div class="card wide">
+      <div class="title">05 — Suspension &amp; Steering Design</div>
+      <p class="desc">Double wishbone geometry was developed and validated in Lotus Shark, iterating on motion ratio and kinematic behaviour ahead of final packaging.</p>
+      <div class="tags"><span>Lotus Shark</span><span>Double Wishbone</span><span>Kinematic Analysis</span><span>Motion Ratio</span></div>
+      <div class="gallery"><div class="frame"><img src="suspension1.jpeg" alt="Suspension geometry study 1" loading="lazy"></div><div class="frame"><video src="suspension3.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="frame"><video src="suspension2.mp4" autoplay muted loop playsinline preload="metadata"></video></div></div>
+      <p class="desc after">Front double wishbone suspension geometry — modelled in SolidWorks, ahead of iterations in Lotus Shark</p>
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> Suspension geometry report + Lotus Shark analysis</p>
+    </div>
+    <div class="card wide">
+      <div class="title">06 — Final CAD Development</div>
+      <p class="desc">All subsystems — roll cage, suspension, ergonomics, chain drive packaging — were consolidated into one complete, manufacturable assembly.</p>
+      <div class="tags"><span>SolidWorks</span><span>Parametric Modelling</span><span>Assembly Management</span><span>Roll Cage Design</span></div>
+      <div class="gallery"><div class="frame"><img src="final.cad1.jpeg" alt="Final CAD prototype 1" loading="lazy"></div><div class="frame"><img src="final.cad2.jpeg" alt="Final CAD prototype 2" loading="lazy"></div><div class="frame"><img src="final.cad3.jpeg" alt="Final CAD prototype 3" loading="lazy"></div></div>
+      
+      <p class="desc after"><strong style="font-weight:500;color:var(--text)">Deliverable —</strong> 1 complete, manufacturable CAD prototype</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span>30-Day Timeline</span></h2>
+  <div class="tl">
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">Research &amp; Reverse Engineering</div>
+      <p class="when">Day 1–5</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">Concept Sketches</div>
+      <p class="when">Day 6–10</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">CAD Development</div>
+      <p class="when">Day 10–15</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">Ergonomics</div>
+      <p class="when">Day 15–20</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">Suspension</div>
+      <p class="when">Day 18–25</p>
+    </div>
+    <div class="tl-item">
+      <span class="dot"></span>
+      <div class="role sm">Final CAD</div>
+      <p class="when">Day 25–30</p>
+    </div>
+  </div>
+</section>
+
+
+
+</div></div>
+</template>
+<script>
+(function(){
+  /* Images/videos in the case study use bare file names (rev1.jpeg, suspension2.mp4 ...).
+     They are resolved against this base. If you copy the media files next to index.html, set it to ''. */
+  var DUNE_MEDIA='https://arpitmalik711.github.io/Dunebuggy.Arpit/';
+  var host=document.getElementById('duneHost'),tpl=document.getElementById('duneTpl'),done=false;
+  window.initDunePane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'}),frag=tpl.content.cloneNode(true);
+    frag.querySelectorAll('img[src],video[src]').forEach(function(m){
+      var s=m.getAttribute('src');
+      if(s&&!/^(https?:)?\/\/|^data:|^\//.test(s))m.setAttribute('src',DUNE_MEDIA+s);
+    });
+    R.appendChild(frag);
+(function(){
+  var ov,track,items;
+  function close(){if(ov){ov.remove();ov=null}document.removeEventListener('keydown',key)}
+  function cur(){return Math.round(track.scrollLeft/track.clientWidth)}
+  function go(n){n=Math.max(0,Math.min(items.length-1,n));track.scrollTo({left:n*track.clientWidth,behavior:'smooth'})}
+  function key(e){if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(cur()+1);else if(e.key==='ArrowLeft')go(cur()-1)}
+  function mk(txt,cls,fn){var b=document.createElement('button');b.textContent=txt;b.className=cls;b.onclick=function(e){e.stopPropagation();fn()};return b}
+  R.addEventListener('click',function(e){
+    var fr=e.target.closest('.gallery .frame,.pair .frame');
+    if(!fr||!fr.querySelector('img,video'))return;
+    items=[].filter.call(fr.closest('.gallery,.pair').querySelectorAll('.frame'),function(x){return x.querySelector('img,video')});
+    var start=items.indexOf(fr);
+    ov=document.createElement('div');ov.className='lb';
+    track=document.createElement('div');track.className='lbtrack';
+    items.forEach(function(x){
+      var m=x.querySelector('img,video'),s=document.createElement('div'),c;s.className='lbslide';
+      if(m.tagName==='VIDEO'){c=document.createElement('video');c.controls=true;c.loop=true;c.muted=true;c.autoplay=true;c.playsInline=true}
+      else{c=document.createElement('img');c.alt=m.alt}
+      c.src=m.currentSrc||m.src;c.onclick=function(ev){ev.stopPropagation()};
+      s.onclick=close;s.appendChild(c);track.appendChild(s);
+    });
+    ov.appendChild(track);
+    ov.appendChild(mk('Close','lbx',close));
+    ov.appendChild(mk('\u2039','lbp',function(){go(cur()-1)}));
+    ov.appendChild(mk('\u203a','lbn',function(){go(cur()+1)}));
+    R.appendChild(ov);
+    track.scrollLeft=start*track.clientWidth;
+    document.addEventListener('keydown',key);
+  });
+})();
+(function(){
+  var vis=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.25});
+  function setup(v){
+    if(v._ak)return;v._ak=1;
+    v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;v.setAttribute('muted','');v.setAttribute('loop','');v.setAttribute('playsinline','');
+    v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){})});
+    vis.observe(v);
+  }
+  function scan(){R.querySelectorAll('.frame video').forEach(setup)}
+  scan();
+  new MutationObserver(scan).observe(R,{childList:true,subtree:true});
+  ['touchstart','click','scroll'].forEach(function(ev){document.addEventListener(ev,function(){R.querySelectorAll('.frame video').forEach(function(v){if(v.paused){var r=v.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){var p=v.play();if(p&&p.catch)p.catch(function(){})}}})},{passive:true})});
+})();
+    var back=R.getElementById('dnBack');
+    if(back)back.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('dune-back'))});
+  };
+})();
+</script>
 </div>
 <div id="reelsPane" class="ytp" role="tabpanel" aria-labelledby="tabReels">
 <style>
@@ -2457,7 +2686,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
     {title:'Vertical Force Balance using Graph',desc:'Vertical force balance of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794607822/3_srpvqy.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_90,w_640,f_jpg,q_auto/v1794607822/3_srpvqy.jpg',dur:''},
     {title:'Shock travel & Wheel travel methodology',desc:'Methodology for measuring shock travel and wheel travel.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794609100/4_s6zy3k.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_77,w_640,f_jpg,q_auto/v1794609100/4_s6zy3k.jpg',dur:''},
     {title:'Motion Ratio Verification',desc:'Verification of the suspension motion ratio.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794610005/5_bjvzdl.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_2,w_640,f_jpg,q_auto/v1794610005/5_bjvzdl.jpg',dur:''},
-    {title:'Full Wheel Travel and Damper Travel Verification',desc:'Verification of full wheel travel and damper travel of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1795269954/IMG_8912_okf1vh.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_89,w_640,f_jpg,q_auto/v1795269954/IMG_8912_okf1vh.jpg',dur:''}
+    {title:'Static Analysis Walkthrough',desc:'Static analysis of the BAJA ATV suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1795269954/IMG_8912_okf1vh.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_89,w_640,f_jpg,q_auto/v1795269954/IMG_8912_okf1vh.jpg',dur:''}
   ];
   var TAGS=['VD study 1','VD study 1','VD study 1','VD study 1','VD study 1','VD study 1'];
   VIDEOS.forEach(function(v,i){v.tag=TAGS[i]||'VD study 1'});
@@ -2876,7 +3105,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
 .linkedin-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:40px}
 .linkedin-intro .lb-hl-yellow{color:#E8C547}
 .li-feed{--li-card:#1B1F23;--li-text:rgba(255,255,255,.9);--li-sec:rgba(255,255,255,.6);--li-line:#38434f;--li-blue:#70B5F9;
-  position:relative;max-width:none;width:100%;margin:0 auto;background:var(--li-card);border:1px solid #38434f;border-radius:8px;overflow:hidden;color:var(--li-text);
+  position:relative;max-width:760px;margin:0 auto;background:var(--li-card);border:1px solid #38434f;border-radius:8px;overflow:hidden;color:var(--li-text);
   font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif}
 .li-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px 0}
 .li-top h3{margin:0;font-size:18px;font-weight:600;line-height:1.2;color:var(--li-text)}
@@ -2888,7 +3117,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
 .li-wrap{position:relative}
 .li-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:12px 18px 26px;scroll-padding-left:18px}
 .li-track::-webkit-scrollbar{display:none}
-.li-post{flex:1 0 280px;min-width:0;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.li-post{flex:none;width:280px;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 @media(hover:hover) and (pointer:fine){.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18)}}
 .li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
 .li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
@@ -2914,9 +3143,8 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
 .li-prev{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:#000;color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 1px #38434f;z-index:2}
 .li-next:focus-visible,.li-prev:focus-visible{outline:2px solid var(--li-blue)}
 .li-next.is-off,.li-prev.is-off{opacity:.35;pointer-events:none}
-.li-feed.is-fit .li-next,.li-feed.is-fit .li-prev,.li-feed.is-fit:not(.is-all) .li-all{display:none}
 .li-all{display:block;width:100%;background:none;border:0;border-top:1px solid var(--li-line);font-family:inherit;cursor:pointer;text-align:center;padding:10px;border-top:1px solid var(--li-line);font-size:14px;font-weight:600;color:var(--li-text);text-decoration:none}
-.li-feed.is-all .li-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));overflow:visible;scroll-snap-type:none}
+.li-feed.is-all .li-track{display:grid;grid-template-columns:repeat(2,280px);justify-content:center;overflow:visible;scroll-snap-type:none}
 .li-feed.is-all .li-next,.li-feed.is-all .li-prev{display:none}
 .li-all:hover{background:rgba(255,255,255,.06)}
 .li-post:hover .li-name{text-decoration:underline}
@@ -2924,7 +3152,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
   .li-top,.li-pills{padding-left:16px;padding-right:16px}
   .li-text{font-size:14px;line-height:20px;min-height:56px}
   .li-track{flex-direction:column;padding:16px;overflow:visible}
-  .li-post{width:auto;flex:none}
+  .li-post{width:auto}
   .li-next,.li-prev,.li-all{display:none}
   .li-feed.is-all .li-track{display:flex}
 }
@@ -3009,7 +3237,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
   </div>
   </section>
 <script>(function(){var t=document.getElementById("liTrack"),n=document.getElementById("liNext"),p=document.getElementById("liPrev"),a=document.getElementById("liAll"),f=t&&t.closest(".li-feed");if(!t||!n)return;
-function upd(){if(!t.clientWidth)return;var max=t.scrollWidth-t.clientWidth;f.classList.toggle("is-fit",max<=4);if(p)p.classList.toggle("is-off",t.scrollLeft<=4);n.classList.toggle("is-off",t.scrollLeft>=max-4)}
+function upd(){if(!t.clientWidth)return;var max=t.scrollWidth-t.clientWidth;if(p)p.classList.toggle("is-off",t.scrollLeft<=4);n.classList.toggle("is-off",t.scrollLeft>=max-4)}
 if(a)a.addEventListener("click",function(){var on=f.classList.toggle("is-all");a.setAttribute("aria-expanded",on);a.innerHTML=on?"Show less &uarr;":"Show all &rarr;";if(on)t.scrollLeft=0;else f.scrollIntoView({block:"nearest"});upd()});
 n.addEventListener("click",function(){t.scrollBy({left:292,behavior:"smooth"})});
 if(p)p.addEventListener("click",function(){t.scrollBy({left:-292,behavior:"smooth"})});
@@ -3410,12 +3638,8 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
 .nav-dl:hover{background:#F2B535;border-color:#F2B535}
 .nav-dl:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .nav-dl .dl-short{display:none}
-/* Journey: shown on desktop and phones, hidden only on the in-between tablet widths */
-@media(min-width:601px) and (max-width:900px){#tabJourney{display:none!important}}
-/* phones: Decisions tab is merged into Investigations (its LinkedIn posts are moved there by script) */
-@media(max-width:600px){#tabLinkedin{display:none!important}
-  .linkedin-section{padding:40px 5% 56px}
-  .linkedin-section .li-post:nth-child(n+4){display:none}}
+/* Journey is a desktop-only tab */
+@media(max-width:900px){#tabJourney{display:none!important}}
 /* mobile: tighten the gap between the profile intro and the Gallery section */
 @media(max-width:768px){.slideshow-section{padding:36px 5% 40px}.proj-section,.casestudy-section,.cc-section{padding:40px 5%}#about,#acknowledgements,#contact{padding:40px 5%}}
 @media(max-width:600px){.highlights-section{padding-bottom:0}.highlights-section .profile-head{margin-bottom:14px}.highlights-section .tool-strip{margin-bottom:0}}
@@ -3448,17 +3672,19 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
-  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity');
+  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane');
   var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
   function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
   try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',m=!r&&!l&&!s&&!a&&!j;
+    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',m=!r&&!l&&!s&&!a&&!j&&!b&&!d;
+    if(b&&window.initBajaPane)window.initBajaPane();
+    if(d&&window.initDunePane)window.initDunePane();
     if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);
     [[tm,m],[tr,r],[tl,l],[tj,j],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
-    try{history.replaceState(null,'',r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
+    try{history.replaceState(null,'',b?'#baja':d?'#dune':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
     if(!keepScroll&&!m)window.scrollTo(0,0);
     else if(!keepScroll){var ref=r?reelsP:l?liP:j?journeyP:s?studiesP:a?aboutP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
@@ -3473,15 +3699,14 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   aec.parentNode.insertBefore(aAnchor,aec);
   function place(){
     if(aec.parentNode!==aboutP)aboutP.appendChild(aec);
-    /* phones: LinkedIn posts live at the bottom of the Investigations tab; larger screens keep their own tab */
-    if(liSec){
-      if(!dq.matches){if(liSec.parentNode!==studiesP)studiesP.appendChild(liSec)}
-      else if(liSec.parentNode!==liP)liP.appendChild(liSec);
-    }
   }
   place();
   if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
+    var bj=e.target.closest('a[href="#baja"]');
+    if(bj){e.preventDefault();e.stopPropagation();show('baja');return}
+    var dn=e.target.closest('a[href="#dune"]');
+    if(dn){e.preventDefault();e.stopPropagation();show('dune');return}
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
     var t=document.getElementById(id);if(!t)return;
@@ -3491,6 +3716,8 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
+  document.addEventListener('dune-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)});
+  document.addEventListener('baja-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)});
   /* phones always open on Main (no restored tab, hash or scroll position); desktop still honours tab links */
   if(!dq.matches){
     try{history.scrollRestoration='manual'}catch(e){}
@@ -3503,6 +3730,8 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   else if((location.hash==='#reels'||location.hash==='#explanations'))show('reels',true);
   else if(location.hash==='#studies'||location.hash==='#casestudies')show('studies',true);
   else if(location.hash==='#about')show('about',true);
+  else if(location.hash==='#baja')show('baja',true);
+  else if(location.hash==='#dune')show('dune',true);
   else if(location.hash==='#journey'&&window.matchMedia('(min-width:901px)').matches)show('journey',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
