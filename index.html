@@ -280,7 +280,7 @@ nav{
 section{padding:100px 6%}
 .section-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
 .section-title{
-  font-family:var(--fd);font-size:clamp(38px,5vw,60px);
+  font-family:var(--fd);font-size:clamp(30px,4vw,48px);
   font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;
   color:var(--text);margin-bottom:52px;
 }
@@ -563,8 +563,8 @@ footer{
   footer{flex-direction:column;gap:12px;text-align:center;padding:20px 5%}
 
   /* section titles */
-  .section-title{font-size:36px;margin-bottom:36px}
-  .proj-header-title{font-size:48px}
+  .section-title{font-size:29px;margin-bottom:36px}
+  .proj-header-title{font-size:38px}
 }
 
 @media(max-width:480px){
@@ -870,7 +870,7 @@ footer{
     <img class="nl-base" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" width="900" height="426" alt="" decoding="async">
     <img class="nl-wave" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" width="900" height="426" alt="" decoding="async">
   </div>
-  <a class="nav-dl" href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Download Resume</span><span class="dl-short">Resume</span></a>
+  <a class="nav-dl" href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Resume</span><span class="dl-short">Resume</span></a>
 </nav>
 
 <!-- ── PROFILE + TABS ── -->
@@ -902,8 +902,6 @@ footer{
 
 <!-- ── ABOUT ── -->
 <section id="about" class="surface-section">
-  <div class="section-label">// 01 — BACKGROUND</div>
-  <h2 class="section-title">ABOUT <span>ME</span></h2>
   <div class="about-grid">
     <div class="about-text">
       <p>I'm a <span class="hl">final-year Mechanical Engineering Student</span> at NSUT specialising in analytical vehicle development, system-level validation, and first-principles engineering reasoning.</p>
@@ -933,7 +931,7 @@ footer{
 .slideshow-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.3;pointer-events:none}
 .slideshow-header{margin-bottom:48px;position:relative;z-index:1}
 .slideshow-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
-.slideshow-title{font-family:var(--fd);font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text)}
+.slideshow-title{font-family:var(--fd);font-size:clamp(30px,4vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text)}
 .slideshow-title span{color:var(--gold)}
 .slideshow-wrap{position:relative;z-index:1;width:90%;margin:0 auto}
 .slideshow-track{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;border:1px solid var(--border2);touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -1393,7 +1391,7 @@ footer{
 .proj-section{padding:100px 6%;background:var(--bg)}
 .proj-header{margin-bottom:64px}
 .proj-header-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:16px}
-.proj-header-title{font-family:var(--fd);font-size:clamp(48px,7vw,90px);font-weight:800;color:var(--text);line-height:.95;text-transform:uppercase;letter-spacing:-2px}
+.proj-header-title{font-family:var(--fd);font-size:clamp(38px,5.6vw,72px);font-weight:800;color:var(--text);line-height:.95;text-transform:uppercase;letter-spacing:-2px}
 .proj-header-sub{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--text-dim);margin-top:18px}
 .proj-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border)}
 @media(max-width:1400px){.proj-cards{grid-template-columns:repeat(3,1fr)}}
@@ -1552,7 +1550,7 @@ footer{
     </a>
 
     <!-- CARD 04 — GridXenergy Intern -->
-    <a href="https://arpitmalik711.github.io/GridxEnergy_Arpit_Malik/" target="_blank" rel="noopener noreferrer" class="proj-card internship-ribbon">
+    <a href="#gridx" class="proj-card internship-ribbon">
       <div class="proj-img-wrap">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784390998/GridxEnergy.cover_y92plz.png" alt="GridXenergy — Mechanical Design Intern">
       </div>
@@ -1568,7 +1566,7 @@ footer{
     </a>
 
     <!-- CARD 05 -->
-    <a href="https://arpitmalik711.github.io/Escooter/" target="_blank" rel="noopener noreferrer" class="proj-card self-ribbon">
+    <a href="#escooter" class="proj-card self-ribbon">
       <div class="proj-img-wrap">
         <img src="upcoming.project.cover.jpeg" alt="Electric Scooter — Chassis Design">
       </div>
@@ -1669,12 +1667,14 @@ footer{
 </section>
 
 <section id="casestudies" class="casestudy-section">
-  <div class="section-label">// 04 — DEEP DIVE</div>
   <h2 class="section-title">Full <span>Case Study</span></h2>
 
   <style>
   .casestudy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:var(--border)}
   .casestudy-card{max-width:none}
+  /* Investigations headlines use the same font treatment as the LinkedIn "Activity" heading */
+  #casestudies,#casestudies *{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans",Helvetica,Arial,sans-serif}
+  #casestudies .section-title,#casestudies .proj-name{font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans",Helvetica,Arial,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.2px}
   .casestudy-progress-bar{display:flex;flex-direction:column;gap:4px;margin-bottom:20px}
   .casestudy-progress-track{height:2px;background:var(--border2);position:relative;overflow:hidden}
   .casestudy-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
@@ -1707,14 +1707,7 @@ footer{
         <div class="proj-num">— 01 <span>/ 04</span></div>
         <div class="proj-name">Chassis Member Failure at <span class="gold">Damper Mount</span></div>
         <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">STRUCTURAL FAILURE ANALYSIS</span>
-          <span class="proj-tag">FEA</span>
-          <span class="proj-tag">ANSYS</span>
-          <span class="proj-tag">CHASSIS ENGINEERING</span>
-          <span class="proj-tag">BAJA SAE</span>
-        </div>
-        <span class="proj-cta">Open Full Case Study →</span>
+         <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
 
@@ -1730,15 +1723,7 @@ footer{
         <div class="proj-name">Mahindra 265 <span class="gold">Steering Geometry</span> Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
 
-        <div class="proj-tags">
-          <span class="proj-tag">REVERSE ENGINEERING</span>
-          <span class="proj-tag">STEERING GEOMETRY</span>
-          <span class="proj-tag">SOLIDWORKS</span>
-          <span class="proj-tag">KPI · CAMBER · SCRUB</span>
-          <span class="proj-tag">ACKERMANN</span>
-          <span class="proj-tag">PRODUCTION VEHICLE</span>
-        </div>
-        <span class="proj-cta">Case Study In Progress 🔧</span>
+         <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
     </a>
 
@@ -1752,14 +1737,7 @@ footer{
         <div class="proj-name">How can a simple change in the tyre <span class="gold">contact patch</span> dramatically alter a vehicle's <span class="gold">load distribution</span>?</div>
         <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
 
-        <div class="proj-tags">
-          <span class="proj-tag">STATIC EQUILIBRIUM</span>
-          <span class="proj-tag">TRACTOR DYNAMICS</span>
-          <span class="proj-tag">BALLAST ANALYSIS</span>
-          <span class="proj-tag">SOLIDWORKS</span>
-          <span class="proj-tag">AGRICULTURAL MACHINERY</span>
-        </div>
-        <span class="proj-cta">Open Full Case Study →</span>
+         <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
 
@@ -1775,14 +1753,7 @@ footer{
         <div class="proj-name">Avore EX Series <span class="gold">Reverse Engineering</span> & Spring Selection</div>
         <p class="proj-blurb">No factory data existed for the Avore EX series — only a confirmed 17" rim diameter. Reconstructing the full chassis and vehicle geometry from scaled teaser imagery alone, then feeding that geometry into a quarter-car model in MSC Adams to drive spring rate selection.</p>
 
-        <div class="proj-tags">
-          <span class="proj-tag">SOLIDWORKS</span>
-          <span class="proj-tag">MSC ADAMS</span>
-          <span class="proj-tag">QUARTER CAR MODEL</span>
-          <span class="proj-tag">SPRING DESIGN</span>
-          <span class="proj-tag">REVERSE ENGINEERING</span>
-        </div>
-        <span class="proj-cta">Case Study In Progress 🔧</span>
+         <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
     </a>
 
@@ -1883,30 +1854,397 @@ footer{
 <style>
 #journeyPane{display:none}
 #journeyPane.is-on{display:block}
-.jy{min-height:70vh;padding:120px 6% 100px;background:var(--bg)}
-.jy-wrap{max-width:860px;margin:0 auto}
-.jy-label{font-family:var(--fm);font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:12px}
-.jy-title{font-family:var(--fd);font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text);margin-bottom:14px}
-.jy-title span{color:var(--gold)}
-.jy-sub{font-size:15px;color:var(--text-sec);line-height:1.7;font-weight:300;max-width:640px;margin-bottom:56px}
-.jy-line{position:relative;padding-left:36px}
-.jy-line::before{content:'';position:absolute;left:4px;top:8px;bottom:0;width:1px;background:var(--border2)}
-.jy-item{position:relative;margin-bottom:28px;background:var(--surface);border:1px solid var(--border);padding:26px 28px;transition:border-color .2s,background .2s}
-.jy-item:hover{border-color:var(--border2);background:var(--surface2)}
-.jy-item::before{content:'';position:absolute;left:-36px;top:30px;width:9px;height:9px;border:1px solid var(--gold);background:var(--bg)}
-.jy-item.now::before{background:var(--gold);box-shadow:0 0 0 4px var(--gold-dim)}
-.jy-period{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
-.jy-role{font-family:var(--fd);font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text);margin-bottom:4px}
-.jy-org{font-family:var(--fm);font-size:10px;letter-spacing:1px;color:var(--text-dim);margin-bottom:14px}
-.jy-points{list-style:none;display:flex;flex-direction:column;gap:6px}
-.jy-points li{font-size:13px;color:var(--text-sec);line-height:1.65;padding-left:18px;position:relative}
-.jy-points li::before{content:'›';position:absolute;left:0;color:var(--gold)}
-.jy-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.jy-chip{font-family:var(--fm);font-size:10px;letter-spacing:1px;color:var(--gold);background:var(--gold-dim);border:1px solid rgba(224,160,32,.25);padding:4px 10px;border-radius:999px}
-.jy-close{margin-top:40px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;color:var(--text-sec);line-height:1.75;font-weight:300}
-@media(max-width:600px){.jy{padding:90px 5% 80px}.jy-item{padding:20px}}
 </style>
-<section class="jy" aria-label="Journey"></section>
+<!-- ARPIT MALIK — JOURNEY SECTION (v2: no buttons, no modals — all project images permanently visible)
+Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
+<section id="arpit-journey" aria-label="Arpit Malik's engineering journey">
+  <style>
+    #arpit-journey{--j-bg:var(--bg);--j-fg:#f5f5f5;--j-muted:#a5a5a5;--j-line:rgba(255,255,255,.85);--j-accent:var(--gold);--j-panel:var(--surface);--j-border:rgba(255,255,255,.13);--j-off:50px;
+      position:relative;isolation:isolate;background:var(--j-bg);color:var(--j-fg);padding:clamp(72px,9vw,132px) clamp(20px,4vw,64px) 100px;overflow:hidden;font-family:inherit}
+    #arpit-journey *{box-sizing:border-box}
+    #arpit-journey .j-intro{max-width:900px;margin:0 auto 64px;text-align:center}
+    #arpit-journey .j-eyebrow{color:var(--j-accent);font-size:14.4px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+    #arpit-journey h2{font-size:clamp(42px,7vw,82px);line-height:.95;letter-spacing:-.045em;margin:14px 0 18px;font-weight:800}
+    #arpit-journey .j-intro p{max-width:650px;margin:auto;color:var(--j-muted);font-size:clamp(15px,1.5vw,18px);line-height:1.65}
+
+    #arpit-journey .j-timeline{position:relative;max-width:1400px;margin:0 auto}
+    #arpit-journey .j-path{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+    #arpit-journey .j-path path{fill:none;vector-effect:non-scaling-stroke}
+    #arpit-journey .j-path .glow{stroke:rgba(255,255,255,.22);stroke-width:13;filter:blur(8px)}
+    #arpit-journey .j-path .line{stroke:var(--j-line);stroke-width:2.2;filter:drop-shadow(0 0 5px rgba(255,255,255,.85))}
+
+    #arpit-journey .j-block{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px minmax(0,1.25fr);column-gap:0;padding:0 0 110px;align-items:start}
+    #arpit-journey .j-block:last-child{padding-bottom:30px}
+    #arpit-journey .j-block[data-side="right"]{grid-template-columns:minmax(0,1.25fr) 190px minmax(0,1fr)}
+    #arpit-journey .j-block[data-side="left"] .j-text{grid-column:1;grid-row:1;padding-right:18px}
+    #arpit-journey .j-block[data-side="left"] .j-gallery{grid-column:3;grid-row:1;padding-left:18px}
+    #arpit-journey .j-block[data-side="right"] .j-text{grid-column:3;grid-row:1;padding-left:18px}
+    #arpit-journey .j-block[data-side="right"] .j-gallery{grid-column:1;grid-row:1;padding-right:18px}
+    #arpit-journey .j-node{position:absolute;top:22px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 8px 3px rgba(255,255,255,.7),0 0 24px 7px rgba(255,255,255,.22);transform:translate(-50%,-50%);z-index:3}
+    #arpit-journey .j-text{position:sticky;top:90px;align-self:start;z-index:2}
+    #arpit-journey .j-kicker{color:var(--j-accent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin:0 0 8px}
+    #arpit-journey .j-date{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
+    #arpit-journey .j-title{font-size:clamp(16px,1.4vw,19px);font-weight:600;margin:0 0 12px;color:#e8e8e8;line-height:1.3}
+    #arpit-journey .j-role{font-size:14px;line-height:1.65;color:var(--j-fg);margin:0 0 10px}
+    #arpit-journey .j-blurb{font-size:13px;line-height:1.65;color:var(--j-muted);margin:0}
+
+    #arpit-journey .j-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;z-index:2;position:relative}
+    #arpit-journey .j-gallery[data-count="1"]{grid-template-columns:minmax(0,440px)}
+    #arpit-journey .j-gallery[data-count="2"],#arpit-journey .j-gallery[data-count="3"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+    #arpit-journey .j-card{margin:0;border:1px solid var(--j-border);background:var(--j-panel);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+    #arpit-journey .j-img{aspect-ratio:4/3;background:#171717;overflow:hidden;position:relative}
+    #arpit-journey .j-img img{display:block;width:100%;height:100%;object-fit:cover}
+    #arpit-journey .j-img.is-broken img{visibility:hidden}
+    #arpit-journey .j-card figcaption{padding:12px 13px 14px}
+    #arpit-journey .j-card .j-event-date{font-size:10px;color:var(--j-accent);letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+    #arpit-journey .j-card h4{font-size:15px;line-height:1.25;margin:5px 0 5px}
+    #arpit-journey .j-card p{font-size:12px;color:var(--j-muted);line-height:1.5;margin:0}
+    #arpit-journey .j-card.no-img{border-style:dashed;background:rgba(255,255,255,.02);justify-content:center;min-height:120px}
+    #arpit-journey .j-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    #arpit-journey .j-tag{font-size:10px;border:1px solid rgba(255,255,255,.22);padding:4px 7px;color:#ddd}
+    #arpit-journey .j-tag.result{background:var(--j-accent);border-color:var(--j-accent);color:#0A0C10;font-weight:700}
+    #arpit-journey .j-footer{max-width:700px;text-align:center;margin:70px auto 0;color:var(--j-muted);font-size:15px;line-height:1.6}
+    #arpit-journey .j-footer strong{color:#fff}
+
+    #arpit-journey .j-img[data-i]{cursor:zoom-in}
+    #arpit-journey .j-img[data-i]:focus-visible{outline:2px solid var(--j-accent);outline-offset:-2px}
+    #arpit-journey .j-img[data-i]:after{content:"";position:absolute;right:8px;bottom:8px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.2-4.2M11 8.5v5M8.5 11h5'/%3E%3C/svg%3E") center/16px no-repeat;opacity:.85;pointer-events:none}
+    #arpit-journey .j-img.is-broken:after{display:none}
+    .arpit-lb{position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.95);display:none;flex-direction:column;color:#f5f5f5;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .arpit-lb.open{display:flex}
+    .arpit-lb *{box-sizing:border-box}
+    .arpit-lb-track{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+    .arpit-lb-track::-webkit-scrollbar{display:none}
+    .arpit-lb-slide{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:64px 72px 24px;min-width:0}
+    .arpit-lb-pic{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+    .arpit-lb-pic img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+    .arpit-lb-cap{max-width:720px;text-align:center;flex:none}
+    .arpit-lb-cap small{display:block;color:#E0A020;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+    .arpit-lb-cap b{display:block;font-size:17px;margin-bottom:4px}
+    .arpit-lb-cap span{display:block;font-size:13px;line-height:1.5;color:#a5a5a5}
+    .arpit-lb button{position:absolute;z-index:2;border:1px solid rgba(255,255,255,.25);background:rgba(20,20,20,.8);color:#fff;width:44px;height:44px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+    .arpit-lb button:hover{background:#E0A020;border-color:#E0A020;color:#0A0C10}
+    .arpit-lb button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .arpit-lb-close{top:14px;right:14px}
+    .arpit-lb-prev{left:14px;top:50%;margin-top:-22px}
+    .arpit-lb-next{right:14px;top:50%;margin-top:-22px}
+    .arpit-lb-count{position:absolute;top:24px;left:20px;z-index:2;font-size:13px;letter-spacing:.08em;color:#a5a5a5}
+    @media(max-width:760px){.arpit-lb-slide{padding:60px 12px 20px}.arpit-lb-prev,.arpit-lb-next{display:none}}
+
+    @media(max-width:900px){#arpit-journey{--j-off:30px}#arpit-journey .j-block,#arpit-journey .j-block[data-side="right"]{grid-template-columns:minmax(0,1fr) 110px minmax(0,1.25fr)}}
+    @media(max-width:760px){
+      #arpit-journey{padding-top:76px;padding-left:18px;padding-right:0}
+      #arpit-journey .j-path{display:none}
+      #arpit-journey .j-timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(#fff,rgba(255,255,255,.12))}
+      #arpit-journey .j-block,#arpit-journey .j-block[data-side="right"]{display:block;padding:0 0 54px 30px}
+      #arpit-journey .j-node{left:7px!important;top:10px}
+      #arpit-journey .j-text{position:static;padding:0 18px 16px 0!important}
+      #arpit-journey .j-gallery,#arpit-journey .j-gallery[data-count]{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:0 18px 12px 0!important;-webkit-overflow-scrolling:touch}
+      #arpit-journey .j-card{flex:0 0 min(78%,290px);scroll-snap-align:start}
+      #arpit-journey .j-footer{padding-right:18px}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      #arpit-journey .j-path path{stroke-dasharray:1;animation:j-draw 2.6s ease forwards}
+      #arpit-journey .j-node{animation:j-pulse 2.8s ease-in-out infinite alternate}
+      @keyframes j-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+      @keyframes j-pulse{from{box-shadow:0 0 5px 2px rgba(255,255,255,.6)}to{box-shadow:0 0 12px 5px rgba(255,255,255,.85),0 0 30px 9px rgba(255,255,255,.2)}}
+    }
+  </style>
+
+  <div class="j-intro">
+    <div class="j-eyebrow">The story behind the engineer</div>
+    <p>From childhood experiments with cardboard, motors and discarded toys to building competition vehicles and exploring vehicle simulation — a timeline of curiosity turning into engineering.</p>
+  </div>
+
+  <div class="j-timeline" id="j-timeline">
+    <svg class="j-path" aria-hidden="true" preserveAspectRatio="none">
+      <path class="glow" pathLength="1" d=""/>
+      <path class="line" pathLength="1" d=""/>
+    </svg>
+    <!-- milestone blocks are rendered below by the script; all images are visible on load -->
+  </div>
+
+  <div class="j-footer"><strong>Still in motion.</strong><br>Building toward a career in Vehicle Dynamics, CAE and Multi-Body Dynamics simulation.</div>
+
+  <script>
+  (() => {
+    const root = document.getElementById('arpit-journey');
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    const img = {
+      cartoons:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788636221/cartoon_gei5hc.png',
+      discovery:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788636724/discovery_qst3ex.png',
+      shows:'https://res.cloudinary.com/fvtkc10l/image/upload/v1788637914/favourite_shows_zzu9q.png',
+      truck:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402345/Boat_Truck_wl0dnm.png',
+      fan:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402347/More_projects_rllssw.png',
+      speaker:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785400959/Speaker_v7ydah.png',
+      lamp:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402347/Bed_night_Light_c3oojh.png',
+      winch:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785401896/Winch_lbhzjh.gif',
+      tractor:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785404853/Tractor_tyre_rbxtcr.jpg',
+      joystick:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402345/Joy_stick_Remote_v9g383.png',
+      pump:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402349/Pump_1_hewupr.png',
+      dodge:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402346/Dodge_eld1cg.png',
+      tdr:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784716437/6685b63f-68d8-4953-9312-8893ba24ae2b_qx2mrn.jpg',
+      tdrLead:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784391532/slide.img1_d3vlz4.jpg',
+      arc:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785484884/final.cad1_u5g8ud.jpg',
+      e2em:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785485139/Screenshot_2026-07-31_133520_sg2pkh.png',
+      gridx:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785485503/Gridxteam_xveekk.jpg'
+    };
+
+    const milestones = [
+      {side:'left', date:'Class I – IV',
+        role:'Cartoons first — Tom & Jerry and Ninja Hattori set the early screen time.',
+        kicker:'THE BEGINNING · CLASS I–IV', title:'A world of cartoons',
+        intro:'',
+        events:[
+          {date:'Class I – IV',title:'A world of cartoons',desc:'Grew up on a steady diet of Tom & Jerry and Ninja Hattori.',image:img.cartoons}
+        ]},
+      {side:'right', date:'Class IV',
+        role:'Dad blocked cartoon channels and started watching science channels.',
+        kicker:'THE TURNING POINT · CLASS IV', title:'Curiosity before the classroom',
+        intro:'',
+        events:[
+          {date:'Class IV onwards',title:'Science takes over screen time',desc:'Discovery, Discovery Science, History TV18 and National Geographic become the new favourites.',image:img.discovery}
+        ]},
+      {side:'right', date:'Class 4',
+        role:'The first build. A basic circuit and a DC motor turned into a working fan.',
+        kicker:'THE WORKSHOP YEARS · CLASS 4 · 2013', title:'The first circuit',
+        intro:'',
+        events:[
+          {date:'Class 4 · 2013',title:'DIY Fan',desc:'Basic electrical circuit and DC motor.',image:img.fan}
+        ]},
+      {side:'left', date:'Class 5',
+        role:'A year of rapid experiments — drivetrains, reverse engineering, wiring and torque.',
+        kicker:'THE WORKSHOP YEARS · CLASS 5 · 2014', title:'Learning by making',
+        intro:'',
+        events:[
+          {date:'Class 5 · 2014',title:'6-Wheel Cardboard Truck',desc:'Exploring drivetrain, axles and motion.',image:img.truck},
+          {date:'Class 5 · 2014',title:'Upgraded Portable Music Player',desc:'Reverse engineering and battery upgrade. The source journey includes multiple versions, including a fully assembled box version.',image:img.speaker},
+          {date:'Class 5 · 2014',title:'Bedside Night Light',desc:'Human-centred design and electrical wiring.',image:img.lamp},
+          {date:'Class 5 · 2014',title:'Miniature Recovery Winch',desc:'Understanding torque and rotary-to-linear motion.',image:img.winch}
+        ]},
+      {side:'right', date:'Class 7',
+        role:'Material substitution and prototyping, applied to a tractor tyre.',
+        kicker:'THE WORKSHOP YEARS · CLASS 7', title:'Prototyping with what is available',
+        intro:'',
+        events:[
+          {date:'Class 7',title:'Custom Tractor Tyre',desc:'Material substitution and prototyping.',image:img.tractor}
+        ]},
+      {side:'left', date:'Class 8',
+        role:'Control and fluids — reversing motor polarity from a handheld remote and moving water with a diaphragm pump.',
+        kicker:'THE WORKSHOP YEARS · CLASS 8', title:'Control and flow',
+        intro:'',
+        events:[
+          {date:'Class 8',title:'Homemade Joystick Remote',desc:'Motor control and polarity reversal.',image:img.joystick},
+          {date:'Class 8',title:'DIY Diaphragm Pump',desc:'Fluid mechanics and check valves.',image:img.pump}
+        ]},
+      {side:'right', date:'Class 9',
+        role:'The biggest school build — a DIY Dodge Challenger with fabricated bodywork and circular DRL optics.',
+        kicker:'THE WORKSHOP YEARS · CLASS 9', title:'A full vehicle build',
+        intro:'',
+        events:[
+          {date:'Class 9',title:'DIY Dodge Challenger',desc:'Vehicle styling, body fabrication and circular DRL optics. The original project gallery also includes steering and DRL development images.',image:img.dodge},
+          {date:'Class 9',title:'Working Steering for the Dodge Challenger',desc:'A functional steering mechanism built for the DIY Dodge Challenger.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785402349/Dodge_Steering_vry6qu.png'}
+        ]},
+      {side:'left', date:'1st Year',
+        role:'Joined NSUT and Team Daedalus Racing (BAJA SAE) — the first foothold on the team, telling the story behind the build.',
+        kicker:'NSUT · TEAM DAEDALUS RACING', title:'Telling the story of the build',
+        intro:'Joined NSUT in 2023 and began on the media side of the team, before moving into suspension engineering.',
+        events:[
+          {date:'2023 · First year',title:'Video Editor · Team Daedalus Racing',desc:'First foothold on the team, telling the story behind the build.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1785483565/team-daedalus-racing-12401462_zd8inl.webp',tags:['TDR · Video Editor']}
+        ]},
+      {side:'right', date:'2nd Year',
+        role:'Moved onto the technical side of the team — suspension and steering for the competition vehicle.',
+        kicker:'NSUT · TEAM DAEDALUS RACING', title:'Onto the technical side',
+        intro:'',
+        events:[
+          {date:'2024 · Second year',title:'Suspension & Steering Member',desc:'',image:img.tdr,tags:['TDR · Suspension & Steering']}
+        ]},
+      {side:'left', date:'2nd Year',
+        role:'Led the suspension and steering sub-system through the ATVC 2025 season, and began industry experience in vehicle design.',
+        kicker:'TEAM DAEDALUS RACING · INDUSTRY EXPERIENCE', title:'Leading a sub-system, building beyond the track',
+        intro:'',
+        events:[
+          {date:'2025 · Second year',title:'Suspension & Steering Lead',desc:'Led the suspension and steering sub-system through the ATVC 2025 season.',image:img.tdrLead,tags:['TDR · Suspension & Steering Lead','AIR 1 · Suspension & Traction · ATVC 2025'],result:true},
+          {date:'2025 · Second year · Summer',title:'Design & Development Intern · ARC Global',desc:'Designed a two-seater dune buggy from the ground up as the sole mechanical engineer on the project. Worked on vehicle layout, CAD, ergonomics and suspension development.',image:img.arc,tags:['2-Seater Dune Buggy','CATIA · SolidWorks · Lotus Shark']}
+        ]},
+      {side:'right', date:'3rd Year',
+        role:'Chief Design Engineer at Team Daedalus Racing, electric moped development and swappable battery-pack R&D — building toward Vehicle Dynamics, CAE and MBD.',
+        kicker:'TEAM DAEDALUS RACING · INDUSTRY EXPERIENCE', title:'Taking technical decisions across the vehicle',
+        intro:'',
+        events:[
+          {date:'2025 · Third year',title:'Vehicle Design & Development Engineer Intern · E2EM Technologies',desc:'Worked on the design and development of an electric moped, from concept through detailed vehicle development.',image:img.e2em,tags:['Electric Moped','Vehicle Design & Integration']},
+          {date:'2026 · Third year',title:'Chief Design Engineer',desc:'Took technical decisions across the vehicle and coordinated full-vehicle CAD with chassis, brakes and powertrain teams.',image:'https://res.cloudinary.com/fvtkc10l/image/upload/v1784715844/IMG_2148_qeywnw.jpg',tags:['TDR · Chief Design Engineer','AIR 2 · Overall · ATVC 2026'],result:true},
+          {date:'2026 · Third year · Summer – Present in supplied file',title:'Mechanical Design Engineer Intern · GridX Energy',desc:'Working on swappable battery-pack R&D, including battery-lock development, L1 two-wheeler-to-swappable integration, vent sizing, AIS modal work and bus-bar fixtures.',image:img.gridx,tags:['Swappable Battery Pack R&D','Mechanical Design']}
+        ]}
+    ];
+
+    milestones.forEach((m, i) => { m.side = i % 2 === 0 ? 'left' : 'right'; });
+    const slides = [];
+    milestones.forEach(m => m.events.forEach(e => { if (e.image) { e._i = slides.length; slides.push(e); } }));
+
+    const safe = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const timeline = root.querySelector('#j-timeline');
+    const svg = timeline.querySelector('.j-path');
+    const paths = svg.querySelectorAll('path');
+
+    const card = e => `
+      <figure class="j-card${e.image ? '' : ' no-img'}">
+        ${e.image ? `<div class="j-img" data-i="${e._i}" role="button" tabindex="0" aria-label="Preview image: ${safe(e.title)}"><img src="${safe(e.image)}" alt="${safe(e.title)}" loading="eager" decoding="async"></div>` : ''}
+        <figcaption>
+          <div class="j-event-date">${safe(e.date)}</div>
+          <h4>${safe(e.title)}</h4>
+          ${e.desc ? `<p>${safe(e.desc)}</p>` : ''}
+          ${e.tags ? `<div class="j-tags">${e.tags.map(t => `<span class="j-tag ${e.result && /AIR/.test(t) ? 'result' : ''}">${safe(t)}</span>`).join('')}</div>` : ''}
+        </figcaption>
+      </figure>`;
+
+    timeline.insertAdjacentHTML('beforeend', milestones.map(m => `
+      <article class="j-block" data-side="${m.side}">
+        <span class="j-node"></span>
+        <div class="j-text">
+          <div class="j-kicker">${safe(m.kicker)}</div>
+          <h3 class="j-date">${safe(m.date)}</h3>
+          <div class="j-title">${safe(m.title)}</div>
+          <p class="j-role">${safe(m.role)}</p>
+          ${m.intro ? `<p class="j-blurb">${safe(m.intro)}</p>` : ''}
+        </div>
+        <div class="j-gallery" data-count="${m.events.length}">${m.events.map(card).join('')}</div>
+      </article>`).join(''));
+
+    timeline.querySelectorAll('.j-img img').forEach(im => {
+      im.addEventListener('error', () => im.parentNode.classList.add('is-broken'));
+      im.addEventListener('load', schedule);
+    });
+
+
+    // ---- Lightbox: click any project image; scroll / swipe / arrows / wheel move between all project images ----
+    const lb = document.createElement('div');
+    lb.className = 'arpit-lb';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Project image preview');
+    lb.innerHTML = `
+      <div class="arpit-lb-count" aria-live="polite"></div>
+      <button type="button" class="arpit-lb-close" aria-label="Close preview">&times;</button>
+      <button type="button" class="arpit-lb-prev" aria-label="Previous image">&#8249;</button>
+      <button type="button" class="arpit-lb-next" aria-label="Next image">&#8250;</button>
+      <div class="arpit-lb-track">${slides.map(e => `
+        <div class="arpit-lb-slide">
+          <div class="arpit-lb-pic"><img src="${safe(e.image)}" alt="${safe(e.title)}" loading="lazy" decoding="async"></div>
+          <div class="arpit-lb-cap"><small>${safe(e.date)}</small><b>${safe(e.title)}</b><span>${safe(e.desc)}</span></div>
+        </div>`).join('')}
+      </div>`;
+    document.body.appendChild(lb);
+    const track = lb.querySelector('.arpit-lb-track');
+    const count = lb.querySelector('.arpit-lb-count');
+    let cur = 0, lastFocus = null, wheelLock = false;
+
+    const clamp = i => Math.max(0, Math.min(slides.length - 1, i));
+    const setCount = () => { count.textContent = (cur + 1) + ' / ' + slides.length; };
+    function goTo(i, smooth){
+      cur = clamp(i);
+      track.scrollTo({left: cur * track.clientWidth, behavior: smooth ? 'smooth' : 'auto'});
+      setCount();
+    }
+    function openLb(i){
+      lastFocus = document.activeElement;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      goTo(i, false);
+      lb.querySelector('.arpit-lb-close').focus({preventScroll: true});
+    }
+    function closeLb(){
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll: true});
+    }
+
+    timeline.addEventListener('click', ev => {
+      const t = ev.target.closest('.j-img[data-i]');
+      if (t) openLb(+t.dataset.i);
+    });
+    timeline.addEventListener('keydown', ev => {
+      if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('.j-img[data-i]')) {
+        ev.preventDefault(); openLb(+ev.target.dataset.i);
+      }
+    });
+    lb.querySelector('.arpit-lb-close').addEventListener('click', closeLb);
+    lb.querySelector('.arpit-lb-prev').addEventListener('click', () => goTo(cur - 1, true));
+    lb.querySelector('.arpit-lb-next').addEventListener('click', () => goTo(cur + 1, true));
+    // click on the dark area (not the image or caption) closes
+    track.addEventListener('click', ev => {
+      if (ev.target.classList.contains('arpit-lb-slide') || ev.target.classList.contains('arpit-lb-pic')) closeLb();
+    });
+    // swipe / drag-scroll updates the counter
+    let sTimer = 0;
+    track.addEventListener('scroll', () => {
+      clearTimeout(sTimer);
+      sTimer = setTimeout(() => {
+        const i = clamp(Math.round(track.scrollLeft / (track.clientWidth || 1)));
+        if (i !== cur) { cur = i; setCount(); }
+      }, 60);
+    }, {passive: true});
+    // mouse wheel / trackpad: one image per scroll gesture
+    track.addEventListener('wheel', ev => {
+      const d = Math.abs(ev.deltaY) > Math.abs(ev.deltaX) ? ev.deltaY : ev.deltaX;
+      if (!d) return;
+      ev.preventDefault();
+      if (wheelLock || Math.abs(d) < 4) return;
+      wheelLock = true;
+      goTo(cur + (d > 0 ? 1 : -1), true);
+      setTimeout(() => { wheelLock = false; }, 450);
+    }, {passive: false});
+    document.addEventListener('keydown', ev => {
+      if (!lb.classList.contains('open')) return;
+      if (ev.key === 'Escape') closeLb();
+      else if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') { ev.preventDefault(); goTo(cur + 1, true); }
+      else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') { ev.preventDefault(); goTo(cur - 1, true); }
+      else if (ev.key === 'Tab') { // keep focus inside the dialog
+        const f = [...lb.querySelectorAll('button')];
+        const i = f.indexOf(document.activeElement);
+        ev.preventDefault();
+        f[(i + (ev.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    });
+    window.addEventListener('resize', () => { if (lb.classList.contains('open')) goTo(cur, false); });
+
+    // Curved glowing path: weaves through the central gutter so image cards never sit on it.
+    function off(){ return parseFloat(getComputedStyle(root).getPropertyValue('--j-off')) || 50; }
+    function layout(){
+      const W = timeline.clientWidth, H = timeline.clientHeight;
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      if (W <= 760) return;
+      const tr = timeline.getBoundingClientRect(), o = off();
+      const pts = [[W/2, 0]];
+      timeline.querySelectorAll('.j-block').forEach((b, i) => {
+        const s = i % 2 === 0 ? -1 : 1;
+        const br = b.getBoundingClientRect(), top = br.top - tr.top;
+        const cols = getComputedStyle(b).gridTemplateColumns.split(' ').map(parseFloat);
+        const cx = cols[0] + cols[1] / 2;
+        const node = b.querySelector('.j-node');
+        node.style.left = (cx + s * o) + 'px';
+        pts.push([cx + s * o, top + 22]);
+        pts.push([cx - s * o, top + br.height * 0.55]);
+      });
+      pts.push([W/2, H]);
+      let d = `M${pts[0][0]} ${pts[0][1]}`;
+      for (let i = 1; i < pts.length; i++){
+        const [x1,y1] = pts[i-1], [x2,y2] = pts[i], my = (y1 + y2) / 2;
+        d += ` C${x1} ${my} ${x2} ${my} ${x2} ${y2}`;
+      }
+      paths.forEach(p => p.setAttribute('d', d));
+    }
+    let raf = 0;
+    function schedule(){ cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); }
+    layout();
+    window.addEventListener('resize', schedule);
+    window.addEventListener('load', schedule);
+    if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(timeline);
+  })();
+  </script>
+</section>
 </div>
 <div id="bajaPane" role="tabpanel" aria-label="BAJA ATV 2026">
 <style>
@@ -2475,6 +2813,2122 @@ img{width:100%;height:100%;object-fit:contain;display:block}
 })();
 </script>
 </div>
+<div id="gridxPane" role="tabpanel" aria-label="GridxEnergy — Mechanical Design Engineer Intern">
+<style>
+#gridxPane{display:none}
+#gridxPane.is-on{display:block}
+</style>
+<div id="gridxHost"></div>
+<template id="gridxTpl"><style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :host {
+    display: block;
+    --black: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --gold: #98c082;
+    --gold-light: #b3d9a0;
+    --white: #ffffff;
+    --gray: #888888;
+    --border: rgba(255,255,255,0.08);
+  }
+  .gx {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    padding: 5rem 2.5rem 4rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .eyebrow {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow::before { content: '// '; color: var(--gray); }
+  .hero-heading {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 2rem;
+  }
+  .hero-heading .accent { color: var(--gold); }
+  .hero-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .hero-tag {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 4px 10px;
+  }
+  .hero-sub { font-size: 14px; color: var(--gray); letter-spacing: 0.02em; }
+  .about-strip {
+    padding: 3.5rem 2.5rem;
+    border-bottom: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-text p { color: #c8c8c8; font-size: 15px; line-height: 1.75; margin-bottom: 1rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-skills { display: flex; flex-direction: column; gap: 0; }
+  .skill-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .skill-row:first-child { border-top: 0.5px solid var(--border); }
+  .skill-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .skill-title {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .skill-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+  .works { padding: 4rem 2.5rem; }
+  .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .section-heading {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--white);
+  }
+  .section-heading .accent { color: var(--gold); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    gap: 1px;
+    background: var(--border);
+  }
+  .project-card {
+    background: var(--surface);
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .project-card:hover { background: var(--surface2); }
+  .project-card:hover .proj-cover img { transform: scale(1.04); filter: brightness(1); }
+  .proj-cover {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 0.5px solid var(--border);
+    background: #0a0a0a;
+    flex-shrink: 0;
+  }
+  .proj-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.85);
+  }
+  .proj-cover-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(10,10,10,0.75);
+    padding: 4px 10px;
+    border: 0.5px solid var(--gold);
+    backdrop-filter: blur(4px);
+  }
+  .proj-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    flex: 1;
+  }
+  .proj-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-top: 0.5px solid var(--border);
+    margin-top: auto;
+  }
+  .proj-index {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .proj-title {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: clamp(18px, 3.5vw, 26px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .proj-desc { font-size: 13px; color: var(--gray); }
+  .proj-arrow {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .proj-arrow::after { content: '→'; font-size: 16px; }
+  .back-section {
+    padding: 2.5rem 2.5rem 4rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border: 0.5px solid var(--border);
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    background: none;
+  }
+  .back-btn::before { content: '←'; font-size: 14px; }
+  .back-btn:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* OVERLAY */
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 9999;
+    flex-direction: column;
+  }
+  .overlay.open { display: flex; }
+  .overlay-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 0.5px solid var(--border);
+    flex-shrink: 0;
+    gap: 1rem;
+  }
+  .overlay-logo {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .overlay-count {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    white-space: nowrap;
+  }
+  .close-btn {
+    background: none;
+    border: 0.5px solid var(--border);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: border-color 0.2s, color 0.2s;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .close-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Progress bar */
+  .progress-bar-wrap {
+    height: 2px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.35s ease;
+  }
+
+  .slides-wrapper { flex: 1; overflow: hidden; position: relative; }
+  .slides-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1.25rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .slide-img {
+    width: 100%;
+    height: auto;
+    max-height: 52vh;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0.75rem 0 1.25rem;
+    border: 0.5px solid rgba(255,255,255,0.08);
+    background: #0f0f0f;
+  }
+  .slide-fig {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.35rem;
+  }
+  .slide-eyebrow {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .slide-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .slide h2 {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: clamp(26px, 5.5vw, 44px);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 1.25rem;
+  }
+  .slide h2 .accent { color: var(--gold); }
+  .slide p {
+    font-size: 14px;
+    color: #b0b0b0;
+    line-height: 1.75;
+    max-width: 640px;
+    margin-bottom: 0.75rem;
+  }
+  .slide ul { list-style: none; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 9px; }
+  .slide ul li {
+    font-size: 13px;
+    color: #a0a0a0;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .slide ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 6px;
+    top: 6px;
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 2rem;
+    border-top: 0.5px solid var(--border);
+    flex-shrink: 0;
+    gap: 1rem;
+  }
+  .nav-btn {
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: none;
+    border: 0.5px solid var(--border);
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .nav-btn:disabled { opacity: 0.25; cursor: default; }
+  .nav-btn:not(:disabled):hover { border-color: var(--gold); color: var(--gold); }
+  .progress-dots { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: center; max-width: 180px; }
+  .dot {
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.12);
+    transform: rotate(45deg);
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+  .dot.active { background: var(--gold); transform: rotate(45deg) scale(1.4); }
+
+  /* GALLERY */
+  .gallery { padding: 4rem 2.5rem; border-top: 0.5px solid var(--border); }
+  .gallery-note {
+    font-size: 13px;
+    color: var(--gray);
+    max-width: 640px;
+    margin: -1rem 0 2.5rem;
+    line-height: 1.7;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+  .gallery-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background: var(--surface);
+    aspect-ratio: 4 / 3;
+  }
+  .gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82);
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+  .gallery-item:hover img, .gallery-item:hover video { transform: scale(1.05); filter: brightness(1); }
+  .gallery-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.85rem 1rem 0.7rem;
+    background: linear-gradient(transparent, rgba(10,10,10,0.92));
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .gallery-empty {
+    grid-column: 1 / -1;
+    border: 1px dashed var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    background: var(--surface);
+  }
+  .gallery-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.97);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .gallery-lightbox.open { display: flex; }
+  .gallery-lightbox img, .gallery-lightbox video {
+    max-width: 90vw;
+    max-height: 74vh;
+    object-fit: contain;
+    border: 0.5px solid var(--border);
+    background: #0f0f0f;
+  }
+  .gallery-lightbox-caption {
+    margin-top: 1.25rem;
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: center;
+    max-width: 640px;
+  }
+  .gallery-lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: none;
+    border: 0.5px solid var(--border);
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .gallery-lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
+  .gallery-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0.5px solid var(--border);
+    color: var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .gallery-lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+  .gallery-lightbox-nav:disabled { opacity: 0.2; cursor: default; }
+  .gallery-lightbox-prev { left: 1.5rem; }
+  .gallery-lightbox-next { right: 1.5rem; }
+  .gallery-lightbox-count {
+    position: absolute;
+    top: 1.35rem;
+    left: 1.5rem;
+    font-family: var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+
+  @media (max-width: 700px) {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-heading { font-size: clamp(38px, 12.5vw, 60px); }
+    .about-strip { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; gap: 2rem; }
+    .works { padding: 3rem 1.25rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .proj-body { padding: 1.25rem; }
+    .back-section { padding: 2rem 1.25rem 3rem; }
+    .slide { padding: 2rem 1.25rem 1rem; }
+    .nav-row { padding: 0.75rem 1rem; }
+    .overlay-header { padding: 0.85rem 1rem; }
+    .overlay-logo { font-size: 10px; }
+    .progress-dots { max-width: 120px; }
+    .proj-body { padding: 1.25rem; gap: 1rem; }
+    .gallery { padding: 3rem 1.25rem; }
+    .gallery-lightbox { padding: 1rem; }
+    .gallery-lightbox-nav { width: 34px; height: 34px; }
+    .gallery-lightbox-prev { left: 0.5rem; }
+    .gallery-lightbox-next { right: 0.5rem; }
+    .gallery-lightbox-count { left: 1rem; top: 1rem; }
+    .gallery-lightbox-close { top: 1rem; right: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slides-track { transition: none; }
+    .progress-bar-fill { transition: none; }
+  }
+
+</style>
+<div class="gx">
+<section class="hero" id="about">
+  <p class="eyebrow">Internship — GridxEnergy</p>
+  <h1 class="hero-heading">Mechanical<br><span class="accent">Design</span><br>Engineer</h1>
+  <div class="hero-meta">
+    <span class="hero-tag">Intern</span>
+    <span class="hero-sub">EV battery systems · Chassis integration · Hardware design</span>
+  </div>
+</section>
+
+<section class="about-strip">
+  <div class="about-text">
+    <p>At GridxEnergy I work at the intersection of mechanical architecture and EV platform design — taking hardware from concept to physical validation under real development constraints.</p>
+    <p>My focus is on subsystem integration, packaging decisions, and first-principles reasoning — making sure every design choice can be traced back to a clear engineering rationale.</p>
+  </div>
+  <div class="about-skills">
+    <div class="skill-row">
+      <div class="skill-diamond"></div>
+      <div>
+        <div class="skill-title">EV Platform Architecture</div>
+        <div class="skill-desc">Battery system packaging, swappable modules, chassis integration</div>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-diamond"></div>
+      <div>
+        <div class="skill-title">Mechanical Interface Design</div>
+        <div class="skill-desc">Latch mechanisms, alignment systems, structural load paths</div>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-diamond"></div>
+      <div>
+        <div class="skill-title">FEA & Structural Analysis</div>
+        <div class="skill-desc">Boundary conditions, mesh strategy, load case definition</div>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-diamond"></div>
+      <div>
+        <div class="skill-title">Prototype & Validation</div>
+        <div class="skill-desc">3D printing, vehicle integration, physical testing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="section-header">
+    <h2 class="section-heading">Selected <span class="accent">Works</span></h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card" data-onclick="openSlides()" role="button" tabindex="0" aria-label="Open project workflow">
+      <div class="proj-cover">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790062016/scooter_conversion_project_cover_dzcgce.jpg" alt="Scooter Conversion Project Cover">
+        <span class="proj-cover-label">// 01 — EV Platform Design</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-index">// 01 — EV Platform Design</div>
+        <div class="proj-title">Converting a fixed-battery EV into a swappable-battery platform under existing chassis constraints</div>
+        <div class="proj-desc">14-figure workflow — concept · CAD · FEA · optimisation · prototype · integration</div>
+      </div>
+      <div class="proj-footer">
+        <div class="proj-arrow">View workflow</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="section-header">
+    <h2 class="section-heading">Further <span class="accent">Work</span></h2>
+  </div>
+  <p class="gallery-note">Additional projects at GridxEnergy where the full workflow can't be shown due to NDA. Images below give a glimpse of the work — click any image to view it larger.</p>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- GALLERY LIGHTBOX -->
+<div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+  <span class="gallery-lightbox-count" id="galleryCount">01 / 01</span>
+  <button class="gallery-lightbox-close" data-onclick="closeGallery()" aria-label="Close gallery">✕</button>
+  <button class="gallery-lightbox-nav gallery-lightbox-prev" id="galleryPrevBtn" data-onclick="changeGallery(-1)" aria-label="Previous image">←</button>
+  <img id="galleryImg" src="" alt="">
+  <button class="gallery-lightbox-nav gallery-lightbox-next" id="galleryNextBtn" data-onclick="changeGallery(1)" aria-label="Next image">→</button>
+  <div class="gallery-lightbox-caption" id="galleryCaption"></div>
+</div>
+
+
+<!-- SLIDESHOW OVERLAY -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Project workflow slideshow">
+  <div class="overlay-header">
+    <span class="overlay-logo">// Swappable battery platform</span>
+    <span class="overlay-count" id="slideCount">Fig. 01 / 13</span>
+    <button class="close-btn" data-onclick="closeSlides()" aria-label="Close slideshow">✕</button>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:7.69%"></div></div>
+
+  <div class="slides-wrapper">
+    <div class="slides-track" id="track">
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 1</div>
+        <div class="slide-eyebrow">Design Challenge</div>
+        <h2>Converting a fixed battery EV into a <span class="accent">swappable battery platform</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061791/Slide1_rsdt13.gif" alt="Design Challenge — Fixed Battery EV Conversion" class="slide-img">
+        <p>The challenge: integrate a swappable battery system into an existing electric two-wheeler without modifying the original chassis architecture. The objective was not simply to design a battery mount, but to develop a structural interface that satisfied packaging constraints, structural integrity, serviceability, and ease of battery replacement simultaneously.</p>
+        <ul>
+          <li>Existing chassis architecture and envelope must remain unmodified</li>
+          <li>Battery CG position to be preserved for vehicle dynamics</li>
+          <li>Structural interface must carry inertial loads from road inputs</li>
+          <li>Design must enable tool-free battery exchange by a single person</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 2</div>
+        <div class="slide-eyebrow">Package Space Analysis</div>
+        <h2>Understanding available space &amp; <span class="accent">chassis constraints</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061790/Slide2_myyued.png" alt="Package Space Analysis — Chassis Constraints" class="slide-img">
+        <p>Before any concept work, the available package space and chassis constraints were mapped in detail. Every hard point — subframe mounts, cable conduits, ground clearance limits, and existing battery envelope — was documented to bound the design space.</p>
+        <ul>
+          <li>Floor geometry and subframe mount locations non-negotiable</li>
+          <li>High-voltage cable routing constrained by existing conduits</li>
+          <li>Battery envelope and mass distribution targets defined</li>
+          <li>Swap access direction selected against chassis geometry</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 3</div>
+        <div class="slide-eyebrow">Concept Development</div>
+        <h2>Initial concepts through <span class="accent">hand sketches</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061780/Slide3_o2rldo.png" alt="Concept Development — Hand Sketches and Initial Layouts" class="slide-img">
+        <p>Multiple mounting concepts were explored through hand sketches — evaluating extraction directions, latch positions, and structural load paths against the constraints documented in the package analysis. Sketching allowed rapid iteration before committing CAD time.</p>
+        <ul>
+          <li>Dock and cradle concept defined: battery seats into a structural receiver</li>
+          <li>Bolting pattern and mount geometry roughed out on paper</li>
+          <li>Load path traced from battery CG through dock to chassis bolts</li>
+          <li>Version 1 geometry locked for CAD development</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 4</div>
+        <div class="slide-eyebrow">CAD Development</div>
+        <h2>3D model of the <span class="accent">battery dock &amp; mount assembly</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061793/Slide4_exucu6.gif" alt="CAD Development — Battery Dock 3D Model" class="slide-img">
+        <p>The sketch concept was developed into a full parametric CAD model. The dock was modelled with bolted interfaces at base and side locations; the dock mount in PETG and base plate in structural steel were designed as separate bodies joined by bolts and holes — replicating real assembly conditions.</p>
+        <ul>
+          <li>Dock mount (PETG) and scooter base platform (structural steel) modelled separately</li>
+          <li>Bolted joints at base and side — no bonded simplifications</li>
+          <li>Wall thickness and geometry driven by anticipated load transfer</li>
+          <li>Model structured for direct import into FEA without geometry cleanup</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 5</div>
+        <div class="slide-eyebrow">Assembly Integration</div>
+        <h2>Full vehicle context &amp; <span class="accent">packaging validation</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061780/Slide5_gp7lft.png" alt="Assembly Integration — Full Vehicle Context" class="slide-img">
+        <p>The CAD assembly was validated in full vehicle context — dock, battery, and scooter platform together. Packaging validation confirmed the design fits within the existing vehicle envelope before structural work began. Structural integrity validation was the next step.</p>
+        <ul>
+          <li>Packaging validation completed: zero chassis modifications required</li>
+          <li>Battery seating position and CG location confirmed in assembly</li>
+          <li>Connector and service access routes verified in digital build</li>
+          <li>Assembly passed to FEA for structural integrity validation</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 6</div>
+        <div class="slide-eyebrow">FEA Model Setup</div>
+        <h2>Contact definitions, boundary conditions &amp; <span class="accent">remote load at battery CG</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061788/Slide6_qyun0q.png" alt="FEA Model Setup — Contacts and Boundary Conditions" class="slide-img">
+        <p>The FEA model was built with realistic contact definitions: bodies joined by bolts and holes, not bonded surfaces — just like the real assembly. Fixed boundary conditions applied at chassis bolt locations; a remote load at the battery CG captures the full moment transferred to the mounting structure.</p>
+        <ul>
+          <li>No bonded contacts — all interfaces defined by bolts through holes</li>
+          <li>Fixed supports at chassis attachment bolt locations</li>
+          <li>Remote point at battery CG: load path is Battery CG → Dock → Bolts → Dock Mount [PETG] → Base Platform [structural steel]</li>
+          <li>PETG material properties assigned to dock mount; structural steel to base</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 7</div>
+        <div class="slide-eyebrow">Defining FEA Load Cases Through Hand Calculations</div>
+        <h2>6 load cases defined from <span class="accent">first principles</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061781/Slide7_pulqhe.png" alt="Load Case Definition — Hand Calculations for FEA" class="slide-img">
+        <p>Load cases were defined through hand calculations before FEA — establishing the g-force magnitudes and directions for each real-world scenario. Six cases were identified to envelope the structural demands across normal use and worst-case events.</p>
+        <ul>
+          <li>1g vertical — battery self weight (baseline)</li>
+          <li>3g–6g vertical bump — potholes, jumps, rough roads</li>
+          <li>2g lateral — cornering</li>
+          <li>2g longitudinal (forward) — acceleration; 2g longitudinal (reverse) — braking</li>
+          <li>Combined loading — worst case real-world condition</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 8</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061781/Slide8_cgcezc.png" alt="Mesh Strategy — Coarse Mesh Verification" class="slide-img">
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 9</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061782/Slide9_t5dlcx.png" alt="Refined Mesh and Static Structural Analysis" class="slide-img">
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 10</div>
+        <div class="slide-eyebrow">Some FEA Decisions Screenshots!!</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061783/Slide10_d18tyu.png" alt="Some FEA Decisions Screenshots" class="slide-img">
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 11</div>
+        <div class="slide-eyebrow">Printing orientation directly influences bending strength due to layer adhesion characteristics.</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061784/Slide11_pj2der.png" alt="Printing Orientation and Bending Strength" class="slide-img">
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 12</div>
+        <div class="slide-eyebrow">Iterations Done on basis of Errors found after fitting and Testing.</div>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061785/Slide12_upazrw.png" alt="Iterations Done on basis of Errors found after fitting and Testing" class="slide-img">
+      </div>
+
+      <div class="slide">
+        <div class="slide-fig">Fig. 13</div>
+        <div class="slide-eyebrow">Prototype Manufactured &amp; Installed</div>
+        <h2>First prototype assembled &amp; <span class="accent">installed on the vehicle</span></h2>
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1790061786/Slide13_leyno8.png" alt="Prototype Manufacturing and Vehicle Installation" class="slide-img">
+        <p>The first prototype was successfully manufactured in PETG, assembled with structural steel base hardware, and installed on the vehicle. Physical installation validated that the digital assembly translated correctly to the real build — providing a functional platform for future iteration based on real-world usage and maintenance feedback.</p>
+        <ul>
+          <li>PETG dock mount printed and post-processed at mating interfaces</li>
+          <li>Assembly bolted to vehicle chassis — zero modifications required</li>
+          <li>First prototype installed and functionally demonstrated on vehicle</li>
+          <li>Platform ready for iteration: real-world feedback, material upgrade, next revision</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <button class="nav-btn" id="prevBtn" data-onclick="changeSlide(-1)" disabled>← Prev</button>
+    <div class="progress-dots" id="dots"></div>
+    <button class="nav-btn" id="nextBtn" data-onclick="changeSlide(1)">Next →</button>
+  </div>
+</div>
+</div>
+</template>
+<script>
+(function(){
+  var host=document.getElementById('gridxHost'),tpl=document.getElementById('gridxTpl'),done=false;
+  window.initGridxPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+
+  /* ── GALLERY — NDA-restricted projects ──
+     Add an entry for each image or video you want in the gallery.
+     src: image/video URL or filename (upload alongside this HTML file)
+     caption: short label shown under the thumbnail and in the lightbox
+     type: "video" for video files, omit or "image" for images
+  */
+  var galleryImages = [
+    { src: "https://res.cloudinary.com/fvtkc10l/video/upload/v1790060422/Green_Red_Woman_in_Nature_Photo_Collage_1_cf9zz7.mp4", caption: "Team GridXEnergy", type: "video" },
+    { src: "https://res.cloudinary.com/fvtkc10l/image/upload/v1790059063/slide_3_vzcrif.png", caption: "Battery Lock Design and Prototyping" },
+    { src: "https://res.cloudinary.com/fvtkc10l/image/upload/v1790059144/63f5cc0d-25f1-4afe-b0ff-8c1b8dca09a6.png", caption: "Thermal Runaway Vent Calculation and Top Lid FEA" },
+    { src: "https://res.cloudinary.com/fvtkc10l/video/upload/v1790059676/WhatsApp_Video_2026-09-22_at_12.17.34_PM_g0sect.mp4", caption: "Modal Analysis FEA Setup for AIS 156 Vibration Test", type: "video" },
+    { src: "https://res.cloudinary.com/fvtkc10l/image/upload/v1790059939/16b4472c-b99d-4347-823a-b29839bd6af7.png", caption: "Completion Certificate" },
+  ];
+
+  var galleryGrid = R.getElementById('galleryGrid');
+  var galleryLightbox = R.getElementById('galleryLightbox');
+  var galleryImg = R.getElementById('galleryImg');
+  var galleryCaption = R.getElementById('galleryCaption');
+  var galleryCount = R.getElementById('galleryCount');
+  var galleryPrevBtn = R.getElementById('galleryPrevBtn');
+  var galleryNextBtn = R.getElementById('galleryNextBtn');
+  var galleryCurrent = 0;
+
+  function renderGallery() {
+    galleryGrid.innerHTML = '';
+    if (galleryImages.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'gallery-empty';
+      empty.textContent = 'Gallery images coming soon';
+      galleryGrid.appendChild(empty);
+      return;
+    }
+    galleryImages.forEach(function(item, idx) {
+      var tile = document.createElement('div');
+      tile.className = 'gallery-item';
+      tile.setAttribute('role', 'button');
+      tile.setAttribute('tabindex', '0');
+      tile.setAttribute('aria-label', 'View: ' + item.caption);
+      tile.onclick = function() { openGallery(idx); };
+      tile.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGallery(idx); }
+      });
+
+      if (item.type === 'video') {
+        var vid = document.createElement('video');
+        vid.src = item.src;
+        vid.autoplay = true;
+        vid.muted = true;
+        vid.loop = true;
+        vid.playsInline = true;
+        tile.appendChild(vid);
+      } else {
+        var img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.caption || '';
+        tile.appendChild(img);
+      }
+
+      if (item.caption) {
+        var cap = document.createElement('div');
+        cap.className = 'gallery-caption';
+        cap.textContent = item.caption;
+        tile.appendChild(cap);
+      }
+      galleryGrid.appendChild(tile);
+    });
+  }
+
+  function updateGalleryUI() {
+    var item = galleryImages[galleryCurrent];
+    var existingMedia = R.getElementById('galleryImg');
+    var newMedia;
+    if (item.type === 'video') {
+      newMedia = document.createElement('video');
+      newMedia.id = 'galleryImg';
+      newMedia.src = item.src;
+      newMedia.controls = true;
+      newMedia.autoplay = true;
+      newMedia.playsInline = true;
+    } else {
+      newMedia = document.createElement('img');
+      newMedia.id = 'galleryImg';
+      newMedia.src = item.src;
+      newMedia.alt = item.caption || '';
+    }
+    existingMedia.replaceWith(newMedia);
+    galleryImg = newMedia;
+    galleryCaption.textContent = item.caption || '';
+    galleryCount.textContent = pad(galleryCurrent + 1) + ' / ' + pad(galleryImages.length);
+    galleryPrevBtn.disabled = galleryCurrent === 0;
+    galleryNextBtn.disabled = galleryCurrent === galleryImages.length - 1;
+  }
+
+  function openGallery(idx) {
+    if (!galleryImages.length) return;
+    galleryCurrent = idx;
+    updateGalleryUI();
+    galleryLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGallery() {
+    galleryLightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    if (galleryImg.tagName === 'VIDEO') galleryImg.pause();
+  }
+
+  function changeGallery(dir) {
+    var next = galleryCurrent + dir;
+    if (next < 0 || next >= galleryImages.length) return;
+    galleryCurrent = next;
+    updateGalleryUI();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (!galleryLightbox.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') changeGallery(1);
+    if (e.key === 'ArrowLeft') changeGallery(-1);
+    if (e.key === 'Escape') closeGallery();
+  });
+
+  var galleryTouchStartX = 0, galleryTouchStartY = 0;
+  galleryLightbox.addEventListener('touchstart', function(e) {
+    galleryTouchStartX = e.touches[0].clientX;
+    galleryTouchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  galleryLightbox.addEventListener('touchend', function(e) {
+    var gdx = e.changedTouches[0].clientX - galleryTouchStartX;
+    var gdy = e.changedTouches[0].clientY - galleryTouchStartY;
+    if (Math.abs(gdy) > Math.abs(gdx) && gdy > 70) { closeGallery(); return; }
+    if (Math.abs(gdx) > 40) changeGallery(gdx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  renderGallery();
+
+  var current = 0;
+  var total = 13;
+  var track = R.getElementById('track');
+  var overlay = R.getElementById('overlay');
+  var slideCount = R.getElementById('slideCount');
+  var prevBtn = R.getElementById('prevBtn');
+  var nextBtn = R.getElementById('nextBtn');
+  var dotsEl = R.getElementById('dots');
+  var progressBar = R.getElementById('progressBar');
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  for (var i = 0; i < total; i++) {
+    var d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    dotsEl.appendChild(d);
+  }
+
+  var gifSlides = [0, 3]; // 0-indexed: Slide1 and Slide4
+
+  function updateUI() {
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    slideCount.textContent = 'Fig. ' + pad(current + 1) + ' / ' + pad(total);
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    var pct = ((current + 1) / total * 100).toFixed(2);
+    progressBar.style.width = pct + '%';
+    R.querySelectorAll('.dot').forEach(function(dot, idx) {
+      dot.classList.toggle('active', idx === current);
+    });
+    // Restart GIF from frame 1 each time that slide is navigated to
+    if (gifSlides.indexOf(current) !== -1) {
+      var slides = track.querySelectorAll('.slide');
+      var gif = slides[current].querySelector('img');
+      if (gif) { var s = gif.src; gif.src = ''; gif.src = s; }
+    }
+  }
+
+  function changeSlide(dir) {
+    var next = current + dir;
+    if (next < 0 || next >= total) return;
+    current = next;
+    updateUI();
+  }
+
+  function openSlides() {
+    current = 0;
+    updateUI();
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSlides() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  R.querySelector('.project-card').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSlides(); }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') changeSlide(1);
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+    if (e.key === 'Escape') closeSlides();
+  });
+
+  var touchStartX = 0, touchStartY = 0;
+  overlay.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  overlay.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dy) > Math.abs(dx) && dy > 70) { closeSlides(); return; }
+    if (Math.abs(dx) > 40) changeSlide(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+
+    var fns={openSlides:openSlides,closeSlides:closeSlides,changeSlide:changeSlide,closeGallery:closeGallery,changeGallery:changeGallery};
+    R.addEventListener('click',function(e){
+      var el=e.target.closest('[data-onclick]');if(!el)return;
+      var m=/^(\w+)\((-?\d*)\)$/.exec(el.getAttribute('data-onclick'));
+      if(m&&fns[m[1]])fns[m[1]](m[2]===''?undefined:+m[2]);
+    });
+  };
+})();
+</script>
+</div>
+<div id="escooterPane" role="tabpanel" aria-label="E-Scooter — Electric Mobility Project">
+<style>
+#escooterPane{display:none}
+#escooterPane.is-on{display:block}
+</style>
+<div id="escooterHost"></div>
+<template id="escooterTpl"><style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:host {
+  display: block;
+  --black: #080808;
+  --white: #f2efe9;
+  --neon: #c6f135;
+  --muted: #3a3a3a;
+  --dim: #141414;
+  --pad: clamp(18px, 5vw, 44px);
+}
+
+
+.es {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  overflow-x: hidden;
+}
+
+
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 64px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 var(--pad) clamp(32px, 8vw, 72px);
+  overflow: hidden;
+}
+
+/* Hero background image */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 45%;
+  display: block;
+}
+/* Multi-layer dark shade — heavier at bottom so text pops */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(8,8,8,0.55) 0%,
+      rgba(8,8,8,0.45) 35%,
+      rgba(8,8,8,0.75) 65%,
+      rgba(8,8,8,0.97) 100%);
+}
+
+/* Subtle green glow at center */
+.hero-glow {
+  position: absolute; z-index: 1;
+  top: 42%; left: 50%; transform: translate(-50%, -50%);
+  width: min(700px, 120vw); height: 300px;
+  background: radial-gradient(ellipse, rgba(198,241,53,0.07) 0%, transparent 70%);
+  pointer-events: none; animation: glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
+
+/* Hero content sits above the image */
+.hero-content { position: relative; z-index: 2; }
+
+.hero-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.5rem, 1.8vw, 0.62rem);
+  letter-spacing: 0.45em; color: var(--neon);
+  text-transform: uppercase; margin-bottom: 18px;
+  opacity: 0; animation: up 0.9s ease 0.3s forwards;
+}
+
+/* ── HERO TITLE ── */
+.hero-title {
+  opacity: 0; animation: up 0.9s ease 0.5s forwards;
+  line-height: 1;
+}
+
+/* Row 1: "ELECTRIC" small label with line */
+.hero-title .label-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.hero-title .label-row::after {
+  content: '';
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--neon);
+  opacity: 0.5;
+}
+.hero-title .label-text {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.5rem, 1.8vw, 0.68rem);
+  letter-spacing: 0.45em;
+  color: var(--neon);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Row 2: "E" huge black cutout box + "SCOOTER" */
+.hero-title .main-row {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(8px, 2vw, 18px);
+  flex-wrap: nowrap;
+}
+
+/* The "E" badge — boxed in neon */
+.hero-title .badge-e {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.4rem, 9vw, 7rem);
+  line-height: 1;
+  color: var(--black);
+  background: var(--neon);
+  padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 18px);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  /* drop a few px to align with SCOOTER baseline */
+  margin-bottom: 4px;
+}
+
+/* "SCOOTER" — massive italic, clipped two-tone */
+.hero-title .word-scooter {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(3.4rem, 16vw, 13rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  /* two-tone: top half white, bottom half neon outline only */
+  color: var(--white);
+  -webkit-text-stroke: 0px transparent;
+  position: relative;
+}
+/* neon underline accent */
+.hero-title .word-scooter::after {
+  content: '';
+  display: block;
+  height: clamp(2px, 0.4vw, 4px);
+  width: 55%;
+  background: var(--neon);
+  margin-top: 6px;
+}
+
+.hero-subtitle {
+  margin-top: 16px;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 300; font-style: italic;
+  letter-spacing: 0.1em; color: rgba(242,239,233,0.35);
+  max-width: 400px; line-height: 1.7;
+  opacity: 0; animation: up 0.9s ease 0.7s forwards;
+}
+
+@keyframes up {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute; bottom: clamp(20px, 5vw, 36px); right: var(--pad);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: up 1s ease 1.1s forwards;
+}
+.scroll-cue span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.48rem; letter-spacing: 0.4em; color: #333;
+  writing-mode: vertical-rl; text-transform: uppercase;
+}
+.scroll-cue-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, transparent, #333);
+}
+
+/* ── GALLERY ── */
+.gallery {
+  padding: clamp(32px, 8vw, 64px) var(--pad) 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+.img-wrap {
+  overflow: hidden; position: relative; background: var(--dim);
+}
+.img-wrap.big { grid-row: 1 / 3; aspect-ratio: 3/4; }
+.img-wrap.small { aspect-ratio: 4/3; }
+.img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(15%) brightness(0.85);
+  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.5s ease;
+}
+.img-wrap:hover img { transform: scale(1.05); filter: grayscale(0%) brightness(0.92); }
+.img-wrap.big::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--neon); z-index: 2;
+}
+.img-num {
+  position: absolute; bottom: 12px; right: 14px; z-index: 2;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem; letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.25);
+}
+
+/* Mobile gallery: stack all vertically */
+@media(max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .img-wrap.big { grid-row: auto; aspect-ratio: 4/3; }
+  .img-wrap.small { aspect-ratio: 16/9; }
+}
+
+/* ── COMING SOON ── */
+.soon-block {
+  padding: clamp(48px, 10vw, 80px) var(--pad) 0;
+  position: relative; overflow: hidden;
+  opacity: 0; animation: up 1s ease 1s forwards;
+}
+.soon-block::before {
+  content: '';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 160vw); height: 400px;
+  background: radial-gradient(ellipse at center,
+    rgba(198,241,53,0.09) 0%, rgba(198,241,53,0.03) 40%, transparent 70%);
+  pointer-events: none;
+  animation: blazePulse 3s ease-in-out infinite;
+}
+@keyframes blazePulse {
+  0%,100%{ opacity:0.7; transform:translate(-50%,-50%) scale(1); }
+  50%    { opacity:1;   transform:translate(-50%,-50%) scale(1.06); }
+}
+.soon-inner { position: relative; text-align: center; padding: 32px 0 16px; }
+.soon-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.5rem, 1.6vw, 0.62rem);
+  letter-spacing: 0.55em; color: rgba(198,241,53,0.45);
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.soon-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 22vw, 20rem);
+  line-height: 0.82; letter-spacing: 0.03em; display: block;
+}
+.word-coming {
+  display: block; color: transparent;
+  -webkit-text-stroke: 1.5px rgba(242,239,233,0.15);
+}
+.word-soon {
+  display: block; color: var(--neon);
+  text-shadow: 0 0 40px rgba(198,241,53,0.6),
+               0 0 100px rgba(198,241,53,0.22),
+               0 0 200px rgba(198,241,53,0.08);
+  animation: heroFlicker 6s ease-in-out infinite, soonBlink 1.4s step-end infinite;
+}
+@keyframes heroFlicker {
+  0%,94%,100% {
+    text-shadow: 0 0 40px rgba(198,241,53,0.6),
+                 0 0 100px rgba(198,241,53,0.22),
+                 0 0 200px rgba(198,241,53,0.08);
+  }
+  95% { text-shadow: 0 0 15px rgba(198,241,53,0.3); }
+  96% { text-shadow: 0 0 60px rgba(198,241,53,0.9),
+                     0 0 140px rgba(198,241,53,0.4); }
+}
+@keyframes soonBlink {
+  0%, 48%, 52%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.soon-tagline {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-top: 24px;
+}
+.soon-tagline::before, .soon-tagline::after {
+  content: ''; flex: 1; max-width: 100px; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(198,241,53,0.25));
+}
+.soon-tagline::after {
+  background: linear-gradient(to left, transparent, rgba(198,241,53,0.25));
+}
+.soon-tagline span {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.45rem, 1.4vw, 0.56rem);
+  letter-spacing: 0.4em; color: #3a3a3a;
+  text-transform: uppercase; white-space: nowrap;
+}
+.soon-desc {
+  margin-top: 16px;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 300; font-style: italic;
+  color: #333; letter-spacing: 0.1em; line-height: 1.8;
+}
+
+/* ── CONTACT STRIP ── */
+.contact-strip {
+  margin: clamp(28px, 6vw, 48px) var(--pad) 0;
+  display: flex; align-items: stretch;
+  border: 1px solid #1c1c1c;
+}
+.contact-item {
+  flex: 1; display: flex; align-items: center;
+  gap: 12px; padding: clamp(16px, 3vw, 22px) clamp(14px, 3vw, 28px);
+  text-decoration: none; color: var(--white);
+  transition: background 0.3s; position: relative; overflow: hidden;
+}
+.contact-item::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--neon); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.contact-item:hover::after { transform: scaleX(1); }
+.contact-item:hover { background: rgba(198,241,53,0.03); }
+.contact-item:hover svg { stroke: var(--neon); }
+.contact-item:hover .contact-label { color: var(--neon); }
+.contact-item svg { stroke: #3a3a3a; flex-shrink: 0; transition: stroke 0.3s; }
+.contact-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.48rem, 1.4vw, 0.55rem);
+  letter-spacing: 0.3em; color: #3a3a3a;
+  text-transform: uppercase; transition: color 0.3s;
+}
+.contact-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  font-weight: 300; letter-spacing: 0.06em;
+  color: #666; margin-left: auto;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.contact-sep { width: 1px; background: #1c1c1c; flex-shrink: 0; }
+
+/* Mobile: stack contact items */
+@media(max-width: 600px) {
+  .contact-strip { flex-direction: column; }
+  .contact-sep { width: 100%; height: 1px; }
+  .contact-val { display: none; }
+  .contact-item { padding: 18px 20px; }
+}
+@media(max-width: 860px) {
+  .contact-val { font-size: 0.72rem; }
+}
+
+/* ── DIVIDER ── */
+.divider {
+  margin: clamp(24px, 6vw, 48px) var(--pad) 0;
+  border: none; border-top: 1px solid #1c1c1c; position: relative;
+}
+.divider::after {
+  content: ''; position: absolute;
+  top: -1px; left: 0; width: 60px; height: 1px;
+  background: var(--neon);
+}
+
+/* ── NOTIFY ── */
+.notify {
+  padding: clamp(20px, 5vw, 36px) var(--pad) clamp(40px, 10vw, 64px);
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.notify-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.48rem, 1.5vw, 0.6rem);
+  letter-spacing: 0.3em; color: var(--muted);
+  text-transform: uppercase; white-space: nowrap;
+}
+.notify-input {
+  flex: 1; min-width: 160px;
+  background: transparent; border: none;
+  border-bottom: 1px solid #2a2a2a; outline: none;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  letter-spacing: 0.1em; padding: 8px 0;
+  transition: border-color 0.3s;
+}
+.notify-input:focus { border-color: var(--neon); }
+.notify-input::placeholder { color: #2a2a2a; }
+.notify-btn {
+  background: transparent; border: 1px solid #2a2a2a;
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  letter-spacing: 0.2em;
+  padding: 10px clamp(16px, 4vw, 28px);
+  cursor: pointer; transition: border-color 0.3s, color 0.3s; white-space: nowrap;
+}
+.notify-btn:hover { border-color: var(--neon); color: var(--neon); }
+
+/* Full width notify on very small screens */
+@media(max-width: 420px) {
+  .notify { flex-direction: column; align-items: flex-start; }
+  .notify-input { width: 100%; }
+  .notify-btn { width: 100%; text-align: center; }
+}
+
+/* ── FEATURED WORK ── */
+.featured {
+  padding: clamp(48px, 10vw, 80px) var(--pad) 0;
+}
+.featured-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: clamp(20px, 4vw, 36px); gap: 16px; flex-wrap: wrap;
+}
+.featured-title-group {}
+.featured-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.45rem, 1.4vw, 0.56rem);
+  letter-spacing: 0.5em; color: var(--neon);
+  text-transform: uppercase; margin-bottom: 6px;
+  opacity: 0.7;
+}
+.featured-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  line-height: 0.9; letter-spacing: 0.04em;
+  color: var(--white);
+}
+.featured-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242,239,233,0.2);
+}
+.featured-count {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.45rem, 1.3vw, 0.54rem);
+  letter-spacing: 0.3em; color: #2a2a2a;
+  text-transform: uppercase; white-space: nowrap;
+  align-self: flex-end;
+}
+
+/* Thumbnail grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+  gap: clamp(6px, 1.5vw, 12px);
+}
+@media(min-width: 600px) {
+  .featured-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media(min-width: 900px) {
+  .featured-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media(min-width: 1200px) {
+  .featured-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.thumb-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: var(--dim); aspect-ratio: 3/4;
+  border: 1px solid #1a1a1a;
+  transition: border-color 0.3s, transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.thumb-card:hover { border-color: rgba(198,241,53,0.3); transform: translateY(-3px); }
+.thumb-card:hover .thumb-overlay { opacity: 1; }
+.thumb-card:hover img { transform: scale(1.07); filter: brightness(0.75); }
+
+.thumb-card img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease;
+  filter: brightness(0.85) grayscale(10%);
+}
+
+.thumb-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  border: 1px dashed #222; color: #2a2a2a;
+}
+.thumb-placeholder svg { stroke: #2a2a2a; opacity: 0.5; }
+.thumb-placeholder span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.42rem; letter-spacing: 0.35em;
+  text-transform: uppercase; opacity: 0.4;
+}
+
+.thumb-overlay {
+  position: absolute; inset: 0; opacity: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 60%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 12px;
+  transition: opacity 0.35s ease;
+}
+.thumb-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.44rem; letter-spacing: 0.4em;
+  color: var(--neon); margin-bottom: 4px; opacity: 0.7;
+}
+.thumb-view {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  letter-spacing: 0.18em; color: var(--white);
+}
+
+/* top neon accent */
+.thumb-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: var(--neon); z-index: 2;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.thumb-card:hover::before { transform: scaleX(1); }
+
+/* Upload CTA card */
+.thumb-add {
+  aspect-ratio: 3/4;
+  border: 1px dashed #1e1e1e; background: transparent;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  cursor: default;
+}
+.thumb-add svg { stroke: #2a2a2a; }
+.thumb-add span {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.4rem; letter-spacing: 0.4em;
+  color: #2a2a2a; text-transform: uppercase; text-align: center;
+  line-height: 1.8;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(4,4,4,0.97);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.lightbox.open { opacity: 1; pointer-events: all; }
+
+.lb-inner {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+/* Image track — horizontal slider */
+.lb-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lb-slide {
+  flex-shrink: 0;
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(60px, 10vw, 90px) clamp(60px, 10vw, 100px);
+}
+.lb-slide img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; display: block;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* HUD */
+.lb-hud {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: clamp(14px, 3vw, 22px) clamp(14px, 4vw, 28px);
+  background: linear-gradient(to bottom, rgba(4,4,4,0.92) 0%, transparent 100%);
+}
+.lb-counter {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.5rem, 2vw, 0.6rem); letter-spacing: 0.4em;
+  color: rgba(242,239,233,0.55); text-transform: uppercase;
+}
+
+/* ── CLOSE BUTTON — always visible ── */
+.lb-close {
+  background: rgba(8,8,8,0.7);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--white);
+  padding: clamp(8px,2vw,11px) clamp(10px,2.5vw,16px);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  display: flex; align-items: center; gap: 8px;
+  min-width: 44px; min-height: 44px;   /* touch target */
+  justify-content: center;
+}
+.lb-close:hover,
+.lb-close:focus-visible {
+  border-color: var(--neon); color: var(--neon);
+  background: rgba(198,241,53,0.07);
+  outline: none;
+}
+.lb-close span {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.45rem, 1.5vw, 0.55rem); letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+.lb-close svg { flex-shrink: 0; }
+/* Hide text label on very small screens, keep icon */
+@media(max-width: 400px) {
+  .lb-close span { display: none; }
+}
+
+/* Arrow buttons */
+.lb-arrow {
+  position: absolute; top: 50%; z-index: 10;
+  transform: translateY(-50%);
+  background: rgba(8,8,8,0.6);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--white); cursor: pointer;
+  padding: clamp(12px,2vw,16px) clamp(10px,1.5vw,14px);
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px;   /* touch target */
+  border-radius: 4px;
+}
+.lb-arrow:hover,
+.lb-arrow:focus-visible {
+  border-color: var(--neon); color: var(--neon);
+  background: rgba(198,241,53,0.07); outline: none;
+}
+.lb-arrow.prev { left: clamp(10px, 3vw, 24px); }
+.lb-arrow.next { right: clamp(10px, 3vw, 24px); }
+
+/* Hide arrows on mobile — swipe is enough */
+@media(max-width: 480px) {
+  .lb-arrow { display: none; }
+}
+
+/* Dot strip */
+.lb-dots {
+  position: absolute; bottom: clamp(18px,4vw,28px); left: 50%; transform: translateX(-50%);
+  display: flex; gap: 10px; z-index: 10;
+}
+.lb-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.18); cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+  /* larger tap target via padding trick */
+  padding: 0; box-shadow: 0 0 0 8px transparent;
+}
+.lb-dot:focus-visible { outline: 1px solid var(--neon); }
+.lb-dot.active { background: var(--neon); transform: scale(1.6); }
+
+/* touch/drag hint */
+.lb-hint {
+  position: absolute; bottom: clamp(48px,8vw,62px); left: 50%; transform: translateX(-50%);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.38rem; letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.15); text-transform: uppercase; white-space: nowrap;
+  z-index: 10;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: clamp(14px, 3vw, 20px) var(--pad);
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #141414; flex-wrap: wrap; gap: 8px;
+}
+footer span {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.4rem, 1.3vw, 0.5rem);
+  letter-spacing: 0.25em; color: #222; text-transform: uppercase;
+}
+</style>
+<div class="es">
+<!-- HERO with background image -->
+<section class="hero">
+
+  <!-- Background image -->
+  <div class="hero-bg">
+    <!-- 
+    ====================================================
+    👇 REPLACE THIS with your image path or URL
+    Examples:
+      src="images/my-scooter.jpg"
+      src="C:/Users/YourName/Pictures/scooter.png"
+      src="./hero.jpg"
+    ==================================================== 
+  -->
+  <img
+    src="teaser.jpeg"
+    alt="E-Scooter Hero"
+  />
+  </div>
+
+  <!-- Center glow -->
+  <div class="hero-glow"></div>
+
+  <!-- Text content -->
+  <div class="hero-content">
+    <div class="hero-tag">// Classified Preview</div>
+    <h1 class="hero-title">
+      <div class="label-row">
+        <span class="label-text">Electric Mobility</span>
+      </div>
+      <div class="main-row">
+        <span class="badge-e">E</span>
+        <span class="word-scooter">Scooter</span>
+      </div>
+    </h1>
+    <p class="hero-subtitle">Something fast is coming. Something clean.<br>Something you've never ridden before.</p>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-cue">
+    <div class="scroll-cue-line"></div>
+    <span>Scroll</span>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FEATURED WORK  — replace the placeholder
+     <img> src attributes with your own file
+     paths, URLs, or data URIs.
+     Add / remove .thumb-card blocks freely.
+     ══════════════════════════════════════════ -->
+<section class="featured">
+
+  <div class="featured-header">
+    <div class="featured-title-group">
+      <div class="featured-eyebrow">// Design Preview</div>
+      <div class="featured-title">Featured <span>Work</span></div>
+    </div>
+    <span class="featured-count" id="thumbCount">— 03 shots</span>
+  </div>
+
+  <div class="featured-grid" id="featuredGrid">
+
+    <!-- ── CARD 1 — Ergonomics view ── -->
+    <div class="thumb-card" data-index="0">
+      <img src="escooter.img.ergono.jpeg" alt="E-Scooter Ergonomics View"
+           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
+      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>escooter.img.ergono.jpeg</span>
+      </div>
+      <div class="thumb-overlay">
+        <div class="thumb-num">01</div>
+        <div class="thumb-view">View</div>
+      </div>
+    </div>
+
+    <!-- ── CARD 2 — Feature calculations view ── -->
+    <div class="thumb-card" data-index="1">
+      <img src="escooter.img.feacalc.jpeg" alt="E-Scooter Feature Calculations"
+           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
+      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>escooter.img.feacalc.jpeg</span>
+      </div>
+      <div class="thumb-overlay">
+        <div class="thumb-num">02</div>
+        <div class="thumb-view">View</div>
+      </div>
+    </div>
+
+    <!-- ── CARD 3 — Top view ── -->
+    <div class="thumb-card" data-index="2">
+      <img src="escooter.img.topview.jpeg" alt="E-Scooter Top View"
+           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
+      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>escooter.img.topview.jpeg</span>
+      </div>
+      <div class="thumb-overlay">
+        <div class="thumb-num">03</div>
+        <div class="thumb-view">View</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-inner" id="lbInner">
+    <div class="lb-track" id="lbTrack"></div>
+    <div class="lb-hud">
+      <span class="lb-counter" id="lbCounter">01 / 06</span>
+      <button class="lb-close" id="lbClose" aria-label="Close lightbox">
+        <span>Close</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <button class="lb-arrow prev" id="lbPrev" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lb-arrow next" id="lbNext" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lb-dots" id="lbDots"></div>
+    <div class="lb-hint">Swipe or use ← → keys</div>
+  </div>
+</div>
+
+<!-- COMING SOON -->
+<div class="soon-block">
+  <div class="soon-inner">
+    <div class="soon-eyebrow">Prepare yourself</div>
+    <div class="soon-text">
+      <span class="word-coming">COMING</span>
+      <span class="word-soon">SOON</span>
+    </div>
+    <div class="soon-tagline">
+      <span>The ride of your life — launching 2025</span>
+    </div>
+    <p class="soon-desc">Details revealed on launch day.</p>
+  </div>
+</div>
+
+<div class="contact-strip">
+  <a href="https://linkedin.com/in/arpit-malik-bb6939303/" target="_blank" rel="noopener noreferrer" class="contact-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+    </svg>
+    <span class="contact-label">LinkedIn</span>
+    <span class="contact-val">linkedin.com/in/arpit-malik-bb6939303</span>
+  </a>
+  
+  <div class="contact-sep"></div>
+  
+  <a href="https://wa.me/917056470711" target="_blank" rel="noopener noreferrer" class="contact-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+    <span class="contact-label">WhatsApp</span>
+    <span class="contact-val">+91 70564 70711</span>
+  </a>
+  
+  <div class="contact-sep"></div>
+  
+  <a href="mailto:arpit.malik.ug23@nsut.ac.in" class="contact-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span class="contact-label">Email</span>
+    <span class="contact-val">arpit.malik.ug23@nsut.ac.in</span>
+  </a>
+</div>
+
+<hr class="divider"/>
+
+<!-- NOTIFY -->
+<div class="notify">
+  <span class="notify-label">Get notified</span>
+  <input class="notify-input" type="email" placeholder="your@email.com"/>
+  <button class="notify-btn" id="notifyBtn">Notify Me</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 — All rights reserved</span>
+  <span>Confidential — Do not distribute</span>
+</footer>
+</div>
+</template>
+<script>
+(function(){
+  /* The page uses bare file names (teaser.jpeg, escooter.img.*.jpeg). They are resolved against this base.
+     If you copy those images next to index.html, set it to ''. */
+  var ES_MEDIA='https://arpitmalik711.github.io/Escooter/';
+  var host=document.getElementById('escooterHost'),tpl=document.getElementById('escooterTpl'),done=false;
+  window.initEscooterPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    /* fonts: @font-face must live in the main document, not inside the shadow root */
+    if(!document.getElementById('esFonts')){var lk=document.createElement('link');lk.id='esFonts';lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,900;1,900&family=Barlow+Condensed:ital,wght@0,300;0,400;1,300&family=Space+Mono&family=Bebas+Neue&display=swap';document.head.appendChild(lk)}
+    var R=host.attachShadow({mode:'open'}),frag=tpl.content.cloneNode(true);
+    frag.querySelectorAll('img[src]').forEach(function(m){
+      var s=m.getAttribute('src');
+      if(s&&!/^(https?:)?\/\/|^data:|^\//.test(s))m.setAttribute('src',ES_MEDIA+s);
+    });
+    R.appendChild(frag);
+
+/* ── LIGHTBOX ENGINE ── */
+(function() {
+  const lb        = R.getElementById('lightbox');
+  const lbTrack   = R.getElementById('lbTrack');
+  const lbCounter = R.getElementById('lbCounter');
+  const lbDots    = R.getElementById('lbDots');
+  const lbPrev    = R.getElementById('lbPrev');
+  const lbNext    = R.getElementById('lbNext');
+  const lbClose   = R.getElementById('lbClose');
+  const inner     = R.getElementById('lbInner');
+
+  const cards = Array.from(R.querySelectorAll('.thumb-card'));
+  const total  = cards.length;
+  let current  = 0;
+
+  /* ── Build slides & dots ── */
+  cards.forEach((card, i) => {
+    const img   = card.querySelector('img');
+    const slide = document.createElement('div');
+    slide.className = 'lb-slide';
+    const lbImg = document.createElement('img');
+    lbImg.src = img ? img.src : '';
+    lbImg.alt = img ? img.alt : '';
+    lbImg.draggable = false;
+    slide.appendChild(lbImg);
+    lbTrack.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'lb-dot';
+    dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    lbDots.appendChild(dot);
+  });
+
+  function pad(n) { return String(n + 1).padStart(2, '0'); }
+
+  function goTo(idx, instant) {
+    current = ((idx % total) + total) % total;
+    lbTrack.style.transition = instant ? 'none' : 'transform 0.42s cubic-bezier(0.16,1,0.3,1)';
+    lbTrack.style.transform  = `translateX(calc(-${current} * 100vw))`;
+    lbCounter.textContent    = `${pad(current)} / ${pad(total - 1)}`;
+    R.querySelectorAll('.lb-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current));
+  }
+
+  function open(idx) {
+    goTo(idx, true);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    /* focus close button for keyboard users */
+    setTimeout(() => lbClose.focus(), 50);
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── Bind thumbnails ── */
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => open(i));
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+    });
+  });
+
+  lbClose.addEventListener('click', close);
+  if (lbPrev) lbPrev.addEventListener('click', () => goTo(current - 1));
+  if (lbNext) lbNext.addEventListener('click', () => goTo(current + 1));
+
+  /* ── Keyboard navigation ── */
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'Escape')     { e.preventDefault(); close(); }
+  });
+
+  /* ── Click dark backdrop to close ── */
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  /* ── Touch swipe ── */
+  let touchStartX = 0, touchStartY = 0, isDragging = false, dragDelta = 0;
+
+  inner.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isDragging  = false;
+    dragDelta   = 0;
+    lbTrack.style.transition = 'none';
+  }, { passive: true });
+
+  inner.addEventListener('touchmove', e => {
+    dragDelta   = e.touches[0].clientX - touchStartX;
+    const dy    = Math.abs(e.touches[0].clientY - touchStartY);
+    if (Math.abs(dragDelta) > dy + 5) {
+      isDragging = true;
+      lbTrack.style.transform = `translateX(calc(-${current} * 100vw + ${dragDelta}px))`;
+    }
+  }, { passive: true });
+
+  inner.addEventListener('touchend', () => {
+    if (isDragging && Math.abs(dragDelta) > 50) {
+      dragDelta < 0 ? goTo(current + 1) : goTo(current - 1);
+    } else {
+      goTo(current); /* snap back */
+    }
+    isDragging = false; dragDelta = 0;
+  });
+
+  /* ── Mouse drag (desktop) ── */
+  let mouseDown = false, mouseStartX = 0, mouseDelta = 0;
+
+  inner.addEventListener('mousedown', e => {
+    /* don't drag when clicking close / arrows / dots */
+    if (e.target.closest('.lb-close, .lb-arrow, .lb-dot')) return;
+    mouseDown   = true;
+    mouseStartX = e.clientX;
+    mouseDelta  = 0;
+    lbTrack.style.transition = 'none';
+    inner.style.cursor = 'grabbing';
+  });
+
+  inner.addEventListener('mousemove', e => {
+    if (!mouseDown) return;
+    mouseDelta = e.clientX - mouseStartX;
+    lbTrack.style.transform = `translateX(calc(-${current} * 100vw + ${mouseDelta}px))`;
+  });
+
+  function endMouseDrag(e) {
+    if (!mouseDown) return;
+    mouseDown = false;
+    inner.style.cursor = '';
+    if (Math.abs(mouseDelta) > 60) {
+      mouseDelta < 0 ? goTo(current + 1) : goTo(current - 1);
+    } else {
+      goTo(current);
+    }
+    mouseDelta = 0;
+  }
+  inner.addEventListener('mouseup',    endMouseDrag);
+  inner.addEventListener('mouseleave', endMouseDrag);
+
+  /* ── Init ── */
+  goTo(0, true);
+})();
+
+  };
+})();
+</script>
+</div>
 <div id="reelsPane" class="ytp" role="tabpanel" aria-labelledby="tabReels">
 <style>
 #reelsPane.ytp{padding:0;background:#0f0f0f;color:#f1f1f1;font-family:var(--fb);min-height:100vh}
@@ -2686,7 +5140,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
     {title:'Vertical Force Balance using Graph',desc:'Vertical force balance of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794607822/3_srpvqy.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_90,w_640,f_jpg,q_auto/v1794607822/3_srpvqy.jpg',dur:''},
     {title:'Shock travel & Wheel travel methodology',desc:'Methodology for measuring shock travel and wheel travel.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794609100/4_s6zy3k.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_77,w_640,f_jpg,q_auto/v1794609100/4_s6zy3k.jpg',dur:''},
     {title:'Motion Ratio Verification',desc:'Verification of the suspension motion ratio.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794610005/5_bjvzdl.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_2,w_640,f_jpg,q_auto/v1794610005/5_bjvzdl.jpg',dur:''},
-    {title:'Static Analysis Walkthrough',desc:'Static analysis of the BAJA ATV suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1795269954/IMG_8912_okf1vh.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_89,w_640,f_jpg,q_auto/v1795269954/IMG_8912_okf1vh.jpg',dur:''}
+    {title:'Full Wheel Travel and Damper Travel Verification',desc:'Verification of full wheel travel and damper travel of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1795269954/IMG_8912_okf1vh.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_89,w_640,f_jpg,q_auto/v1795269954/IMG_8912_okf1vh.jpg',dur:''}
   ];
   var TAGS=['VD study 1','VD study 1','VD study 1','VD study 1','VD study 1','VD study 1'];
   VIDEOS.forEach(function(v,i){v.tag=TAGS[i]||'VD study 1'});
@@ -3105,7 +5559,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
 .linkedin-intro{font-size:15px;color:var(--text-sec);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:40px}
 .linkedin-intro .lb-hl-yellow{color:#E8C547}
 .li-feed{--li-card:#1B1F23;--li-text:rgba(255,255,255,.9);--li-sec:rgba(255,255,255,.6);--li-line:#38434f;--li-blue:#70B5F9;
-  position:relative;max-width:760px;margin:0 auto;background:var(--li-card);border:1px solid #38434f;border-radius:8px;overflow:hidden;color:var(--li-text);
+  position:relative;max-width:none;width:100%;margin:0 auto;background:var(--li-card);border:1px solid #38434f;border-radius:8px;overflow:hidden;color:var(--li-text);
   font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif}
 .li-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px 0}
 .li-top h3{margin:0;font-size:18px;font-weight:600;line-height:1.2;color:var(--li-text)}
@@ -3117,7 +5571,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
 .li-wrap{position:relative}
 .li-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:12px 18px 26px;scroll-padding-left:18px}
 .li-track::-webkit-scrollbar{display:none}
-.li-post{flex:none;width:280px;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.li-post{flex:1 0 280px;min-width:0;box-sizing:border-box;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 @media(hover:hover) and (pointer:fine){.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18)}}
 .li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
 .li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
@@ -3143,8 +5597,9 @@ img{width:100%;height:100%;object-fit:contain;display:block}
 .li-prev{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:#000;color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 1px #38434f;z-index:2}
 .li-next:focus-visible,.li-prev:focus-visible{outline:2px solid var(--li-blue)}
 .li-next.is-off,.li-prev.is-off{opacity:.35;pointer-events:none}
+.li-feed.is-fit .li-next,.li-feed.is-fit .li-prev,.li-feed.is-fit:not(.is-all) .li-all{display:none}
 .li-all{display:block;width:100%;background:none;border:0;border-top:1px solid var(--li-line);font-family:inherit;cursor:pointer;text-align:center;padding:10px;border-top:1px solid var(--li-line);font-size:14px;font-weight:600;color:var(--li-text);text-decoration:none}
-.li-feed.is-all .li-track{display:grid;grid-template-columns:repeat(2,280px);justify-content:center;overflow:visible;scroll-snap-type:none}
+.li-feed.is-all .li-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));overflow:visible;scroll-snap-type:none}
 .li-feed.is-all .li-next,.li-feed.is-all .li-prev{display:none}
 .li-all:hover{background:rgba(255,255,255,.06)}
 .li-post:hover .li-name{text-decoration:underline}
@@ -3152,7 +5607,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
   .li-top,.li-pills{padding-left:16px;padding-right:16px}
   .li-text{font-size:14px;line-height:20px;min-height:56px}
   .li-track{flex-direction:column;padding:16px;overflow:visible}
-  .li-post{width:auto}
+  .li-post{width:auto;flex:none}
   .li-next,.li-prev,.li-all{display:none}
   .li-feed.is-all .li-track{display:flex}
 }
@@ -3237,7 +5692,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
   </div>
   </section>
 <script>(function(){var t=document.getElementById("liTrack"),n=document.getElementById("liNext"),p=document.getElementById("liPrev"),a=document.getElementById("liAll"),f=t&&t.closest(".li-feed");if(!t||!n)return;
-function upd(){if(!t.clientWidth)return;var max=t.scrollWidth-t.clientWidth;if(p)p.classList.toggle("is-off",t.scrollLeft<=4);n.classList.toggle("is-off",t.scrollLeft>=max-4)}
+function upd(){if(!t.clientWidth)return;var max=t.scrollWidth-t.clientWidth;f.classList.toggle("is-fit",max<=4);if(p)p.classList.toggle("is-off",t.scrollLeft<=4);n.classList.toggle("is-off",t.scrollLeft>=max-4)}
 if(a)a.addEventListener("click",function(){var on=f.classList.toggle("is-all");a.setAttribute("aria-expanded",on);a.innerHTML=on?"Show less &uarr;":"Show all &rarr;";if(on)t.scrollLeft=0;else f.scrollIntoView({block:"nearest"});upd()});
 n.addEventListener("click",function(){t.scrollBy({left:292,behavior:"smooth"})});
 if(p)p.addEventListener("click",function(){t.scrollBy({left:-292,behavior:"smooth"})});
@@ -3638,8 +6093,12 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
 .nav-dl:hover{background:#F2B535;border-color:#F2B535}
 .nav-dl:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .nav-dl .dl-short{display:none}
-/* Journey is a desktop-only tab */
-@media(max-width:900px){#tabJourney{display:none!important}}
+/* Journey: shown on desktop and phones, hidden only on the in-between tablet widths */
+@media(min-width:601px) and (max-width:900px){#tabJourney{display:none!important}}
+/* phones: Decisions tab is merged into Investigations (its LinkedIn posts are moved there by script) */
+@media(max-width:600px){#tabLinkedin{display:none!important}
+  .linkedin-section{padding:40px 5% 56px}
+  .linkedin-section .li-post:nth-child(n+4){display:none}}
 /* mobile: tighten the gap between the profile intro and the Gallery section */
 @media(max-width:768px){.slideshow-section{padding:36px 5% 40px}.proj-section,.casestudy-section,.cc-section{padding:40px 5%}#about,#acknowledgements,#contact{padding:40px 5%}}
 @media(max-width:600px){.highlights-section{padding-bottom:0}.highlights-section .profile-head{margin-bottom:14px}.highlights-section .tool-strip{margin-bottom:0}}
@@ -3666,25 +6125,40 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
 @keyframes tnPulse{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.55,1.9);opacity:0}}
 @media(max-width:600px){#tabLinkedin .tab-new{top:1px;right:auto;left:calc(50% + 4px)}}
 @media(prefers-reduced-motion:reduce){#tabLinkedin .tab-new{animation:tnLife 10.95s ease 3.3s forwards,tnBlink 3s ease-in-out 3.3s infinite}#tabLinkedin .tab-new::after{display:none}}
+.pane-back{position:fixed;z-index:95;left:20px;bottom:24px;width:46px;height:46px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(10,12,16,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5);transition:border-color .2s,background .2s;-webkit-tap-highlight-color:transparent}
+.pane-back.on{display:flex}
+.pane-back:hover{border-color:#fff;background:rgba(30,34,42,.95)}
+.pane-back:focus-visible{outline:2px solid #E0A020;outline-offset:2px}
+.pane-back svg{width:22px;height:22px;display:block}
+@media(max-width:600px){.pane-back{left:14px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:44px;height:44px}}
 </style>
 <script>
 (function(){
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
-  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane');
+  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane');
   var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
   function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
   try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
+  /* always-visible back button while a project page (BAJA / Dune Buggy / GridxEnergy) is open */
+  var pbCur=null,pbBtn=document.createElement('button');
+  pbBtn.type='button';pbBtn.className='pane-back';pbBtn.title='Back to projects';pbBtn.setAttribute('aria-label','Back to projects');
+  pbBtn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>';
+  pbBtn.addEventListener('click',function(){if(pbCur)document.dispatchEvent(new CustomEvent(pbCur+'-back'))});
+  document.body.appendChild(pbBtn);
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',m=!r&&!l&&!s&&!a&&!j&&!b&&!d;
+    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es;
     if(b&&window.initBajaPane)window.initBajaPane();
     if(d&&window.initDunePane)window.initDunePane();
+    if(g&&window.initGridxPane)window.initGridxPane();
+    if(es&&window.initEscooterPane)window.initEscooterPane();
     if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);
+    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':null;pbBtn.classList.toggle('on',!!pbCur);
     [[tm,m],[tr,r],[tl,l],[tj,j],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
-    try{history.replaceState(null,'',b?'#baja':d?'#dune':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
+    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
     if(!keepScroll&&!m)window.scrollTo(0,0);
     else if(!keepScroll){var ref=r?reelsP:l?liP:j?journeyP:s?studiesP:a?aboutP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
@@ -3699,14 +6173,17 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   aec.parentNode.insertBefore(aAnchor,aec);
   function place(){
     if(aec.parentNode!==aboutP)aboutP.appendChild(aec);
+    /* phones: LinkedIn posts live at the bottom of the Investigations tab; larger screens keep their own tab */
+    if(liSec){
+      if(!dq.matches){if(liSec.parentNode!==studiesP)studiesP.appendChild(liSec)}
+      else if(liSec.parentNode!==liP)liP.appendChild(liSec);
+    }
   }
   place();
   if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
-    var bj=e.target.closest('a[href="#baja"]');
-    if(bj){e.preventDefault();e.stopPropagation();show('baja');return}
-    var dn=e.target.closest('a[href="#dune"]');
-    if(dn){e.preventDefault();e.stopPropagation();show('dune');return}
+    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"]');
+    if(pj){e.preventDefault();e.stopPropagation();show(pj.getAttribute('href').slice(1));return}
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
     var t=document.getElementById(id);if(!t)return;
@@ -3716,8 +6193,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
-  document.addEventListener('dune-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)});
-  document.addEventListener('baja-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)});
+  ['baja','dune','gridx','escooter'].forEach(function(n){document.addEventListener(n+'-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
   /* phones always open on Main (no restored tab, hash or scroll position); desktop still honours tab links */
   if(!dq.matches){
     try{history.scrollRestoration='manual'}catch(e){}
@@ -3732,6 +6208,8 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   else if(location.hash==='#about')show('about',true);
   else if(location.hash==='#baja')show('baja',true);
   else if(location.hash==='#dune')show('dune',true);
+  else if(location.hash==='#gridx')show('gridx',true);
+  else if(location.hash==='#escooter')show('escooter',true);
   else if(location.hash==='#journey'&&window.matchMedia('(min-width:901px)').matches)show('journey',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
