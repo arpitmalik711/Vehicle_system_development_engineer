@@ -870,7 +870,7 @@ footer{
     <img class="nl-base" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699524/logo-base_iakrjv.webp" width="900" height="426" alt="" decoding="async">
     <img class="nl-wave" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792699530/logo-wave_idngt5.webp" width="900" height="426" alt="" decoding="async">
   </div>
-  <a class="nav-dl" href="Arpit_Malik_Resume.pdf" download="Arpit_Malik_Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Download Resume</span><span class="dl-short">Resume</span></a>
+  <a class="nav-dl" href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" aria-label="Download resume (PDF)" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span class="dl-full">Download Resume</span><span class="dl-short">Resume</span></a>
 </nav>
 
 <!-- ── PROFILE + TABS ── -->
@@ -936,13 +936,16 @@ footer{
 .slideshow-title{font-family:var(--fd);font-size:clamp(38px,5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:-1px;line-height:1;color:var(--text)}
 .slideshow-title span{color:var(--gold)}
 .slideshow-wrap{position:relative;z-index:1;width:90%;margin:0 auto}
-.slideshow-track{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;border:1px solid var(--border2)}
+.slideshow-track{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;border:1px solid var(--border2);touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 .slide{
-  position:absolute;inset:0;opacity:0;
-  transition:opacity .8s ease;
+  position:absolute;inset:0;will-change:transform;backface-visibility:hidden;
+  transform:translate3d(100%,0,0);
+  transition:transform .75s cubic-bezier(.22,.61,.36,1);
 }
-.slide.active{opacity:1}
-.slide-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75)}
+.slide.active{transform:none}
+.slide-img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none;user-select:none}
+.slideshow-track.is-dragging{cursor:grabbing}
+@media(prefers-reduced-motion:reduce){.slide{transition-duration:.01s!important}}
 .slide-placeholder{
   width:100%;height:100%;
   background:var(--surface2);
@@ -952,7 +955,7 @@ footer{
 .slide-placeholder-text{font-family:var(--fm);font-size:10px;letter-spacing:3px;color:var(--text-dim)}
 .slide-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(10,12,16,.92) 0%,rgba(10,12,16,.2) 55%,transparent 100%);
+  background:linear-gradient(to top,rgba(10,12,16,.92) 0%,rgba(10,12,16,.2) 55%,transparent 100%),rgba(0,0,0,.25);
   pointer-events:none;
 }
 .slide-caption{
@@ -971,7 +974,7 @@ footer{
 /* mobile slideshow fix */
 @media(max-width:768px){
   .slideshow-track{aspect-ratio:4/3}
-  .slide-overlay{background:linear-gradient(to top,rgba(10,12,16,.97) 0%,rgba(10,12,16,.4) 45%,transparent 100%)}
+  .slide-overlay{background:linear-gradient(to top,rgba(10,12,16,.97) 0%,rgba(10,12,16,.4) 45%,transparent 100%),rgba(0,0,0,.25)}
   .slide-caption{padding:16px 16px 14px}
   .slide-caption-num{font-size:9px;margin-bottom:4px}
   .slide-caption-title{font-size:16px;margin-bottom:4px}
@@ -1024,34 +1027,34 @@ footer{
 
       <!-- SLIDE 02 -->
       <div class="slide">
-        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391566/slide.img2_uwbjmr.jpg" alt="Dune Buggy Suspension Geometry">
+        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1795266962/Screenshot_2026-11-14_204148_xjggjr.png" alt="Altair MotionView model of the BAJA ATV">
         <div class="slide-overlay"></div>
         <div class="slide-caption">
           <div class="slide-caption-num">02 / 07</div>
-          <div class="slide-caption-title">Rolling Chassis ATV — Workshop Session</div>
-          <div class="slide-caption-desc">Workshop-floor build of the rolling chassis — structural assembly, suspension integration, and iterative refinement during the BAJA SAE vehicle development cycle.</div>
+          <div class="slide-caption-title">Altair MotionView Model — BAJA ATV</div>
+          <div class="slide-caption-desc">Multibody dynamics model of the BAJA SAE ATV built in Altair MotionView — suspension modelling and motion simulation.</div>
         </div>
       </div>
 
       <!-- SLIDE 03 -->
       <div class="slide">
-        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391569/slide.img3_ttefba.jpg" alt="BAJA ATV">
+        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391566/slide.img2_uwbjmr.jpg" alt="Dune Buggy Suspension Geometry">
         <div class="slide-overlay"></div>
         <div class="slide-caption">
           <div class="slide-caption-num">03 / 07</div>
-          <div class="slide-caption-title">Suspension Fabrication — After Rollcage Fabrication</div>
-          <div class="slide-caption-desc">Suspension assembly and fabrication phase following rollcage completion — translating geometry design into physical hardware, with iterative fit and alignment checks on the workshop floor.</div>
+          <div class="slide-caption-title">Rolling Chassis ATV — Workshop Session</div>
+          <div class="slide-caption-desc">Workshop-floor build of the rolling chassis — structural assembly, suspension integration, and iterative refinement during the BAJA SAE vehicle development cycle.</div>
         </div>
       </div>
 
       <!-- SLIDE 04 -->
       <div class="slide">
-        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391571/slide.img4_i3bdww.jpg" alt="BAJA ATV Physical Build">
+        <img class="slide-img" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1784391569/slide.img3_ttefba.jpg" alt="BAJA ATV">
         <div class="slide-overlay"></div>
         <div class="slide-caption">
           <div class="slide-caption-num">04 / 07</div>
-          <div class="slide-caption-title">ATV Design Assembly — SolidWorks</div>
-          <div class="slide-caption-desc">Full vehicle assembly developed in SolidWorks — complete CAD model of the BAJA SAE ATV covering chassis architecture, suspension geometry, and system packaging within rulebook constraints.</div>
+          <div class="slide-caption-title">Suspension Fabrication — After Rollcage Fabrication</div>
+          <div class="slide-caption-desc">Suspension assembly and fabrication phase following rollcage completion — translating geometry design into physical hardware, with iterative fit and alignment checks on the workshop floor.</div>
         </div>
       </div>
 
@@ -1105,29 +1108,69 @@ footer{
 <script>
 (function(){
   const INTERVAL = 2000;
-  const slides = document.querySelectorAll('.slide');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const n = slides.length;
   const dotsWrap = document.getElementById('slideDots');
   const progress = document.getElementById('slideProgress');
-  let current = 0, timer, paused = false;
+  const track = document.getElementById('slideshowTrack');
+  let current = 0, timer, paused = false, dragging = false, down = false, offscreen = false;
 
   // build dots
   slides.forEach((_,i)=>{
     const d = document.createElement('button');
     d.className = 'slide-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Go to slide ' + (i+1));
     d.addEventListener('click',()=>goTo(i,true));
     dotsWrap.appendChild(d);
   });
-
   function getDots(){ return dotsWrap.querySelectorAll('.slide-dot'); }
+  function setDot(from,to){ const d=getDots(); d[from].classList.remove('active'); d[to].classList.add('active'); }
 
-  function goTo(n, manual=false){
-    slides[current].classList.remove('active');
-    getDots()[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    getDots()[current].classList.add('active');
-    if(manual){ clearInterval(timer); startAuto(); }
+  // ── SLIDING ENGINE (GPU transforms; slides sit side by side and glide) ──
+  const idx = k => ((k % n) + n) % n;
+  const T = (pct,px) => 'translate3d(calc(' + pct + '% + ' + (px||0) + 'px),0,0)';
+  function put(s,pct,px,anim){ s.style.visibility='visible'; s.style.transition = anim ? '' : 'none'; s.style.transform = T(pct,px); }
+  function park(s,pct){ s.style.transition='none'; s.style.transform=T(pct,0); s.style.visibility='hidden'; }
+  function prep(){            // current centred, its two neighbours waiting at ±100%
+    slides.forEach((s,i)=>{
+      if(i===current) put(s,0,0,false);
+      else if(i===idx(current+1)) put(s,100,0,false);
+      else if(i===idx(current-1)) put(s,-100,0,false);
+      else park(s,100);
+    });
+  }
+  prep();
+
+  function goTo(k, manual){
+    const nw = idx(k);
+    if(nw !== current){
+      const old = current, dir = k > old ? 1 : -1;
+      slides.forEach((s,i)=>{ if(i!==old && i!==nw) park(s,100); });
+      put(slides[nw], dir*100, 0, false);
+      void slides[nw].offsetWidth;                 // commit the start position
+      put(slides[nw], 0, 0, true);                 // incoming glides in
+      put(slides[old], -dir*100, 0, true);         // outgoing glides out
+      setDot(old, nw);
+      current = nw;
+    }
     startProgress();
+    schedule();
+  }
+
+  // from a finger drag: neighbours are already staged, so just glide on from where the finger left off
+  function finish(dir){
+    const old = current;
+    if(dir === 0){
+      put(slides[old],0,0,true);
+      put(slides[idx(old+1)],100,0,true);
+      put(slides[idx(old-1)],-100,0,true);
+      return;
+    }
+    const nw = idx(old + dir);
+    put(slides[nw],0,0,true);
+    put(slides[old],-dir*100,0,true);
+    setDot(old, nw);
+    current = nw;
   }
 
   function startProgress(){
@@ -1141,45 +1184,76 @@ footer{
     });
   }
 
-  function startAuto(){
-    clearInterval(timer);
-    timer = setInterval(()=>{ if(!paused) goTo(current+1); }, INTERVAL);
+  // autoplay: every INTERVAL, but never while a finger / mouse is on the slideshow;
+  // as soon as the person lets go the full interval restarts and it carries on by itself
+  function schedule(){ clearTimeout(timer); timer = setTimeout(tick, INTERVAL); }
+  function tick(){
+    if(paused || dragging || down || offscreen){ schedule(); return; }
+    goTo(current+1);
   }
+  startProgress();
+  schedule();
 
   document.getElementById('slidePrev').addEventListener('click',()=>goTo(current-1,true));
   document.getElementById('slideNext').addEventListener('click',()=>goTo(current+1,true));
 
-  // pause on hover
-  const track = document.getElementById('slideshowTrack');
-  track.addEventListener('mouseenter',()=>paused=true);
-  track.addEventListener('mouseleave',()=>paused=false);
+  // pause on mouse hover only (a tap on a phone must never leave it paused)
+  track.addEventListener('pointerenter',e=>{ if(e.pointerType==='mouse') paused=true; });
+  track.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse'){ paused=false; startProgress(); schedule(); } });
 
-  // ── TOUCH SWIPE ──
-  let touchStartX = 0, touchStartY = 0, touchMoved = false;
-  track.addEventListener('touchstart', e=>{
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    touchMoved = false;
-    paused = true;
-  }, {passive:true});
-  track.addEventListener('touchmove', e=>{
-    const dx = Math.abs(e.touches[0].clientX - touchStartX);
-    const dy = Math.abs(e.touches[0].clientY - touchStartY);
-    if(dx > 8) touchMoved = true;
-  }, {passive:true});
-  track.addEventListener('touchend', e=>{
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
-    paused = false;
-    if(touchMoved && Math.abs(dx) > 40 && dy < 60){
-      dx < 0 ? goTo(current+1, true) : goTo(current-1, true);
-    } else if(!touchMoved){
-      openLightbox(current);
-    }
+  // do not spin while the slideshow is off screen / on another tab
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(es=>{ offscreen = !es[0].isIntersecting; },{threshold:.15}).observe(track);
+  }
+
+  // ── DRAG / SWIPE (finger or mouse) — the slides follow the finger ──
+  let sx=0, dx=0, lastX=0, lastT=0, vx=0, pid=null, suppressClick=false;
+  track.addEventListener('pointerdown', e=>{
+    if(e.pointerType==='mouse' && e.button!==0) return;
+    if(e.target.closest('.slide-arrow, .slide-dot')) return;
+    down = true; dragging = false; pid = e.pointerId;
+    sx = lastX = e.clientX; lastT = performance.now(); vx = 0; dx = 0;
   });
+  track.addEventListener('pointermove', e=>{
+    if(!down || e.pointerId !== pid) return;
+    dx = e.clientX - sx;
+    if(!dragging){
+      if(Math.abs(dx) < 6) return;
+      dragging = true; prep();
+      try{ track.setPointerCapture(pid); }catch(_){}
+      track.classList.add('is-dragging');
+    }
+    const now = performance.now();
+    vx = (e.clientX - lastX) / Math.max(1, now - lastT);
+    lastX = e.clientX; lastT = now;
+    put(slides[current],0,dx,false);
+    put(slides[idx(current+1)],100,dx,false);
+    put(slides[idx(current-1)],-100,dx,false);
+  });
+  function endDrag(cancel){
+    if(!down) return;
+    down = false;
+    if(!dragging) return;
+    dragging = false;
+    track.classList.remove('is-dragging');
+    suppressClick = true; setTimeout(()=>{ suppressClick = false; }, 60);
+    if(performance.now() - lastT > 100) vx = 0;
+    const w = track.clientWidth;
+    let dir = 0;
+    if(!cancel){
+      if(dx < -w*.18 || vx < -.45) dir = 1;
+      else if(dx > w*.18 || vx > .45) dir = -1;
+    }
+    finish(dir);
+    startProgress();
+    schedule();
+  }
+  track.addEventListener('pointerup', ()=>endDrag(false));
+  track.addEventListener('pointercancel', ()=>endDrag(true));
 
-  // click on desktop opens lightbox
+  // tap / click opens the lightbox (but not at the end of a swipe)
   track.addEventListener('click', e=>{
+    if(suppressClick) return;
     if(e.target.closest('.slide-arrow, .slide-dot, #slidePrev, #slideNext')) return;
     openLightbox(current);
   });
@@ -1311,8 +1385,6 @@ footer{
     if(lbMoved&&Math.abs(dx)>50){dx<0?lbCurrent=(lbCurrent+1)%slides.length:lbCurrent=(lbCurrent-1+slides.length)%slides.length;renderLb();}
   },{passive:true});
 
-  startAuto();
-  startProgress();
 })();
 </script>
 
@@ -1795,7 +1867,7 @@ footer{
         <span class="contact-link-icon">wa</span>
         <span class="contact-link-text">+91 70564 70711</span>
       </a>
-      <a href="#" class="contact-link">
+      <a href="Arpit%20Malik%20Resume.pdf" download="Arpit Malik Resume.pdf" class="contact-link" onclick="try{window.gtag&&gtag('event','resume_download')}catch(e){}">
         <span class="contact-link-icon">↓</span>
         <span class="contact-link-text">Download CV / Resume</span>
       </a>
@@ -2046,9 +2118,10 @@ footer{
     {title:'Static Analysis model Run',desc:'Static analysis run of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794606768/2_mydzfd.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/image/upload/v1794606979/Screenshot_2026-11-14_032527_f7hgbp.png',dur:''},
     {title:'Vertical Force Balance using Graph',desc:'Vertical force balance of the suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794607822/3_srpvqy.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_90,w_640,f_jpg,q_auto/v1794607822/3_srpvqy.jpg',dur:''},
     {title:'Shock travel & Wheel travel methodology',desc:'Methodology for measuring shock travel and wheel travel.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794609100/4_s6zy3k.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_77,w_640,f_jpg,q_auto/v1794609100/4_s6zy3k.jpg',dur:''},
-    {title:'Motion Ratio Verification',desc:'Verification of the suspension motion ratio.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794610005/5_bjvzdl.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_2,w_640,f_jpg,q_auto/v1794610005/5_bjvzdl.jpg',dur:''}
+    {title:'Motion Ratio Verification',desc:'Verification of the suspension motion ratio.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1794610005/5_bjvzdl.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_2,w_640,f_jpg,q_auto/v1794610005/5_bjvzdl.jpg',dur:''},
+    {title:'Static Analysis Walkthrough',desc:'Static analysis of the BAJA ATV suspension model.',yt:'',mp4:'https://res.cloudinary.com/fvtkc10l/video/upload/v1795269954/IMG_8912_okf1vh.mp4',thumb:'https://res.cloudinary.com/fvtkc10l/video/upload/so_89,w_640,f_jpg,q_auto/v1795269954/IMG_8912_okf1vh.jpg',dur:''}
   ];
-  var TAGS=['VD study 1','VD study 1','VD study 1','VD study 1','VD study 1'];
+  var TAGS=['VD study 1','VD study 1','VD study 1','VD study 1','VD study 1','VD study 1'];
   VIDEOS.forEach(function(v,i){v.tag=TAGS[i]||'VD study 1'});
   var AVATAR="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg";
   var SPEEDS=[0.25,0.5,0.75,1,1.25,1.5,1.75,2],speed=1,uiT=0,spUI=null;
