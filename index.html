@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0A0C10">
+<style>html{background:#0A0C10;color-scheme:dark}body{background:#0A0C10}</style>
 <title>Portfolio — Vehicle Systems Development Engineer</title>
 <link rel="preconnect" href="https://res.cloudinary.com">
 
@@ -49,7 +52,7 @@
   --fm:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   --fb:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -596,12 +599,6 @@ footer{
 
 <!-- ── INTRO ANIMATION (preload hints — missing files fail silently) ── -->
 <!-- Landscape set: used on screens ≥769px wide -->
-<link rel="preload" as="video" href="vid1.mp4" type="video/mp4" media="(min-width: 769px)">
-<link rel="preload" as="video" href="vid2.mp4" type="video/mp4" media="(min-width: 769px)">
-<link rel="preload" as="video" href="vid3.mp4" type="video/mp4" media="(min-width: 769px)">
-<link rel="preload" as="video" href="vid4.mp4" type="video/mp4" media="(min-width: 769px)">
-<link rel="preload" as="video" href="vid5.mp4" type="video/mp4" media="(min-width: 769px)">
-<link rel="preload" as="video" href="vid6.mp4" type="video/mp4" media="(min-width: 769px)">
 
 <style id="intro-overlay-styles">
 #intro-overlay{
@@ -708,9 +705,9 @@ footer{
 .highlights-section{padding:96px 6% 8px}
 /* ── PROFILE HEADER (Instagram-style) ── */
 .profile-head{display:flex;align-items:center;gap:56px;max-width:900px;margin:0 0 30px}
-.profile-avatar{flex:0 0 136px;width:136px;height:170px;border-radius:16px;padding:3px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
-.profile-avatar-inner{width:100%;height:100%;border-radius:13px;background:var(--bg);padding:3px;overflow:hidden}
-.profile-avatar-inner img{width:100%;height:100%;border-radius:10px;object-fit:cover;object-position:center top;display:block;background:var(--surface2)}
+.profile-avatar{flex:0 0 156px;width:156px;height:196px;border-radius:16px;padding:0}
+.profile-avatar-inner{width:100%;height:100%;border-radius:16px;padding:0;overflow:hidden}
+.profile-avatar-inner img{width:100%;height:100%;border-radius:16px;object-fit:cover;object-position:center top;display:block;background:var(--surface2)}
 .profile-info{flex:1;min-width:0}
 .profile-actions{display:contents}
 .profile-row1{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
@@ -729,11 +726,11 @@ footer{
 .profile-bio a.bl:hover .bt,.profile-bio a.bl:focus-visible .bt{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){
   /* phone layout: avatar + stats on top, bio below the photo, buttons last (Instagram style) */
-  .profile-head{display:grid;grid-template-columns:84px minmax(0,1fr);grid-template-areas:"avatar handle" "bio bio";column-gap:20px;row-gap:0;align-items:start;max-width:none}
+  .profile-head{display:grid;grid-template-columns:101px minmax(0,1fr);grid-template-areas:"avatar handle" "bio bio";column-gap:20px;row-gap:0;align-items:start;max-width:none}
   .profile-info,.profile-row1{display:contents}
-  .profile-avatar{grid-area:avatar;width:88px;height:110px;flex:none;border-radius:12px}
-  .profile-avatar-inner{border-radius:9px;padding:2px}
-  .profile-avatar-inner img{border-radius:7px}
+  .profile-avatar{grid-area:avatar;width:101px;height:126px;flex:none;border-radius:12px}
+  .profile-avatar-inner{border-radius:12px;padding:0}
+  .profile-avatar-inner img{border-radius:12px}
   .profile-handle{grid-area:handle;align-self:center;font-size:18px;margin-bottom:8px}
   .profile-bio{grid-area:bio;margin-top:14px}
 }
@@ -742,7 +739,7 @@ footer{
   .highlights-section{max-width:935px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
   .highlights-section .profile-head{max-width:none;margin:0 0 34px}
   /* desktop: identity first, then one divided stat card */
-  .profile-head{display:grid;grid-template-columns:136px minmax(0,1fr);column-gap:44px;row-gap:0;align-items:start}
+  .profile-head{display:grid;grid-template-columns:156px minmax(0,1fr);column-gap:44px;row-gap:0;align-items:start}
   .profile-info{display:contents}
   .profile-avatar{grid-column:1;grid-row:1 / span 7;align-self:center}
   .tool-strip{grid-column:2;margin:10px 0 0;max-width:680px}
@@ -758,6 +755,25 @@ footer{
   .profile-bio .bl.t .bi{width:14px;height:14px;margin-top:0}
 }
 
+</style>
+<style>
+/* DESKTOP ONLY (>=1000px): "Areas of interest" pill chips on the right side of the profile intro */
+.profile-aoi{display:none}
+@media(min-width:1000px){
+  .profile-head{position:relative}
+  .profile-aoi{display:flex;flex-direction:column;align-items:flex-start;position:absolute;right:0;top:0;bottom:84px;justify-content:center;max-width:270px;animation:fadeUp .6s .5s ease both}
+  .aoi-label{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+  .aoi-chips{display:flex;flex-wrap:wrap;gap:7px}
+  .aoi-chips span{font-family:var(--fb);font-size:12px;line-height:1.4;color:#fff;border:1px solid var(--gold);border-radius:999px;padding:3px 12px;white-space:nowrap}
+}
+</style>
+<style>
+/* Profile intro text (name, target pill, bio rows, TOOLS label, areas of interest) uses exactly the BAJA page font settings */
+.highlights-section .profile-head,
+.highlights-section .profile-head *{
+  font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
 </style>
 </head>
 <body>
@@ -789,6 +805,38 @@ footer{
   });
 })();
 </script>
+<style>
+/* DESKTOP ONLY (>=769px): tool logos start hidden, then swing-drop into the TOOLS strip on load */
+@media(min-width:769px){html.tool-fall .tool-logo{opacity:0}}
+</style>
+<script>
+/* DESKTOP ONLY (>=769px): "swing drop" - each tool logo tumbles down, rocks and settles, left to right */
+(function(){
+  var root=document.documentElement;
+  if(!window.matchMedia('(min-width: 769px)').matches) return;   // phones/tablets keep the existing pop-in
+  root.classList.add('tool-fall');                                // hides the logos right away (no flash)
+  function run(){
+    var logos=[].slice.call(document.querySelectorAll('.tool-logo'));
+    if(!logos.length || !logos[0].animate){ root.classList.remove('tool-fall'); return; }
+    var kf=[
+      {transform:'translateY(-130px) rotate(-30deg)',opacity:0,offset:0},
+      {transform:'translateY(0) rotate(14deg)',opacity:1,offset:.5,easing:'ease-out'},
+      {transform:'translateY(0) rotate(-6deg)',opacity:1,offset:.72},
+      {transform:'translateY(0) rotate(2deg)',opacity:1,offset:.88},
+      {transform:'translateY(0) rotate(0)',opacity:1,offset:1}
+    ];
+    var anims=logos.map(function(el,i){
+      return el.animate(kf,{duration:1000,delay:i*130,easing:'ease-in',fill:'both'});
+    });
+    var done=function(){ root.classList.remove('tool-fall'); anims.forEach(function(a){a.cancel()}); };
+    anims[anims.length-1].onfinish=done;
+    setTimeout(done,2500);                                        // safety net
+  }
+  function start(){ setTimeout(run,250); }
+  if(document.readyState==='complete') start(); else window.addEventListener('load',start);
+  setTimeout(function(){ root.classList.remove('tool-fall'); },5000); // never leave logos hidden
+})();
+</script>
 <script>
 /* TOOL LOGO HIGHLIGHT: every 3s each logo swells slightly in turn, left to right (size change only, no glow).
    Starts only after the intro (and the mobile pop-in) is done; pauses while the tab is hidden or the strip is off-screen. */
@@ -806,6 +854,7 @@ footer{
     function wave(){
       if(document.hidden || !inView) return;
       if(root.classList.contains('tool-pop')) return;   // pop-in still running
+      if(root.classList.contains('tool-fall')) return;  // desktop fall-in still running
       logos.forEach(function(el,i){
         var o={duration:700,delay:i*110,easing:'ease-out'};
         el.animate([{transform:'scale(1)'},{transform:'scale(1.25)',offset:.4},{transform:'scale(1)'}],o);
@@ -882,6 +931,10 @@ footer{
         <span class="profile-handle">Arpit Malik</span>
       </div>
       <div class="profile-bio"><span class="bl t gi"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span class="bt"><span class="g"><span class="em">🎯 </span>Target: Vehicle Dynamics Engineer</span></span></span><br><span class="bl"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span class="bt">Chief Design Engineer @ <a class="bio-link" href="https://www.linkedin.com/company/team-daedalus-racing/posts/?feedView=all" target="_blank" rel="noopener noreferrer">Team Daedalus Racing</a></span></span><br><span class="bl"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg><span class="bt">Previously Steering <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 1px;fill:none;stroke:#E0A020;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/><path d="M3 12h7M14 12h7M12 14v7"/></svg> &amp; Suspension <svg style="width:14px;height:14px;vertical-align:-2px;margin:0 1px;fill:none;stroke:#E0A020;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="3" r="1.5"/><circle cx="12" cy="21" r="1.5"/><path d="M12 4.5v15M8 7l8 2-8 2 8 2-8 2 8 2"/></svg> Lead</span></span><br><a class="bl" href="https://nsut.ac.in/en/home" target="_blank" rel="noopener noreferrer" aria-label="Netaji Subhas University of Technology, Delhi (opens website)"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 10-10-5L2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg><span class="bt"><span class="em">🎓 </span><span class="ul">Netaji Subhas University of Technology, Delhi</span></span></a><div class="tool-strip" aria-label="Tools I use"><span class="tool-strip-label">TOOLS</span><div class="tool-strip-logos"><span class="tool-logo" tabindex="0" data-name="MotionView"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/h_72,f_auto,q_auto/v1793745853/Gemini_Generated_Image_rovv7wrovv7wrovv_mauh0g.png" alt="MotionView" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="tool-logo-fb">MotionView</span></span><span class="tool-logo" tabindex="0" data-name="Lotus Shark"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/h_72,f_auto,q_auto/v1793746620/Screenshot_2026-11-04_042544_ekvva3.png" alt="Lotus Shark" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="tool-logo-fb">Lotus Shark</span></span><span class="tool-logo" tabindex="0" data-name="ANSYS"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/h_72,f_auto,q_auto/v1793746264/Gemini_Generated_Image_iykkngiykkngiykk_g3rx6x.png" alt="ANSYS" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="tool-logo-fb">ANSYS</span></span><span class="tool-logo" tabindex="0" data-name="SolidWorks"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/h_72,f_auto,q_auto/v1793746455/Gemini_Generated_Image_h0vzmqh0vzmqh0vz_pg37ax.png" alt="SolidWorks" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="tool-logo-fb">SolidWorks</span></span><span class="tool-logo" tabindex="0" data-name="CATIA"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/h_72,f_auto,q_auto/v1793746746/DS-CATIA-Logo-1_jr9g5f.webp" alt="CATIA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="tool-logo-fb">CATIA</span></span></div></div></div>
+    </div>
+    <div class="profile-aoi" aria-label="Areas of interest">
+      <div class="aoi-label">AREAS OF INTEREST</div>
+      <div class="aoi-chips"><span>Vehicle Dynamics Engineering</span><span>Multibody Dynamics (MBD)</span><span>Suspension Development</span><span>Vehicle Simulation and CAE</span></div>
     </div>
   </div>
   <div class="rl-tabs" role="tablist">
@@ -2257,7 +2310,7 @@ Self-contained: scoped CSS, vanilla JS. Drop into the portfolio as-is. -->
 <template id="bajaTpl"><style>
 :host{display:block;--bg:#0A0C10;--text:#FFFFFF;--muted:#8A8F9A;--line:#2A2F3A;--card:#111318}
 *{box-sizing:border-box}
-.topbar{margin:0 0 4px}
+.topbar{margin:0 0 4px;visibility:hidden}
 .bj{margin:0;color:var(--text);font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);line-height:1.5}
 .wrap{max-width:960px;margin:0 auto}
 .back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;transition:border-color .2s,color .2s}
@@ -2555,7 +2608,7 @@ function imgFrame(u,a){
 <template id="duneTpl"><style>
 :host{display:block;--bg:#0A0C10;--text:#FFFFFF;--muted:#8A8F9A;--line:#2A2F3A;--card:#111318}
 *{box-sizing:border-box}
-.topbar{margin:0 0 4px}
+.topbar{margin:0 0 4px;visibility:hidden}
 .bj{margin:0;color:var(--text);font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);line-height:1.5}
 .wrap{max-width:960px;margin:0 auto}
 .back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;transition:border-color .2s,color .2s}
@@ -6125,12 +6178,12 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
 @keyframes tnPulse{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.55,1.9);opacity:0}}
 @media(max-width:600px){#tabLinkedin .tab-new{top:1px;right:auto;left:calc(50% + 4px)}}
 @media(prefers-reduced-motion:reduce){#tabLinkedin .tab-new{animation:tnLife 10.95s ease 3.3s forwards,tnBlink 3s ease-in-out 3.3s infinite}#tabLinkedin .tab-new::after{display:none}}
-.pane-back{position:fixed;z-index:95;left:20px;bottom:24px;width:46px;height:46px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(10,12,16,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5);transition:border-color .2s,background .2s;-webkit-tap-highlight-color:transparent}
+.pane-back{position:fixed;z-index:95;left:20px;top:76px;width:46px;height:46px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(10,12,16,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5);transition:border-color .2s,background .2s;-webkit-tap-highlight-color:transparent}
 .pane-back.on{display:flex}
 .pane-back:hover{border-color:#fff;background:rgba(30,34,42,.95)}
 .pane-back:focus-visible{outline:2px solid #E0A020;outline-offset:2px}
 .pane-back svg{width:22px;height:22px;display:block}
-@media(max-width:600px){.pane-back{left:14px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:44px;height:44px}}
+@media(max-width:600px){.pane-back{left:14px;top:72px;width:44px;height:44px}}
 </style>
 <script>
 (function(){
