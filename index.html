@@ -6,7 +6,18 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0A0C10">
 <style>html{background:#0A0C10;color-scheme:dark}body{background:#0A0C10}</style>
-<title>Portfolio — Vehicle Systems Development Engineer</title>
+<title>Mechanical Engineer</title>
+<meta name="description" content="BAJA SAE suspension design, Altair MotionView multibody analysis and vehicle dynamics case studies by Arpit Malik.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arpit Malik Portfolio">
+<meta property="og:title" content="Mechanical Engineer">
+<meta property="og:description" content="BAJA SAE suspension design, Altair MotionView multibody analysis and vehicle dynamics case studies.">
+<meta property="og:url" content="https://arpitmalik711.github.io/Vehicle_system_development_engineer/">
+<meta property="og:image" content="https://res.cloudinary.com/fvtkc10l/image/upload/c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/v1784390861/BajaBuggy.cover_dvnzjn.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://res.cloudinary.com/fvtkc10l/image/upload/c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/v1784390861/BajaBuggy.cover_dvnzjn.jpg">
 <link rel="preconnect" href="https://res.cloudinary.com">
 
   <!-- ============================================================
@@ -597,108 +608,7 @@ footer{
 @media(min-width:601px){.tool-logo{height:39px}.tool-logo img{height:35.6px;max-width:110px}.tool-logo-fb{font-size:15px}}
 </style>
 
-<!-- ── INTRO ANIMATION (preload hints — missing files fail silently) ── -->
-<!-- Landscape set: used on screens ≥769px wide -->
 
-<style id="intro-overlay-styles">
-#intro-overlay{
-  position:fixed;inset:0;z-index:99999;
-  background:#000;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;font-family:var(--fb);
-}
-#intro-overlay.intro-hidden{display:none}
-#intro-overlay.intro-fading{opacity:0;transition:opacity .65s ease}
-
-#skip-intro-btn{
-  position:absolute;top:24px;right:24px;z-index:20;
-  font-family:var(--fm);font-size:10px;letter-spacing:2.5px;
-  color:var(--text-sec);background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.18);
-  padding:9px 16px;cursor:pointer;
-  transition:color .2s,border-color .2s,background .2s;
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-}
-#skip-intro-btn:hover{color:var(--gold);border-color:rgba(224,160,32,0.5);background:rgba(224,160,32,0.08)}
-
-.intro-stage{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity .5s ease;
-  text-align:center;padding:0 24px;
-}
-.intro-stage.is-visible{opacity:1}
-
-/* Stage 1 — name reveal */
-#stage-name{gap:14px}
-#stage-name .intro-name{
-  font-family:var(--fd);font-weight:700;letter-spacing:6px;
-  font-size:clamp(32px,6vw,64px);color:var(--text);
-  opacity:0;transform:translateY(14px);
-  animation:introFadeUp .9s .05s ease forwards;
-}
-#stage-name .intro-subtitle{
-  font-family:var(--fm);font-size:clamp(10px,1.6vw,13px);
-  letter-spacing:3px;color:var(--gold);text-transform:uppercase;
-  opacity:0;transform:translateY(10px);
-  animation:introFadeUp .9s .3s ease forwards;
-}
-@keyframes introFadeUp{to{opacity:1;transform:translateY(0)}}
-
-/* Stage 2 — video montage */
-#stage-montage{inset:0;padding:0}
-.video-layer{position:absolute;inset:0;background:#06070a}
-.video-layer video{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center;opacity:0;
-  transition:opacity .6s ease;
-  will-change:opacity,transform;
-  backface-visibility:hidden;
-  -webkit-media-controls:none;
-}
-.video-layer video::-webkit-media-controls,
-.video-layer video::-webkit-media-controls-enclosure,
-.video-layer video::-webkit-media-controls-overlay-play-button{display:none!important}
-.video-layer video.active{opacity:1}
-.video-layer video.kenburns{animation-name:kenburn;animation-timing-function:ease-out;animation-fill-mode:forwards}
-@keyframes kenburn{from{transform:scale(1)}to{transform:scale(1.08)}}
-.montage-dark-overlay{position:absolute;inset:0;background:rgba(6,7,10,0.27);z-index:2;pointer-events:none}
-.montage-vignette{
-  position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.55) 100%);
-}
-#keyword-display{
-  position:relative;z-index:3;
-  font-family:var(--fd);font-weight:600;letter-spacing:4px;
-  font-size:clamp(20px,4vw,40px);color:var(--text);
-  text-transform:uppercase;
-  opacity:0;transition:opacity .35s ease;
-  text-shadow:0 2px 24px rgba(0,0,0,0.6);
-}
-#keyword-display.visible{opacity:1}
-
-/* Stage 3 — outro */
-#stage-outro .intro-name{
-  font-family:var(--fd);font-weight:700;letter-spacing:6px;
-  font-size:clamp(30px,5.5vw,56px);color:var(--text);
-}
-#stage-outro .intro-tagline{
-  font-family:var(--fb);font-weight:300;font-size:clamp(13px,2vw,18px);
-  color:var(--text-sec);letter-spacing:1px;margin-top:8px;
-}
-#stage-outro .intro-subtitle2{
-  font-family:var(--fm);font-size:clamp(9px,1.4vw,11px);
-  letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:14px;
-}
-
-@media(max-width:600px){
-  #skip-intro-btn{top:16px;right:16px;font-size:9px;padding:7px 12px}
-}
-
-/* Phones (≤768px): no intro at all — site opens directly */
-#intro-overlay{display:none!important}
-</style>
 
 <style>
 /* ── PROFILE SECTION ── */
@@ -775,6 +685,7 @@ footer{
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -862,54 +773,6 @@ footer{
     }
     setInterval(wave,3000);
   });
-})();
-</script>
-
-<!-- ── INTRO ANIMATION ── -->
-<!-- Landscape clips (laptop/desktop, ≥769px):  vid1.mp4 … vid6.mp4
-     Portrait clips (mobile, ≤768px):           vid1-mobile.mp4 … vid6-mobile.mp4
-     Any subset of either set works — if a device's preferred set is missing entirely,
-     it automatically falls back to the other set. -->
-<div id="intro-overlay">
-  <button id="skip-intro-btn" type="button">SKIP INTRO →</button>
-
-  <div class="intro-stage is-visible" id="stage-name">
-    <h1 class="intro-name">ARPIT MALIK</h1>
-    <p class="intro-subtitle">Vehicle Development Engineer</p>
-  </div>
-
-  <div class="intro-stage" id="stage-montage">
-    <div class="video-layer">
-      <video id="vidLayerA" autoplay muted playsinline preload="auto"></video>
-      <video id="vidLayerB" autoplay muted playsinline preload="auto"></video>
-    </div>
-    <div class="montage-dark-overlay"></div>
-    <div class="montage-vignette"></div>
-    <div id="keyword-display"></div>
-  </div>
-
-  <div class="intro-stage" id="stage-outro">
-    <h1 class="intro-name">ARPIT MALIK</h1>
-    <p class="intro-tagline">Designing Beyond CAD</p>
-    <p class="intro-subtitle2">Vehicle Development Portfolio</p>
-  </div>
-</div>
-
-<script>
-/* Runs immediately, before the rest of the page renders — if the intro already
-   played this session, hide it instantly with zero flash. Refresh-safe via sessionStorage. */
-(function(){
-  var overlay = document.getElementById('intro-overlay');
-  try{
-    if(true){ /* video intro disabled on every screen size */
-      overlay.classList.add('intro-hidden');
-    } else {
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.overflow = 'hidden';
-    }
-  }catch(e){
-    overlay.classList.add('intro-hidden');
-  }
 })();
 </script>
 
@@ -1752,15 +1615,29 @@ footer{
 
   <div class="casestudy-grid">
 
-    <a href="https://arpitmalik711.github.io/Memberbend.casestudy/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
+    <a href="#chassis" class="casestudy-card">
       <div class="casestudy-img-wrap">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792659013/mount_failure_linkedin_cover_ay2kuh.png" alt="Chassis Member Failure at Damper Mount">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 01 <span>/ 04</span></div>
+        <div class="proj-num">— 01 <span>/ 05</span></div>
         <div class="proj-name">Chassis Member Failure at <span class="gold">Damper Mount</span></div>
         <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
          <span class="proj-cta">Open Full Case Study →</span>
+      </div>
+    </a>
+
+
+    <!-- CASE STUDY 02 — Front Upper A-Arm Failure -->
+    <a href="#arm" class="casestudy-card">
+      <div class="casestudy-img-wrap">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png" alt="Front upper A-arm failure after a shock swap">
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">— 02 <span>/ 05</span></div>
+        <div class="proj-name">Front Upper <span class="gold">A-Arm</span> Failure after a Shock Swap</div>
+        <p class="proj-blurb">Shock swap before mBAJA 2026 changed the load path and bent the front upper A-arm. Found via impact reconstruction, energy-based loads and transient FEA; design updated.</p>
+         <span class="proj-cta">Open Full Investigation →</span>
       </div>
     </a>
 
@@ -1771,7 +1648,7 @@ footer{
         <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 02 <span>/ 04</span></div>
+        <div class="proj-num">— 03 <span>/ 05</span></div>
 
         <div class="proj-name">Mahindra 265 <span class="gold">Steering Geometry</span> Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
@@ -1786,7 +1663,7 @@ footer{
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792661431/ballast_study_cover_kioort.png" alt="Front ballast study: how a tyre contact patch change alters load distribution" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:filter .4s ease;" onmouseenter="this.style.filter='brightness(1)'" onmouseleave="this.style.filter='brightness(.88)'">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 03 <span>/ 04</span></div>
+        <div class="proj-num">— 04 <span>/ 05</span></div>
         <div class="proj-name">How can a simple change in the tyre <span class="gold">contact patch</span> dramatically alter a vehicle's <span class="gold">load distribution</span>?</div>
         <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
 
@@ -1795,13 +1672,13 @@ footer{
     </a>
 
     <!-- CASE STUDY 04 — Avore EX Series Reverse Engineering & Spring Selection -->
-    <a href="https://arpitmalik711.github.io/Avore_arpit_malik_study/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
+    <a href="#avore" class="casestudy-card">
       <div class="casestudy-img-wrap" style="position:relative;">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792662128/Avore_RE_study_cover_aadwiy.png" alt="Avore EX Series Reverse Engineering and Spring Selection">
         <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 04 <span>/ 04</span></div>
+        <div class="proj-num">— 05 <span>/ 05</span></div>
 
         <div class="proj-name">Avore EX Series <span class="gold">Reverse Engineering</span> & Spring Selection</div>
         <p class="proj-blurb">No factory data existed for the Avore EX series — only a confirmed 17" rim diameter. Reconstructing the full chassis and vehicle geometry from scaled teaser imagery alone, then feeding that geometry into a quarter-car model in MSC Adams to drive spring rate selection.</p>
@@ -2368,6 +2245,8 @@ video{width:100%;height:100%;display:block;background:#000}
 #vd{row-gap:28px}
 img{width:100%;height:100%;object-fit:contain;display:block}
 .desc{color:var(--muted);font-size:14px;margin:0;max-width:60ch}
+.inv-open{order:2;align-self:flex-start;margin-top:2px;border-color:#E0A020;color:#E0A020}
+.inv-open:hover{border-color:#fff;color:#fff}
 </style>
 
 <div class="bj"><div class="wrap">
@@ -2521,6 +2400,9 @@ function imgFrame(u,a){
   var t=document.createElement('div');t.className='title';t.textContent='Suspension and traction A-arm failure';
   var d=document.createElement('p');d.className='desc';d.textContent='A leaking rear AFCO shock before mBAJA 2026 forced a last-minute suspension reconfiguration: front 21-inch AFCO shocks were moved to the rear and sourced 16-inch FOX shocks added to the front. Following a severe obstacle impact, the front upper A-arm bent. I reconstructed the impact condition, estimated loads using an energy-based approach and performed transient FEA to investigate the failure. The analysis revealed that the revised shock configuration altered the suspension load path, increasing the A-arm bending moment. These findings were used to update the design and improve its structural robustness.';
   f.appendChild(t);f.appendChild(d);
+  var ob=document.createElement('button');ob.type='button';ob.className='inv-open';ob.textContent='Open full investigation \u2192';
+  ob.addEventListener('click',function(){document.dispatchEvent(new CustomEvent('open-arm'))});
+  f.appendChild(ob);
 })();
 (function(){
   var f=R.getElementById('drv'),B='https://res.cloudinary.com/fvtkc10l/image/upload/',g=document.createElement('div');g.className='gallery';
@@ -3935,6 +3817,2713 @@ img{width:100%;height:100%;object-fit:contain;display:block}
       var m=/^(\w+)\((-?\d*)\)$/.exec(el.getAttribute('data-onclick'));
       if(m&&fns[m[1]])fns[m[1]](m[2]===''?undefined:+m[2]);
     });
+  };
+})();
+</script>
+</div>
+<div id="avorePane" role="tabpanel" aria-label="Avore EX Series — Reverse Engineering Case Study">
+<style>
+#avorePane{display:none}
+#avorePane.is-on{display:block}
+</style>
+<div id="avoreHost"></div>
+<template id="avoreTpl"><style>
+
+  :host{display:block;
+    --gold:#E0A020;
+    --gold-dim:#8a6a24;
+    --ink:#0A0C10;
+    --ink-raised:#12151B;
+    --ink-line:#20242c;
+    --paper:#EDE9E0;
+    --text-dim:#8b8f99;
+    --text-mid:#c7c9cf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  .av{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Barlow', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+
+  /* ---------- layout shell ---------- */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  section{padding:96px 0;border-bottom:1px solid var(--ink-line);}
+  section:last-of-type{border-bottom:none;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px;height:1px;
+    background:var(--gold);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:140px 0 80px;
+    border-bottom:1px solid var(--ink-line);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--ink-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ink-line) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .hero-frame{
+    position:absolute;
+    top:40px; left:32px; right:32px; bottom:40px;
+    border:1px solid var(--ink-line);
+    pointer-events:none;
+  }
+  .hero-frame::before,.hero-frame::after,
+  .hero-tick-tl,.hero-tick-br{content:"";}
+  .corner-tick{
+    position:absolute;
+    width:18px;height:18px;
+    border-top:2px solid var(--gold);
+    border-left:2px solid var(--gold);
+  }
+  .corner-tick.tl{top:-1px;left:-1px;}
+  .corner-tick.tr{top:-1px;right:-1px;transform:rotate(90deg);}
+  .corner-tick.bl{bottom:-1px;left:-1px;transform:rotate(-90deg);}
+  .corner-tick.br{bottom:-1px;right:-1px;transform:rotate(180deg);}
+
+  .hero-inner{position:relative;z-index:2;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .hero-visual{
+    position:relative;
+    border:1px solid var(--ink-line);
+    aspect-ratio:4/5;
+    overflow:hidden;
+  }
+  .hero-visual img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .hero-visual .corner-tick{width:22px;height:22px;}
+  .case-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    border:1px solid var(--ink-line);
+    display:inline-block;
+    padding:6px 14px;
+    margin-bottom:32px;
+  }
+  .case-tag span{color:var(--gold);}
+  h1.hero-title{
+    font-size:clamp(48px,8vw,108px);
+    line-height:0.95;
+    margin-bottom:24px;
+  }
+  h1.hero-title .accent{color:var(--gold);}
+  .hero-sub{
+    max-width:620px;
+    font-size:18px;
+    font-weight:300;
+    color:var(--text-mid);
+    margin-bottom:48px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    padding-top:32px;
+    border-top:1px solid var(--ink-line);
+    max-width:820px;
+  }
+  .hero-meta-item .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:6px;
+  }
+  .hero-meta-item .value{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:20px;
+    font-weight:500;
+    color:var(--paper);
+  }
+
+  /* ---------- section headers ---------- */
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:48px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,4vw,44px);
+    line-height:1.05;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-dim);
+  }
+  .lede{
+    max-width:680px;
+    color:var(--text-mid);
+    font-size:16px;
+    margin-bottom:12px;
+  }
+
+  /* ---------- known parameter callout ---------- */
+  .constraint-card{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:28px;
+    align-items:center;
+    border:1px solid var(--ink-line);
+    background:var(--ink-raised);
+    padding:28px 32px;
+    margin-top:36px;
+  }
+  .constraint-card .big{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:64px;
+    font-weight:700;
+    color:var(--gold);
+    line-height:1;
+  }
+  .constraint-card .big small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--text-dim);
+    font-weight:400;
+    text-transform:uppercase;
+    margin-top:8px;
+  }
+  .constraint-card p{
+    color:var(--text-mid);
+    font-size:15px;
+  }
+  .constraint-card p strong{color:var(--paper);font-weight:500;}
+
+  /* ---------- reference gallery ---------- */
+  .gallery-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    margin-bottom:28px;
+    max-width:680px;
+  }
+  .ref-group{margin-bottom:44px;}
+  .ref-group:last-child{margin-bottom:0;}
+  .ref-group-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .ref-group-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--ink-line);
+  }
+  .ref-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:2px;
+    background:var(--ink-line);
+    border:1px solid var(--ink-line);
+  }
+  .ref-item{
+    position:relative;
+    background:var(--ink-raised);
+    aspect-ratio:4/3;
+    overflow:hidden;
+    cursor:zoom-in;
+  }
+  .ref-item img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+    filter:grayscale(15%) contrast(1.02);
+    transition:transform 0.5s ease, filter 0.5s ease;
+  }
+  .ref-item:hover img{
+    transform:scale(1.04);
+    filter:grayscale(0%) contrast(1.05);
+  }
+  .ref-item .fig{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    padding:8px 10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.08em;
+    color:var(--text-dim);
+    background:linear-gradient(to top, rgba(10,12,16,0.9), transparent);
+  }
+
+  /* ---------- workflow figure captions (title + description on the figure) ---------- */
+  .ref-item .fig-cap{
+    position:absolute;
+    left:0;right:0;bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(to top, rgba(10,12,16,0.96) 0%, rgba(10,12,16,0.75) 55%, transparent 100%);
+  }
+  .ref-item .fig-cap .fnum{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.1em;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .ref-item .fig-cap h4{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.01em;
+    color:var(--paper);
+    line-height:1.15;
+    margin-bottom:4px;
+  }
+  .ref-item .fig-cap .desc{
+    font-size:12px;
+    line-height:1.35;
+    color:var(--text-mid);
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transition:max-height 0.35s ease, opacity 0.3s ease;
+  }
+  .ref-item:hover .fig-cap .desc,
+  .ref-item:focus-within .fig-cap .desc{
+    max-height:90px;
+    opacity:1;
+  }
+
+  /* ---------- lightbox ---------- */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:rgba(8,9,12,0.96);
+    display:none;
+    flex-direction:column;
+  }
+  .lightbox.is-open{display:flex;}
+  .lightbox-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 28px;
+    border-bottom:1px solid var(--ink-line);
+    flex-shrink:0;
+  }
+  .lightbox-count{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    color:var(--text-dim);
+  }
+  .lightbox-count b{color:var(--gold);font-weight:500;}
+  .lightbox-title{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:0.01em;
+    color:var(--paper);
+    text-align:center;
+    flex:1;
+    padding:0 20px;
+  }
+  .lightbox-title:empty{display:none;}
+  .lightbox-actions{display:flex;align-items:center;gap:10px;}
+  .lightbox-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:var(--text-mid);
+    background:transparent;
+    border:1px solid var(--ink-line);
+    padding:8px 14px;
+    cursor:pointer;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .lightbox-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .lightbox-close{font-size:16px;padding:7px 12px;}
+  .lightbox-viewport{
+    flex:1;
+    overflow:auto;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .lightbox-viewport img{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    cursor:zoom-in;
+    margin:auto;
+    user-select:none;
+  }
+  .lightbox-viewport.is-zoomed{align-items:flex-start;justify-content:flex-start;}
+  .lightbox-viewport.is-zoomed img{cursor:zoom-out;max-width:none;max-height:none;}
+  .lightbox-nav{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(10,12,16,0.7);
+    border:1px solid var(--ink-line);
+    color:var(--paper);
+    width:44px;height:44px;
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .lightbox-nav:hover{border-color:var(--gold);color:var(--gold);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+  @media (max-width:640px){
+    .lightbox-bar{padding:14px 16px;}
+    .lightbox-title{font-size:12px;padding:0 10px;}
+    .lightbox-nav{width:36px;height:36px;font-size:16px;}
+    .lightbox-prev{left:10px;}
+    .lightbox-next{right:10px;}
+  }
+
+  /* ---------- workflow steps ---------- */
+  .step{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:28px;
+    padding:36px 0;
+    border-top:1px solid var(--ink-line);
+  }
+  .step:first-of-type{border-top:none;}
+  .step-index{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--gold);
+    padding-top:4px;
+  }
+  .step-body h3{
+    font-size:22px;
+    margin-bottom:12px;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .step-body p{
+    color:var(--text-mid);
+    font-size:15px;
+    max-width:680px;
+    margin-bottom:14px;
+  }
+  .step-body ul{
+    list-style:none;
+    max-width:680px;
+  }
+  .step-body li{
+    position:relative;
+    padding-left:20px;
+    color:var(--text-mid);
+    font-size:15px;
+    margin-bottom:8px;
+  }
+  .step-body li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--gold-dim);
+  }
+  .step-flag{
+    display:inline-block;
+    margin-top:14px;
+    padding:5px 10px;
+    border:1px dashed var(--ink-line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.05em;
+    color:var(--text-dim);
+  }
+  .step-figref{
+    display:inline-block;
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.05em;
+    color:var(--gold-dim);
+  }
+
+  /* ---------- workflow image grid ---------- */
+  .workflow-gallery{margin-top:56px;}
+  .workflow-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    background:var(--ink-line);
+    border:1px solid var(--ink-line);
+  }
+  .workflow-grid .ref-item{aspect-ratio:4/3;}
+
+  /* ---------- question & answer blocks (text-only, no imagery) ---------- */
+  .qa-list{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    background:var(--ink-line);
+    border:1px solid var(--ink-line);
+    margin-top:8px;
+  }
+  .qa-block{
+    background:var(--ink-raised);
+    padding:36px 40px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:36px;
+  }
+  .qa-status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border:1px solid var(--gold-dim);
+    color:var(--gold);
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .qa-status.is-pending{
+    color:var(--text-dim);
+    border-color:var(--ink-line);
+  }
+  .qa-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .qa-q{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:none;
+    font-weight:600;
+    font-size:22px;
+    line-height:1.25;
+    color:var(--paper);
+    margin-top:6px;
+    letter-spacing:0;
+  }
+  .qa-body .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .qa-answer{
+    color:var(--text-mid);
+    font-size:15px;
+    font-weight:300;
+  }
+  .qa-figure-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:18px;
+  }
+  .qa-figure-grid .qa-figure{
+    margin-top:0;
+  }
+  @media (max-width:560px){
+    .qa-figure-grid{grid-template-columns:1fr;}
+  }
+  .qa-figure{
+    margin-top:18px;
+    padding:16px 18px;
+    border:1px solid var(--ink-line);
+    background:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-mid);
+  }
+  .qa-figure img{
+    display:block;
+    width:auto;
+    max-width:100%;
+    max-height:380px;
+    margin:0 auto 14px;
+    border:1px solid var(--ink-line);
+    cursor:zoom-in;
+  }
+  .qa-figure .qa-figure-label{
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:8px;
+  }
+  @media (max-width:720px){
+    .qa-block{grid-template-columns:1fr;gap:16px;padding:24px 20px;}
+  }
+
+  /* ---------- placeholder for continuing content ---------- */
+  .pending{
+    border:1px dashed var(--ink-line);
+    padding:40px 32px;
+    text-align:center;
+    color:var(--text-dim);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.04em;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:48px 0;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+  }
+
+  /* ---------- tablet ---------- */
+  @media (max-width:900px){
+    .wrap{padding:0 24px;}
+    section{padding:72px 0;}
+    .ref-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+    .hero-grid{grid-template-columns:1fr;gap:0;}
+    .hero-visual{display:none;}
+  }
+
+  /* ---------- mobile ---------- */
+  @media (max-width:640px){
+    .wrap{padding:0 18px;}
+    section{padding:56px 0;}
+
+    /* hero */
+    .hero{min-height:auto;padding:100px 0 56px;}
+    .hero-frame{top:20px;left:16px;right:16px;bottom:20px;}
+    .hero::before{background-size:40px 40px;}
+    h1.hero-title{font-size:clamp(40px,13vw,64px);}
+    .hero-sub{font-size:16px;margin-bottom:36px;}
+    .hero-meta{gap:24px 20px;padding-top:24px;}
+    .hero-meta-item{flex:1 1 calc(50% - 20px);}
+    .hero-meta-item .value{font-size:17px;}
+
+    /* section headers */
+    .section-head{margin-bottom:32px;}
+    .section-head h2{font-size:clamp(26px,7vw,34px);}
+    .lede{font-size:15px;}
+
+    /* constraint card */
+    .constraint-card{grid-template-columns:1fr;text-align:left;padding:24px 20px;gap:18px;}
+    .constraint-card .big{font-size:52px;}
+
+    /* reference gallery */
+    .gallery-note{font-size:11px;margin-bottom:20px;}
+    .ref-grid{grid-template-columns:repeat(2,1fr);}
+    .ref-group{margin-bottom:32px;}
+    .workflow-grid{grid-template-columns:repeat(2,1fr);}
+    .workflow-gallery{margin-top:40px;}
+
+    /* workflow steps */
+    .step{grid-template-columns:1fr;gap:8px;padding:28px 0;}
+    .step-index{padding-top:0;}
+    .step-body h3{font-size:19px;}
+    .step-body p,.step-body li{font-size:14px;}
+
+    .pending{padding:28px 20px;font-size:12px;}
+    footer{padding:36px 0;font-size:11px;}
+  }
+
+  /* ---------- small phones ---------- */
+  @media (max-width:400px){
+    .hero-meta-item{flex:1 1 100%;}
+    .case-tag{font-size:11px;padding:5px 10px;}
+  }
+
+  /* ---------- accessibility ---------- */
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .ref-item img{transition:none;}
+  }
+
+  .hero{min-height:0;padding:120px 0 80px;}
+  @media (max-width:640px){.hero{padding:104px 0 56px;}}
+
+</style><div class="av">
+<section class="hero">
+  <div class="hero-frame">
+    <span class="corner-tick tl"></span>
+    <span class="corner-tick tr"></span>
+    <span class="corner-tick bl"></span>
+    <span class="corner-tick br"></span>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="case-tag">CASE STUDY <span>// REVERSE ENGINEERING</span></div>
+        <h1 class="hero-title">AVORE <span class="accent">EX</span><br>SERIES</h1>
+        <p class="hero-sub">Reconstructing a full chassis and vehicle geometry from pre-launch teaser imagery alone — no factory drawings, no spec sheet, no plastic body panels to hide behind.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="label">Known Parameter</div>
+            <div class="value">17" Rim Diameter</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Source Material</div>
+            <div class="value">Pre-Launch Teasers</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Method</div>
+            <div class="value">Image-Scaled CAD Reconstruction</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Scope</div>
+            <div class="value">Chassis + Vehicle Dynamics</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785953462/Screenshot_2026-08-05_234004_kf5lmi.png" alt="Avore EX Series CAD reconstruction hero render">
+        <span class="corner-tick tl"></span>
+        <span class="corner-tick tr"></span>
+        <span class="corner-tick bl"></span>
+        <span class="corner-tick br"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brief">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The Constraint</h2>
+      <span class="section-num mono">// 01</span>
+    </div>
+    <p class="lede">No factory data existed for the Avore EX series at the time of this study. The only confirmed figure available was rim size — everything else had to be derived, not looked up.</p>
+    <div class="constraint-card">
+      <div class="big">17<small>inch rim</small></div>
+      <p>The single known parameter going in. Every other dimension on the vehicle — <strong>wheelbase, rake angle, ground clearance, and the full chassis envelope</strong> — was reverse engineered from this one reference, using scaled orthographic images rather than any published specification.</p>
+    </div>
+  </div>
+</section>
+
+<section id="references">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Reference Material</h2>
+      <span class="section-num mono">// 02</span>
+    </div>
+    <p class="gallery-note">Sourced primarily from manufacturer teaser clips and stills released ahead of launch — manufacturing-line and test-rig footage tends to expose structure that final marketing photography is styled to conceal.</p>
+
+    <div class="ref-group">
+      <div class="ref-group-label">Fig. 01 — Reference Set</div>
+      <div class="ref-grid">
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/1_nra6xu.png" alt="Avore EX reference 1"><div class="fig">01</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944962/9_d8117h.png" alt="Avore EX reference 2"><div class="fig">02</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945555/img_12_hucpb0.png" alt="Avore EX reference 3"><div class="fig">03</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945554/img_1_uktxgz.png" alt="Avore EX reference 4"><div class="fig">04</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945555/img_4_c94uqa.png" alt="Avore EX reference 5"><div class="fig">05</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945554/img_2_p3dr05.png" alt="Avore EX reference 6"><div class="fig">06</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945554/img_3_xh21y1.png" alt="Avore EX reference 7"><div class="fig">07</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945554/img_10_epaldy.png" alt="Avore EX reference 8"><div class="fig">08</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945553/img_11_tio6s5.png" alt="Avore EX reference 9"><div class="fig">09</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945553/img_8_kvg8xg.png" alt="Avore EX reference 10"><div class="fig">10</div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785945553/img_6_ptsetc.png" alt="Avore EX reference 11"><div class="fig">11</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Reconstruction Workflow</h2>
+      <span class="section-num mono">// 03</span>
+    </div>
+    <p class="lede">Step-by-step process from scaled image to full chassis geometry.</p>
+
+    <div class="workflow-gallery">
+      <div class="ref-group-label">Workflow Figures — 01–12</div>
+      <div class="workflow-grid">
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/1_nra6xu.png" alt="Side view scaled to 17-inch rim with wheelbase and rake angle marked"><div class="fig-cap"><div class="fnum">FIG. 01</div><h4>Reference Image Selection &amp; Scaling</h4><div class="desc">Scaled the side-view sketch to the 17" rim diameter, then traced wheelbase, rake &amp; ground clearance.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944961/2_dljymq.png" alt="Rake angle measured at approximately 26 degrees"><div class="fig-cap"><div class="fnum">FIG. 02</div><h4>Rake Angle Extraction</h4><div class="desc">Steering axis projected against the ground reference line — rake measured at ≈26°.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944962/3_kcl5dm.png" alt="Chassis pipe centrelines and battery traced from testing side view"><div class="fig-cap"><div class="fnum">FIG. 03</div><h4>Chassis Centreline &amp; Battery Tracing</h4><div class="desc">Chassis tube centrelines and the battery pack envelope traced from a testing-rig side view.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944962/4_gjcvht.png" alt="Side view outer boundaries extracted"><div class="fig-cap"><div class="fnum">FIG. 04</div><h4>Side-View Boundary Extraction</h4><div class="desc">Fairing, seat &amp; tail silhouette extracted to define the outer envelope for chassis and running gear.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/5_j246du.png" alt="Chassis width and tube bends estimated visually"><div class="fig-cap"><div class="fnum">FIG. 05</div><h4>Chassis Width &amp; Tube Bends</h4><div class="desc">Estimated visually by cross-referencing multiple angles — lowest-confidence dimension so far.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785947358/6_l0zizp.png" alt="Chassis weldment completed in SolidWorks"><div class="fig-cap"><div class="fnum">FIG. 06</div><h4>Chassis Weldment Modeling</h4><div class="desc">Modeled as a SolidWorks weldment from traced centrelines, width &amp; tube bends.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944962/10_o7gkoe.png" alt="Rear wheel, disc and belt pulley modeled"><div class="fig-cap"><div class="fnum">FIG. 07</div><h4>Rear Wheel, Disc &amp; Belt Pulley</h4><div class="desc">Modeled using the testing-rig image for detail and teaser footage for styling &amp; proportion.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/7_lqszij.png" alt="Assembly positioned on wheelbase and rake angle"><div class="fig-cap"><div class="fnum">FIG. 08</div><h4>Assembly on Wheelbase &amp; Rake</h4><div class="desc">Chassis and wheel/tire package locked onto the wheelbase &amp; rake values from steps 01–02.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/8_hz8a0e.png" alt="Swingarm modeled from hardpoints"><div class="fig-cap"><div class="fnum">FIG. 09</div><h4>Swingarm Modeling from Hardpoints</h4><div class="desc">Pivot, axle &amp; shock mount triangulated from scaled reference images.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785952570/Screenshot_2026-08-05_232532_j01si1.png" alt="Front telescopic forks modeled"><div class="fig-cap"><div class="fnum">FIG. 10</div><h4>Front Telescopic Fork Modeling</h4><div class="desc">Stanchion offset &amp; travel proportions matched to the reference stills.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785952067/Screenshot_2026-08-05_231611_tvtwyw.png" alt="Latest assembly state, work in progress"><div class="fig-cap"><div class="fnum">FIG. 11</div><h4>Current State</h4><div class="desc">Latest iteration of the full assembly — remaining subsystems still in progress.</div></div></div>
+        <div class="ref-item"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1785944963/14_knqyci.png" alt="Model compared against 5 foot 8 inch mannequin for scale validation"><div class="fig-cap"><div class="fnum">FIG. 12</div><h4>Scale Validation Against Human Reference</h4><div class="desc">Checked against a 5'8" (≈173cm) human reference for plausible rider triangle &amp; scale.</div></div></div>
+      </div>
+    </div>
+
+    <div class="pending">Workflow continues — next step pending</div>
+  </div>
+</section>
+
+<section id="dynamics">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Understanding Motorcycle Dynamics</h2>
+      <span class="section-num mono">// 04</span>
+    </div>
+    <p class="lede">Mapping how a two-wheeler's chassis, suspension &amp; rider inputs interact in motion, before modeling geometry further — worked through as open questions rather than reference imagery.</p>
+
+    <div class="qa-list">
+      <div class="qa-block">
+        <div>
+          <div class="qa-status">Investigating</div>
+          <div class="qa-num">Question 01</div>
+        </div>
+        <div class="qa-body">
+          <div class="qa-q">What are the vehicle's degrees of freedom, and how do a two-wheeler's chassis, suspension &amp; rider inputs interact in motion?</div>
+          <div class="label">Answer</div>
+          <div class="qa-answer">A two-wheeler's motion is governed by a coupled set of degrees of freedom — roll, yaw, steer, pitch, plus front/rear suspension travel — acted on simultaneously by the chassis, suspension geometry &amp; rider inputs. Mapping these out first is the foundation for the geometry work that follows.</div>
+          <div class="qa-figure">
+            <div class="qa-figure-label">Fig. — Degrees of Freedom</div>
+            <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786868513/22_krmq1c.png" alt="Degrees of freedom mapping for the two-wheeler's chassis, suspension and rider inputs">
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div>
+          <div class="qa-status">Answered</div>
+          <div class="qa-num">Question 02</div>
+        </div>
+        <div class="qa-body">
+          <div class="qa-q">Does the reverse-engineered chassis geometry actually satisfy the theoretical trail relationship?</div>
+          <div class="label">Answer</div>
+          <div class="qa-answer">Yes, within reasonable margin at the unloaded state. Theoretical trail was checked against the CAD-measured value from the reconstructed geometry, confirming the reverse-engineered dimensions satisfy the expected theoretical relationship.</div>
+          <div class="qa-figure">
+            <div class="qa-figure-label">Fig. — Trail Verification (Unloaded)</div>
+            <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786868388/18_bx2sni.png" alt="Trail verification calculation — reverse-engineered geometry, unloaded state">
+            a<sub>n</sub> = R<sub>f</sub>sinε − d<br>
+            Calculated: 48.63&nbsp;mm &nbsp;|&nbsp; Measured (CAD): 54.26&nbsp;mm &nbsp;|&nbsp; Error: 11.57%
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div>
+          <div class="qa-status">Answered</div>
+          <div class="qa-num">Question 03</div>
+        </div>
+        <div class="qa-body">
+          <div class="qa-q">Why does caster (rake) matter?</div>
+          <div class="label">Answer</div>
+          <div class="qa-answer">Caster sets the steering axis's backward tilt, which is what generates trail and, with it, the self-centering/stabilizing effect at speed. More caster gives a more planted, stable feel but slower steering response; less caster sharpens steering at the cost of high-speed stability.</div>
+          <div class="qa-figure-grid">
+            <div class="qa-figure">
+              <div class="qa-figure-label">Fig. — Caster &amp; Trail Relationship</div>
+              <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786880069/23_xbpm2k.png" alt="Diagram showing how caster angle generates trail and steering axis geometry">
+            </div>
+            <div class="qa-figure">
+              <div class="qa-figure-label">Fig. — Effect on Stability &amp; Steering Response</div>
+              <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786880063/26_fflc8z.png" alt="Diagram showing how caster angle affects stability and steering response">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div>
+          <div class="qa-status">Answered</div>
+          <div class="qa-num">Question 04</div>
+        </div>
+        <div class="qa-body">
+          <div class="qa-q">What is kinematic steering angle, and how is it affected by caster &amp; roll angle?</div>
+          <div class="label">Answer</div>
+          <div class="qa-answer">Δ = ArcTan[(cosε · tanδ) / cosφ] — the actual wheel-plane angle, given handlebar angle δ, caster ε &amp; roll φ. Since the steering axis isn't vertical, a 10° bar input ≠ 10° wheel angle. Increasing roll angle increases the kinematic angle for the same bar input.</div>
+          <div class="qa-figure-grid">
+            <div class="qa-figure">
+              <div class="qa-figure-label">Fig. — Derivation &amp; Case I / Case II (ε=0°, ε=26° Avore, φ=0°)</div>
+              <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786869446/1e008121-3444-4f47-a2cd-a1dc93f1cc8c_x0jmbv.jpg" alt="Handwritten derivation of kinematic steering angle formula, Case I and Case II">
+            </div>
+            <div class="qa-figure">
+              <div class="qa-figure-label">Fig. — Case III (φ=5°, 15°) &amp; Cornering Force Balance</div>
+              <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1786869446/1e008121-3444-4f47-a2cd-a1dc93f1cc8c_x0jmbv.jpg" alt="Handwritten Case III roll angle comparison and cornering force balance diagram">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pending">More questions pending</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap mono">AVORE EX SERIES — REVERSE ENGINEERING CASE STUDY</div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-bar">
+    <div class="lightbox-count mono">Fig. <b id="lightboxCurrent">01</b> / <span id="lightboxTotal">01</span></div>
+    <div class="lightbox-title" id="lightboxTitle"></div>
+    <div class="lightbox-actions">
+      <button class="lightbox-btn" id="lightboxZoomOut" type="button">&minus;</button>
+      <button class="lightbox-btn" id="lightboxZoomIn" type="button">+</button>
+      <button class="lightbox-btn" id="lightboxReset" type="button">Reset</button>
+      <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close">&times;</button>
+    </div>
+  </div>
+  <div class="lightbox-viewport" id="lightboxViewport">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image">&#8250;</button>
+</div>
+</div></template>
+<script>
+(function(){
+  var host=document.getElementById('avoreHost'),tpl=document.getElementById('avoreTpl'),done=false;
+  window.initAvorePane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+
+(function(){
+  var thumbs = Array.prototype.slice.call(R.querySelectorAll('.ref-item img'));
+  if(!thumbs.length) return;
+
+  var lightbox = R.getElementById('lightbox');
+  var viewport = R.getElementById('lightboxViewport');
+  var img = R.getElementById('lightboxImg');
+  var currentLabel = R.getElementById('lightboxCurrent');
+  var totalLabel = R.getElementById('lightboxTotal');
+  var titleLabel = R.getElementById('lightboxTitle');
+  var closeBtn = R.getElementById('lightboxClose');
+  var prevBtn = R.getElementById('lightboxPrev');
+  var nextBtn = R.getElementById('lightboxNext');
+  var zoomInBtn = R.getElementById('lightboxZoomIn');
+  var zoomOutBtn = R.getElementById('lightboxZoomOut');
+  var resetBtn = R.getElementById('lightboxReset');
+
+  var index = 0;
+  var scale = 1;
+  var MIN_SCALE = 1;
+  var MAX_SCALE = 3;
+  var fitWidth = 0, fitHeight = 0;
+
+  totalLabel.textContent = String(thumbs.length).padStart(2,'0');
+
+  var titles = thumbs.map(function(t){
+    var heading = t.parentElement && t.parentElement.querySelector('.fig-cap h4');
+    return heading ? heading.textContent : '';
+  });
+
+  function setScale(next){
+    scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, next));
+    if(scale === MIN_SCALE || !fitWidth){
+      img.style.width = '';
+      img.style.height = '';
+    } else {
+      img.style.width = (fitWidth * scale) + 'px';
+      img.style.height = (fitHeight * scale) + 'px';
+    }
+    viewport.classList.toggle('is-zoomed', scale > MIN_SCALE);
+  }
+
+  function captureFitSize(){
+    // size of the image as currently rendered (i.e. fit-to-screen size)
+    fitWidth = img.clientWidth;
+    fitHeight = img.clientHeight;
+  }
+
+  function show(i){
+    index = (i + thumbs.length) % thumbs.length;
+    fitWidth = 0;
+    fitHeight = 0;
+    img.style.width = '';
+    img.style.height = '';
+    img.src = thumbs[index].src;
+    img.alt = thumbs[index].alt || '';
+    currentLabel.textContent = String(index + 1).padStart(2,'0');
+    titleLabel.textContent = titles[index] || '';
+    scale = MIN_SCALE;
+    viewport.classList.remove('is-zoomed');
+    viewport.scrollTop = 0;
+    viewport.scrollLeft = 0;
+    if(img.complete){
+      captureFitSize();
+    } else {
+      img.onload = captureFitSize;
+    }
+  }
+
+  function open(i){
+    show(i);
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  thumbs.forEach(function(t, i){
+    t.addEventListener('click', function(){ open(i); });
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', function(){ show(index - 1); });
+  nextBtn.addEventListener('click', function(){ show(index + 1); });
+  zoomInBtn.addEventListener('click', function(){ setScale(scale + 0.5); });
+  zoomOutBtn.addEventListener('click', function(){ setScale(scale - 0.5); });
+  resetBtn.addEventListener('click', function(){ setScale(1); });
+
+  img.addEventListener('click', function(){
+    setScale(scale > MIN_SCALE ? 1 : 2);
+  });
+
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox){ close(); }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!lightbox.classList.contains('is-open')) return;
+    if(e.key === 'Escape') close();
+    else if(e.key === 'ArrowLeft') show(index - 1);
+    else if(e.key === 'ArrowRight') show(index + 1);
+    else if(e.key === '+' || e.key === '=') setScale(scale + 0.5);
+    else if(e.key === '-') setScale(scale - 0.5);
+  });
+
+  viewport.addEventListener('wheel', function(e){
+    if(!e.ctrlKey) return;
+    e.preventDefault();
+    setScale(scale + (e.deltaY < 0 ? 0.25 : -0.25));
+  }, { passive:false });
+})();
+
+  };
+})();
+</script>
+</div>
+<div id="chassisPane" role="tabpanel" aria-label="Chassis Member Failure at Damper Mount — Case Study">
+<style>
+#chassisPane{display:none}
+#chassisPane.is-on{display:block}
+</style>
+<div id="chassisHost"></div>
+<template id="chassisTpl"><style>
+
+:host{display:block;
+  --bg:#0b0e14; --card:#131720; --card2:#181d28;
+  --border:#252d3d; --border2:#2e3a50;
+  --accent:#f97316; --accent2:#38bdf8;
+  --danger:#ef4444; --success:#22c55e; --warn:#eab308;
+  --text:#e2e8f4; --sub:#94a3b8; --muted:#64748b;
+  --mono:'Space Mono',monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+  --nav-h:56px; --r:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.cs{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;font-size:15.5px;overflow-x:clip;padding-top:64px;position:relative}
+img{max-width:100%;display:block}
+a{color:var(--accent2);text-decoration:none}
+sub{font-size:.75em;vertical-align:sub}
+.cs::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(56,189,248,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.022) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
+
+/* ── BACK TO PORTFOLIO LINK ── */
+.nav-back{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--sub);
+  padding:6px 12px;border-radius:6px;
+  border:1px solid var(--border2);
+  background:rgba(255,255,255,.03);
+  text-decoration:none;white-space:nowrap;flex-shrink:0;
+  transition:color .2s,border-color .2s,background .2s,transform .15s;
+}
+.nav-back:hover,.nav-back:focus-visible{
+  color:var(--text);
+  border-color:rgba(249,115,22,.45);
+  background:rgba(249,115,22,.07);
+  transform:translateX(-2px);
+  outline:none;
+}
+
+/* ── EXPLORE MORE CTA ── */
+footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted);max-width:760px;margin:0 auto}
+footer strong{color:var(--text)}
+
+.cta-wrap{padding:44px 0 32px;display:flex;flex-direction:column;align-items:center;gap:16px}
+
+.cta-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:16px 36px;
+  background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);
+  color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;
+  border-radius:10px;text-decoration:none;
+  box-shadow:0 4px 24px rgba(249,115,22,.35),0 1px 0 rgba(255,255,255,.1) inset;
+  transition:transform .18s,box-shadow .18s,filter .18s;
+  position:relative;overflow:hidden;
+}
+.cta-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-btn:hover,.cta-btn:focus-visible{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 10px 36px rgba(249,115,22,.5),0 1px 0 rgba(255,255,255,.1) inset;
+  filter:brightness(1.08);
+  outline:none;
+}
+.cta-btn:active{transform:translateY(-1px) scale(1.00)}
+.cta-label{line-height:1}
+.cta-arrow{
+  font-size:22px;line-height:1;
+  transition:transform .2s;
+}
+.cta-btn:hover .cta-arrow{transform:translateX(4px)}
+
+.cta-sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+.cta-sub strong{color:var(--text)}
+
+.footer-meta{
+  border-top:1px solid var(--border);
+  padding-top:20px;
+  font-family:var(--mono);font-size:10px;color:var(--muted);line-height:1.8;
+}
+
+@media(max-width:480px){
+  .cta-btn{padding:14px 26px;font-size:17px;gap:10px}
+  .nav-back{font-size:9.5px;padding:5px 9px}
+}
+
+/* ── ① STICKY NAV ── */
+#snav{position:sticky;top:64px;height:48px;background:rgba(11,14,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:50;display:flex;align-items:center;justify-content:flex-start;padding:0 20px 0 80px;gap:8px}
+.nav-brand{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.nav-brand span{color:var(--muted)}
+.nav-links{display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);padding:6px 11px;border-radius:6px;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap;border:none;background:none}
+.nav-link:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-link.active{color:var(--accent);background:rgba(249,115,22,.1)}
+
+/* ── HERO ── */
+.hero{margin-top:0;padding:56px 20px 44px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::after{content:'4g';position:absolute;right:-10px;top:0;font-family:var(--cond);font-size:clamp(100px,22vw,260px);font-weight:800;color:rgba(249,115,22,.04);letter-spacing:-6px;pointer-events:none;user-select:none;line-height:1}
+.hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid rgba(249,115,22,.3);padding:3px 10px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.chip::before{content:'▶';font-size:7px}
+.hero h1{font-family:var(--cond);font-size:clamp(30px,7vw,62px);font-weight:800;line-height:1.05;letter-spacing:-.5px;margin-bottom:14px}
+.hero h1 em{color:var(--danger);font-style:normal}
+.hero-sub{font-size:15px;color:var(--sub);max-width:600px;margin-bottom:28px}
+.author-line{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;margin-top:8px}
+.author-name{font-family:var(--cond);font-size:22px;font-weight:800;color:var(--text);letter-spacing:.01em;line-height:1}
+.author-table{border-collapse:collapse;font-family:var(--mono);font-size:11px;margin-top:2px}
+.author-table td{padding:4px 12px 4px 0;vertical-align:middle;white-space:nowrap}
+.author-table td:first-child{color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:9.5px;padding-right:14px;border-right:1px solid var(--border2)}
+.author-table td:last-child{padding-left:14px;color:var(--text);font-size:11.5px}
+.author-table tr:not(:last-child) td{border-bottom:1px solid rgba(255,255,255,.04)}
+.at-role{color:var(--accent) !important}
+.at-inst{color:var(--sub) !important}
+.at-date{color:var(--accent2) !important}
+.author-meta{display:none}
+.author-dates{display:none}
+.author-sep{display:none}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px}
+.pill .pv{font-family:var(--cond);font-size:20px;font-weight:700;line-height:1}
+.pill .pv.d{color:var(--danger)}.pill .pv.w{color:var(--warn)}.pill .pv.g{color:var(--success)}
+.pill .pl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* ── ② BENTO CARD LAYOUT ── */
+.page{max-width:760px;margin:0 auto;padding:32px 16px 80px;display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.4),0 4px 20px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.03);opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s ease}
+.card.visible{opacity:1;transform:none}
+.card::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 2px 2px 0;background:var(--accent);opacity:.5}
+.card.dc::before{background:var(--danger)}.card.sc::before{background:var(--success)}.card.ic::before{background:var(--accent2)}.card.nc::before{background:var(--border2)}
+.sl{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px}
+.sl .n{width:22px;height:22px;border-radius:50%;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.25);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.sl.dl{color:var(--danger)}.sl.dl .n{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25);color:var(--danger)}
+.sl.sl2{color:var(--success)}.sl.sl2 .n{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.25);color:var(--success)}
+.sl.il{color:var(--accent2)}.sl.il .n{background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.25);color:var(--accent2)}
+.card h2{font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;margin-bottom:14px;letter-spacing:-.2px}
+.card p{color:var(--sub);font-size:15px;margin-bottom:12px}.card p:last-child{margin-bottom:0}
+.card p strong{color:var(--text);font-weight:600}
+
+/* ── ④ METRICS TABLE ── */
+.mt{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.mt thead tr{background:rgba(56,189,248,.08);border-bottom:1px solid var(--border2)}
+.mt thead th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);padding:9px 13px;text-align:left;font-weight:400}
+.mt thead th:first-child{width:36px;min-width:36px;text-align:center;padding:9px 6px}
+.mt tbody tr{border-bottom:1px solid var(--border)}.mt tbody tr:last-child{border-bottom:none}
+.mt tbody tr:hover{background:rgba(255,255,255,.02)}
+.mt td{padding:10px 13px}.mt td:first-child{font-family:var(--mono);font-size:12px;color:var(--sub);width:42%;background:rgba(0,0,0,.15)}
+.mt td:last-child{color:var(--text)}
+.mt-num{width:36px !important;min-width:36px !important;max-width:36px !important;padding:10px 4px !important;text-align:center !important;background:rgba(0,0,0,.15)}
+@media(max-width:600px){.mt{font-size:12px}.mt-num{width:32px !important;min-width:32px !important;max-width:32px !important}}
+.vd{color:var(--danger);font-weight:700;font-family:var(--mono)}.vs{color:var(--success);font-weight:700;font-family:var(--mono)}.vw{color:var(--warn);font-weight:700;font-family:var(--mono)}.vm{font-family:var(--mono);font-size:12px}
+
+/* ── ④ CALLOUT BOXES ── */
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+@media(max-width:540px){.cr{grid-template-columns:1fr}}
+.cb{border-radius:8px;padding:13px 15px;border:1px solid;font-size:14px}
+.cb .ct{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.cb .cx{color:var(--sub);line-height:1.6;font-size:13.5px}.cb .cx strong{color:var(--text);font-weight:600}
+.cb.assumed{background:rgba(56,189,248,.06);border-color:rgba(56,189,248,.2)}.cb.assumed .ct{color:var(--accent2)}
+.cb.reality{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.2)}.cb.reality .ct{color:var(--danger)}
+.cb.fix{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.2)}.cb.fix .ct{color:var(--success)}
+.cb.note{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.2)}.cb.note .ct{color:var(--accent)}
+.cb.info{background:rgba(56,189,248,.05);border-color:rgba(56,189,248,.15)}.cb.info .ct{color:var(--accent2)}
+.fml{font-family:var(--mono);font-size:12.5px;color:var(--accent2);font-weight:700;background:none;border:none;border-radius:0;padding:0;white-space:nowrap}
+.cb.full{margin:12px 0}
+
+/* ── TIMELINE ── */
+.tl{padding-left:22px;margin:14px 0;position:relative}
+.tl::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--danger),rgba(249,115,22,.3),var(--border))}
+.tli{position:relative;margin-bottom:20px}
+.tli::before{content:'';position:absolute;left:-19px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tli.d::before{border-color:var(--danger);background:rgba(239,68,68,.15)}.tli.ok::before{border-color:var(--success)}
+.tli h4{font-family:var(--cond);font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px}
+.tli p{font-size:13.5px;color:var(--sub);margin:0}
+
+/* ── RESULT STRIP ── */
+.rs{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.rc{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:13px 15px;flex:1;min-width:110px}
+.rc .rl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:4px}
+.rc .rv{font-family:var(--cond);font-size:26px;font-weight:700;line-height:1;color:var(--accent)}
+.rc .ru{font-size:11.5px;color:var(--muted);margin-top:2px}
+.rc.rcd .rv{color:var(--danger)}.rc.rcs .rv{color:var(--success)}.rc.rcw .rv{color:var(--warn)}
+
+/* ── ② GALLERY ── */
+.gal{margin:18px 0 4px}
+.gtitle{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.gtitle::before{content:'◈';color:var(--accent2)}
+.gg{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr))}
+.gg.g2{grid-template-columns:repeat(2,1fr)}.gg.g3{grid-template-columns:repeat(3,1fr)}.gg.g4{grid-template-columns:repeat(2,1fr)}
+.gth{aspect-ratio:4/3;border-radius:8px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);background:var(--card2);transition:border-color .2s,transform .2s,box-shadow .2s}
+.gth:hover{border-color:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.gth img{width:100%;height:100%;object-fit:cover;transition:transform .3s}.gth:hover img{transform:scale(1.05)}
+.ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px}
+.ph .pi{font-size:24px;opacity:.4}.ph .pt{font-size:12px;color:var(--muted);text-align:center}
+.ph .pk{font-family:var(--mono);font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;background:rgba(249,115,22,.08);padding:2px 8px;border-radius:3px}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 55%);opacity:0;transition:opacity .2s;display:flex;flex-direction:column;justify-content:flex-end;padding:10px}
+.gth:hover .gov{opacity:1}
+.gov .gc{font-size:11px;font-family:var(--mono);color:#fff;line-height:1.3}
+.gov .gi{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);width:26px;height:26px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px}
+
+/* ── ② LIGHTBOX ── */
+#lb{display:none;position:fixed;inset:0;z-index:900;background:rgba(5,7,12,.95);backdrop-filter:blur(8px);flex-direction:column;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb-wrap{position:relative;max-width:min(92vw,960px);max-height:78vh;display:flex;align-items:center;justify-content:center}
+#lb-img{max-width:100%;max-height:78vh;border-radius:6px;box-shadow:0 32px 96px rgba(0,0,0,.8);object-fit:contain;user-select:none;touch-action:none;cursor:zoom-in;transform-origin:center center;will-change:transform;transition:transform .08s ease}
+#lb-img.zoomed{cursor:grab}
+#lb-img.grabbing{cursor:grabbing;transition:none}
+#lb-zoom-bar{position:fixed;bottom:66px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(8,10,16,.82);border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:7px 16px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.8);opacity:0;transition:opacity .3s;z-index:902;white-space:nowrap;backdrop-filter:blur(8px);pointer-events:none}
+#lb-zoom-bar.show{opacity:1;pointer-events:auto}
+#lb-zoom-pct{min-width:36px;text-align:center;color:var(--accent);font-weight:700}
+#lb-zoom-reset{background:none;border:1px solid rgba(249,115,22,.35);border-radius:10px;color:var(--accent);cursor:pointer;font-family:var(--mono);font-size:10px;padding:2px 8px;transition:background .2s}
+#lb-zoom-reset:hover{background:rgba(249,115,22,.15)}
+#lb-counter{position:absolute;top:-30px;right:0;font-family:var(--mono);font-size:10px;color:var(--muted)}
+#lb-caption{margin-top:12px;max-width:min(92vw,680px);padding:0 16px;text-align:center}
+#lb-sec{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+#lb-cap{font-size:13px;color:var(--sub);line-height:1.5}
+#lb-dots{display:flex;gap:6px;margin-top:12px;justify-content:center;flex-wrap:wrap;max-width:92vw}
+.lbd{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:background .2s,transform .2s}
+.lbd.active{background:var(--accent);transform:scale(1.5)}
+#lb-swipe{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;color:rgba(255,255,255,.22);letter-spacing:.1em;pointer-events:none}
+.lba{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:901;backdrop-filter:blur(4px)}
+.lba:hover{background:rgba(255,255,255,.14)}
+#lb-prev{left:12px}#lb-next{right:12px}
+#lb-close{position:fixed;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:901}
+#lb-close:hover{background:rgba(239,68,68,.3)}
+@media(max-width:600px){#lb-prev{left:4px}#lb-next{right:4px}.lba{width:36px;height:36px;font-size:14px}}
+
+/* ── ③ BEFORE / AFTER ── */
+.bac{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+@media(max-width:540px){.bac{grid-template-columns:1fr}}
+.bas{display:flex;flex-direction:column;gap:10px}
+.babadge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:4px;align-self:flex-start}
+.babadge.orig{background:rgba(239,68,68,.12);color:var(--danger);border:1px solid rgba(239,68,68,.25)}
+.babadge.redes{background:rgba(34,197,94,.12);color:var(--success);border:1px solid rgba(34,197,94,.25)}
+.bath{aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--card2);cursor:pointer;position:relative;transition:border-color .2s,transform .2s}
+.bath:hover{transform:translateY(-2px)}
+.bath.ot{border-color:rgba(239,68,68,.25)}.bath.ot:hover{border-color:var(--danger)}
+.bath.rt{border-color:rgba(34,197,94,.25)}.bath.rt:hover{border-color:var(--success)}
+.bath img{width:100%;height:100%;object-fit:cover}
+.bath .ph{width:100%;height:100%}
+.bath .gov{opacity:0}.bath:hover .gov{opacity:1}
+.bast{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:11px 13px;display:flex;align-items:center;gap:10px}
+.bast .bv{font-family:var(--cond);font-size:24px;font-weight:700;line-height:1;flex-shrink:0}
+.bast .bv.red{color:var(--danger)}.bast .bv.green{color:var(--success)}
+.bast .bl{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* ── NAV SECTION MARKER ── */
+.nsm{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);padding:8px 0 4px;display:flex;align-items:center;gap:10px}
+.nsm::after{content:'';flex:1;height:1px;background:var(--border)}
+
+footer{border-top:1px solid var(--border);padding:30px 20px;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted);max-width:760px;margin:0 auto}
+footer strong{color:var(--text)}
+
+/* ── CALC RESULT BADGE (always-visible overlay) ── */
+.res-badge{position:absolute;bottom:8px;left:8px;right:8px;background:rgba(8,11,18,.82);backdrop-filter:blur(6px);border:1px solid rgba(249,115,22,.35);border-radius:6px;padding:6px 9px;display:flex;align-items:center;justify-content:space-between;gap:6px;pointer-events:none}
+.res-badge .rb-label{font-family:var(--mono);font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+.res-badge .rb-val{font-family:var(--cond);font-size:15px;font-weight:700;color:var(--accent);white-space:nowrap;line-height:1}
+.res-badge.rb-ok .rb-val{color:var(--success)}
+.res-badge.rb-warn .rb-val{color:var(--warn)}
+.res-badge.rb-danger .rb-val{color:var(--danger)}
+.calc-hint{font-family:var(--mono);font-size:9.5px;color:var(--muted);text-align:center;margin-top:8px;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:6px}
+.calc-hint::before,.calc-hint::after{content:'';flex:1;height:1px;background:var(--border)}
+.sub-section{margin-top:22px;border-top:1px solid var(--border2);padding-top:18px}
+.sub-label{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.13em;color:var(--accent2);margin-bottom:14px}
+.sub-label::before{content:'◈';font-size:11px}
+.sub-label::after{content:'';flex:1;height:1px;background:rgba(56,189,248,.15)}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+@media(max-width:500px){.mc-grid{grid-template-columns:1fr}}
+.mc-field{background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.14);border-radius:8px;padding:12px 14px}
+.mc-field .mcf-label{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.mc-field .mcf-label::before{content:'▸';color:var(--accent2);font-size:9px}
+.mc-field .mcf-val{font-family:var(--mono);font-size:13px;color:var(--accent2)}
+.mc-field .mcf-hint{font-size:11.5px;color:var(--muted);margin-top:4px;font-style:italic}
+
+/* ── CALC SHEET STRIP ── */
+.calc-strip-wrap{position:relative;margin:0 -4px}
+.calc-strip{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:4px 4px 10px;
+}
+.calc-strip::-webkit-scrollbar{display:none}
+
+/* A4 ratio: 1:1.414 → width : height */
+.cs-thumb{
+  flex:0 0 auto;
+  /* ~A4: width drives height via padding trick */
+  width:clamp(110px,28vw,160px);
+  aspect-ratio:1/1.414;
+  border-radius:8px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  border:1px solid var(--border);
+  background:var(--card2);
+  scroll-snap-align:start;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.cs-thumb:hover,.cs-thumb:focus-visible{
+  border-color:var(--accent2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+  outline:none;
+}
+.cs-inner{width:100%;height:100%;position:relative;display:flex;flex-direction:column}
+.cs-inner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+/* placeholder (when no real image) */
+.cs-ph{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;padding:10px 8px;flex:1;
+}
+.cs-pi{font-size:22px;opacity:.35}
+.cs-pt{font-size:11px;font-family:var(--cond);font-weight:700;color:var(--muted);text-align:center;line-height:1.2}
+.cs-pk{font-family:var(--mono);font-size:8px;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;background:rgba(249,115,22,.09);padding:2px 7px;border-radius:3px;text-align:center;margin-top:2px}
+
+/* result badge at bottom */
+.cs-badge{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:5px 7px;
+  background:rgba(8,11,18,.85);
+  backdrop-filter:blur(5px);
+  border-top:1px solid rgba(249,115,22,.25);
+  display:flex;flex-direction:column;gap:1px;
+  pointer-events:none;
+}
+.cs-badge .rb-label{font-family:var(--mono);font-size:7.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.cs-badge .rb-val{font-family:var(--cond);font-size:12px;font-weight:700;line-height:1;color:var(--accent)}
+.cs-badge.rb-ok .rb-val{color:var(--success)}
+.cs-badge.rb-warn .rb-val{color:var(--warn)}
+.cs-badge.rb-danger .rb-val{color:var(--danger)}
+
+/* hover overlay */
+.cs-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.72) 100%);
+  opacity:0;transition:opacity .2s;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px;
+}
+.cs-thumb:hover .cs-ov,.cs-thumb:focus-visible .cs-ov{opacity:1}
+.cs-zoom{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(56,189,248,.18);border:1px solid rgba(56,189,248,.4);
+  display:flex;align-items:center;justify-content:center;font-size:13px;
+}
+.cs-cap{font-family:var(--mono);font-size:9px;color:#fff;text-align:center;line-height:1.3;opacity:.85}
+
+/* scroll hint */
+.cs-scroll-hint{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em;
+  padding:6px 0 0;gap:6px;
+  user-select:none;
+}
+.cs-scroll-hint::before,.cs-scroll-hint::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* keyboard focus ring for strip */
+.calc-strip:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+
+/* ── MATERIAL TEST REPORT LINK ── */
+.mtr-link{
+  display:flex;align-items:center;gap:12px;
+  margin-top:16px;
+  padding:13px 16px;
+  background:linear-gradient(135deg,rgba(52,211,153,.07) 0%,rgba(56,189,248,.05) 100%);
+  border:1px solid rgba(52,211,153,.3);
+  border-radius:10px;
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .2s,background .2s,transform .15s,box-shadow .2s;
+  position:relative;
+  overflow:hidden;
+}
+.mtr-link::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,var(--success),rgba(56,189,248,.6));
+  border-radius:0 2px 2px 0;
+}
+.mtr-link:hover,.mtr-link:focus-visible{
+  border-color:rgba(52,211,153,.55);
+  background:linear-gradient(135deg,rgba(52,211,153,.12) 0%,rgba(56,189,248,.08) 100%);
+  transform:translateY(-1px);
+  box-shadow:0 6px 20px rgba(52,211,153,.12);
+  outline:none;
+}
+.mtr-icon{
+  font-size:22px;flex-shrink:0;
+  filter:drop-shadow(0 0 6px rgba(52,211,153,.5));
+}
+.mtr-body{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.mtr-label{
+  font-family:var(--cond);font-size:16px;font-weight:700;
+  color:var(--success);letter-spacing:.02em;line-height:1;
+}
+.mtr-sub{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.07em;line-height:1.4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.mtr-arrow{
+  font-size:18px;color:var(--success);opacity:.7;flex-shrink:0;
+  transition:transform .2s,opacity .2s;
+}
+.mtr-link:hover .mtr-arrow{transform:translate(2px,-2px);opacity:1}
+@media(max-width:400px){
+  .mtr-sub{white-space:normal;font-size:9px}
+  .mtr-label{font-size:14px}
+}
+
+/* ── TOOL BADGES ── */
+.tool-badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.tbadge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:20px;border:1px solid;line-height:1.3;white-space:nowrap}
+.tbadge.ansys{color:#38bdf8;border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.07)}
+.tbadge.sw{color:#fb923c;border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.07)}
+.tbadge.calc{color:#a78bfa;border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.07)}
+.tbadge.astm{color:#34d399;border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.07)}
+
+@media(max-width:600px){#snav{padding-left:70px;padding-right:10px}}
+
+</style><div class="cs">
+
+
+<!-- LIGHTBOX -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lb-close" aria-label="Close">✕</button>
+  <div id="lb-wrap">
+    <span id="lb-counter"></span>
+    <img id="lb-img" src="" alt=""/>
+  </div>
+  <div id="lb-caption">
+    <div id="lb-sec"></div>
+    <div id="lb-cap"></div>
+  </div>
+  <div id="lb-dots"></div>
+  <div id="lb-swipe">← SWIPE OR USE ARROW KEYS →</div>
+  <div id="lb-zoom-bar"><span>🔍</span><span id="lb-zoom-pct">100%</span><button id="lb-zoom-reset">RESET</button></div>
+  <button class="lba" id="lb-prev">‹</button>
+  <button class="lba" id="lb-next">›</button>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="vmod" style="display:none;position:fixed;inset:0;z-index:950;background:rgba(5,7,12,.96);backdrop-filter:blur(10px);flex-direction:column;align-items:center;justify-content:center;gap:16px" role="dialog" aria-modal="true" aria-label="Video viewer">
+  <button id="vmod-close" aria-label="Close video" style="position:fixed;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:951">✕</button>
+  <video id="vmod-video" loop muted playsinline controls
+    style="max-width:min(92vw,640px);max-height:72vh;border-radius:10px;box-shadow:0 32px 96px rgba(0,0,0,.8);outline:none">
+  </video>
+  <div style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase">TAP OUTSIDE OR PRESS ESC TO CLOSE</div>
+</div>
+
+<!-- ① STICKY NAV -->
+<nav id="snav">
+  <div class="nav-links">
+    <button class="nav-link" data-target="sec-summary">Summary</button>
+    <button class="nav-link" data-target="sec-context">Context</button>
+    <button class="nav-link" data-target="sec-validation">Validation</button>
+    <button class="nav-link" data-target="sec-solution">Solution</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="chip">Structural Failure Analysis · Chassis Engineering</div>
+    <h1>Chassis Member Failure<br/>at <em>Damper Mount</em></h1>
+    <div class="author-line">
+      <span class="author-name">Arpit Malik</span>
+      <table class="author-table">
+        <tr><td>Role</td><td class="at-role">Chief Design Engineer · Team Daedalus Racing</td></tr>
+        <tr><td>Institution</td><td class="at-inst">NSUT, Delhi</td></tr>
+        <tr><td>Case Study</td><td class="at-date">21 Mar 2026 → 11 Apr 2026 &nbsp;·&nbsp; 21 days</td></tr>
+      </table>
+    </div>
+    <p class="hero-sub">During the <strong>Suspension &amp; Traction dynamic event at Baja SAE 2025</strong>, the vehicle became airborne after clearing a height obstacle — landing generated a high-G impact load that exposed a critical load-path error. A damper mount 241 mm (9.5 in) from Node 1 generated combined <strong style="color:var(--danger)">bending + axial + twisting</strong> stresses. <strong style="color:var(--warn);font-family:var(--mono);font-size:13px;letter-spacing:.03em">Analytical:</strong> σ<sub>VM</sub> = 1136 MPa (FOS 0.67). <strong style="color:var(--accent2);font-family:var(--mono);font-size:13px;letter-spacing:.03em">FEA:</strong> 831 MPa (FOS 0.92). <strong style="color:var(--danger);font-family:var(--mono);font-size:13px;letter-spacing:.03em">Both confirm failure.</strong> Resolved via triangulated load-path redesign — <strong style="color:var(--success);font-family:var(--mono);font-size:13px;letter-spacing:.03em">Post-fix FEA:</strong> 555 MPa (FOS 1.37).</p>
+    <div class="hero-pills">
+      <div class="pill"><div class="pv d">1136</div><div class="pl">MPa — Analytical Peak</div></div>
+      <div class="pill"><div class="pv d">831</div><div class="pl">MPa — FEA Pre-Fix</div></div>
+      <div class="pill"><div class="pv w">855</div><div class="pl">MPa — S<sub>ult</sub></div></div>
+      <div class="pill"><div class="pv d">0.67</div><div class="pl">FOS Pre-Fix (Analytical)</div></div>
+      <div class="pill"><div class="pv g">33.2%</div><div class="pl">Stress Reduction (FEA)</div></div>
+    </div>
+    <div class="tool-badges">
+      <span class="tbadge ansys">⬡ ANSYS Mechanical</span>
+      <span class="tbadge sw">◈ SolidWorks</span>
+      <span class="tbadge calc">∑ Hand Calculations</span>
+      <span class="tbadge astm">⬢ Material Testing (ASTM)</span>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- ══ SUMMARY ══ -->
+  <div class="nsm" id="sec-summary">Summary</div>
+
+  <!-- Card: Project Overview + Material Table -->
+  <div class="card ic">
+    <div class="sl il"><span class="n">01</span> Project Overview</div>
+    <h2>Structural Remediation of BAJA ATV Chassis Member</h2>
+    <p><strong>Problem:</strong> Mid-span damper mount → bending-dominated failure under 4g. Plastic deformation + Crack initiation at Chessis Member Crossection.</p>
+    <p><strong>Method:</strong> 1D beam theory + ANSYS FEA correlation → root cause confirmed → triangulated load path redesign.</p>
+    <p><strong>Result:</strong> FEA stress 831 → 555 MPa. Min FOS 0.92 → 1.37. Competition cleared.</p>
+
+    <!-- ④ MATERIAL PROPERTIES TABLE -->
+    <div class="gtitle" style="margin-top:20px">Material Properties — AISI 4130 Steel (Lab-Verified)</div>
+    <table class="mt">
+      <thead><tr><th>Property</th><th>Symbol</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Material Grade</td><td class="vm">—</td><td class="vm">AISI 4130 CrMo Steel</td></tr>
+        <tr><td>Yield Strength</td><td class="vm">S<sub>y</sub></td><td><span class="vs">763 MPa</span> <span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">Source: Test Report</span></td></tr>
+        <tr><td>Ultimate Tensile Strength</td><td class="vm">S<sub>ult</sub></td><td><span class="vs">855 MPa</span> <span style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:4px">Source: Test Report</span></td></tr>
+        <tr><td>Young's Modulus</td><td class="vm">E</td><td class="vm">2 × 10<sup>11</sup> Pa (200 GPa)</td></tr>
+        <tr><td>Poisson's Ratio</td><td class="vm">ν</td><td class="vm">0.3</td></tr>
+        <tr><td>Section (OD × WT)</td><td class="vm">—</td><td class="vm">25.4 mm × 1 mm</td></tr>
+        <tr><td>Design Load Case</td><td class="vm">—</td><td><span class="vd">4g vertical (high-G test)</span></td></tr>
+        <tr><td>Peak Von Mises — Analytical</td><td class="vm">σ<sub>VM</sub></td><td><span class="vd">1136 MPa ← exceeds S<sub>ult</sub> by 32.9%</span></td></tr>
+        <tr><td>Peak Von Mises — FEA Pre-Fix</td><td class="vm">σ<sub>VM</sub></td><td><span class="vd">831 MPa ← exceeds S<sub>y</sub> by 8.9%</span></td></tr>
+        <tr><td>Factor of Safety (pre-fix, analytical)</td><td class="vm">FOS</td><td><span class="vd">0.67 — failure certain</span></td></tr>
+        <tr><td>Factor of Safety (pre-fix, FEA)</td><td class="vm">FOS</td><td><span class="vd">0.92 — plastic deformation confirmed</span></td></tr>
+        <tr><td>Stress Reduction (post-fix, FEA)</td><td class="vm">Δσ</td><td><span class="vs">33.2% — 831 → 555 MPa via triangulation</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Card: Competition photos -->
+  <div class="card nc">
+    <div class="sl"><span class="n">02</span> Competition Context</div>
+    <h2>The Vehicle &amp; Event</h2>
+    <p>Add competition and vehicle photos below. Click any image to open fullscreen viewer.</p>
+    <div class="gal">
+      <div class="gtitle">Competition &amp; Vehicle Photos</div>
+      <div class="gg g3" data-gallery="bg" data-sn="Competition Context">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/competition.pngcompetition.png data-caption="Team Daedalus Racing — Baja SAE 2025 competition · NSUT, Delhi"><img src="https://arpitmalik711.github.io/Memberbend.casestudy/competition.pngcompetition.png alt="Competition — Baja SAE 2025" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Competition — Baja SAE 2025</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/vehicle.jpegvehicle.jpeg data-caption="Vehicle — side profile"><img src="https://arpitmalik711.github.io/Memberbend.casestudy/vehicle.jpegvehicle.jpeg alt="Vehicle" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Side profile</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/team.pngteam.png data-caption="Team Daedalus Racing — Baja SAE 2025 · NSUT, Delhi"><img src="https://arpitmalik711.github.io/Memberbend.casestudy/team.pngteam.png alt="Team Daedalus Racing" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="ph" style="display:none"><div class="pi">📷</div><div class="pt">Team</div><div class="pk">Team</div></div><div class="gov"><div class="gi">🔍</div><div class="gc">Team Daedalus Racing</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONTEXT ══ -->
+  <div class="nsm" id="sec-context">Context</div>
+
+  <!-- Card: ④ Assumptions vs Reality -->
+  <div class="card dc">
+    <div class="sl dl"><span class="n">03</span> Assumptions vs Reality</div>
+    <h2>What Was Designed vs What Happened</h2>
+    <p>Mount placed mid-span — correct for kinematics, wrong for load path. Bending dominates; axial capacity of the tube is irrelevant.</p>
+
+    <div class="cr">
+      <div class="cb assumed"><div class="ct">☑ Assumed: Load Path</div><div class="cx">Mount placed <strong>241 mm (9.5 in) away from Node 1</strong> for correct damper angle and stroke geometry.<br/><strong>Assumed:</strong> Member carries load axially — efficient use of tubular section.</div></div>
+      <div class="cb reality"><div class="ct">✕ Reality: Load Path</div><div class="cx">Mid-span transverse load creates <strong>bending moment M = F·a(L−a)/L</strong>. Axial strength of tube is irrelevant — bending dominates entirely.</div></div>
+    </div>
+
+    <div class="cr">
+      <div class="cb assumed"><div class="ct">☑ Assumed: Stress Level</div><div class="cx">Initial design check estimated stresses within safe envelope.<br/><strong>Assumed FOS ≥ 2.0</strong> per Baja SAE structural guidelines.</div></div>
+      <div class="cb reality"><div class="ct">✕ Reality: Stress Level</div><div class="cx">Bending + Axial load + Twisting drives σ<sub>VM</sub> to <strong>1136 MPa</strong>.<br/><strong>Actual FOS = 0.67</strong> — structural failure was mathematically certain.</div></div>
+    </div>
+
+    <div class="cr">
+      <div class="cb assumed"><div class="ct">☑ Assumed: Material Margin</div><div class="cx">S<sub>ult</sub> = 855 MPa assumed sufficient for the design load envelope with standard safety factor applied.</div></div>
+      <div class="cb reality"><div class="ct">✕ Reality: Material Margin</div><div class="cx">Calculated stress <strong>exceeds S<sub>ult</sub> by 32.9%</strong>. Material substitution alone cannot fix a load-path geometry error of this magnitude.</div></div>
+    </div>
+
+    <div class="cb note full"><div class="ct">▶ Key Insight</div><div class="cx">This was not a material failure. It was a <strong>geometry of load path failure</strong>. The correct fix is therefore geometric: redirect loads through triangulation — not material upgrade.</div></div>
+  </div>
+
+  <!-- Card: Failure event -->
+  <div class="card dc">
+    <div class="sl dl"><span class="n">04</span> Failure Event</div>
+    <h2>What Went Wrong — Failure Sequence</h2>
+    <div class="tl">
+      <div class="tli"><h4>Pre-Test Inspection</h4><p>Member visually intact. No cracks or deformation at mount joint before the dynamic event.</p></div>
+      <div class="tli d"><h4>Suspension &amp; Traction Event — Vehicle Becomes Airborne</h4><p>During the Baja SAE 2025 competition Suspension &amp; Traction test, the vehicle jumped from a height obstacle. Landing impact generated a high-G transverse load spike at the damper mount — far exceeding the static design envelope.</p></div>
+      <div class="tli d"><h4>4g Impact Load — Failure Initiates</h4><p>Transverse force at mid-span generates bending moment. Analytical σ<sub>VM</sub> = <strong>1136 MPa</strong> — exceeds S<sub>ult</sub> = 855 MPa.</p></div>
+      <div class="tli d"><h4>Plastic Deformation &amp; Crack Initiation</h4><p>Tube cross-section deforms at mount. Cracking at stress concentration — mount–member interface.</p></div>
+      <div class="tli ok"><h4>Test Halted — Investigation Begins</h4><p>Member removed. Fracture surface documented → root cause analysis initiated.</p></div>
+    </div>
+    <div class="gal">
+      <div class="gtitle">Failure Photos — Field Evidence</div>
+      <div class="gg g3" data-gallery="failure" data-sn="Failure Evidence">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.failurephoto.pnglearning.Memberbending.failurephoto.png data-caption="Failure photo — plastic deformation and cracking at damper mount interface"><img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.failurephoto.pnglearning.Memberbending.failurephoto.png alt="Failure photo" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Failure photo</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.happened.jpeglearning.Memberbending.happened.jpeg data-caption="FBD of failure — member bending load path at damper mount. Shows how transverse load creates bending moment at mid-span."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.happened.jpeglearning.Memberbending.happened.jpeg alt="FBD of failure" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">FBD of failure</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.MemberRemoved.jpeglearning.Memberbending.MemberRemoved.jpeg data-caption="Chassis member removed for inspection — fracture surface and deformation documented post-failure."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.Memberbending.MemberRemoved.jpeglearning.Memberbending.MemberRemoved.jpeg alt="Chassis Member Removed" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Chassis Member Removed</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Root Cause -->
+  <div class="card dc">
+    <div class="sl dl"><span class="n">05</span> Root Cause Analysis</div>
+    <h2>Why the Failure Occurred</h2>
+    <p>Mid-span mount → simultaneous <strong>bending + axial + twisting</strong>. Combined σ<sub>VM</sub> = 1136 MPa. FOS = 0.67. Failure certain.</p>
+    <div class="cb info full"><div class="ct">◈ Analytical Method — Euler–Bernoulli Beam Theory + Torsion</div><div class="cx">(1) Decompose damper axis force into transverse &amp; axial components at mount node under 4g.<br/>(2) Free-body diagram of chassis member.<br/>(3) Bending moment: <span class="fml">M = F·a(L−a)/L</span> (peak at mount, a = 241 mm (9.5 in) from Node 1).<br/>(4) Bending stress: <span class="fml">σ<sub>b</sub> = M·c/I</span> (extreme fibre); <span class="fml">τ<sub>twist</sub> = T·c/J</span> from torsion; <span class="fml">σ<sub>axial</sub> = F<sub>∥</sub>/A<sub>pipe</sub></span>.<br/>(5) Von Mises: <span class="fml">σ<sub>VM</sub> = √(σ² + 3τ²)</span> where <span class="fml">σ = σ<sub>axial</sub> + σ<sub>b</sub></span> and <span class="fml">τ = τ<sub>twist</sub></span> → <strong>1136 MPa</strong>.<br/>(6) FOS = S<sub>yield</sub>/σ<sub>VM</sub> = 763/1136 = <strong>0.67</strong> — structural failure was mathematically certain.</div></div>
+    <div class="rs">
+      <div class="rc rcd"><div class="rl">Calculated σ<sub>VM</sub></div><div class="rv">1136</div><div class="ru">MPa at bracket pipe cross-section</div></div>
+      <div class="rc rcw"><div class="rl">S<sub>ult</sub> Material</div><div class="rv">855</div><div class="ru">MPa lab-verified</div></div>
+      <div class="rc rcd"><div class="rl">FOS Pre-Fix</div><div class="rv">0.67</div><div class="ru">Failure certain</div></div>
+    </div>
+  </div>
+
+  <!-- ══ VALIDATION ══ -->
+  <div class="nsm" id="sec-validation">Validation</div>
+
+  <!-- Card: Analytical Verification & FEA Validation (V&V) -->
+  <div class="card">
+    <div class="sl"><span class="n">06</span> Analytical Verification &amp; FEA Validation (V&amp;V)</div>
+    <h2>1D Beam Theory Workings</h2>
+    <p>First-principles validation: <strong>Euler–Bernoulli beam theory + torsion + Von Mises criterion</strong>. 3D CAD force vectors resolved. Combined bending, axial, twisting checked against lab-verified AISI 4130 properties.</p>
+    <div class="cr">
+      <div class="cb reality"><div class="ct">Pre-Fix Result — Analytical</div><div class="cx">σ<sub>VM</sub> = <strong>1136 MPa</strong> (conservative upper bound)<br/>FOS = 763/1136 = <strong>0.67</strong><br/>Mode: <strong>bending + axial + twisting</strong> — failure mathematically certain</div></div>
+      <div class="cb reality" style="border-color:rgba(239,68,68,.4)"><div class="ct">Pre-Fix Result — FEA</div><div class="cx">σ<sub>VM</sub> = <strong>831 MPa</strong> — exceeds S<sub>y</sub> by 8.9%<br/>FOS = 763/831 = <strong>0.92</strong><br/>Plastic deformation confirmed at same failure zone</div></div>
+      <div class="cb fix"><div class="ct">Post-Fix Result — FEA</div><div class="cx">Triangulation → M ≈ 0 at node<br/>Load path: axial T/C only<br/>σ<sub>VM</sub> = <strong>555 MPa</strong> · Min FOS = <strong>1.37</strong></div></div>
+    </div>
+    <!-- CALC SHEETS STRIP -->
+    <div class="gal">
+      <div class="gtitle">Handwritten Calculation Sheets — tap any sheet to expand</div>
+
+      <!-- horizontal scroll strip -->
+      <div class="calc-strip-wrap">
+        <div class="calc-strip" id="calcStrip">
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal1.jpeglearning.pipebending_casestudy.cal1.jpeg data-caption="Sheet 1 — FBD from Tyre to Damper &amp; 3D Force Decomposition using vector coordinates from CAD. Full free-body diagram traced from tyre contact patch through suspension linkage to damper mount. Damper axis force resolved into X, Y, Z components at the bracket mount node under the 4g load case. Coordinate system defined and labelled." data-badge-class="rb-warn" data-badge-label="Sheet 1" data-badge-val="FBD + 3D Decomp.">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal1.jpeglearning.pipebending_casestudy.cal1.jpeg alt="Sheet 1 — FBD Tyre to Damper &amp; 3D Force Decomposition" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 1</div><div class="cs-pk">FBD &amp; 3D Decomp.</div></div>
+              <div class="cs-badge rb-warn"><span class="rb-label">Sheet 1</span><span class="rb-val">FBD + 3D Decomp.</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 1 — FBD Tyre→Damper · 3D Force Decomp. · Coord. System</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal2.jpeglearning.pipebending_casestudy.cal2.jpeg data-caption="Sheet 2 — Damper axis force resolved into transverse (F⊥) and axial (F∥) components at the bracket mount node under the 4g load case. Decomposition performed using the angle between the chassis member and the damper axis. F⊥ drives bending; F∥ drives axial stress in the member." data-badge-class="rb-warn" data-badge-label="Sheet 2" data-badge-val="F⊥ &amp; F∥ resolved">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal2.jpeglearning.pipebending_casestudy.cal2.jpeg alt="Sheet 2 — Force Component Decomposition" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 2</div><div class="cs-pk">F⊥ &amp; F∥ Decomp.</div></div>
+              <div class="cs-badge rb-warn"><span class="rb-label">Sheet 2</span><span class="rb-val">F⊥ &amp; F∥ resolved</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 2 — F⊥ &amp; F∥ via Member–Damper Angle</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal3.jpeglearning.pipebending_casestudy.cal3.jpeg data-caption="Sheet 3 — Static load on a single tyre calculated from vehicle weight distribution under the 4g load case. Motion ratio applied to convert tyre load into the actual force entering the damper. This damper force is the primary input to all subsequent stress calculations." data-badge-class="rb-warn" data-badge-label="Sheet 3" data-badge-val="F_damper via MR">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal3.jpeglearning.pipebending_casestudy.cal3.jpeg alt="Sheet 3 — Tyre Load &amp; Motion Ratio" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 3</div><div class="cs-pk">Tyre Load &amp; Motion Ratio</div></div>
+              <div class="cs-badge rb-warn"><span class="rb-label">Sheet 3</span><span class="rb-val">F_damper via MR</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 3 — Tyre Load → Motion Ratio → F_damper</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal4.jpeglearning.pipebending_casestudy.cal4.jpeg data-caption="Sheet 4 — Assumption: Zero Damping Energy Dissipation (worst-case conservative load). Static damper force multiplied by dynamic factor of 4 to obtain the 4g design load. Moment analysis using Simply Supported Beam model: peak bending moment M = F·a(L−a)/L at the bracket mount location." data-badge-class="rb-danger" data-badge-label="Sheet 4" data-badge-val="M = F·a(L−a)/L">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal4.jpeglearning.pipebending_casestudy.cal4.jpeg alt="Sheet 4 — Dynamic Load &amp; Moment Analysis" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 4</div><div class="cs-pk">Dynamic Load &amp; BMD</div></div>
+              <div class="cs-badge rb-danger"><span class="rb-label">Sheet 4</span><span class="rb-val">M = F·a(L−a)/L</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 4 — ×4g · Simply Supported BMD · Peak M</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal5.jpeglearning.pipebending_casestudy.cal5.jpeg data-caption="Sheet 5 — Section Properties &amp; Moment of Inertia. Tubular cross-section geometry: OD, wall thickness, area A, second moment of area I, and extreme fibre distance y. These values feed directly into σ_b = My/I and σ_axial = F∥/A." data-badge-class="rb-warn" data-badge-label="Sheet 5" data-badge-val="I, y, A computed">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal5.jpeglearning.pipebending_casestudy.cal5.jpeg alt="Sheet 5 — Section Properties &amp; Moment of Inertia" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 5</div><div class="cs-pk">Section Properties</div></div>
+              <div class="cs-badge rb-warn"><span class="rb-label">Sheet 5</span><span class="rb-val">I, y, A computed</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 5 — Section Props · σ_b = My/I · σ_axial = F∥/A</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal6.jpeglearning.pipebending_casestudy.cal6.jpeg data-caption="Sheet 6 — Shear stress calculated using Torsion Theory. Torque applied at the mount node resolved into shear stress τ in the tubular section using τ = Tr/J, where J is the polar moment of inertia of the cross-section." data-badge-class="rb-warn" data-badge-label="Sheet 6" data-badge-val="τ = Tr/J">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal6.jpeglearning.pipebending_casestudy.cal6.jpeg alt="Sheet 6 — Shear Stress via Torsion Theory" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 6</div><div class="cs-pk">Torsion Theory</div></div>
+              <div class="cs-badge rb-warn"><span class="rb-label">Sheet 6</span><span class="rb-val">τ = Tr/J</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 6 — Shear Stress · Torsion Theory · τ = Tr/J</div></div>
+            </div>
+          </div>
+
+          <div class="cs-thumb" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal7.jpeglearning.pipebending_casestudy.cal7.jpeg data-caption="Sheet 7 — Von Mises Stress &amp; FOS. Combined stress state: σ = σ_axial + σ_b; shear τ from transverse load. Von Mises criterion applied: σ_VM = √(σ² + 3τ²). Result: σ_VM = 1136 MPa. FOS = S_yield / σ_VM = 763 / 1136 = 0.67 — FAILURE certain." data-badge-class="rb-danger" data-badge-label="Sheet 7" data-badge-val="FOS = 0.67 FAIL">
+            <div class="cs-inner">
+              <img src="https://arpitmalik711.github.io/Memberbend.casestudy/learning.pipebending_casestudy.cal7.jpeglearning.pipebending_casestudy.cal7.jpeg alt="Sheet 7 — Von Mises &amp; FOS" loading="lazy"/>
+              <div class="cs-ph" style="display:none"><div class="cs-pi">📝</div><div class="cs-pt">Sheet 7</div><div class="cs-pk">Von Mises &amp; FOS</div></div>
+              <div class="cs-badge rb-danger"><span class="rb-label">Sheet 7</span><span class="rb-val">FOS = 0.67 FAIL</span></div>
+              <div class="cs-ov"><div class="cs-zoom">🔍</div><div class="cs-cap">Sheet 7 — σ_VM = 1136 MPa · FOS 0.67 · FAILURE</div></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- scroll hint -->
+        <div class="cs-scroll-hint" id="csScrollHint">
+          <span>← swipe or use arrow keys →</span>
+        </div>
+      </div>
+
+      <!-- Material Test Report link -->
+      <a class="mtr-link" href="#" id="mtrLink">
+        <span class="mtr-icon">⬢</span>
+        <span class="mtr-body">
+          <span class="mtr-label">Material Test Report</span>
+          <span class="mtr-sub">AISI 4130 · ASTM-Verified · S<sub>y</sub> = 763 MPa · S<sub>ult</sub> = 855 MPa</span>
+        </span>
+        <span class="mtr-arrow">↗</span>
+      </a>
+
+      <!-- Stress-Strain Curve Comparison -->
+      <div class="gal" style="margin-top:18px">
+        <div class="gtitle">Stress-Strain Curve — Tested vs Normalised AISI 4130</div>
+        <div class="gg" style="grid-template-columns:1fr" data-gallery="stress-strain" data-sn="Stress-Strain Curve Comparison">
+          <div class="gth" style="aspect-ratio:16/9;max-width:100%" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/stressstrain_TDRvsNORMALISE.pngstressstrain_TDRvsNORMALISE.png data-caption="Stress-Strain curve comparison — Lab-tested AISI 4130 (TDR specimen) vs Normalised AISI 4130 (reference). S_y = 763 MPa · S_ult = 855 MPa. ASTM-verified."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/stressstrain_TDRvsNORMALISE.pngstressstrain_TDRvsNORMALISE.png alt="Stress-Strain curve — Tested vs Normalised AISI 4130" style="width:100%;height:100%;object-fit:contain;position:absolute;inset:0;background:var(--card2)"/><div class="gov"><div class="gi">🔍</div><div class="gc">Tested vs Normalised — σ-ε curve</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Card: FEA Setup + Mesh convergence -->
+  <div class="card ic">
+    <div class="sl il"><span class="n">07</span> FEA Setup — ANSYS</div>
+    <h2>3D Model &amp; FEA Setup</h2>
+    <p>Nonlinear Transient Structural Analysis in ANSYS Mechanical — same boundary conditions as real vehicle with geometric and material nonlinearities included. Both methods independently confirmed failure at identical location and magnitude, validating the analytical approach.</p>
+    <table class="mt">
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Software</td><td>ANSYS Mechanical</td></tr>
+        <tr><td>Analysis Type</td><td class="vm">Nonlinear Transient Structural</td></tr>
+        <tr><td>Element Type</td><td class="vm">Mixed — Tetrahedron &amp; Hexahedral</td></tr>
+        <tr><td>Mesh — Global Size</td><td class="vm">5 mm</td></tr>
+        <tr><td>Material Model</td><td class="vm">Nonlinear elastic, isotropic</td></tr>
+        <tr><td>Applied Load</td><td><span class="vd">4g vertical — damper axis direction</span></td></tr>
+        <tr><td>Boundary Conditions</td><td class="vm">RRH members fixed as shown in SS</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Card: FEA Pre-Fix Results -->
+  <div class="card dc">
+    <div class="sl dl"><span class="n">08</span> FEA Results — Pre-Fix Failure</div>
+    <h2>ANSYS — Failure Confirmed at 831 MPa</h2>
+    <p>FEA peak: <strong>831 MPa</strong> — same location as analytical prediction. Exceeds S<sub>y</sub> = 763 MPa. Plastic deformation confirmed. See §08b for why FEA reads lower than the hand calc.</p>
+    <div class="rs">
+      <div class="rc rcd"><div class="rl">FEA Peak σ<sub>VM</sub></div><div class="rv">831</div><div class="ru">MPa — weld toe, pre-fix</div></div>
+      <div class="rc rcd"><div class="rl">S<sub>y</sub> exceeded by</div><div class="rv">+8.9%</div><div class="ru">Plastic deformation zone</div></div>
+      <div class="rc rcd"><div class="rl">FEA FOS</div><div class="rv">0.92</div><div class="ru">Failure confirmed</div></div>
+      <div class="rc"><div class="rl">1D ↔ 3D Correlation</div><div class="rv" style="color:var(--success)">✓</div><div class="ru">Same failure zone</div></div>
+    </div>
+    <div class="gal">
+      <div class="gtitle">FEA Contour Plots — Pre-Fix (6 Screenshots)</div>
+      <div class="gg g4" data-gallery="fea-prefix" data-sn="FEA Pre-Fix Results">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.setup.pngpre.Full.setup.png data-caption="Nonlinear Transient Structural Analysis setup — ANSYS. Boundary conditions, load application, contact nonlinearities, and mesh visible for the pre-fix chassis node under 4g load case."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.setup.pngpre.Full.setup.png alt="Nonlinear Transient Structural Analysis setup — Pre-Fix" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Nonlinear Transient Structural setup</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.vonmises.pngpre.Full.vonmises.png data-caption="Von Mises stress — full assembly. Peak stress concentration clearly visible at mid-span mount node."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.vonmises.pngpre.Full.vonmises.png alt="Von Mises stress — full assembly" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Von Mises full</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.deformation.pngpre.Full.deformation.png data-caption="Total deformation plot — maximum displacement at mid-span, consistent with bending mode failure."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.deformation.pngpre.Full.deformation.png alt="Total deformation plot" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Deformation</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.failurepron1.pngpre.failurepron1.png data-caption="Von Mises stress — close-up at failure zone. 831 MPa peak at weld toe of damper mount. Exceeds S_y = 763 MPa — plastic deformation confirmed."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.failurepron1.pngpre.failurepron1.png alt="Von Mises close-up — failure zone" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Von Mises close-up</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.failurepron2.pngpre.failurepron2.png data-caption="Von Mises stress — close-up at failure zone (second view). Stress concentration at weld toe of damper mount."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.failurepron2.pngpre.failurepron2.png alt="Von Mises close-up 2" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Von Mises close-up 2</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.fos.pngpre.Full.fos.png data-caption="Factor of Safety (FOS) map — pre-fix. Min FOS = 0.92 at critical zone. Plastic deformation certain under 4g load case."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.fos.pngpre.Full.fos.png alt="FOS map pre-fix" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">FOS map</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: Why Calculated Stress > FEA Stress -->
+  <div class="card ic">
+    <div class="sl il"><span class="n">08b</span> Analytical vs FEA — Stress Discrepancy</div>
+    <h2>Why Calculated Stress is Higher than FEA Result</h2>
+    <p>Hand calc uses conservative assumptions → gives upper bound. FEA models real 3D behaviour → lower but more accurate. Both flag the same failure zone.</p>
+
+    <table class="mt">
+      <thead><tr><th>#</th><th>Assumption (Hand Calculation)</th><th>Reality (FEA / Real Frame)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="mt-num"><span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.4);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;">1</span></td>
+          <td>Member was assumed to be an <strong>isolated individual beam</strong></td>
+          <td>Load is <strong>distributed to multiple tubes</strong> in the real frame — neighbouring members share the load</td>
+        </tr>
+        <tr>
+          <td class="mt-num"><span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.4);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;">2</span></td>
+          <td>Member was assumed as <strong>simply supported</strong> at both ends</td>
+          <td>Joints have <strong>some stiffness</strong> — not fully fixed, but not purely simply supported either</td>
+        </tr>
+        <tr>
+          <td class="mt-num"><span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.4);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;">3</span></td>
+          <td>Load applied at a <strong>single point</strong> → point load → <strong>higher stress</strong></td>
+          <td>Load is <strong>distributed through the bracket to an area of tube</strong> — not a true point load</td>
+        </tr>
+        <tr>
+          <td class="mt-num"><span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.4);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;">4</span></td>
+          <td>Assumed <strong>all 3 stresses acting at the same cross-section</strong> simultaneously</td>
+          <td>Bending is higher at the <strong>point of load application</strong>; axial is higher elsewhere; torsional stress similarly distributed — <strong>FEA combines stresses at nodes</strong> accurately</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cb note full">
+      <div class="ct">▶ Engineering Interpretation</div>
+      <div class="cx">Hand calc: conservative upper bound (FOS 0.67). FEA: realistic distribution (FOS 0.92). <strong>Both confirm failure.</strong> Discrepancy is expected — not a contradiction.</div>
+    </div>
+
+    <!-- Assumption vs Reality image -->
+    <div class="gal">
+      <div class="gtitle">Assumptions vs Reality — Handwritten Working</div>
+      <div class="gg g2" data-gallery="assump-vs-reality" data-sn="Assumptions vs Reality">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/assumptionsvsreality.jpgassumptionsvsreality.jpg data-caption="Assumptions vs Reality — handwritten page showing conservative assumptions used in 1D calculation vs actual FEA conditions."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/assumptionsvsreality.jpgassumptionsvsreality.jpg alt="Assumptions vs Reality" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Assumptions vs Reality</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SOLUTION ══ -->
+  <div class="nsm" id="sec-solution">Solution</div>
+
+  <!-- Card: Decision -->
+  <div class="card sc">
+    <div class="sl sl2"><span class="n">09</span> Engineering Decision</div>
+    <h2>Triangulated Load Path Redirection</h2>
+    <p>Root cause is geometric — fix must be geometric. Added triangulating member from mount node to adjacent frame node.</p>
+    <div class="cr">
+      <div class="cb reality"><div class="ct">✕ Rejected: Upsize Member</div><div class="cx">Reduces stress but bending remains. Adds weight. Doesn't fix load path.</div></div>
+      <div class="cb fix"><div class="ct">✓ Chosen: Triangulation</div><div class="cx">Load routes through node → pure axial in all members. M ≈ 0. Minimal weight penalty.</div></div>
+    </div>
+    <div class="cb info full"><div class="ct">◈ Why Triangulation Eliminates Bending</div><div class="cx">At a true truss node, load resolves into axial components only — no moment arm, no bending. Eccentricity <em>e</em> → 0; M = F·e → 0.</div></div>
+  </div>
+
+  <!-- Card: Implementation photos + post-fix FEA -->
+  <div class="card sc">
+    <div class="sl sl2"><span class="n">11</span> Implementation &amp; Verified Results</div>
+    <h2>Fabrication &amp; Post-Fix FEA</h2>
+    <div class="gal">
+      <div class="gtitle">Fix Implementation — Triangulation Member &amp; Weld</div>
+      <div class="gg g2" data-gallery="fix-photos" data-sn="Fix Implementation">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.finaldesign.pngpost.finaldesign.png data-caption="Final design — triangulation member geometry chosen to create true two-force truss node."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.finaldesign.pngpost.finaldesign.png alt="Final design" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Final design</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.finalassembly.jpegpost.finalassembly.jpeg data-caption="Final welded assembly — remediated chassis node. Triangulation member visible. Ready for 2025 competition."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.finalassembly.jpegpost.finalassembly.jpeg alt="Final welded assembly" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Final welded assembly</div></div></div>
+      </div>
+    </div>
+    <!-- ── MESH CONVERGENCE ── -->
+    <div class="sub-section">
+      <div class="sub-label" style="font-family:var(--cond);font-size:clamp(22px,5vw,36px);font-weight:800;color:#ffffff;letter-spacing:-.2px;text-transform:none;margin-bottom:16px">Mesh Convergence Study</div>
+      <p style="color:var(--sub);font-size:14px;margin-bottom:14px">20 mm → 5 mm refinement. Δσ<sub>VM</sub>: 35.5% → 15.9% — trending to convergence. RAM limit hit at 5 mm; 2 mm run projected &lt;5% change.</p>
+
+      <div class="cb note full" style="margin-bottom:14px">
+        <div class="ct">⚠ Hardware Limit Reached</div>
+        <div class="cx">RAM exhausted at <strong>5 mm</strong> — 2 mm not completed. Trend (35.5% → 15.9% → projected &lt;5%) confirms near-convergence. <strong>5 mm result used</strong> as best available approximation.</div>
+      </div>
+
+      <table class="mt" style="margin-bottom:14px">
+        <thead>
+          <tr><th>Global Mesh Size</th><th>Peak σ<sub>VM</sub></th><th>Deformation</th><th>Δσ<sub>VM</sub></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>20 mm</td><td class="vm">3.506 × 10<sup>8</sup> Pa</td><td class="vm">0.0015 mm</td><td class="vm">—</td></tr>
+          <tr><td>10 mm</td><td class="vm">4.75 × 10<sup>8</sup> Pa</td><td class="vm">0.00175 mm</td><td><span class="vw">35.5% change</span></td></tr>
+          <tr><td>5 mm</td><td class="vm">5.367 × 10<sup>8</sup> Pa</td><td class="vm">0.0018 mm</td><td><span class="vw">15.9% change</span></td></tr>
+          <tr><td>2 mm</td><td style="color:var(--muted);font-family:var(--mono);font-size:12px">— RAM limit reached</td><td style="color:var(--muted);font-family:var(--mono);font-size:12px">—</td><td style="color:var(--muted);font-family:var(--mono);font-size:12px">Projected &lt;5%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="gal">
+        <div class="gtitle">Mesh Convergence Graph — Max Von Mises Stress vs Mesh Size</div>
+        <div class="gg" style="grid-template-columns:1fr" data-gallery="fea-mesh-postfix" data-sn="Mesh Convergence">
+          <div class="gth" style="aspect-ratio:16/9;max-width:100%" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.MeshConvergence.pngpost.MeshConvergence.png data-caption="Mesh Convergence Study — Max Von Mises Stress (Pa) vs Mesh Size (mm). 20mm→10mm: 35.5% change. 10mm→5mm: 15.9% change. Hardware RAM limit reached at 2.5mm — solution trending towards &lt;5% convergence."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.MeshConvergence.pngpost.MeshConvergence.png alt="Mesh Convergence Graph" style="width:100%;height:100%;object-fit:contain;position:absolute;inset:0;background:var(--card2)"/><div class="gov"><div class="gi">🔍</div><div class="gc">Convergence graph</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal">
+      <div class="gtitle">Post-Fix FEA Verification (ANSYS)</div>
+      <div class="gg g4" data-gallery="fix-fea" data-sn="Post-Fix FEA">
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.mesh.pngpost.Final.mesh.png data-caption="Final mesh — post-fix triangulated chassis node. 5 mm global element size (best available; RAM limit at 2 mm). Mesh used for all post-fix FEA results."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.mesh.pngpost.Final.mesh.png alt="Final mesh — post-fix ANSYS" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Final mesh</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.setup.pngpost.Final.setup.png data-caption="Nonlinear Transient Structural Analysis setup — ANSYS. Boundary conditions, load application, contact nonlinearities, and mesh visible for the post-fix triangulated chassis node under 4g load case."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.setup.pngpost.Final.setup.png alt="Nonlinear Transient Structural Analysis setup" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Nonlinear Transient Structural setup</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.vonmises.pngpost.Final.vonmises.png data-caption="Von Mises stress — triangulated redesign. Peak stress 555 MPa. 33.2% reduction vs pre-fix FEA (831 MPa)."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.vonmises.pngpost.Final.vonmises.png alt="Post-fix stress" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Post-fix stress</div></div></div>
+        <div class="gth" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.final.fos.pngpost.final.fos.png data-caption="Safety factor map — redesigned node. Min FOS = 1.37. Structural integrity confirmed for 2025 Baja SAE season."><img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.final.fos.pngpost.final.fos.png alt="Post-fix FOS map" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/><div class="gov"><div class="gi">🔍</div><div class="gc">Post-fix FOS</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card: ③ BEFORE / AFTER COMPARISON -->
+  <div class="card">
+    <div class="sl sl2"><span class="n">12</span> Before &amp; After Comparison</div>
+    <h2>FEA — Original vs Triangulated Redesign</h2>
+    <p>Same BCs, same 4g load. FEA-to-FEA comparison. Click image to expand.</p>
+
+    <!-- ③ BA CONTAINER — desktop side-by-side / mobile stacked -->
+    <div class="bac">
+      <div class="bas">
+        <div class="babadge orig">✕ Original Design</div>
+        <div class="bath ot" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.vonmises.pngpre.Full.vonmises.png data-caption="Von Mises stress — original design. 831 MPa FEA peak at weld toe. FOS = 0.92. Plastic deformation confirmed." data-gallery-id="comparison" data-gallery-index="0">
+          <img src="https://arpitmalik711.github.io/Memberbend.casestudy/pre.Full.vonmises.pngpre.Full.vonmises.png alt="Original Von Mises stress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);display:block"/>
+          <div class="gov"><div class="gi">🔍</div><div class="gc">Original — Von Mises</div></div>
+        </div>
+        <div class="bast">
+          <div class="bv red">831</div>
+          <div><div class="bl">Peak σ<sub>VM</sub> — FEA (MPa)</div><div style="font-size:12px;color:var(--danger);font-family:var(--mono)">FOS = 0.92 — FAILURE</div></div>
+        </div>
+      </div>
+
+      <div class="bas">
+        <div class="babadge redes">✓ Triangulated Redesign</div>
+        <div class="bath rt" data-src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.vonmises.pngpost.Final.vonmises.png data-caption="Von Mises stress — triangulated redesign. 555 MPa peak. 51.1% stress reduction vs original. Min FOS = 1.37 confirmed. 2025 season cleared." data-gallery-id="comparison" data-gallery-index="1">
+          <img src="https://arpitmalik711.github.io/Memberbend.casestudy/post.Final.vonmises.pngpost.Final.vonmises.png alt="Redesign Von Mises stress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);display:block"/>
+          <div class="gov"><div class="gi">🔍</div><div class="gc">Redesign — Von Mises</div></div>
+        </div>
+        <div class="bast">
+          <div class="bv green">555</div>
+          <div><div class="bl">Peak σ<sub>VM</sub> (MPa)</div><div style="font-size:12px;color:var(--success);font-family:var(--mono)">Min FOS = 1.37 — Safe</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rs">
+      <div class="rc rcs"><div class="rl">Stress Reduction</div><div class="rv">33.2%</div><div class="ru">831 → 555 MPa (FEA)</div></div>
+      <div class="rc rcs"><div class="rl">Post-Fix FOS</div><div class="rv">1.37</div><div class="ru">Min — confirmed safe</div></div>
+      <div class="rc"><div class="rl">Bending Moment</div><div class="rv">≈ 0</div><div class="ru">At mount node</div></div>
+      <div class="rc rcs"><div class="rl">2025 Season</div><div class="rv">✓</div><div class="ru">Cleared</div></div>
+    </div>
+  </div>
+
+  <!-- Card: Closing the Loop -->
+  <div class="card sc">
+    <div class="sl sl2"><span class="n">★</span> Closing the Loop</div>
+    <h2>The Redemption — ATVC India 2025 &amp; 2026</h2>
+    <p>The same obstacle that caused the failure became the proving ground. After the triangulated redesign was validated and welded, Team Daedalus Racing returned to competition — and answered the failure with back-to-back results.</p>
+
+    <!-- ── Two competition blocks side by side on desktop ── -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px">
+
+      <!-- ATVC 2025 -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--success);display:flex;align-items:center;gap:6px">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--success);display:inline-block"></span>ATVC India 2025
+        </div>
+        <div id="vmod-trigger" style="border-radius:10px;overflow:hidden;border:2px solid rgba(34,197,94,.35);position:relative;background:var(--card2);cursor:pointer;transition:border-color .2s,transform .2s" onclick="openVmod(0)">
+          <video src="https://arpitmalik711.github.io/Memberbend.casestudy/vehicle_landing.mp4vehicle_landing.mp4 autoplay loop muted playsinline
+            style="width:100%;height:150px;object-fit:cover;display:block;pointer-events:none"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          </video>
+          <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:30px 12px;min-height:150px">
+            <div style="font-size:28px">🚗</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Add vehicle_landing.mp4</div>
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);opacity:0;transition:opacity .2s;border-radius:8px" class="vplay-ov">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(34,197,94,.25);border:2px solid rgba(34,197,94,.7);display:flex;align-items:center;justify-content:center;font-size:17px;backdrop-filter:blur(4px)">▶</div>
+          </div>
+          <div style="position:absolute;bottom:8px;left:8px;background:rgba(8,11,18,.82);backdrop-filter:blur(6px);border:1px solid rgba(34,197,94,.35);border-radius:5px;padding:4px 8px;font-family:var(--mono);font-size:8.5px;color:var(--success);text-transform:uppercase;letter-spacing:.07em">
+            ● S&amp;T Event
+          </div>
+        </div>
+        <div style="background:var(--card2);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+          <div style="font-family:var(--cond);font-size:38px;font-weight:800;color:var(--success);line-height:1;flex-shrink:0">AIR 1</div>
+          <div>
+            <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)">Suspension &amp; Traction</div>
+            <div style="font-size:12px;color:var(--text);margin-top:2px">Zero structural failures · Full event</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ATVC 2026 -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);display:flex;align-items:center;gap:6px">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--accent2);display:inline-block"></span>ATVC India 2026
+        </div>
+        <div id="vmod-trigger-2" style="border-radius:10px;overflow:hidden;border:2px solid rgba(56,189,248,.35);position:relative;background:var(--card2);cursor:pointer;transition:border-color .2s,transform .2s" onclick="openVmod(1)">
+          <video id="vid-2026" src="https://arpitmalik711.github.io/Memberbend.casestudy/vehicle_landing_2026.mp4vehicle_landing_2026.mp4 autoplay loop muted playsinline preload="auto"
+            style="width:100%;height:150px;object-fit:cover;display:block;pointer-events:none"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          </video>
+          <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:30px 12px;min-height:150px">
+            <div style="font-size:28px">🚗</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Add vehicle_landing_2026.mp4</div>
+          </div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);opacity:0;transition:opacity .2s;border-radius:8px" class="vplay-ov2">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(56,189,248,.2);border:2px solid rgba(56,189,248,.6);display:flex;align-items:center;justify-content:center;font-size:17px;backdrop-filter:blur(4px)">▶</div>
+          </div>
+          <div style="position:absolute;bottom:8px;left:8px;background:rgba(8,11,18,.82);backdrop-filter:blur(6px);border:1px solid rgba(56,189,248,.35);border-radius:5px;padding:4px 8px;font-family:var(--mono);font-size:8.5px;color:var(--accent2);text-transform:uppercase;letter-spacing:.07em">
+            ● Overall
+          </div>
+        </div>
+        <div style="background:var(--card2);border:1px solid rgba(56,189,248,.3);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:12px">
+          <div style="font-family:var(--cond);font-size:38px;font-weight:800;color:var(--accent2);line-height:1;flex-shrink:0">AIR 2</div>
+          <div>
+            <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)">Overall · ATVC India 2026</div>
+            <div style="font-size:12px;color:var(--text);margin-top:2px">Chassis held · Full competition</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cb fix full" style="margin-top:18px">
+      <div class="ct">◈ Loop Closed</div>
+      <div class="cx">The failure at Baja SAE 2025 — caused by the vehicle landing from a height obstacle — was analysed, root-caused, and structurally remediated. The redesigned chassis went on to secure <strong>AIR 1 in Suspension &amp; Traction at ATVC India 2025</strong>, and <strong>AIR 2 Overall at ATVC India 2026</strong>, clearing the same dynamic obstacle both times with zero structural failures.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <!-- Explore More Projects CTA -->
+  <div class="cta-wrap">
+    <a class="cta-btn" href="#" id="csBackCta">
+      <span class="cta-label">Explore More Projects</span>
+      <span class="cta-arrow">→</span>
+    </a>
+    <p class="cta-sub">Arpit Malik · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi</p>
+  </div>
+  <div class="footer-meta">
+    <strong>Structural Remediation of BAJA ATV Chassis Member — Case Study</strong><br/>
+    Baja SAE 2025 · Mechanical Design Engineering · Chassis &amp; Suspension Structures
+  </div>
+</footer>
+
+
+</div></template>
+<script>
+(function(){
+  var host=document.getElementById('chassisHost'),tpl=document.getElementById('chassisTpl'),done=false;
+  window.initChassisPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+
+// ─── LIGHTBOX ───────────────────────────────
+const lb=R.getElementById('lb'),lbImg=R.getElementById('lb-img'),
+      lbCap=R.getElementById('lb-cap'),lbSec=R.getElementById('lb-sec'),
+      lbDots=R.getElementById('lb-dots'),lbCnt=R.getElementById('lb-counter');
+const lbZoomBar=R.getElementById('lb-zoom-bar'),lbZoomPct=R.getElementById('lb-zoom-pct'),lbZoomReset=R.getElementById('lb-zoom-reset');
+let pool=[],idx=0;
+
+// ── Zoom / Pan state ──
+let scale=1,tx=0,ty=0,zoomTimer=null;
+const MIN_SCALE=1,MAX_SCALE=2;
+
+function clampTx(s,dtx){
+  const imgW=lbImg.naturalWidth||lbImg.offsetWidth,wrapW=lbImg.offsetWidth;
+  const overflow=Math.max(0,(wrapW*s-wrapW)/2);
+  return Math.min(overflow/s,Math.max(-overflow/s,dtx));
+}
+function clampTy(s,dty){
+  const imgH=lbImg.naturalHeight||lbImg.offsetHeight,wrapH=lbImg.offsetHeight;
+  const overflow=Math.max(0,(wrapH*s-wrapH)/2);
+  return Math.min(overflow/s,Math.max(-overflow/s,dty));
+}
+function applyZoom(newScale,originX,originY,instant){
+  const prev=scale;
+  scale=Math.min(MAX_SCALE,Math.max(MIN_SCALE,newScale));
+  if(originX!=null){
+    const rect=lbImg.getBoundingClientRect();
+    const ox=(originX-rect.left-rect.width/2)/prev;
+    const oy=(originY-rect.top-rect.height/2)/prev;
+    tx+=ox*(prev-scale);ty+=oy*(prev-scale);
+  }
+  tx=clampTx(scale,tx);ty=clampTy(scale,ty);
+  lbImg.style.transition=instant?'none':'transform .08s ease';
+  lbImg.style.transform=`scale(${scale}) translate(${tx}px,${ty}px)`;
+  lbImg.classList.toggle('zoomed',scale>1);
+  updateZoomBar();
+}
+function resetZoom(){applyZoom(1,null,null,false);tx=0;ty=0;applyZoom(1)}
+function updateZoomBar(){
+  lbZoomPct.textContent=Math.round(scale*100)+'%';
+  if(scale>1){lbZoomBar.classList.add('show');clearTimeout(zoomTimer);}
+  else{clearTimeout(zoomTimer);zoomTimer=setTimeout(()=>lbZoomBar.classList.remove('show'),1200);}
+}
+
+function openLB(imgs,i,sn){pool=imgs;idx=i;lbSec.textContent=sn||'';renderLB();lb.classList.add('open');document.body.style.overflow='hidden';resetZoom()}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow='';resetZoom()}
+function go(d){if(scale>1)return;idx=(idx+d+pool.length)%pool.length;renderLB();resetZoom()}
+function renderLB(){
+  const it=pool[idx];
+  if(it.src&&it.src!=='#'){lbImg.src=it.src;lbImg.alt=it.caption||'';lbImg.style.display='block'}
+  else{lbImg.src='';lbImg.style.display='none'}
+  lbCap.textContent=it.caption||'';
+  lbCnt.textContent=pool.length>1?`${idx+1} / ${pool.length}`:'';
+  lbDots.innerHTML='';
+  if(pool.length>1)pool.forEach((_,i)=>{const d=document.createElement('div');d.className='lbd'+(i===idx?' active':'');d.onclick=()=>{if(scale<=1){idx=i;renderLB();resetZoom()}};lbDots.appendChild(d)})
+}
+R.getElementById('lb-prev').onclick=()=>go(-1);
+R.getElementById('lb-next').onclick=()=>go(+1);
+R.getElementById('lb-close').onclick=closeLB;
+lbZoomReset.onclick=()=>{tx=0;ty=0;applyZoom(1,null,null,false)};
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='ArrowRight')go(+1);
+  if(e.key==='ArrowLeft')go(-1);
+  if(e.key==='Escape')closeLB();
+  if(e.key==='+'||e.key==='=')applyZoom(scale*1.3);
+  if(e.key==='-')applyZoom(scale/1.3);
+  if(e.key==='0'){tx=0;ty=0;applyZoom(1)}
+});
+
+// ── Mouse wheel zoom ──
+lbImg.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const delta=e.deltaY<0?1.15:1/1.15;
+  applyZoom(scale*delta,e.clientX,e.clientY,true);
+  lbZoomBar.classList.add('show');clearTimeout(zoomTimer);
+  zoomTimer=setTimeout(()=>{if(scale<=1)lbZoomBar.classList.remove('show')},1800);
+},{passive:false});
+
+// ── Double-click to zoom in/out ──
+lbImg.addEventListener('dblclick',e=>{
+  if(scale>1){tx=0;ty=0;applyZoom(1,null,null,false);}
+  else{applyZoom(2,e.clientX,e.clientY,false);}
+});
+
+// ── Mouse drag to pan ──
+let isDragging=false,dragX=0,dragY=0,startTx=0,startTy=0;
+lbImg.addEventListener('mousedown',e=>{
+  if(scale<=1)return;e.preventDefault();
+  isDragging=true;dragX=e.clientX;dragY=e.clientY;startTx=tx;startTy=ty;
+  lbImg.classList.add('grabbing');
+});
+window.addEventListener('mousemove',e=>{
+  if(!isDragging)return;
+  tx=clampTx(scale,startTx+(e.clientX-dragX)/scale);
+  ty=clampTy(scale,startTy+(e.clientY-dragY)/scale);
+  lbImg.style.transition='none';
+  lbImg.style.transform=`scale(${scale}) translate(${tx}px,${ty}px)`;
+});
+window.addEventListener('mouseup',()=>{isDragging=false;lbImg.classList.remove('grabbing')});
+
+// ── Touch: pinch-zoom + swipe ──
+let touches={},pinchDist=null,pinchMidX=0,pinchMidY=0,swipeStartX=0,swipeStartY=0,swipeMoved=false,touchStartTx=0,touchStartTy=0;
+function getTouchDist(a,b){return Math.hypot(b.clientX-a.clientX,b.clientY-a.clientY)}
+
+lbImg.addEventListener('touchstart',e=>{
+  if(e.touches.length===2){
+    pinchDist=getTouchDist(e.touches[0],e.touches[1]);
+    pinchMidX=(e.touches[0].clientX+e.touches[1].clientX)/2;
+    pinchMidY=(e.touches[0].clientY+e.touches[1].clientY)/2;
+    touchStartTx=tx;touchStartTy=ty;
+  } else if(e.touches.length===1){
+    swipeStartX=e.touches[0].clientX;swipeStartY=e.touches[0].clientY;
+    swipeMoved=false;touchStartTx=tx;touchStartTy=ty;
+  }
+},{passive:true});
+
+lbImg.addEventListener('touchmove',e=>{
+  if(e.touches.length===2){
+    e.preventDefault();
+    const d=getTouchDist(e.touches[0],e.touches[1]);
+    const ratio=d/pinchDist;
+    const mx=(e.touches[0].clientX+e.touches[1].clientX)/2;
+    const my=(e.touches[0].clientY+e.touches[1].clientY)/2;
+    applyZoom(scale*ratio,mx,my,true);
+    pinchDist=d;
+    lbZoomBar.classList.add('show');
+  } else if(e.touches.length===1&&scale>1){
+    e.preventDefault();swipeMoved=true;
+    tx=clampTx(scale,touchStartTx+(e.touches[0].clientX-swipeStartX)/scale);
+    ty=clampTy(scale,touchStartTy+(e.touches[0].clientY-swipeStartY)/scale);
+    lbImg.style.transition='none';
+    lbImg.style.transform=`scale(${scale}) translate(${tx}px,${ty}px)`;
+  }
+},{passive:false});
+
+lbImg.addEventListener('touchend',e=>{
+  if(e.changedTouches.length===1&&scale<=1&&!swipeMoved){
+    const dx=e.changedTouches[0].clientX-swipeStartX;
+    if(Math.abs(dx)>40)go(dx<0?+1:-1);
+  }
+  if(e.touches.length<2)pinchDist=null;
+  clearTimeout(zoomTimer);
+  zoomTimer=setTimeout(()=>{if(scale<=1)lbZoomBar.classList.remove('show')},1800);
+},{passive:true});
+
+// ─── CALC STRIP ─────────────────────────────
+(function(){
+  const strip = R.getElementById('calcStrip');
+  if(!strip) return;
+  const thumbs = Array.from(strip.querySelectorAll('.cs-thumb'));
+  const imgs = thumbs.map(t => ({src: t.dataset.src||'', caption: t.dataset.caption||''}));
+
+  thumbs.forEach((t,i) => {
+    t.tabIndex = 0;
+    t.setAttribute('role','button');
+    t.setAttribute('aria-label', 'Sheet ' + (i+1));
+    t.addEventListener('click', () => openLB(imgs, i, 'Handwritten Calculation Sheets'));
+    t.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' '){e.preventDefault(); openLB(imgs, i, 'Handwritten Calculation Sheets');}
+      if(e.key === 'ArrowRight'){e.preventDefault(); const n=thumbs[i+1]; if(n){n.focus(); n.scrollIntoView({behavior:'smooth',inline:'nearest',block:'nearest'});}}
+      if(e.key === 'ArrowLeft'){e.preventDefault(); const p=thumbs[i-1]; if(p){p.focus(); p.scrollIntoView({behavior:'smooth',inline:'nearest',block:'nearest'});}}
+    });
+  });
+
+  // Material Test Report — open in lightbox
+  const mtrLink = R.getElementById('mtrLink');
+  if(mtrLink){
+    mtrLink.addEventListener('click', e => {
+      e.preventDefault();
+      openLB([{src:'https://arpitmalik711.github.io/Memberbend.casestudy/4130%2025.4%20Materialreport.png', caption:'Material Test Report — AISI 4130 Steel (25.4 mm) · ASTM-Verified · S\u2091 = 763 MPa · S\u1d64\u1d4f\u1d57 = 855 MPa'}], 0, 'Material Test Report');
+    });
+  }
+
+  // hide scroll hint once user has scrolled the strip
+  strip.addEventListener('scroll', () => {
+    const hint = R.getElementById('csScrollHint');
+    if(hint && strip.scrollLeft > 20) hint.style.opacity = '0';
+    else if(hint) hint.style.opacity = '1';
+  }, {passive:true});
+})();
+
+// Wire regular galleries
+R.querySelectorAll('[data-gallery]').forEach(grid=>{
+  const sn=grid.dataset.sn||'';
+  const thumbs=Array.from(grid.querySelectorAll('.gth'));
+  const imgs=thumbs.map(t=>({src:t.dataset.src||'',caption:t.dataset.caption||''}));
+  thumbs.forEach((t,i)=>{t.tabIndex=0;t.role='button';t.onclick=()=>openLB(imgs,i,sn);t.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLB(imgs,i,sn)}}})
+});
+
+// Wire before/after thumbnails (shared pool)
+const baThumbs=Array.from(R.querySelectorAll('.bath[data-gallery-id]'));
+if(baThumbs.length){
+  const baImgs=baThumbs.map(t=>({src:t.dataset.src||'',caption:t.dataset.caption||''}));
+  baThumbs.forEach((t,i)=>{t.tabIndex=0;t.role='button';t.onclick=()=>openLB(baImgs,i,'Before & After Comparison');t.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLB(baImgs,i,'Before & After Comparison')}}})
+}
+
+// ─── STICKY NAV ACTIVE STATE ────────────────
+const navBtns=R.querySelectorAll('.nav-link');
+const markers=R.querySelectorAll('.nsm');
+navBtns.forEach(b=>b.addEventListener('click',()=>{const el=R.getElementById(b.dataset.target);if(el){const y=el.getBoundingClientRect().top+window.scrollY-124;window.scrollTo({top:y,behavior:'smooth'})}}));
+const mObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navBtns.forEach(b=>b.classList.toggle('active',b.dataset.target===id))}})},{rootMargin:'-10% 0px -80% 0px'});
+markers.forEach(m=>mObs.observe(m));
+
+// ─── SCROLL REVEAL CARDS ────────────────────
+const rObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');rObs.unobserve(e.target)}})},{threshold:0.06});
+R.querySelectorAll('.card').forEach((c,i)=>{c.style.transitionDelay=`${(i%3)*55}ms`;rObs.observe(c)});
+
+// ─── VIDEO MODAL ────────────────────────────
+const vmod=R.getElementById('vmod');
+const vmodVideo=R.getElementById('vmod-video');
+const vmodTrigger=R.getElementById('vmod-trigger');
+const vmodTrigger2=R.getElementById('vmod-trigger-2');
+const vplayOv=vmodTrigger?.querySelector('.vplay-ov');
+const vplayOv2=vmodTrigger2?.querySelector('.vplay-ov2');
+
+const vSrcs=['https://arpitmalik711.github.io/Memberbend.casestudy/vehicle_landing.mp4','https://arpitmalik711.github.io/Memberbend.casestudy/vehicle_landing_2026.mp4'];
+
+function openVmod(idx){
+  vmodVideo.src=vSrcs[idx||0];
+  vmod.style.display='flex';
+  document.body.style.overflow='hidden';
+  vmodVideo.currentTime=0;
+  vmodVideo.play();
+}
+function closeVmod(){
+  vmod.style.display='none';
+  document.body.style.overflow='';
+  vmodVideo.pause();
+  vmodVideo.src='';
+}
+
+R.getElementById('vmod-close').onclick=closeVmod;
+vmod.addEventListener('click',e=>{if(e.target===vmod)closeVmod()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vmod.style.display==='flex')closeVmod()});
+
+// hover — show play overlays
+[[vmodTrigger,vplayOv,0],[vmodTrigger2,vplayOv2,1]].forEach(([el,ov,idx])=>{
+  if(!el||!ov)return;
+  el.addEventListener('mouseenter',()=>ov.style.opacity='1');
+  el.addEventListener('mouseleave',()=>ov.style.opacity='0');
+  el.addEventListener('focus',()=>ov.style.opacity='1');
+  el.addEventListener('blur',()=>ov.style.opacity='0');
+  el.tabIndex=0;
+  el.setAttribute('role','button');
+  el.setAttribute('aria-label','Play video');
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openVmod(idx)}});
+});
+// ─── ENSURE 2026 VIDEO LOOPS ────────────────
+const vid2026=R.getElementById('vid-2026');
+if(vid2026){
+  vid2026.addEventListener('ended',()=>{vid2026.currentTime=0;vid2026.play()});
+  vid2026.addEventListener('canplay',()=>vid2026.play());
+}
+
+const bk=R.getElementById('csBackCta');if(bk)bk.addEventListener('click',e=>{e.preventDefault();document.dispatchEvent(new CustomEvent('chassis-back'))});
+
+  };
+})();
+</script>
+</div>
+<div id="armPane" role="tabpanel" aria-label="Front Upper A-Arm Failure — Investigation">
+<style>
+#armPane{display:none}
+#armPane.is-on{display:block}
+</style>
+<div id="armHost"></div>
+<template id="armTpl"><style>
+:host{display:block;
+  --bg:#0b0e14; --card:#131720; --card2:#181d28;
+  --border:#252d3d; --border2:#2e3a50;
+  --accent:#f97316; --accent2:#38bdf8;
+  --danger:#ef4444; --success:#22c55e; --warn:#eab308;
+  --text:#e2e8f4; --sub:#94a3b8; --muted:#64748b;
+  --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
+  --r:12px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.ar{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;font-size:15.5px;overflow-x:clip;padding-top:64px;position:relative}
+.ar::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(56,189,248,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.022) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
+img,video{max-width:100%;display:block}
+strong{font-weight:600;color:var(--text)}
+
+/* sticky section nav */
+#snav{position:sticky;top:64px;height:48px;background:rgba(11,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:50;display:flex;align-items:center;padding:0 20px 0 80px}
+.nav-links{display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);padding:6px 11px;border-radius:6px;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap;border:none;background:none}
+.nav-link:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-link.active{color:var(--accent);background:rgba(249,115,22,.1)}
+
+/* hero */
+.hero{padding:56px 20px 44px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::after{content:'A-ARM';position:absolute;right:-10px;top:0;font-family:var(--cond);font-size:clamp(90px,20vw,240px);font-weight:800;color:rgba(249,115,22,.04);letter-spacing:-4px;pointer-events:none;user-select:none;line-height:1}
+.hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid rgba(249,115,22,.3);padding:3px 10px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.chip::before{content:'▶';font-size:7px}
+.hero h1{font-family:var(--cond);font-size:clamp(30px,7vw,62px);font-weight:700;line-height:1.05;letter-spacing:-.5px;margin-bottom:14px}
+.hero h1 em{color:var(--danger);font-style:normal}
+.author-line{display:flex;flex-direction:column;gap:10px;margin:8px 0 18px}
+.author-name{font-family:var(--cond);font-size:22px;font-weight:700;color:var(--text);line-height:1}
+.author-table{border-collapse:collapse;font-family:var(--mono);font-size:11px}
+.author-table td{padding:4px 12px 4px 0;vertical-align:middle}
+.author-table td:first-child{color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:9.5px;padding-right:14px;border-right:1px solid var(--border2);white-space:nowrap}
+.author-table td:last-child{padding-left:14px;color:var(--text);font-size:11.5px}
+.author-table tr:not(:last-child) td{border-bottom:1px solid rgba(255,255,255,.04)}
+.at-role{color:var(--accent) !important}.at-inst{color:var(--sub) !important}.at-date{color:var(--accent2) !important}
+.hero-sub{font-size:15px;color:var(--sub);max-width:620px;margin-bottom:26px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px}
+.pill .pv{font-family:var(--cond);font-size:20px;font-weight:700;line-height:1}
+.pill .pv.d{color:var(--danger)}.pill .pv.w{color:var(--warn)}.pill .pv.g{color:var(--success)}.pill .pv.b{color:var(--accent2)}
+.pill .pl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.tool-badges{display:flex;flex-wrap:wrap;gap:8px}
+.tbadge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:20px;border:1px solid;line-height:1.3;white-space:nowrap}
+.tbadge.a{color:#38bdf8;border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.07)}
+.tbadge.b{color:#fb923c;border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.07)}
+.tbadge.c{color:#a78bfa;border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.07)}
+
+/* cards */
+.page{max-width:760px;margin:0 auto;padding:32px 16px 80px;display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
+.nsm{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);padding:8px 0 4px;display:flex;align-items:center;gap:10px;scroll-margin-top:130px}
+.nsm::after{content:'';flex:1;height:1px;background:var(--border)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.4),0 4px 20px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.03)}
+.card::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 2px 2px 0;background:var(--accent);opacity:.5}
+.card.dc::before{background:var(--danger)}.card.sc::before{background:var(--success)}.card.ic::before{background:var(--accent2)}
+.sl{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px}
+.sl .n{width:22px;height:22px;border-radius:50%;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.25);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.sl.dl{color:var(--danger)}.sl.dl .n{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25)}
+.sl.sl2{color:var(--success)}.sl.sl2 .n{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.25)}
+.sl.il{color:var(--accent2)}.sl.il .n{background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.25)}
+.card h2{font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;margin-bottom:14px;letter-spacing:-.2px}
+.card p{color:var(--sub);font-size:15px;margin-bottom:12px}.card p:last-child{margin-bottom:0}
+
+/* callouts */
+.cr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+@media(max-width:640px){.cr{grid-template-columns:1fr}}
+.cb{border-radius:8px;padding:13px 15px;border:1px solid;font-size:14px}
+.cb .ct{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+.cb .cx{color:var(--sub);line-height:1.6;font-size:13.5px}
+.cb.assumed{background:rgba(56,189,248,.06);border-color:rgba(56,189,248,.2)}.cb.assumed .ct{color:var(--accent2)}
+.cb.reality{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.2)}.cb.reality .ct{color:var(--danger)}
+.cb.fix{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.2)}.cb.fix .ct{color:var(--success)}
+.cb.note{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.2)}.cb.note .ct{color:var(--accent)}
+.cb.full{margin:14px 0 0}
+
+/* config table */
+.mt{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.mt thead tr{background:rgba(56,189,248,.08);border-bottom:1px solid var(--border2)}
+.mt thead th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);padding:9px 13px;text-align:left;font-weight:400}
+.mt tbody tr{border-bottom:1px solid var(--border)}.mt tbody tr:last-child{border-bottom:none}
+.mt td{padding:10px 13px;color:var(--text)}
+.mt td:first-child{font-family:var(--mono);font-size:12px;color:var(--sub);background:rgba(0,0,0,.15);width:26%}
+.mt .vd{color:var(--danger);font-weight:600}
+@media(max-width:600px){.mt{font-size:12px}.mt td,.mt thead th{padding:8px 9px}}
+
+/* timeline */
+.tl{padding-left:22px;margin:14px 0;position:relative}
+.tl::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent2),rgba(249,115,22,.4),var(--danger))}
+.tli{position:relative;margin-bottom:20px}.tli:last-child{margin-bottom:0}
+.tli::before{content:'';position:absolute;left:-19px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tli.d::before{border-color:var(--danger);background:rgba(239,68,68,.15)}.tli.ok::before{border-color:var(--success)}.tli.i::before{border-color:var(--accent2)}
+.tli h4{font-family:var(--cond);font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px}
+.tli p{font-size:13.5px;color:var(--sub);margin:0 !important}
+
+/* gallery */
+.card>.gg{margin:14px 0;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));max-width:480px}
+.tli .gg{margin-top:10px;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));max-width:480px}
+.gal{margin:18px 0 4px}
+.gtitle{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.gtitle::before{content:'◈';color:var(--accent2)}
+.gg{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr))}
+.gth{aspect-ratio:4/3;border-radius:8px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);background:var(--card2);transition:border-color .2s,transform .2s,box-shadow .2s;padding:0;display:block;width:100%}
+.gth:hover,.gth:focus-visible{border-color:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);outline:none}
+.gth img,.gth video{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.gth .fig{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:#fff;background:rgba(8,11,18,.78);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:2px 7px}
+.gth .vb{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
+.gth .vb::before{content:'';margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0b0e14}
+.gth.bad{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:900;background:rgba(5,7,12,.95);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 24px}
+.lb-stage{max-width:min(94vw,980px);max-height:74vh;display:flex;align-items:center;justify-content:center}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:74vh;border-radius:6px;box-shadow:0 32px 96px rgba(0,0,0,.8);object-fit:contain;background:#000}
+.lb-cap{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.06em;text-align:center}
+.lb-btn{position:fixed;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.16)}
+.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%;transform:translateY(-50%)}.lb-n{right:12px;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){.lb-p{left:4px}.lb-n{right:4px}.lb-btn{width:36px;height:36px}}
+
+/* footer */
+footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted);max-width:760px;margin:0 auto;position:relative;z-index:1}
+.cta-wrap{padding:44px 0 32px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;padding:16px 36px;background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;border-radius:10px;text-decoration:none;box-shadow:0 4px 24px rgba(249,115,22,.35);transition:transform .18s,box-shadow .18s,filter .18s}
+.cta-btn:hover,.cta-btn:focus-visible{transform:translateY(-3px);box-shadow:0 10px 36px rgba(249,115,22,.5);filter:brightness(1.08);outline:none}
+.cta-arrow{transition:transform .2s}.cta-btn:hover .cta-arrow{transform:translateX(4px)}
+.cta-sub{font-size:10px;letter-spacing:.06em}
+.footer-meta{border-top:1px solid var(--border);padding-top:20px;font-size:10px;line-height:1.8}
+.footer-meta strong{color:var(--text)}
+@media(max-width:480px){.cta-btn{padding:14px 26px;font-size:17px}}
+
+/* linkedin post card */
+.lip-h{max-width:760px;margin:0 auto;padding:8px 16px 0;position:relative;z-index:1;font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.2px;color:var(--text);text-align:center}
+.lip-wrap{max-width:760px;margin:0 auto;padding:0 16px 8px;position:relative;z-index:1;display:flex;justify-content:center}
+.li-post{--li-card:#1B1F23;--li-text:rgba(255,255,255,.9);--li-sec:rgba(255,255,255,.6);--li-line:#38434f;--li-blue:#70B5F9;width:100%;max-width:380px;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:400;line-height:normal;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18);outline:none}
+.li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
+.li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
+.li-who{min-width:0;flex:1}
+.li-name{font-size:14px;font-weight:600;line-height:1.25;color:var(--li-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-name i{font-style:normal;font-weight:400;font-size:11px;color:var(--li-sec)}
+.li-sub{font-size:11px;color:var(--li-sec);line-height:1.33;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-dots{color:var(--li-sec);font-size:16px;line-height:1;padding:2px 0 0 4px}
+.li-text{padding:6px 10px 8px;font-size:14px;line-height:20px;color:var(--li-text);min-height:48px}
+.li-clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.li-more{color:var(--li-sec)}
+.li-media{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#2b3238}
+.li-media img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.li-react{display:flex;align-items:center;gap:14px;padding:10px 10px 0;font-size:12.5px;color:var(--li-sec)}
+.li-react span{display:inline-flex;align-items:center;gap:6px}
+.li-react svg{width:18px;height:18px}
+.li-react b{font-weight:400}
+.li-impr{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;font-size:12.5px;color:var(--li-text)}
+.li-impr span{display:inline-flex;align-items:center;gap:8px}
+.li-impr b{font-weight:600;color:var(--li-blue)}
+.li-post:hover .li-name{text-decoration:underline}
+</style>
+<div class="ar">
+
+<nav id="snav"><div class="nav-links">
+  <button class="nav-link" data-target="sec-context">Context</button>
+  <button class="nav-link" data-target="sec-evidence">Evidence</button>
+  <button class="nav-link" data-target="sec-analysis">Analysis</button>
+  <button class="nav-link" data-target="sec-resolution">Resolution</button>
+</div></nav>
+
+<header class="hero"><div class="hero-inner">
+  <div class="chip">Structural Failure Analysis · Suspension Engineering</div>
+  <h1>Front Upper <em>A-Arm</em> Failure<br/>after a Shock Swap</h1>
+  <div class="author-line">
+    <span class="author-name">Arpit Malik</span>
+    <table class="author-table">
+      <tr><td>Role</td><td class="at-role">Chief Design Engineer · Team Daedalus Racing</td></tr>
+      <tr><td>Institution</td><td class="at-inst">NSUT, Delhi</td></tr>
+      <tr><td>Event</td><td class="at-date">mBAJA 2026 · Suspension &amp; Traction A-arm failure</td></tr>
+    </table>
+  </div>
+  <p class="hero-sub">Leaking rear shock forced a shock swap before <strong>mBAJA 2026</strong>. After a hard obstacle hit, the <strong style="color:var(--danger)">front upper A-arm bent</strong>. Cause: the new layout <strong style="color:var(--warn)">changed the load path</strong> and raised A-arm bending moment. Design updated.</p>
+  </div></header>
+
+<main class="page">
+
+
+  <div class="nsm" id="sec-context">Context</div>
+  <div class="card nc">
+    <div class="sl"><span class="n">02</span> Background</div>
+    <h2>Last-Minute Shock Reconfiguration</h2>
+    <table class="mt">
+      <thead><tr><th>Position</th><th>Original</th><th>Revised</th></tr></thead>
+      <tbody>
+        <tr><td>Front</td><td>21 in AFCO</td><td class="vd">16 in FOX (sourced)</td></tr>
+        <tr><td>Rear</td><td>AFCO (leaking)</td><td>21 in AFCO (from front)</td></tr>
+      </tbody>
+    </table>
+    <div class="cb note full"><div class="ct">▶ Why it matters</div><div class="cx">Shock length and mounting set <strong>where and at what angle load enters the arm</strong>.</div></div>
+  </div>
+
+  <div class="nsm" id="sec-evidence">Evidence</div>
+  <div class="card dc">
+    <div class="sl dl"><span class="n">03</span> Failure Event</div>
+    <h2>Leaking Shock to Bent A-Arm</h2>
+    <div class="tl">
+      <div class="tli i"><h4>Rear AFCO shock leaks</h4></div>
+      <div class="tli"><h4>Shocks swapped</h4><p>21 in AFCO to rear; 16 in FOX to front.</p><div class="gg" data-figs="2"></div></div>
+      <div class="tli d"><h4>Severe obstacle impact</h4><div class="gg" data-figs="1"></div></div>
+      <div class="tli d"><h4>Front upper A-arm bends</h4><div class="gg" data-figs="3"></div></div>
+    </div>
+  </div>
+
+  <div class="nsm" id="sec-analysis">Analysis</div>
+  <div class="card ic">
+    <div class="sl il"><span class="n">04</span> Method</div>
+    <h2>Reconstruct, Estimate, Simulate</h2>
+    <div class="tl">
+      <div class="tli i"><h4>1 · Impact reconstruction</h4><div class="gg" data-figs="4,5"></div></div>
+      <div class="tli i"><h4>2 · Energy-based load estimate</h4><div class="gg" data-figs="6,7"></div></div>
+      <div class="tli i"><h4>3 · Transient FEA of the A-arm</h4><div class="gg" data-figs="8,9"></div></div>
+    </div>
+  </div>
+
+  <div class="card dc">
+    <div class="sl dl"><span class="n">05</span> Root Cause</div>
+    <h2>Revised Load Path, Higher Bending</h2>
+    <p>The new shock layout <strong>increased the A-arm bending moment</strong> beyond what it was designed for.</p>
+    <div class="cb note full"><div class="ct">▶ Key Insight</div><div class="cx"><strong>A component change is a system change.</strong></div></div>
+  </div>
+
+  <div class="nsm" id="sec-resolution">Resolution</div>
+  <div class="card sc">
+    <div class="sl sl2"><span class="n">06</span> Solution</div>
+    <h2>A-Arm Design Updated</h2>
+    <p>Redesigned to be robust under the final shock load path.</p>
+    <div class="gg" data-figs="10"></div>
+    <p><strong>On-event fix:</strong> A-arm reinforced to increase its <strong>second moment of inertia</strong>, so we kept running the BAJA endurance with the <strong>same shock placement</strong>.</p>
+    <div class="cb fix full"><div class="ct">◈ Takeaway</div><div class="cx">Re-validate structure whenever the load path changes.</div></div>
+  </div>
+
+</main>
+
+<h2 class="lip-h">LinkedIn Post</h2>
+<div class="lip-wrap" style="padding-top:16px">
+<a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="li-post">
+      <div class="li-head">
+        <img class="li-av" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="Arpit Malik">
+        <div class="li-who"><div class="li-name">ARPIT MALIK <i>· You</i></div><div class="li-sub">Chief Design Engineer @TDR | Ex-Vehicle Design…</div></div>
+        <div class="li-dots">•••</div>
+      </div>
+      <div class="li-text"><div class="li-clamp">Suspension Failure Investigation — Load Path &amp; A-Arm Bending. A mid-competition shock swap altered the suspension load path — and cracked the front A-arm under impact. Post-event, I reconstructed the failure using energy-based impact estimation and transient FEA to trace root cause, not just patch the symptom.</div><span class="li-more">…more</span></div>
+      <div class="li-media"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png" alt="Suspension Failure Investigation — Load Path &amp; A-Arm Bending" loading="lazy"></div>
+      <div class="li-react"><span class="li-lk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#378FE9"/><path d="M8 11v6H6v-6zm1 0l3-5c1 0 1.5.8 1.2 1.8L13 10h3.2c.8 0 1.3.7 1.1 1.4l-1 4.3c-.2.8-.8 1.3-1.6 1.3H9z" fill="#fff"/></svg><b>1,033</b></span><span class="li-cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H9l-5 4z"/></svg><b>25</b></span><span class="li-sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12V9a3 3 0 013-3h12l-3-3M20 12v3a3 3 0 01-3 3H5l3 3"/></svg><b>4</b></span><span class="li-sd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3L3 10l7 3 3 7z"/></svg></span></div>
+      <div class="li-impr"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg>92K impressions</span><b>View post</b></div>
+    </a>
+</div>
+
+<footer>
+  <div class="cta-wrap">
+    <a class="cta-btn" href="#" id="armBackCta"><span>Explore More Projects</span><span class="cta-arrow">→</span></a>
+    <p class="cta-sub">Arpit Malik · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi</p>
+  </div>
+  <div class="footer-meta"><strong>Front Upper A-Arm Failure — Investigation</strong><br/>mBAJA 2026 · Suspension &amp; Traction · Structural Failure Analysis</div>
+</footer>
+
+</div></template>
+<script>
+(function(){
+  var host=document.getElementById('armHost'),tpl=document.getElementById('armTpl'),done=false;
+  window.initArmPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+
+    /* ── media (same assets as the BAJA page's Failure Investigation card) ── */
+    var B='https://res.cloudinary.com/fvtkc10l/';
+    function im(v,n){return {t:'i',u:B+'image/upload/v'+v+'/'+n+'.jpg'}}
+    var MEDIA=[
+      {t:'v',u:[B+'video/upload/v1795285534/1_ygnkuq.mp4']},
+      im('1795285407','2_ddrnxn'),im('1795285407','3_p9sq9s'),im('1795285407','4_qndmli'),
+      im('1795285408','5_phii4y'),im('1795285408','6_kitbdy'),im('1795285408','7_na5cnx'),
+      {t:'v',u:[B+'video/upload/v1790887893/IMG_8043_hfajth.mp4',B+'video/upload/v1790887893/IMG_8043_hfajth.mov']},
+      im('1795285408','8_t2ujyy'),im('1795285407','10_pxsix3')
+    ];
+    MEDIA.forEach(function(m,i){m.c='Fig. '+String(i+1).padStart(2,'0')+' — A-arm investigation'});
+
+    function mkVideo(m,controls){
+      var v=document.createElement('video');
+      v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='metadata';v.controls=!!controls;
+      v.setAttribute('muted','');v.setAttribute('playsinline','');
+      m.u.forEach(function(u){var s=document.createElement('source');s.src=u;v.appendChild(s)});
+      return v;
+    }
+    function mkThumb(i){
+       var m=MEDIA[i];
+       var b=document.createElement('button');b.type='button';b.className='gth';b.setAttribute('aria-label',m.c);
+       var el;
+       if(m.t==='v'){el=mkVideo(m,false)}
+       else{el=document.createElement('img');el.src=m.u;el.alt=m.c;el.loading='lazy';
+         el.onerror=function(){b.classList.add('bad');b.textContent='Image unavailable'}}
+       b.appendChild(el);
+       if(m.t==='v'){var vb=document.createElement('span');vb.className='vb';b.appendChild(vb)}
+       var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+String(i+1).padStart(2,'0');b.appendChild(f);
+       b.addEventListener('click',function(){openLb(i)});
+       return b;
+     }
+     [].slice.call(R.querySelectorAll('[data-figs]')).forEach(function(g){
+       g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(mkThumb(+n-1))});
+     });
+
+    /* ── lightbox ── */
+    var ov=null,cur=0;
+    function renderLb(){
+      var m=MEDIA[cur],stage=ov.querySelector('.lb-stage');stage.innerHTML='';
+      var el;
+      if(m.t==='v'){el=mkVideo(m,true)}else{el=document.createElement('img');el.src=m.u;el.alt=m.c}
+      stage.appendChild(el);
+      ov.querySelector('.lb-cap').textContent=m.c+'  ·  '+(cur+1)+' / '+MEDIA.length;
+    }
+    function go(n){cur=(n+MEDIA.length)%MEDIA.length;renderLb()}
+    function closeLb(){if(ov){ov.remove();ov=null}document.removeEventListener('keydown',onKey)}
+    function onKey(e){if(e.key==='Escape')closeLb();else if(e.key==='ArrowRight')go(cur+1);else if(e.key==='ArrowLeft')go(cur-1)}
+    function btn(txt,cls,fn,label){var b=document.createElement('button');b.type='button';b.className='lb-btn '+cls;b.textContent=txt;b.setAttribute('aria-label',label);b.onclick=function(e){e.stopPropagation();fn()};return b}
+    function openLb(i){
+      closeLb();cur=i;
+      ov=document.createElement('div');ov.className='lb';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+      var st=document.createElement('div');st.className='lb-stage';st.onclick=function(e){e.stopPropagation()};
+      var cp=document.createElement('div');cp.className='lb-cap';
+      ov.appendChild(st);ov.appendChild(cp);
+      ov.appendChild(btn('✕','lb-x',closeLb,'Close'));
+      ov.appendChild(btn('‹','lb-p',function(){go(cur-1)},'Previous'));
+      ov.appendChild(btn('›','lb-n',function(){go(cur+1)},'Next'));
+      ov.onclick=closeLb;
+      R.appendChild(ov);renderLb();
+      document.addEventListener('keydown',onKey);
+      var tx=null;
+      ov.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+      ov.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1))});
+    }
+
+    /* ── section nav ── */
+    var links=[].slice.call(R.querySelectorAll('.nav-link'));
+    links.forEach(function(l){l.addEventListener('click',function(){
+      var t=R.getElementById(l.getAttribute('data-target'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    })});
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('active',l.getAttribute('data-target')===e.target.id)});
+      })},{rootMargin:'-120px 0px -65% 0px'});
+      R.querySelectorAll('.nsm').forEach(function(s){io.observe(s)});
+    }
+
+    /* ── autoplay thumbnails only while visible ── */
+    if('IntersectionObserver' in window){
+      var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+        var p;if(e.isIntersecting){p=e.target.play();if(p&&p.catch)p.catch(function(){})}else e.target.pause();
+      })},{threshold:.25});
+      R.querySelectorAll('.gth video').forEach(function(v){vio.observe(v)});
+    }
+
+    var bk=R.getElementById('armBackCta');
+    if(bk)bk.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('arm-back'))});
   };
 })();
 </script>
@@ -5759,144 +8348,6 @@ t.addEventListener("scroll",upd,{passive:true});window.addEventListener("resize"
   <a href="#" class="back-top">BACK TO TOP ↑</a>
 </footer>
 
-<!-- ── INTRO ANIMATION ENGINE ── -->
-<script>
-(function(){
-  var overlay = document.getElementById('intro-overlay');
-  if(!overlay || overlay.classList.contains('intro-hidden')) return; // already played this session
-  if(window.matchMedia('(max-width: 768px)').matches) return;          // phones: no intro
-
-  var KEYWORDS_DESKTOP = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigations'];
-  var KEYWORDS_MOBILE  = ['EV Mobility','SAE Baja','Vehicle Development','Structural Analysis','Suspension & Steering','Engineering Investigation'];
-  var LANDSCAPE = ['vid1.mp4','vid2.mp4','vid3.mp4','vid4.mp4','vid5.mp4','vid6.mp4'];
-  var PORTRAIT  = ['vid1-mobile.mp4','vid2-mobile.mp4','vid3-mobile.mp4','vid4-mobile.mp4','vid5-mobile.mp4','vid6-mobile.mp4'];
-  var isMobile = window.matchMedia('(max-width: 768px)').matches;
-  var KEYWORDS = isMobile ? KEYWORDS_MOBILE : KEYWORDS_DESKTOP;
-  var PRIMARY  = isMobile ? PORTRAIT : LANDSCAPE;
-  var FALLBACK = isMobile ? LANDSCAPE : PORTRAIT;
-  var MONTAGE_MS = 6000;        // base montage window (6 evenly-split clips)
-  var LAST_CLIP_EXTRA_MS = 1000; // extra time added to the final clip only
-  var OUTRO_AT_MS = 800 + MONTAGE_MS + LAST_CLIP_EXTRA_MS; // 7.8s
-  var END_AT_MS   = OUTRO_AT_MS + 1200;                    // 9.0s
-  var timeouts = [];
-  var finished = false;
-
-  function setTO(fn, ms){ var id = setTimeout(fn, ms); timeouts.push(id); return id; }
-  function clearAllTimers(){ timeouts.forEach(clearTimeout); timeouts = []; }
-
-  // Probe each candidate filename — only files that actually exist get used.
-  function checkVideo(src){
-    return new Promise(function(resolve){
-      var v = document.createElement('video');
-      var settled = false;
-      function done(ok){ if(!settled){ settled = true; resolve(ok ? src : null); } }
-      v.muted = true; v.preload = 'auto';
-      v.addEventListener('loadedmetadata', function(){ done(true); }, { once:true });
-      v.addEventListener('error', function(){ done(false); }, { once:true });
-      v.src = src;
-      setTimeout(function(){ done(false); }, 2500); // don't hang the timeline on a slow/missing file
-    });
-  }
-
-  function detectSet(list){
-    return Promise.all(list.map(checkVideo)).then(function(results){
-      return results.filter(Boolean);
-    });
-  }
-
-  // Try the device's preferred orientation first; if none of those files exist,
-  // fall back to whichever set was actually provided rather than playing nothing.
-  var detectVideos = isMobile ? Promise.resolve([]) : detectSet(PRIMARY).then(function(found){
-    if(found.length) return found;
-    return detectSet(FALLBACK);
-  });
-
-  function showStage(id){
-    var stages = overlay.querySelectorAll('.intro-stage');
-    for(var i=0;i<stages.length;i++){ stages[i].classList.remove('is-visible'); }
-    var el = document.getElementById(id);
-    if(el) el.classList.add('is-visible');
-  }
-
-  function scheduleKeywords(){
-    var el = document.getElementById('keyword-display');
-    var n = KEYWORDS.length;
-    var base = MONTAGE_MS / n;
-    var fade = 300;
-    var start = 0;
-    KEYWORDS.forEach(function(kw, i){
-      var slot = (i === n - 1) ? base + LAST_CLIP_EXTRA_MS : base; // last keyword stays up as long as the last clip
-      (function(kw, slotStart, slotLen){
-        setTO(function(){ el.textContent = kw; el.classList.add('visible'); }, slotStart);
-        setTO(function(){ el.classList.remove('visible'); }, slotStart + slotLen - fade);
-      })(kw, start, slot);
-      start += slot;
-    });
-  }
-
-  function runMontage(videos){
-    if(!videos.length) return; // no clips found — premium dark background + keywords carry the montage
-    var layers = [document.getElementById('vidLayerA'), document.getElementById('vidLayerB')];
-    var n = videos.length;
-    var base = MONTAGE_MS / n;
-    var durations = [], starts = [0];
-    for(var k=0; k<n; k++){
-      durations.push(k === n - 1 ? base + LAST_CLIP_EXTRA_MS : base); // last clip plays 1s longer
-      if(k > 0) starts.push(starts[k-1] + durations[k-1]);
-    }
-
-    function showClip(i){
-      var layer = layers[i % 2], other = layers[(i + 1) % 2];
-      layer.classList.remove('kenburns');
-      void layer.offsetWidth; // force reflow so the zoom animation restarts cleanly on reused layers
-      layer.src = videos[i];
-      layer.style.animationDuration = durations[i] + 'ms';
-      var p = layer.play();
-      if(p && p.catch) p.catch(function(){});
-      layer.classList.add('active','kenburns');
-      other.classList.remove('active');
-    }
-
-    showClip(0);
-    for(var i=1; i<n; i++){
-      (function(idx){ setTO(function(){ showClip(idx); }, starts[idx]); })(i);
-    }
-  }
-
-  function finishIntro(){
-    if(finished) return;
-    finished = true;
-    clearAllTimers();
-    try{ sessionStorage.setItem('amIntroPlayed','1'); }catch(e){}
-    overlay.classList.add('intro-fading');
-    setTimeout(function(){
-      overlay.classList.add('intro-hidden');
-      document.documentElement.style.overflow = '';
-      document.body.style.overflow = '';
-      ['vidLayerA','vidLayerB'].forEach(function(id){
-        var v = document.getElementById(id);
-        if(v){ v.pause(); v.removeAttribute('src'); v.load(); }
-      });
-    }, 650);
-  }
-
-
-  var skipBtn = document.getElementById('skip-intro-btn');
-  if(skipBtn) skipBtn.addEventListener('click', finishIntro);
-
-  // ── Timeline ──
-  // 0.0–0.8s: name + subtitle (handled purely by CSS animation, already running)
-  setTO(function(){                      // 0.8s
-    showStage('stage-montage');
-    scheduleKeywords();
-    detectVideos.then(runMontage);
-  }, 800);
-
-  setTO(function(){ showStage('stage-outro'); }, OUTRO_AT_MS); // 7.8s
-  setTO(finishIntro, END_AT_MS);                                // 9.0s → fade into homepage
-})();
-</script>
-
 <!-- ── CERTIFICATE PREVIEW MODAL ── -->
 <div id="cert-modal">
   <div id="cert-backdrop"></div>
@@ -6190,7 +8641,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
-  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane');
+  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane'),avoreP=document.getElementById('avorePane'),chassisP=document.getElementById('chassisPane'),armP=document.getElementById('armPane'),armFrom='studies';
   var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
   function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
   try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
@@ -6201,17 +8652,20 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   pbBtn.addEventListener('click',function(){if(pbCur)document.dispatchEvent(new CustomEvent(pbCur+'-back'))});
   document.body.appendChild(pbBtn);
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es;
+    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',av=name==='avore',ch=name==='chassis',ar=name==='arm',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es&&!av&&!ch&&!ar;
     if(b&&window.initBajaPane)window.initBajaPane();
     if(d&&window.initDunePane)window.initDunePane();
     if(g&&window.initGridxPane)window.initGridxPane();
     if(es&&window.initEscooterPane)window.initEscooterPane();
+    if(av&&window.initAvorePane)window.initAvorePane();
+    if(ch&&window.initChassisPane)window.initChassisPane();
+    if(ar&&window.initArmPane)window.initArmPane();
     if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);
-    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':null;pbBtn.classList.toggle('on',!!pbCur);
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);avoreP.classList.toggle('is-on',av);chassisP.classList.toggle('is-on',ch);armP.classList.toggle('is-on',ar);
+    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':av?'avore':ch?'chassis':ar?'arm':null;pbBtn.classList.toggle('on',!!pbCur);
     [[tm,m],[tr,r],[tl,l],[tj,j],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
-    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
+    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':av?'#avore':ch?'#chassis':ar?'#arm':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
     if(!keepScroll&&!m)window.scrollTo(0,0);
     else if(!keepScroll){var ref=r?reelsP:l?liP:j?journeyP:s?studiesP:a?aboutP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
@@ -6235,8 +8689,8 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   place();
   if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
-    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"]');
-    if(pj){e.preventDefault();e.stopPropagation();show(pj.getAttribute('href').slice(1));return}
+    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"],a[href="#avore"],a[href="#chassis"],a[href="#arm"]');
+    if(pj){e.preventDefault();e.stopPropagation();if(pj.getAttribute('href')==='#arm')armFrom='studies';show(pj.getAttribute('href').slice(1));return}
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
     var t=document.getElementById(id);if(!t)return;
@@ -6246,6 +8700,13 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
+  ['avore','chassis'].forEach(function(n){document.addEventListener(n+'-back',function(){show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
+  /* A-arm investigation: reachable from the Investigations list and from the BAJA page; back returns to whichever opened it */
+  document.addEventListener('open-arm',function(){armFrom='baja';show('arm')});
+  document.addEventListener('arm-back',function(){
+    if(armFrom==='baja'){show('baja',true);setTimeout(function(){var h=document.getElementById('bajaHost'),t=h&&h.shadowRoot&&h.shadowRoot.getElementById('inv');if(t)t.scrollIntoView({behavior:'smooth',block:'center'})},60)}
+    else{show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)}
+  });
   ['baja','dune','gridx','escooter'].forEach(function(n){document.addEventListener(n+'-back',function(){show('main',true);setTimeout(function(){var t=document.getElementById('projects');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
   /* phones always open on Main (no restored tab, hash or scroll position); desktop still honours tab links */
   if(!dq.matches){
@@ -6263,6 +8724,9 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   else if(location.hash==='#dune')show('dune',true);
   else if(location.hash==='#gridx')show('gridx',true);
   else if(location.hash==='#escooter')show('escooter',true);
+  else if(location.hash==='#avore')show('avore',true);
+  else if(location.hash==='#chassis')show('chassis',true);
+  else if(location.hash==='#arm')show('arm',true);
   else if(location.hash==='#journey'&&window.matchMedia('(min-width:901px)').matches)show('journey',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
