@@ -1583,7 +1583,6 @@ footer{
 </section>
 
 <section id="casestudies" class="casestudy-section">
-  <h2 class="section-title">Full <span>Case Study</span></h2>
 
   <style>
   .casestudy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:var(--border)}
@@ -1611,22 +1610,45 @@ footer{
     .casestudy-progress-label{font-size:7px;letter-spacing:1px}
     .casestudy-milestones{display:none}
   }
+  /* grid option A: uniform 3 x 2 on desktop, 2 columns on tablet */
+  @media(min-width:601px){
+    .casestudy-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;background:none;max-width:1200px;margin:0 auto;align-items:stretch}
+    .casestudy-card{border-radius:10px}
+    .casestudy-card .proj-body{display:flex;flex-direction:column;flex:1}
+    .casestudy-card .proj-blurb{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .casestudy-card .proj-cta{margin-top:auto}
+    #casestudies .proj-name{font-size:clamp(17px,1.6vw,20px);line-height:1.25}
+  }
+  @media(min-width:1000px){
+    .casestudy-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
   </style>
 
   <div class="casestudy-grid">
 
-    <a href="#chassis" class="casestudy-card">
+        <a href="#driveline" class="casestudy-card">
       <div class="casestudy-img-wrap">
-        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792659013/mount_failure_linkedin_cover_ay2kuh.png" alt="Chassis Member Failure at Damper Mount">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792658465/driveline_correction_post_linkedin_cover_fcgqtp.png" alt="Front driveline and steering correction before final welding">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 01 <span>/ 05</span></div>
-        <div class="proj-name">Chassis Member Failure at <span class="gold">Damper Mount</span></div>
+        <div class="proj-num">— 01 <span>/ 06</span></div>
+        <div class="proj-name">Front <span class="gold">Driveline</span> and Steering Correction Before Final Welding</div>
+        <p class="proj-blurb">Excessive front CV axle articulation at full lock, found a day before welding. Rack moved ~2 in forward and upward using LOTUS Shark, preserving toe and bump steer. 48 endurance laps, AIR 2 overall at ATVC.</p>
+         <span class="proj-cta">Open Full Investigation →</span>
+      </div>
+    </a>
+
+<a href="#chassis" class="casestudy-card">
+      <div class="casestudy-img-wrap">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792659013/mount_failure_linkedin_cover_ay2kuh.png" alt="Chassis shock absorber mount failure due to high-G landing">
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">— 02 <span>/ 06</span></div>
+        <div class="proj-name">Chassis <span class="gold">Shock Absorber Mount</span> Failure due to High-G Landing</div>
         <p class="proj-blurb">High-G landing at Baja SAE 2025 exposed a critical load-path error at the damper mount. Combined bending + axial + twisting stresses confirmed failure analytically (σ<sub>VM</sub> = 1136 MPa, FOS 0.67) and via FEA (831 MPa, FOS 0.92). Resolved through triangulated load-path redesign — post-fix FEA: 555 MPa, FOS 1.37.</p>
          <span class="proj-cta">Open Full Case Study →</span>
       </div>
     </a>
-
 
     <!-- CASE STUDY 02 — Front Upper A-Arm Failure -->
     <a href="#arm" class="casestudy-card">
@@ -1634,10 +1656,26 @@ footer{
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png" alt="Front upper A-arm failure after a shock swap">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 02 <span>/ 05</span></div>
+        <div class="proj-num">— 03 <span>/ 06</span></div>
         <div class="proj-name">Front Upper <span class="gold">A-Arm</span> Failure after a Shock Swap</div>
         <p class="proj-blurb">Shock swap before mBAJA 2026 changed the load path and bent the front upper A-arm. Found via impact reconstruction, energy-based loads and transient FEA; design updated.</p>
          <span class="proj-cta">Open Full Investigation →</span>
+      </div>
+    </a>
+
+    <!-- CASE STUDY 04 — Avore EX Series Reverse Engineering & Spring Selection -->
+    <a href="#avore" class="casestudy-card">
+      <div class="casestudy-img-wrap" style="position:relative;">
+        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792662128/Avore_RE_study_cover_aadwiy.png" alt="Avore EX Series Reverse Engineering and Spring Selection">
+        <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">— 04 <span>/ 06</span></div>
+
+        <div class="proj-name">Avore EX Series <span class="gold">Reverse Engineering</span> & Spring Selection</div>
+        <p class="proj-blurb">No factory data existed for the Avore EX series — only a confirmed 17" rim diameter. Reconstructing the full chassis and vehicle geometry from scaled teaser imagery alone, then feeding that geometry into a multibody model in Altair MotionView to drive spring rate selection.</p>
+
+         <span class="proj-cta">Case Study In Progress 🔧</span>
       </div>
     </a>
 
@@ -1648,7 +1686,7 @@ footer{
         <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 03 <span>/ 05</span></div>
+        <div class="proj-num">— 05 <span>/ 06</span></div>
 
         <div class="proj-name">Mahindra 265 <span class="gold">Steering Geometry</span> Investigation</div>
         <p class="proj-blurb">Why does a 2013 production tractor run positive camber? A childhood observation turned into a full reverse-engineering investigation — KPI measurement, SolidWorks reconstruction, Ackermann verification, and scrub radius analysis to decode the engineering intent behind +3° camber on the front axle.</p>
@@ -1663,7 +1701,7 @@ footer{
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792661431/ballast_study_cover_kioort.png" alt="Front ballast study: how a tyre contact patch change alters load distribution" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:filter .4s ease;" onmouseenter="this.style.filter='brightness(1)'" onmouseleave="this.style.filter='brightness(.88)'">
       </div>
       <div class="proj-body">
-        <div class="proj-num">— 04 <span>/ 05</span></div>
+        <div class="proj-num">— 06 <span>/ 06</span></div>
         <div class="proj-name">How can a simple change in the tyre <span class="gold">contact patch</span> dramatically alter a vehicle's <span class="gold">load distribution</span>?</div>
         <p class="proj-blurb">On field exit, split-surface geometry and implement overturning moment combine to unload the front axle — lifting the front wheels and removing steering control at the critical moment. This study quantifies the load loss and verifies a front ballast remedy.</p>
 
@@ -1671,21 +1709,6 @@ footer{
       </div>
     </a>
 
-    <!-- CASE STUDY 04 — Avore EX Series Reverse Engineering & Spring Selection -->
-    <a href="#avore" class="casestudy-card">
-      <div class="casestudy-img-wrap" style="position:relative;">
-        <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792662128/Avore_RE_study_cover_aadwiy.png" alt="Avore EX Series Reverse Engineering and Spring Selection">
-        <div class="cs-progress-bar"><span class="cs-progress-dot"></span>IN PROGRESS</div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-num">— 05 <span>/ 05</span></div>
-
-        <div class="proj-name">Avore EX Series <span class="gold">Reverse Engineering</span> & Spring Selection</div>
-        <p class="proj-blurb">No factory data existed for the Avore EX series — only a confirmed 17" rim diameter. Reconstructing the full chassis and vehicle geometry from scaled teaser imagery alone, then feeding that geometry into a quarter-car model in MSC Adams to drive spring rate selection.</p>
-
-         <span class="proj-cta">Case Study In Progress 🔧</span>
-      </div>
-    </a>
 
   </div>
 </section>
@@ -4874,7 +4897,7 @@ img{width:100%;height:100%;object-fit:contain;display:block}
 })();
 </script>
 </div>
-<div id="chassisPane" role="tabpanel" aria-label="Chassis Member Failure at Damper Mount — Case Study">
+<div id="chassisPane" role="tabpanel" aria-label="Chassis Shock Absorber Mount Failure due to High-G Landing — Case Study">
 <style>
 #chassisPane{display:none}
 #chassisPane.is-on{display:block}
@@ -5347,7 +5370,7 @@ footer strong{color:var(--text)}
 <header class="hero">
   <div class="hero-inner">
     <div class="chip">Structural Failure Analysis · Chassis Engineering</div>
-    <h1>Chassis Member Failure<br/>at <em>Damper Mount</em></h1>
+    <h1>Chassis <em>Shock Absorber Mount</em><br/>Failure due to High-G Landing</h1>
     <div class="author-line">
       <span class="author-name">Arpit Malik</span>
       <table class="author-table">
@@ -6157,6 +6180,193 @@ const bk=R.getElementById('csBackCta');if(bk)bk.addEventListener('click',e=>{e.p
 })();
 </script>
 </div>
+<div id="drivelinePane" role="tabpanel" aria-label="Front Driveline and Steering Correction — Investigation">
+<style>
+#drivelinePane{display:none}
+#drivelinePane.is-on{display:block}
+</style>
+<div id="dlHost"></div>
+<template id="dlTpl"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:host{display:block;--bg:#0A0C10;--surface:#111318;--border:#1E2229;--text:#F2F4F8;--sub:#9AA3B2;--muted:#6B7482;--accent:#f97316;--ok:#34d399;--warn:#E0A020;--danger:#ef4444;
+--cond:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Barlow",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+box-sizing:border-box;}
+.dl{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;min-height:100vh}
+.hero{max-width:760px;margin:0 auto;padding:56px 20px 28px;text-align:center}
+.chip{display:inline-block;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(249,115,22,.35);padding:5px 12px;border-radius:99px}
+h1{font:700 clamp(32px,8vw,56px)/1.05 var(--cond);margin:18px 0 12px;letter-spacing:-.3px}
+h1 em{font-style:normal;color:var(--accent)}
+.meta{font:400 11px var(--mono);color:var(--muted);line-height:1.9}
+.meta b{color:var(--sub);font-weight:500}
+.sub{color:var(--sub);margin-top:16px}
+.sub strong{color:var(--text)}
+main{max-width:760px;margin:0 auto;padding:0 16px 24px}
+.card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 20px;margin-top:16px}
+.card.d{border-left-color:var(--danger)}.card.i{border-left-color:var(--warn)}.card.s{border-left-color:var(--ok)}
+.sl{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sl span{color:var(--accent);margin-right:6px}
+h2{font:700 26px/1.15 var(--cond);margin:6px 0 10px}
+p{color:var(--sub);font-size:15px}p strong{color:var(--text)}
+.tl{border-left:2px solid var(--border);padding-left:22px;margin-left:6px}
+.tli{position:relative;padding:6px 0 26px}.tli .sl{margin-bottom:2px}.tli p{margin-top:4px}
+.tli::before{content:"";position:absolute;left:-29px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tli.d::before{background:var(--danger)}.tli.i::before{background:var(--warn)}.tli.s::before{background:var(--ok)}
+h4{font:600 17px var(--cond);letter-spacing:.02em}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px}
+.gth{position:relative;aspect-ratio:16/10;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#161a21;display:flex;align-items:center;justify-content:center;font:11px var(--mono);color:var(--muted);text-align:center}
+.gth img,.gth video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fig{position:absolute;left:6px;bottom:6px;font:500 9.5px var(--mono);background:rgba(0,0,0,.65);color:#fff;padding:2px 6px;border-radius:4px;letter-spacing:.06em}
+.hero-img{margin-top:22px;aspect-ratio:16/9}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+th{font:500 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td{color:var(--sub)}td.v{color:var(--ok)}
+.cb{margin-top:14px;border-radius:8px;padding:12px 14px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25)}
+.cb.ok{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.ct{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.cb.ok .ct{color:var(--ok)}.cx{color:var(--text);font-size:15px}
+.dl footer{max-width:760px;margin:24px auto 0;padding:20px 20px 36px;border-top:1px solid var(--border);text-align:center;font:10.5px/1.8 var(--mono);color:var(--muted)}
+footer strong{color:var(--text)}
+
+.cta-wrap{padding:8px 0 24px;display:flex;justify-content:center}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;padding:16px 36px;background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;border-radius:10px;text-decoration:none;box-shadow:0 4px 24px rgba(249,115,22,.35);transition:transform .18s,filter .18s}
+.cta-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+
+/* type scale matched to the BAJA page */
+:root,:host{--cond:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--body:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--mono:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--text:#FFFFFF;--sub:#8A8F9A;--muted:#8A8F9A;--border:#2A2F3A}
+.dl,body{line-height:1.5}
+.chip{font:500 12px/1.2 var(--body);letter-spacing:.18em}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;line-height:1.1;margin:28px 0 10px}
+.meta{font:400 12px/1.8 var(--body);letter-spacing:.03em}
+.sub{font-size:clamp(16px,2.2vw,18px);line-height:1.65;max-width:62ch;margin:16px auto 0}
+.sl{font:500 12px/1.2 var(--body);letter-spacing:.18em;margin-bottom:6px}
+h4{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+p{font-size:14px;line-height:1.5;max-width:60ch}
+.fig{font:500 12px/1.2 var(--body);letter-spacing:.06em}
+.gth{font-size:12px}
+footer,.dl footer{font:400 12px/1.8 var(--body)}
+.cta-btn{font-size:16px;font-weight:500}
+/* linkedin post card */
+.lip-h{max-width:760px;margin:0 auto;padding:8px 16px 0;position:relative;z-index:1;font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.2px;color:var(--text);text-align:center}
+.lip-wrap{max-width:760px;margin:0 auto;padding:0 16px 8px;position:relative;z-index:1;display:flex;justify-content:center}
+.li-post{--li-card:#1B1F23;--li-text:rgba(255,255,255,.9);--li-sec:rgba(255,255,255,.6);--li-line:#38434f;--li-blue:#70B5F9;width:100%;max-width:380px;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:400;line-height:normal;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18);outline:none}
+.li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
+.li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
+.li-who{min-width:0;flex:1}
+.li-name{font-size:14px;font-weight:600;line-height:1.25;color:var(--li-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-name i{font-style:normal;font-weight:400;font-size:11px;color:var(--li-sec)}
+.li-sub{font-size:11px;color:var(--li-sec);line-height:1.33;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-dots{color:var(--li-sec);font-size:16px;line-height:1;padding:2px 0 0 4px}
+.li-text{padding:6px 10px 8px;font-size:14px;line-height:20px;color:var(--li-text);min-height:48px}
+.li-clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.li-more{color:var(--li-sec)}
+.li-media{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#2b3238}
+.li-media img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.li-react{display:flex;align-items:center;gap:14px;padding:10px 10px 0;font-size:12.5px;color:var(--li-sec)}
+.li-react span{display:inline-flex;align-items:center;gap:6px}
+.li-react svg{width:18px;height:18px}
+.li-react b{font-weight:400}
+.li-impr{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;font-size:12.5px;color:var(--li-text)}
+.li-impr span{display:inline-flex;align-items:center;gap:8px}
+.li-impr b{font-weight:600;color:var(--li-blue)}
+.li-post:hover .li-name{text-decoration:underline}
+
+.lip-h{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;font-family:var(--cond)}
+.liwrap{margin-top:8px}.liwrap .li-post{max-width:260px}.liwrap .li-text{font-size:12px;line-height:17px;min-height:0}.liwrap .li-name{font-size:12px}.liwrap .li-sub{font-size:10px}.liwrap .li-react,.liwrap .li-impr{font-size:11px}
+</style>
+<div class="dl">
+<header class="hero">
+    <h1>Front <em>Driveline</em> and Steering<br>Correction Before Final Welding</h1>
+  <div class="meta"><b>Arpit Malik</b> · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi<br>BAJA SAE · ATVC</div>
+  <p class="sub">Assembly validation showed <strong>excessive front CV axle articulation</strong> at full lock. The steering rack was moved <strong>~2 in forward and upward</strong> before welding. Result: <strong>48 endurance laps, AIR 2 overall</strong>.</p>
+  <div class="gth hero-img" data-fig="1"></div>
+</header>
+<main>
+  <div class="tl">
+    <div class="tli d"><div class="sl"><span>01</span> Problem</div><h4>One day before final chassis welding</h4>
+      <p>Assembly validation showed <strong>excessive front CV axle articulation</strong> at full steering lock. Cause: rearward differential position.</p>
+      <div class="gg" data-figs="2,8"></div></div>
+    <div class="tli i"><div class="sl"><span>02</span> Objective</div><h4>Reduce axle angularity</h4>
+      <p>Without compromising steering kinematics: preserve <strong>toe behaviour</strong>, minimise <strong>bump steer</strong> across 11 in of wheel travel.</p>
+      <div class="gg"><div class="gth" id="vid"></div></div></div>
+    <div class="tli"><div class="sl"><span>03</span> Analysis</div><h4>Kinematic study in LOTUS Shark</h4>
+      <p>Rack repositioned <strong>~2 in forward and upward</strong>.</p>
+      <div class="gg" data-figs="3,4"></div></div>
+    <div class="tli"><div class="sl"><span>04</span> Final Assembly</div><h4>Final assembly: axle angles from top view</h4>
+      <div class="gg" data-figs="5"></div>
+      <div class="gg"><div class="gth" id="vid3"></div></div></div>
+    <div class="tli s"><div class="sl"><span>05</span> Validation</div><h4>Revised geometry validated</h4>
+      <p>Trade-off: <strong>increased steering effort</strong>.</p>
+      <div class="gg" data-figs="6,7"></div>
+      </div>
+    <div class="tli s"><div class="sl"><span>06</span> Outcome</div><h4>48 endurance laps · AIR 2 overall at ATVC</h4>
+      <div class="gg"><div class="gth" id="vid2"></div></div>
+      <p><strong>Takeaway:</strong> validate full-lock articulation at assembly, not after welding.</p></div>
+      <div class="tli"><div class="sl"><span>07</span> LinkedIn post</div><h4>Shared publicly</h4>
+      <div class="liwrap">
+<a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-baja-bajasae-ugcPost-7461823122908921856-0SkZ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="li-post">
+      <div class="li-head">
+        <img class="li-av" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="Arpit Malik">
+        <div class="li-who"><div class="li-name">ARPIT MALIK <i>· You</i></div><div class="li-sub">Chief Design Engineer @TDR | Ex-Vehicle Design…</div></div>
+        <div class="li-dots">•••</div>
+      </div>
+      <div class="li-text"><div class="li-clamp">Driveline Geometry Correction — Steering Rack Repositioning Under Deadline. One day before roll cage welding, I found the front CV axles were nearing their articulation limits at full lock. An overnight kinematic rework in Lotus Shark — shifting the rack forward and up — fixed the geometry without delaying fabrication, and held up for 48 laps at ATVC.</div><span class="li-more">…more</span></div>
+      <div class="li-media"><img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792658465/driveline_correction_post_linkedin_cover_fcgqtp.png" alt="Driveline Geometry Correction — Steering Rack Repositioning Under Deadline" loading="lazy"></div>
+      <div class="li-react"><span class="li-lk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#378FE9"/><path d="M8 11v6H6v-6zm1 0l3-5c1 0 1.5.8 1.2 1.8L13 10h3.2c.8 0 1.3.7 1.1 1.4l-1 4.3c-.2.8-.8 1.3-1.6 1.3H9z" fill="#fff"/></svg><b>340</b></span><span class="li-cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H9l-5 4z"/></svg><b>9</b></span><span class="li-sd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3L3 10l7 3 3 7z"/></svg></span></div>
+      <div class="li-impr"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg>25K impressions</span><b>View post</b></div>
+    </a>
+      </div></div>
+  </div>
+</main>
+
+<div class="cta-wrap"><a class="cta-btn" href="#" id="dlBackCta"><span>Explore More Projects</span><span>→</span></a></div>
+</div></template>
+<script>
+(function(){
+  var host=document.getElementById('dlHost'),tpl=document.getElementById('dlTpl'),done=false;
+  window.initDrivelinePane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+
+(function(){
+  var B='https://res.cloudinary.com/fvtkc10l/';
+  var IMG=[
+    'image/upload/v1792658465/driveline_correction_post_linkedin_cover_fcgqtp.png',
+    'image/upload/v1795286638/11_b4zqhl.jpg','image/upload/v1795286639/22_ujmpzt.jpg',
+    'image/upload/v1795286641/33_xwcxhu.jpg','image/upload/v1795286642/44_gnfsu8.jpg',
+    'image/upload/v1795286643/55_pcgz5z.jpg','image/upload/v1795286644/66_lrzmqf.jpg','image/upload/v1795684025/15b2c0f9-8629-4871-b4b6-127b71e0a1e6_yw9akb.jpg'
+  ];
+  function thumb(i){
+    var b=document.createElement('div');b.className='gth';fill(b,i);return b;
+  }
+  function fill(b,i){
+    var im=document.createElement('img');im.src=B+IMG[i];im.alt='Driveline correction, Fig. '+(i+1);im.loading='lazy';
+    im.onerror=function(){im.remove();b.firstChild&&b.removeChild(b.firstChild);b.insertBefore(document.createTextNode('Image unavailable'),b.firstChild)};
+    b.appendChild(im);
+    var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+String(i+1).padStart(2,'0');b.appendChild(f);
+  }
+  var h=R.querySelector('[data-fig]');if(h)fill(h,0);
+  [].forEach.call(R.querySelectorAll('[data-figs]'),function(g){
+    g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(thumb(+n-1))});
+  });
+  var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.controls=true;v.preload='metadata';
+  var s=document.createElement('source');s.src=B+'video/upload/v1791031735/IMG_8105_abuexv.mp4';v.appendChild(s);
+  R.getElementById('vid').appendChild(v);
+  var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.playsInline=true;v2.controls=true;v2.preload='metadata';
+  var s2=document.createElement('source');s2.src=B+'video/upload/v1795684023/WhatsApp_Video_2026-11-26_at_2.35.53_PM_md6otr.mp4';v2.appendChild(s2);
+  R.getElementById('vid2').appendChild(v2);
+  var v3=document.createElement('video');v3.loop=true;v3.muted=true;v3.playsInline=true;v3.controls=true;v3.preload='metadata';
+  var s3=document.createElement('source');s3.src=B+'video/upload/v1795684633/WhatsApp_Video_2026-11-26_at_2.46.40_PM_ybfxmf.mp4';v3.appendChild(s3);
+  R.getElementById('vid3').appendChild(v3);
+})();
+
+    var bk=R.getElementById('dlBackCta');
+    if(bk)bk.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('driveline-back'))});
+  };
+})();
+</script>
+</div>
 <div id="armPane" role="tabpanel" aria-label="Front Upper A-Arm Failure — Investigation">
 <style>
 #armPane{display:none}
@@ -6322,6 +6532,38 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
 .li-impr span{display:inline-flex;align-items:center;gap:8px}
 .li-impr b{font-weight:600;color:var(--li-blue)}
 .li-post:hover .li-name{text-decoration:underline}
+
+/* type scale matched to the BAJA page */
+:host{--sans:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--cond:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--mono:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--text:#FFFFFF;--sub:#8A8F9A;--muted:#8A8F9A}
+.ar{font-weight:400;font-size:14px;line-height:1.5}
+.nav-link{font-size:12px;letter-spacing:.14em}
+.chip{font-size:12px;letter-spacing:.18em}
+.hero h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+.author-name{font-size:clamp(17px,2.2vw,20px);font-weight:500;line-height:1.3}
+.author-table{font-size:12px}
+.author-table td:first-child{font-size:12px;letter-spacing:.14em}
+.author-table td:last-child{font-size:12px}
+.hero-sub{font-size:clamp(16px,2.2vw,18px);line-height:1.65;max-width:62ch}
+.pill .pv{font-size:clamp(17px,2.2vw,20px);font-weight:500}
+.pill .pl,.tbadge{font-size:12px}
+.nsm{font-size:12px;letter-spacing:.18em}
+.sl{font-size:12px;letter-spacing:.18em}
+.sl .n{font-size:12px}
+.card h2{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;margin-bottom:10px}
+.card p,.tli p{font-size:14px;line-height:1.5;max-width:60ch}
+.tli h4{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+.cb{font-size:14px}
+.cb .ct{font-size:12px;letter-spacing:.14em}
+.cb .cx{font-size:14px;line-height:1.5}
+.mt{font-size:14px}
+.mt thead th{font-size:12px;letter-spacing:.14em}
+.mt td:first-child{font-size:14px}
+.gtitle{font-size:12px;letter-spacing:.14em}
+.gth .fig{font-size:12px}
+.gth.bad{font-size:12px}
+.cta-btn{font-size:16px;font-weight:500}
+.cta-sub,.footer-meta,footer{font-size:12px}
+.liwrap{margin-top:8px}.liwrap .li-post{max-width:260px}.liwrap .li-text{font-size:12px;line-height:17px;min-height:0}.liwrap .li-name{font-size:12px}.liwrap .li-sub{font-size:10px}.liwrap .li-react,.liwrap .li-impr{font-size:11px}
 </style>
 <div class="ar">
 
@@ -6403,10 +6645,11 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
     <div class="cb fix full"><div class="ct">◈ Takeaway</div><div class="cx">Re-validate structure whenever the load path changes.</div></div>
   </div>
 
-</main>
-
-<h2 class="lip-h">LinkedIn Post</h2>
-<div class="lip-wrap" style="padding-top:16px">
+  <div class="nsm" id="sec-linkedin">LinkedIn</div>
+  <div class="card ic">
+    <div class="sl il"><span class="n">07</span> LinkedIn post</div>
+    <h2>Shared publicly</h2>
+    <div class="liwrap">
 <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="li-post">
       <div class="li-head">
         <img class="li-av" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="Arpit Malik">
@@ -6418,7 +6661,10 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
       <div class="li-react"><span class="li-lk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#378FE9"/><path d="M8 11v6H6v-6zm1 0l3-5c1 0 1.5.8 1.2 1.8L13 10h3.2c.8 0 1.3.7 1.1 1.4l-1 4.3c-.2.8-.8 1.3-1.6 1.3H9z" fill="#fff"/></svg><b>1,033</b></span><span class="li-cm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H9l-5 4z"/></svg><b>25</b></span><span class="li-sh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12V9a3 3 0 013-3h12l-3-3M20 12v3a3 3 0 01-3 3H5l3 3"/></svg><b>4</b></span><span class="li-sd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3L3 10l7 3 3 7z"/></svg></span></div>
       <div class="li-impr"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg>92K impressions</span><b>View post</b></div>
     </a>
-</div>
+    </div>
+  </div>
+
+</main>
 
 <footer>
   <div class="cta-wrap">
@@ -8641,7 +8887,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
-  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane'),avoreP=document.getElementById('avorePane'),chassisP=document.getElementById('chassisPane'),armP=document.getElementById('armPane'),armFrom='studies';
+  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane'),avoreP=document.getElementById('avorePane'),chassisP=document.getElementById('chassisPane'),armP=document.getElementById('armPane'),dlP=document.getElementById('drivelinePane'),armFrom='studies';
   var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
   function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
   try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
@@ -8652,7 +8898,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   pbBtn.addEventListener('click',function(){if(pbCur)document.dispatchEvent(new CustomEvent(pbCur+'-back'))});
   document.body.appendChild(pbBtn);
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',av=name==='avore',ch=name==='chassis',ar=name==='arm',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es&&!av&&!ch&&!ar;
+    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',av=name==='avore',ch=name==='chassis',ar=name==='arm',dv=name==='driveline',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es&&!av&&!ch&&!ar&&!dv;
     if(b&&window.initBajaPane)window.initBajaPane();
     if(d&&window.initDunePane)window.initDunePane();
     if(g&&window.initGridxPane)window.initGridxPane();
@@ -8660,12 +8906,13 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     if(av&&window.initAvorePane)window.initAvorePane();
     if(ch&&window.initChassisPane)window.initChassisPane();
     if(ar&&window.initArmPane)window.initArmPane();
+    if(dv&&window.initDrivelinePane)window.initDrivelinePane();
     if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);avoreP.classList.toggle('is-on',av);chassisP.classList.toggle('is-on',ch);armP.classList.toggle('is-on',ar);
-    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':av?'avore':ch?'chassis':ar?'arm':null;pbBtn.classList.toggle('on',!!pbCur);
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);avoreP.classList.toggle('is-on',av);chassisP.classList.toggle('is-on',ch);armP.classList.toggle('is-on',ar);dlP.classList.toggle('is-on',dv);
+    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':av?'avore':ch?'chassis':ar?'arm':dv?'driveline':null;pbBtn.classList.toggle('on',!!pbCur);
     [[tm,m],[tr,r],[tl,l],[tj,j],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
-    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':av?'#avore':ch?'#chassis':ar?'#arm':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
+    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':av?'#avore':ch?'#chassis':ar?'#arm':dv?'#driveline':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
     if(!keepScroll&&!m)window.scrollTo(0,0);
     else if(!keepScroll){var ref=r?reelsP:l?liP:j?journeyP:s?studiesP:a?aboutP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
@@ -8689,7 +8936,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   place();
   if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
-    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"],a[href="#avore"],a[href="#chassis"],a[href="#arm"]');
+    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"],a[href="#avore"],a[href="#chassis"],a[href="#arm"],a[href="#driveline"]');
     if(pj){e.preventDefault();e.stopPropagation();if(pj.getAttribute('href')==='#arm')armFrom='studies';show(pj.getAttribute('href').slice(1));return}
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
@@ -8700,7 +8947,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
-  ['avore','chassis'].forEach(function(n){document.addEventListener(n+'-back',function(){show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
+  ['avore','chassis','driveline'].forEach(function(n){document.addEventListener(n+'-back',function(){show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
   /* A-arm investigation: reachable from the Investigations list and from the BAJA page; back returns to whichever opened it */
   document.addEventListener('open-arm',function(){armFrom='baja';show('arm')});
   document.addEventListener('arm-back',function(){
@@ -8727,6 +8974,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   else if(location.hash==='#avore')show('avore',true);
   else if(location.hash==='#chassis')show('chassis',true);
   else if(location.hash==='#arm')show('arm',true);
+  else if(location.hash==='#driveline')show('driveline',true);
   else if(location.hash==='#journey'&&window.matchMedia('(min-width:901px)').matches)show('journey',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
