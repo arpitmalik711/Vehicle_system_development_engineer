@@ -6350,15 +6350,27 @@ footer,.dl footer{font:400 12px/1.8 var(--body)}
   [].forEach.call(R.querySelectorAll('[data-figs]'),function(g){
     g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(thumb(+n-1))});
   });
-  var v=document.createElement('video');v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.controls=true;v.preload='metadata';
+  var v=document.createElement('video');v.loop=true;v.muted=true;v.playsInline=true;v.controls=true;v.preload='metadata';
   var s=document.createElement('source');s.src=B+'video/upload/v1791031735/IMG_8105_abuexv.mp4';v.appendChild(s);
   R.getElementById('vid').appendChild(v);
   var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.playsInline=true;v2.controls=true;v2.preload='metadata';
   var s2=document.createElement('source');s2.src=B+'video/upload/v1795684023/WhatsApp_Video_2026-11-26_at_2.35.53_PM_md6otr.mp4';v2.appendChild(s2);
   R.getElementById('vid2').appendChild(v2);
+  var tag=document.createElement('span');tag.className='fig';tag.textContent='CAR 31';tag.style.cssText='top:6px;bottom:auto;left:6px;pointer-events:none;z-index:2';R.getElementById('vid2').appendChild(tag);
   var v3=document.createElement('video');v3.loop=true;v3.muted=true;v3.playsInline=true;v3.controls=true;v3.preload='metadata';
   var s3=document.createElement('source');s3.src=B+'video/upload/v1795684633/WhatsApp_Video_2026-11-26_at_2.46.40_PM_ybfxmf.mp4';v3.appendChild(s3);
   R.getElementById('vid3').appendChild(v3);
+
+  /* Auto-play each driveline video when it scrolls into view; pause when it leaves */
+  [v,v2,v3].forEach(function(x){x.muted=true;x.setAttribute('muted','');x.setAttribute('playsinline','')});
+  if('IntersectionObserver' in window){
+    var dlVis=new IntersectionObserver(function(es){es.forEach(function(e){
+      var vid=e.target;
+      if(e.isIntersecting){var p=vid.play();if(p&&p.catch)p.catch(function(){})}
+      else vid.pause();
+    })},{threshold:.35});
+    [v,v2,v3].forEach(function(x){dlVis.observe(x)});
+  }
 })();
 
     var bk=R.getElementById('dlBackCta');
@@ -6374,139 +6386,65 @@ footer,.dl footer{font:400 12px/1.8 var(--body)}
 </style>
 <div id="armHost"></div>
 <template id="armTpl"><style>
-:host{display:block;
-  --bg:#0b0e14; --card:#131720; --card2:#181d28;
-  --border:#252d3d; --border2:#2e3a50;
-  --accent:#f97316; --accent2:#38bdf8;
-  --danger:#ef4444; --success:#22c55e; --warn:#eab308;
-  --text:#e2e8f4; --sub:#94a3b8; --muted:#64748b;
-  --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'Barlow',sans-serif; --cond:'Barlow Condensed',sans-serif;
-  --r:12px;
-}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-.ar{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;font-size:15.5px;overflow-x:clip;padding-top:64px;position:relative}
-.ar::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(56,189,248,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.022) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
-img,video{max-width:100%;display:block}
-strong{font-weight:600;color:var(--text)}
+:host{display:block;--bg:#0A0C10;--surface:#111318;--border:#1E2229;--text:#F2F4F8;--sub:#9AA3B2;--muted:#6B7482;--accent:#f97316;--ok:#34d399;--warn:#E0A020;--danger:#ef4444;
+--cond:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Barlow",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+box-sizing:border-box;}
+.dl{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;min-height:100vh}
+.hero{max-width:760px;margin:0 auto;padding:56px 20px 28px;text-align:center}
+.chip{display:inline-block;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(249,115,22,.35);padding:5px 12px;border-radius:99px}
+h1{font:700 clamp(32px,8vw,56px)/1.05 var(--cond);margin:18px 0 12px;letter-spacing:-.3px}
+h1 em{font-style:normal;color:var(--accent)}
+.meta{font:400 11px var(--mono);color:var(--muted);line-height:1.9}
+.meta b{color:var(--sub);font-weight:500}
+.sub{color:var(--sub);margin-top:16px}
+.sub strong{color:var(--text)}
+main{max-width:760px;margin:0 auto;padding:0 16px 24px}
+.card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 20px;margin-top:16px}
+.card.d{border-left-color:var(--danger)}.card.i{border-left-color:var(--warn)}.card.s{border-left-color:var(--ok)}
+.sl{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sl span{color:var(--accent);margin-right:6px}
+h2{font:700 26px/1.15 var(--cond);margin:6px 0 10px}
+p{color:var(--sub);font-size:15px}p strong{color:var(--text)}
+.tl{border-left:2px solid var(--border);padding-left:22px;margin-left:6px}
+.tli{position:relative;padding:6px 0 26px}.tli .sl{margin-bottom:2px}.tli p{margin-top:4px}
+.tli::before{content:"";position:absolute;left:-29px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tli.d::before{background:var(--danger)}.tli.i::before{background:var(--warn)}.tli.s::before{background:var(--ok)}
+h4{font:600 17px var(--cond);letter-spacing:.02em}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px}
+.gth{position:relative;aspect-ratio:16/10;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#161a21;display:flex;align-items:center;justify-content:center;font:11px var(--mono);color:var(--muted);text-align:center}
+.gth img,.gth video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fig{position:absolute;left:6px;bottom:6px;font:500 9.5px var(--mono);background:rgba(0,0,0,.65);color:#fff;padding:2px 6px;border-radius:4px;letter-spacing:.06em}
+.hero-img{margin-top:22px;aspect-ratio:16/9}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+th{font:500 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td{color:var(--sub)}td.v{color:var(--ok)}
+.cb{margin-top:14px;border-radius:8px;padding:12px 14px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25)}
+.cb.ok{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.ct{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.cb.ok .ct{color:var(--ok)}.cx{color:var(--text);font-size:15px}
+.dl footer{max-width:760px;margin:24px auto 0;padding:20px 20px 36px;border-top:1px solid var(--border);text-align:center;font:10.5px/1.8 var(--mono);color:var(--muted)}
+footer strong{color:var(--text)}
 
-/* sticky section nav */
-#snav{position:sticky;top:64px;height:48px;background:rgba(11,14,20,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:50;display:flex;align-items:center;padding:0 20px 0 80px}
-.nav-links{display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-link{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);padding:6px 11px;border-radius:6px;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap;border:none;background:none}
-.nav-link:hover{color:var(--text);background:rgba(255,255,255,.05)}
-.nav-link.active{color:var(--accent);background:rgba(249,115,22,.1)}
+.cta-wrap{padding:8px 0 24px;display:flex;justify-content:center}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;padding:16px 36px;background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;border-radius:10px;text-decoration:none;box-shadow:0 4px 24px rgba(249,115,22,.35);transition:transform .18s,filter .18s}
+.cta-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
 
-/* hero */
-.hero{padding:56px 20px 44px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.hero::after{content:'A-ARM';position:absolute;right:-10px;top:0;font-family:var(--cond);font-size:clamp(90px,20vw,240px);font-weight:800;color:rgba(249,115,22,.04);letter-spacing:-4px;pointer-events:none;user-select:none;line-height:1}
-.hero-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
-.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid rgba(249,115,22,.3);padding:3px 10px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
-.chip::before{content:'▶';font-size:7px}
-.hero h1{font-family:var(--cond);font-size:clamp(30px,7vw,62px);font-weight:700;line-height:1.05;letter-spacing:-.5px;margin-bottom:14px}
-.hero h1 em{color:var(--danger);font-style:normal}
-.author-line{display:flex;flex-direction:column;gap:10px;margin:8px 0 18px}
-.author-name{font-family:var(--cond);font-size:22px;font-weight:700;color:var(--text);line-height:1}
-.author-table{border-collapse:collapse;font-family:var(--mono);font-size:11px}
-.author-table td{padding:4px 12px 4px 0;vertical-align:middle}
-.author-table td:first-child{color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:9.5px;padding-right:14px;border-right:1px solid var(--border2);white-space:nowrap}
-.author-table td:last-child{padding-left:14px;color:var(--text);font-size:11.5px}
-.author-table tr:not(:last-child) td{border-bottom:1px solid rgba(255,255,255,.04)}
-.at-role{color:var(--accent) !important}.at-inst{color:var(--sub) !important}.at-date{color:var(--accent2) !important}
-.hero-sub{font-size:15px;color:var(--sub);max-width:620px;margin-bottom:26px}
-.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
-.pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px}
-.pill .pv{font-family:var(--cond);font-size:20px;font-weight:700;line-height:1}
-.pill .pv.d{color:var(--danger)}.pill .pv.w{color:var(--warn)}.pill .pv.g{color:var(--success)}.pill .pv.b{color:var(--accent2)}
-.pill .pl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.tool-badges{display:flex;flex-wrap:wrap;gap:8px}
-.tbadge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:20px;border:1px solid;line-height:1.3;white-space:nowrap}
-.tbadge.a{color:#38bdf8;border-color:rgba(56,189,248,.35);background:rgba(56,189,248,.07)}
-.tbadge.b{color:#fb923c;border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.07)}
-.tbadge.c{color:#a78bfa;border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.07)}
-
-/* cards */
-.page{max-width:760px;margin:0 auto;padding:32px 16px 80px;display:flex;flex-direction:column;gap:18px;position:relative;z-index:1}
-.nsm{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);padding:8px 0 4px;display:flex;align-items:center;gap:10px;scroll-margin-top:130px}
-.nsm::after{content:'';flex:1;height:1px;background:var(--border)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.4),0 4px 20px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.03)}
-.card::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 2px 2px 0;background:var(--accent);opacity:.5}
-.card.dc::before{background:var(--danger)}.card.sc::before{background:var(--success)}.card.ic::before{background:var(--accent2)}
-.sl{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px}
-.sl .n{width:22px;height:22px;border-radius:50%;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.25);display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
-.sl.dl{color:var(--danger)}.sl.dl .n{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.25)}
-.sl.sl2{color:var(--success)}.sl.sl2 .n{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.25)}
-.sl.il{color:var(--accent2)}.sl.il .n{background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.25)}
-.card h2{font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;margin-bottom:14px;letter-spacing:-.2px}
-.card p{color:var(--sub);font-size:15px;margin-bottom:12px}.card p:last-child{margin-bottom:0}
-
-/* callouts */
-.cr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
-@media(max-width:640px){.cr{grid-template-columns:1fr}}
-.cb{border-radius:8px;padding:13px 15px;border:1px solid;font-size:14px}
-.cb .ct{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
-.cb .cx{color:var(--sub);line-height:1.6;font-size:13.5px}
-.cb.assumed{background:rgba(56,189,248,.06);border-color:rgba(56,189,248,.2)}.cb.assumed .ct{color:var(--accent2)}
-.cb.reality{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.2)}.cb.reality .ct{color:var(--danger)}
-.cb.fix{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.2)}.cb.fix .ct{color:var(--success)}
-.cb.note{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.2)}.cb.note .ct{color:var(--accent)}
-.cb.full{margin:14px 0 0}
-
-/* config table */
-.mt{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
-.mt thead tr{background:rgba(56,189,248,.08);border-bottom:1px solid var(--border2)}
-.mt thead th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);padding:9px 13px;text-align:left;font-weight:400}
-.mt tbody tr{border-bottom:1px solid var(--border)}.mt tbody tr:last-child{border-bottom:none}
-.mt td{padding:10px 13px;color:var(--text)}
-.mt td:first-child{font-family:var(--mono);font-size:12px;color:var(--sub);background:rgba(0,0,0,.15);width:26%}
-.mt .vd{color:var(--danger);font-weight:600}
-@media(max-width:600px){.mt{font-size:12px}.mt td,.mt thead th{padding:8px 9px}}
-
-/* timeline */
-.tl{padding-left:22px;margin:14px 0;position:relative}
-.tl::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--accent2),rgba(249,115,22,.4),var(--danger))}
-.tli{position:relative;margin-bottom:20px}.tli:last-child{margin-bottom:0}
-.tli::before{content:'';position:absolute;left:-19px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.tli.d::before{border-color:var(--danger);background:rgba(239,68,68,.15)}.tli.ok::before{border-color:var(--success)}.tli.i::before{border-color:var(--accent2)}
-.tli h4{font-family:var(--cond);font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px}
-.tli p{font-size:13.5px;color:var(--sub);margin:0 !important}
-
-/* gallery */
-.card>.gg{margin:14px 0;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));max-width:480px}
-.tli .gg{margin-top:10px;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));max-width:480px}
-.gal{margin:18px 0 4px}
-.gtitle{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;display:flex;align-items:center;gap:6px}
-.gtitle::before{content:'◈';color:var(--accent2)}
-.gg{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr))}
-.gth{aspect-ratio:4/3;border-radius:8px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--border);background:var(--card2);transition:border-color .2s,transform .2s,box-shadow .2s;padding:0;display:block;width:100%}
-.gth:hover,.gth:focus-visible{border-color:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);outline:none}
-.gth img,.gth video{width:100%;height:100%;object-fit:cover;pointer-events:none}
-.gth .fig{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:#fff;background:rgba(8,11,18,.78);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:2px 7px}
-.gth .vb{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
-.gth .vb::before{content:'';margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0b0e14}
-.gth.bad{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:var(--muted)}
-
-/* lightbox */
-.lb{position:fixed;inset:0;z-index:900;background:rgba(5,7,12,.95);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 24px}
-.lb-stage{max-width:min(94vw,980px);max-height:74vh;display:flex;align-items:center;justify-content:center}
-.lb-stage img,.lb-stage video{max-width:100%;max-height:74vh;border-radius:6px;box-shadow:0 32px 96px rgba(0,0,0,.8);object-fit:contain;background:#000}
-.lb-cap{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.06em;text-align:center}
-.lb-btn{position:fixed;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.lb-btn:hover{background:rgba(255,255,255,.16)}
-.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%;transform:translateY(-50%)}.lb-n{right:12px;top:50%;transform:translateY(-50%)}
-@media(max-width:600px){.lb-p{left:4px}.lb-n{right:4px}.lb-btn{width:36px;height:36px}}
-
-/* footer */
-footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted);max-width:760px;margin:0 auto;position:relative;z-index:1}
-.cta-wrap{padding:44px 0 32px;display:flex;flex-direction:column;align-items:center;gap:16px}
-.cta-btn{display:inline-flex;align-items:center;gap:14px;padding:16px 36px;background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;border-radius:10px;text-decoration:none;box-shadow:0 4px 24px rgba(249,115,22,.35);transition:transform .18s,box-shadow .18s,filter .18s}
-.cta-btn:hover,.cta-btn:focus-visible{transform:translateY(-3px);box-shadow:0 10px 36px rgba(249,115,22,.5);filter:brightness(1.08);outline:none}
-.cta-arrow{transition:transform .2s}.cta-btn:hover .cta-arrow{transform:translateX(4px)}
-.cta-sub{font-size:10px;letter-spacing:.06em}
-.footer-meta{border-top:1px solid var(--border);padding-top:20px;font-size:10px;line-height:1.8}
-.footer-meta strong{color:var(--text)}
-@media(max-width:480px){.cta-btn{padding:14px 26px;font-size:17px}}
-
+/* type scale matched to the BAJA page */
+:root,:host{--cond:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--body:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--mono:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--text:#FFFFFF;--sub:#8A8F9A;--muted:#8A8F9A;--border:#2A2F3A}
+.dl,body{line-height:1.5}
+.chip{font:500 12px/1.2 var(--body);letter-spacing:.18em}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;line-height:1.1;margin:28px 0 10px}
+.meta{font:400 12px/1.8 var(--body);letter-spacing:.03em}
+.sub{font-size:clamp(16px,2.2vw,18px);line-height:1.65;max-width:62ch;margin:16px auto 0}
+.sl{font:500 12px/1.2 var(--body);letter-spacing:.18em;margin-bottom:6px}
+h4{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+p{font-size:14px;line-height:1.5;max-width:60ch}
+.fig{font:500 12px/1.2 var(--body);letter-spacing:.06em}
+.gth{font-size:12px}
+footer,.dl footer{font:400 12px/1.8 var(--body)}
+.cta-btn{font-size:16px;font-weight:500}
 /* linkedin post card */
 .lip-h{max-width:760px;margin:0 auto;padding:8px 16px 0;position:relative;z-index:1;font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.2px;color:var(--text);text-align:center}
 .lip-wrap{max-width:760px;margin:0 auto;padding:0 16px 8px;position:relative;z-index:1;display:flex;justify-content:center}
@@ -6533,123 +6471,67 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
 .li-impr b{font-weight:600;color:var(--li-blue)}
 .li-post:hover .li-name{text-decoration:underline}
 
-/* type scale matched to the BAJA page */
-:host{--sans:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--cond:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--mono:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--text:#FFFFFF;--sub:#8A8F9A;--muted:#8A8F9A}
-.ar{font-weight:400;font-size:14px;line-height:1.5}
-.nav-link{font-size:12px;letter-spacing:.14em}
-.chip{font-size:12px;letter-spacing:.18em}
-.hero h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
-.author-name{font-size:clamp(17px,2.2vw,20px);font-weight:500;line-height:1.3}
-.author-table{font-size:12px}
-.author-table td:first-child{font-size:12px;letter-spacing:.14em}
-.author-table td:last-child{font-size:12px}
-.hero-sub{font-size:clamp(16px,2.2vw,18px);line-height:1.65;max-width:62ch}
-.pill .pv{font-size:clamp(17px,2.2vw,20px);font-weight:500}
-.pill .pl,.tbadge{font-size:12px}
-.nsm{font-size:12px;letter-spacing:.18em}
-.sl{font-size:12px;letter-spacing:.18em}
-.sl .n{font-size:12px}
-.card h2{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;margin-bottom:10px}
-.card p,.tli p{font-size:14px;line-height:1.5;max-width:60ch}
-.tli h4{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
-.cb{font-size:14px}
-.cb .ct{font-size:12px;letter-spacing:.14em}
-.cb .cx{font-size:14px;line-height:1.5}
-.mt{font-size:14px}
-.mt thead th{font-size:12px;letter-spacing:.14em}
-.mt td:first-child{font-size:14px}
-.gtitle{font-size:12px;letter-spacing:.14em}
-.gth .fig{font-size:12px}
-.gth.bad{font-size:12px}
-.cta-btn{font-size:16px;font-weight:500}
-.cta-sub,.footer-meta,footer{font-size:12px}
+.lip-h{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;font-family:var(--cond)}
 .liwrap{margin-top:8px}.liwrap .li-post{max-width:260px}.liwrap .li-text{font-size:12px;line-height:17px;min-height:0}.liwrap .li-name{font-size:12px}.liwrap .li-sub{font-size:10px}.liwrap .li-react,.liwrap .li-impr{font-size:11px}
+
+/* A-arm extras: clickable thumbs, video badge, lightbox */
+button.gth{appearance:none;-webkit-appearance:none;padding:0;cursor:pointer;color:inherit;transition:transform .18s,border-color .18s,box-shadow .18s}
+.gth:hover,.gth:focus-visible{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);outline:none}
+.gth img,.gth video{pointer-events:none}
+.hero-img{cursor:default}.hero-img:hover{transform:none;box-shadow:none;border-color:var(--border)}
+td.vd{color:var(--danger);font-weight:600}
+.gth .vb{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
+.gth .vb::before{content:'';margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0b0e14}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:900;background:rgba(5,7,12,.95);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 24px}
+.lb-stage{max-width:min(94vw,980px);max-height:74vh;display:flex;align-items:center;justify-content:center}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:74vh;border-radius:6px;box-shadow:0 32px 96px rgba(0,0,0,.8);object-fit:contain;background:#000}
+.lb-cap{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.06em;text-align:center}
+.lb-btn{position:fixed;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.16)}
+.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%;transform:translateY(-50%)}.lb-n{right:12px;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){.lb-p{left:4px}.lb-n{right:4px}.lb-btn{width:36px;height:36px}}
+
 </style>
-<div class="ar">
-
-<nav id="snav"><div class="nav-links">
-  <button class="nav-link" data-target="sec-context">Context</button>
-  <button class="nav-link" data-target="sec-evidence">Evidence</button>
-  <button class="nav-link" data-target="sec-analysis">Analysis</button>
-  <button class="nav-link" data-target="sec-resolution">Resolution</button>
-</div></nav>
-
-<header class="hero"><div class="hero-inner">
+<div class="dl">
+<header class="hero">
   <div class="chip">Structural Failure Analysis · Suspension Engineering</div>
-  <h1>Front Upper <em>A-Arm</em> Failure<br/>after a Shock Swap</h1>
-  <div class="author-line">
-    <span class="author-name">Arpit Malik</span>
-    <table class="author-table">
-      <tr><td>Role</td><td class="at-role">Chief Design Engineer · Team Daedalus Racing</td></tr>
-      <tr><td>Institution</td><td class="at-inst">NSUT, Delhi</td></tr>
-      <tr><td>Event</td><td class="at-date">mBAJA 2026 · Suspension &amp; Traction A-arm failure</td></tr>
-    </table>
-  </div>
-  <p class="hero-sub">Leaking rear shock forced a shock swap before <strong>mBAJA 2026</strong>. After a hard obstacle hit, the <strong style="color:var(--danger)">front upper A-arm bent</strong>. Cause: the new layout <strong style="color:var(--warn)">changed the load path</strong> and raised A-arm bending moment. Design updated.</p>
-  </div></header>
-
-<main class="page">
-
-
-  <div class="nsm" id="sec-context">Context</div>
-  <div class="card nc">
-    <div class="sl"><span class="n">02</span> Background</div>
-    <h2>Last-Minute Shock Reconfiguration</h2>
-    <table class="mt">
-      <thead><tr><th>Position</th><th>Original</th><th>Revised</th></tr></thead>
-      <tbody>
-        <tr><td>Front</td><td>21 in AFCO</td><td class="vd">16 in FOX (sourced)</td></tr>
-        <tr><td>Rear</td><td>AFCO (leaking)</td><td>21 in AFCO (from front)</td></tr>
-      </tbody>
-    </table>
-    <div class="cb note full"><div class="ct">▶ Why it matters</div><div class="cx">Shock length and mounting set <strong>where and at what angle load enters the arm</strong>.</div></div>
-  </div>
-
-  <div class="nsm" id="sec-evidence">Evidence</div>
-  <div class="card dc">
-    <div class="sl dl"><span class="n">03</span> Failure Event</div>
-    <h2>Leaking Shock to Bent A-Arm</h2>
-    <div class="tl">
-      <div class="tli i"><h4>Rear AFCO shock leaks</h4></div>
-      <div class="tli"><h4>Shocks swapped</h4><p>21 in AFCO to rear; 16 in FOX to front.</p><div class="gg" data-figs="2"></div></div>
-      <div class="tli d"><h4>Severe obstacle impact</h4><div class="gg" data-figs="1"></div></div>
-      <div class="tli d"><h4>Front upper A-arm bends</h4><div class="gg" data-figs="3"></div></div>
-    </div>
-  </div>
-
-  <div class="nsm" id="sec-analysis">Analysis</div>
-  <div class="card ic">
-    <div class="sl il"><span class="n">04</span> Method</div>
-    <h2>Reconstruct, Estimate, Simulate</h2>
-    <div class="tl">
-      <div class="tli i"><h4>1 · Impact reconstruction</h4><div class="gg" data-figs="4,5"></div></div>
-      <div class="tli i"><h4>2 · Energy-based load estimate</h4><div class="gg" data-figs="6,7"></div></div>
-      <div class="tli i"><h4>3 · Transient FEA of the A-arm</h4><div class="gg" data-figs="8,9"></div></div>
-    </div>
-  </div>
-
-  <div class="card dc">
-    <div class="sl dl"><span class="n">05</span> Root Cause</div>
-    <h2>Revised Load Path, Higher Bending</h2>
-    <p>The new shock layout <strong>increased the A-arm bending moment</strong> beyond what it was designed for.</p>
-    <div class="cb note full"><div class="ct">▶ Key Insight</div><div class="cx"><strong>A component change is a system change.</strong></div></div>
-  </div>
-
-  <div class="nsm" id="sec-resolution">Resolution</div>
-  <div class="card sc">
-    <div class="sl sl2"><span class="n">06</span> Solution</div>
-    <h2>A-Arm Design Updated</h2>
-    <p>Redesigned to be robust under the final shock load path.</p>
-    <div class="gg" data-figs="10"></div>
-    <p><strong>On-event fix:</strong> A-arm reinforced to increase its <strong>second moment of inertia</strong>, so we kept running the BAJA endurance with the <strong>same shock placement</strong>.</p>
-    <div class="cb fix full"><div class="ct">◈ Takeaway</div><div class="cx">Re-validate structure whenever the load path changes.</div></div>
-  </div>
-
-  <div class="nsm" id="sec-linkedin">LinkedIn</div>
-  <div class="card ic">
-    <div class="sl il"><span class="n">07</span> LinkedIn post</div>
-    <h2>Shared publicly</h2>
-    <div class="liwrap">
+  <h1>Front Upper <em>A-Arm</em> Failure<br>after a Shock Swap</h1>
+  <div class="meta"><b>Arpit Malik</b> · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi<br>BAJA SAE · mBAJA 2026</div>
+  <p class="sub">Leaking rear shock forced a shock swap before <strong>mBAJA 2026</strong>. After a hard obstacle hit, the <strong style="color:var(--danger)">front upper A-arm bent</strong>. Cause: the new layout <strong style="color:var(--warn)">changed the load path</strong> and raised A-arm bending moment. Design updated.</p>
+  <div class="gth hero-img" data-hero="1"></div>
+</header>
+<main>
+  <div class="tl">
+    <div class="tli"><div class="sl"><span>01</span> Background</div><h4>Last-minute shock reconfiguration</h4>
+      <table>
+        <thead><tr><th>Position</th><th>Original</th><th>Revised</th></tr></thead>
+        <tbody>
+          <tr><td>Front</td><td>21 in AFCO</td><td class="vd">16 in FOX (sourced)</td></tr>
+          <tr><td>Rear</td><td>AFCO (leaking)</td><td>21 in AFCO (from front)</td></tr>
+        </tbody>
+      </table>
+      <div class="cb"><div class="ct">▶ Why it matters</div><div class="cx">Shock length and mounting set <strong>where and at what angle load enters the arm</strong>.</div></div></div>
+    <div class="tli d"><div class="sl"><span>02</span> Failure Event</div><h4>Leaking shock to bent A-arm</h4>
+      <p>Rear AFCO shock leaks, so the shocks are swapped: <strong>21 in AFCO to rear, 16 in FOX to front</strong>. A severe obstacle impact then <strong>bends the front upper A-arm</strong>.</p>
+      <div class="gg" data-figs="2,1,3"></div></div>
+    <div class="tli i"><div class="sl"><span>03</span> Analysis</div><h4>Reconstruct, estimate, simulate</h4>
+      <p><strong>1 · Impact reconstruction</strong></p>
+      <div class="gg" data-figs="4,5"></div>
+      <p style="margin-top:14px"><strong>2 · Energy-based load estimate</strong></p>
+      <div class="gg" data-figs="6,7"></div>
+      <p style="margin-top:14px"><strong>3 · Transient FEA of the A-arm</strong></p>
+      <div class="gg" data-figs="8,9"></div></div>
+    <div class="tli d"><div class="sl"><span>04</span> Root Cause</div><h4>Revised load path, higher bending</h4>
+      <p>The new shock layout <strong>increased the A-arm bending moment</strong> beyond what it was designed for.</p>
+      <div class="cb"><div class="ct">▶ Key insight</div><div class="cx"><strong>A component change is a system change.</strong></div></div></div>
+    <div class="tli s"><div class="sl"><span>05</span> Solution</div><h4>A-arm design updated</h4>
+      <p>Redesigned to be robust under the final shock load path.</p>
+      <div class="gg" data-figs="10"></div>
+      <p><strong>On-event fix:</strong> A-arm reinforced to increase its <strong>second moment of inertia</strong>, so we kept running the BAJA endurance with the <strong>same shock placement</strong>.</p>
+      <div class="cb ok"><div class="ct">◈ Takeaway</div><div class="cx">Re-validate structure whenever the load path changes.</div></div></div>
+    <div class="tli"><div class="sl"><span>06</span> LinkedIn post</div><h4>Shared publicly</h4>
+      <div class="liwrap">
 <a href="https://www.linkedin.com/posts/arpit-malik-bb6939303_jouncejunkie-bajasae-suspensiondesign-ugcPost-7466461955407556608-86Qp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE2PEnoBDz8YCwDfv4JuAgC7F4-wc6zLV2o" target="_blank" rel="noopener noreferrer" class="li-post">
       <div class="li-head">
         <img class="li-av" src="https://res.cloudinary.com/fvtkc10l/image/upload/v1791734500/Arpit_Malik_pic_qx6shm.jpg" alt="Arpit Malik">
@@ -6662,18 +6544,11 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
       <div class="li-impr"><span><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="2" width="4" height="19" rx="1"/></svg>92K impressions</span><b>View post</b></div>
     </a>
     </div>
+    </div>
   </div>
-
 </main>
 
-<footer>
-  <div class="cta-wrap">
-    <a class="cta-btn" href="#" id="armBackCta"><span>Explore More Projects</span><span class="cta-arrow">→</span></a>
-    <p class="cta-sub">Arpit Malik · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi</p>
-  </div>
-  <div class="footer-meta"><strong>Front Upper A-Arm Failure — Investigation</strong><br/>mBAJA 2026 · Suspension &amp; Traction · Structural Failure Analysis</div>
-</footer>
-
+<div class="cta-wrap"><a class="cta-btn" href="#" id="armBackCta"><span>Explore More Projects</span><span>→</span></a></div>
 </div></template>
 <script>
 (function(){
@@ -6717,6 +6592,9 @@ footer{border-top:1px solid var(--border);padding:0 20px 36px;text-align:center;
      [].slice.call(R.querySelectorAll('[data-figs]')).forEach(function(g){
        g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(mkThumb(+n-1))});
      });
+
+    var heroEl=R.querySelector('[data-hero]');
+    if(heroEl){var hi=document.createElement('img');hi.src=B+'image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png';hi.alt='Front upper A-arm failure';hi.loading='lazy';heroEl.appendChild(hi)}
 
     /* ── lightbox ── */
     var ov=null,cur=0;
