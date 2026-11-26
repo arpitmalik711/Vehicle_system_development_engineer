@@ -1696,7 +1696,7 @@ footer{
     </a>
 
     <!-- CASE STUDY 03 — Mahindra 265 Front Lift Study -->
-    <a href="https://arpitmalik711.github.io/Tractor_Front_Lift_Study/" target="_blank" rel="noopener noreferrer" class="casestudy-card">
+    <a href="#tractor" class="casestudy-card">
       <div class="casestudy-img-wrap" style="position:relative;">
         <img src="https://res.cloudinary.com/fvtkc10l/image/upload/v1792661431/ballast_study_cover_kioort.png" alt="Front ballast study: how a tyre contact patch change alters load distribution" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88);transition:filter .4s ease;" onmouseenter="this.style.filter='brightness(1)'" onmouseleave="this.style.filter='brightness(.88)'">
       </div>
@@ -6180,197 +6180,6 @@ const bk=R.getElementById('csBackCta');if(bk)bk.addEventListener('click',e=>{e.p
 })();
 </script>
 </div>
-<script>
-/* MediaKit — shared, professional media handling for case-study panes:
-   click-to-open lightbox (arrows / swipe / scroll / keys / dots), smooth loading,
-   videos autoplay only while visible and stop when the page/pane is left. */
-(function(){
-  if(window.MediaKit)return;
-  var ZOOM='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
-  var CSS=[
-  '.gth.mk{cursor:pointer;background:linear-gradient(110deg,#141820 30%,#1d222c 50%,#141820 70%);background-size:200% 100%;animation:mkSh 1.4s linear infinite;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}',
-  '.gth.mk.is-ready{animation:none;background:#0d1015}',
-  '@keyframes mkSh{to{background-position:-200% 0}}',
-  '.gth.mk img,.gth.mk video{opacity:0;pointer-events:none;transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1)}',
-  '.gth.mk.is-ready img,.gth.mk.is-ready video{opacity:1}',
-  '.gth.mk:hover img,.gth.mk:hover video{transform:scale(1.035)}',
-  '.gth.mk:hover,.gth.mk:focus-visible{border-color:var(--accent,#f97316);box-shadow:0 10px 28px rgba(0,0,0,.45)}',
-  '.gth.mk:focus-visible{outline:2px solid var(--accent,#f97316);outline-offset:2px}',
-  '.gth.mk .mk-zoom{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:7px;background:rgba(10,12,16,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transform:translateY(-3px);transition:opacity .2s,transform .2s;pointer-events:none;z-index:2}',
-  '.gth.mk:hover .mk-zoom,.gth.mk:focus-visible .mk-zoom{opacity:1;transform:none}',
-  '@media (hover:none){.gth.mk .mk-zoom{opacity:.85;transform:none}}',
-  '.gth.mk .fig{z-index:2}',
-  '.lb{position:fixed;inset:0;z-index:99999;background:rgba(6,8,12,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 64px 92px;color:#fff;font-family:var(--body,system-ui,sans-serif);animation:lbIn .25s ease}',
-  '.lb.closing{animation:lbOut .18s ease forwards}',
-  '@keyframes lbIn{from{opacity:0}to{opacity:1}}@keyframes lbOut{from{opacity:1}to{opacity:0}}',
-  '.lb-stage{position:relative;width:100%;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}',
-  '.lb-item{display:block;max-width:min(96vw,1180px);max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);object-fit:contain;border-radius:8px;background:#000;box-shadow:0 30px 90px rgba(0,0,0,.7);animation:lbSlide .35s cubic-bezier(.2,.7,.2,1) both}',
-  '.lb-item.from-r{--dx:28px}.lb-item.from-l{--dx:-28px}',
-  '@keyframes lbSlide{from{opacity:0;transform:translateX(var(--dx,0)) scale(.985)}to{opacity:1;transform:none}}',
-  '.lb-spin{position:absolute;width:34px;height:34px;border:3px solid rgba(255,255,255,.18);border-top-color:var(--accent,#f97316);border-radius:50%;animation:lbSpin .8s linear infinite}',
-  '.lb-spin.off{display:none}@keyframes lbSpin{to{transform:rotate(360deg)}}',
-  '.lb-top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 16px}',
-  '.lb-count{font:500 12px/1 var(--body,system-ui,sans-serif);letter-spacing:.16em;color:rgba(255,255,255,.7)}',
-  '.lb-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}',
-  '.lb-btn:hover,.lb-btn:focus-visible{background:rgba(255,255,255,.2);outline:none}',
-  '.lb-p,.lb-n{position:absolute;top:50%;margin-top:-21px}.lb-p{left:14px}.lb-n{right:14px}',
-  '.lb-cap{margin-top:14px;font:400 13px/1.45 var(--body,system-ui,sans-serif);color:rgba(255,255,255,.75);text-align:center;max-width:70ch;min-height:19px}',
-  '.lb-dots{position:absolute;bottom:24px;left:0;right:0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:0 20px}',
-  '.lb-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.28);cursor:pointer;transition:background .2s,transform .2s}',
-  '.lb-dot.on{background:var(--accent,#f97316);transform:scale(1.4)}',
-  '@media(max-width:640px){.lb{padding:58px 10px 92px}.lb-p,.lb-n{top:auto;bottom:12px;margin-top:0;width:38px;height:38px}.lb-p{left:12px}.lb-n{right:12px}.lb-dots{bottom:26px;padding:0 64px}}',
-  '@media(prefers-reduced-motion:reduce){.lb,.lb-item,.gth.mk{animation:none!important}.gth.mk img,.gth.mk video{transition:none!important}}'
-  ].join('\n');
-
-  window.MediaKit=function(R,opts){
-    opts=opts||{};
-    var pane=opts.pane||null;
-    var st=document.createElement('style');st.textContent=CSS;R.appendChild(st);
-    var reg=[],vids=[],ov=null,cur=0,list=[],prevOverflow='',lastFocus=null,wheelT=0;
-    var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    function srcs(u){return Array.isArray(u)?u:[u]}
-    function paneOn(){return !pane||pane.classList.contains('is-on')}
-    function active(){return paneOn()&&!document.hidden&&!ov}
-    function play(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
-    function sync(v){if(v.__mkVis&&active())play(v);else v.pause()}
-    function syncAll(){vids.forEach(sync)}
-
-    var hasIO='IntersectionObserver' in window;
-    var vio=hasIO?new IntersectionObserver(function(es){es.forEach(function(e){e.target.__mkVis=e.isIntersecting;sync(e.target)})},{threshold:.4}):null;
-    var wio=hasIO?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.preload='auto';wio.unobserve(e.target)}})},{rootMargin:'400px 0px'}):null;
-
-    document.addEventListener('visibilitychange',syncAll);
-    window.addEventListener('pagehide',function(){vids.forEach(function(v){v.pause()})});
-    if(pane&&window.MutationObserver){
-      new MutationObserver(function(){syncAll();if(!paneOn()&&ov)closeLb(true)}).observe(pane,{attributes:true,attributeFilter:['class']});
-    }
-
-    function add(el,item){
-      el.classList.add('mk');
-      el.setAttribute('role','button');el.tabIndex=0;
-      el.setAttribute('aria-label','Open '+(item.t==='v'?'video':'image')+(item.c?': '+item.c:''));
-      var m;
-      function ready(){el.classList.add('is-ready')}
-      function bad(){if(m&&m.parentNode)m.parentNode.removeChild(m);el.classList.add('is-ready','bad');el.insertBefore(document.createTextNode('Media unavailable'),el.firstChild)}
-      if(item.t==='v'){
-        m=document.createElement('video');
-        m.loop=true;m.muted=true;m.defaultMuted=true;m.playsInline=true;m.controls=false;m.preload='metadata';
-        m.setAttribute('muted','');m.setAttribute('playsinline','');m.setAttribute('disablepictureinpicture','');
-        var us=srcs(item.u);
-        us.forEach(function(u,i){var s=document.createElement('source');s.src=u;if(i===us.length-1)s.addEventListener('error',bad);m.appendChild(s)});
-        m.addEventListener('loadeddata',ready);m.addEventListener('playing',ready);
-        vids.push(m);
-        if(vio){vio.observe(m);wio.observe(m)}else m.__mkVis=true;
-      }else{
-        m=document.createElement('img');
-        m.alt=item.c||'';m.decoding='async';m.loading='lazy';
-        m.onload=ready;m.onerror=bad;m.src=item.u;
-        if(m.complete&&m.naturalWidth)ready();
-      }
-      el.insertBefore(m,el.firstChild);
-      var z=document.createElement('span');z.className='mk-zoom';z.setAttribute('aria-hidden','true');z.innerHTML=ZOOM;el.appendChild(z);
-      el.addEventListener('click',function(){openLb(el)});
-      el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(el)}});
-      reg.push({el:el,item:item});
-      return m;
-    }
-
-    function ordered(){
-      return reg.filter(function(r){return r.el.isConnected}).sort(function(a,b){return (a.el.compareDocumentPosition(b.el)&4)?-1:1});
-    }
-    function render(dir){
-      var it=list[cur].item,stage=ov.querySelector('.lb-stage'),spin=ov.querySelector('.lb-spin');
-      [].slice.call(stage.querySelectorAll('.lb-item')).forEach(function(n){if(n.pause)n.pause();n.parentNode.removeChild(n)});
-      spin.classList.remove('off');
-      function done(){spin.classList.add('off')}
-      var m;
-      if(it.t==='v'){
-        m=document.createElement('video');
-        m.loop=true;m.muted=true;m.autoplay=true;m.playsInline=true;m.controls=true;m.preload='auto';
-        m.setAttribute('controlsList','nodownload');m.setAttribute('playsinline','');
-        srcs(it.u).forEach(function(u){var s=document.createElement('source');s.src=u;m.appendChild(s)});
-        m.addEventListener('loadeddata',function(){done();play(m)});
-        m.addEventListener('error',done,true);
-      }else{
-        m=document.createElement('img');m.alt=it.c||'';m.onload=done;m.onerror=done;m.src=it.u;
-      }
-      m.className='lb-item'+(dir>0?' from-r':dir<0?' from-l':'');
-      stage.appendChild(m);
-      ov.querySelector('.lb-count').textContent=(cur+1)+' / '+list.length;
-      ov.querySelector('.lb-cap').textContent=it.c||'';
-      [].forEach.call(ov.querySelectorAll('.lb-dot'),function(d,i){d.classList.toggle('on',i===cur);if(i===cur)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
-      [1,-1].forEach(function(k){var n=list[(cur+k+list.length)%list.length].item;if(n.t!=='v'){var im=new Image();im.src=n.u}});
-    }
-    function go(k){if(!ov||list.length<2)return;cur=(cur+k+list.length)%list.length;render(k)}
-    function jump(i){if(!ov||i===cur)return;var d=i>cur?1:-1;cur=i;render(d)}
-    function onKey(e){
-      if(!ov)return;
-      if(e.key==='Escape'){closeLb()}
-      else if(e.key==='ArrowRight'){e.preventDefault();go(1)}
-      else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
-      else if(e.key==='Tab'){
-        var f=[].slice.call(ov.querySelectorAll('button')),a=R.activeElement,i=f.indexOf(a);
-        e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus();
-      }
-    }
-    function btn(txt,cls,label,fn){var b=document.createElement('button');b.type='button';b.className='lb-btn '+cls;b.textContent=txt;b.setAttribute('aria-label',label);b.addEventListener('click',function(e){e.stopPropagation();fn()});return b}
-    function openLb(el){
-      closeLb(true);
-      list=ordered();cur=0;list.forEach(function(r,i){if(r.el===el)cur=i});
-      lastFocus=el;
-      ov=document.createElement('div');ov.className='lb';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Media viewer');
-      var top=document.createElement('div');top.className='lb-top';
-      var cnt=document.createElement('span');cnt.className='lb-count';
-      top.appendChild(cnt);top.appendChild(btn('✕','lb-x','Close',function(){closeLb()}));
-      var stage=document.createElement('div');stage.className='lb-stage';
-      var sp=document.createElement('div');sp.className='lb-spin';stage.appendChild(sp);
-      var cap=document.createElement('div');cap.className='lb-cap';
-      ov.appendChild(top);ov.appendChild(stage);ov.appendChild(cap);
-      if(list.length>1){
-        ov.appendChild(btn('‹','lb-p','Previous',function(){go(-1)}));
-        ov.appendChild(btn('›','lb-n','Next',function(){go(1)}));
-        var dots=document.createElement('div');dots.className='lb-dots';
-        list.forEach(function(r,i){var d=document.createElement('button');d.type='button';d.className='lb-dot';d.setAttribute('aria-label','Go to item '+(i+1));d.addEventListener('click',function(e){e.stopPropagation();jump(i)});dots.appendChild(d)});
-        ov.appendChild(dots);
-      }
-      ov.addEventListener('click',function(e){if(e.target===ov||e.target===stage)closeLb()});
-      ov.addEventListener('wheel',function(e){
-        e.preventDefault();
-        var d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY,now=Date.now();
-        if(Math.abs(d)<24||now-wheelT<380)return;
-        wheelT=now;go(d>0?1:-1);
-      },{passive:false});
-      var tx=null,ty=null;
-      ov.addEventListener('touchstart',function(e){if(e.target.tagName==='VIDEO'){tx=null;return}tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
-      ov.addEventListener('touchend',function(e){
-        if(tx===null)return;
-        var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
-        if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1);
-        else if(dy>110&&Math.abs(dy)>Math.abs(dx))closeLb();
-      });
-      prevOverflow=document.documentElement.style.overflow;
-      document.documentElement.style.overflow='hidden';
-      R.appendChild(ov);
-      document.addEventListener('keydown',onKey);
-      render(0);
-      syncAll();
-      var x=ov.querySelector('.lb-x');if(x)x.focus({preventScroll:true});
-    }
-    function closeLb(instant){
-      if(!ov)return;
-      var o=ov;ov=null;
-      document.removeEventListener('keydown',onKey);
-      document.documentElement.style.overflow=prevOverflow;
-      [].forEach.call(o.querySelectorAll('video'),function(v){v.pause()});
-      function rm(){if(o.parentNode)o.parentNode.removeChild(o)}
-      if(instant===true||reduce)rm();else{o.classList.add('closing');setTimeout(rm,190)}
-      if(lastFocus&&lastFocus.focus){try{lastFocus.focus({preventScroll:true})}catch(e){}}
-      syncAll();
-    }
-    return {add:add,close:function(){closeLb(true)},pauseAll:function(){vids.forEach(function(v){v.pause()})}};
-  };
-})();
-</script>
 <div id="drivelinePane" role="tabpanel" aria-label="Front Driveline and Steering Correction — Investigation">
 <style>
 #drivelinePane{display:none}
@@ -6520,32 +6329,478 @@ footer,.dl footer{font:400 12px/1.8 var(--body)}
     if(done||!host||!host.attachShadow)return;done=true;
     var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
 
-    var B='https://res.cloudinary.com/fvtkc10l/';
-    var IMG=[
-      'image/upload/v1792658465/driveline_correction_post_linkedin_cover_fcgqtp.png',
-      'image/upload/v1795286638/11_b4zqhl.jpg','image/upload/v1795286639/22_ujmpzt.jpg',
-      'image/upload/v1795286641/33_xwcxhu.jpg','image/upload/v1795286642/44_gnfsu8.jpg',
-      'image/upload/v1795286643/55_pcgz5z.jpg','image/upload/v1795286644/66_lrzmqf.jpg','image/upload/v1795684025/15b2c0f9-8629-4871-b4b6-127b71e0a1e6_yw9akb.jpg'
-    ];
-    var kit=window.MediaKit(R,{pane:document.getElementById('drivelinePane')});
-    function pad(i){return String(i+1).padStart(2,'0')}
-    function fill(b,i){
-      kit.add(b,{t:'i',u:B+IMG[i],c:'Front driveline correction — Fig. '+pad(i)});
-      var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+pad(i);b.appendChild(f);
-    }
-    var h=R.querySelector('[data-fig]');if(h)fill(h,0);
-    [].forEach.call(R.querySelectorAll('[data-figs]'),function(g){
-      g.getAttribute('data-figs').split(',').forEach(function(n){var b=document.createElement('div');b.className='gth';g.appendChild(b);fill(b,+n-1)});
-    });
-    [['vid','video/upload/v1791031735/IMG_8105_abuexv.mp4','Front driveline correction — steering articulation'],
-     ['vid3','video/upload/v1795684633/WhatsApp_Video_2026-11-26_at_2.46.40_PM_ybfxmf.mp4','Front driveline correction — final assembly'],
-     ['vid2','video/upload/v1795684023/WhatsApp_Video_2026-11-26_at_2.35.53_PM_md6otr.mp4','Car 31 — endurance run at ATVC']
-    ].forEach(function(x){var el=R.getElementById(x[0]);if(el)kit.add(el,{t:'v',u:[B+x[1]],c:x[2]})});
-    var c31=R.getElementById('vid2');
-    if(c31){var tag=document.createElement('span');tag.className='fig';tag.textContent='CAR 31';tag.style.cssText='top:6px;bottom:auto;left:6px;pointer-events:none;z-index:2';c31.appendChild(tag)}
+(function(){
+  var B='https://res.cloudinary.com/fvtkc10l/';
+  var IMG=[
+    'image/upload/v1792658465/driveline_correction_post_linkedin_cover_fcgqtp.png',
+    'image/upload/v1795286638/11_b4zqhl.jpg','image/upload/v1795286639/22_ujmpzt.jpg',
+    'image/upload/v1795286641/33_xwcxhu.jpg','image/upload/v1795286642/44_gnfsu8.jpg',
+    'image/upload/v1795286643/55_pcgz5z.jpg','image/upload/v1795286644/66_lrzmqf.jpg','image/upload/v1795684025/15b2c0f9-8629-4871-b4b6-127b71e0a1e6_yw9akb.jpg'
+  ];
+  function thumb(i){
+    var b=document.createElement('div');b.className='gth';fill(b,i);return b;
+  }
+  function fill(b,i){
+    var im=document.createElement('img');im.src=B+IMG[i];im.alt='Driveline correction, Fig. '+(i+1);im.loading='lazy';
+    im.onerror=function(){im.remove();b.firstChild&&b.removeChild(b.firstChild);b.insertBefore(document.createTextNode('Image unavailable'),b.firstChild)};
+    b.appendChild(im);
+    var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+String(i+1).padStart(2,'0');b.appendChild(f);
+  }
+  var h=R.querySelector('[data-fig]');if(h)fill(h,0);
+  [].forEach.call(R.querySelectorAll('[data-figs]'),function(g){
+    g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(thumb(+n-1))});
+  });
+  var v=document.createElement('video');v.loop=true;v.muted=true;v.playsInline=true;v.controls=true;v.preload='metadata';
+  var s=document.createElement('source');s.src=B+'video/upload/v1791031735/IMG_8105_abuexv.mp4';v.appendChild(s);
+  R.getElementById('vid').appendChild(v);
+  var v2=document.createElement('video');v2.loop=true;v2.muted=true;v2.playsInline=true;v2.controls=true;v2.preload='metadata';
+  var s2=document.createElement('source');s2.src=B+'video/upload/v1795684023/WhatsApp_Video_2026-11-26_at_2.35.53_PM_md6otr.mp4';v2.appendChild(s2);
+  R.getElementById('vid2').appendChild(v2);
+  var tag=document.createElement('span');tag.className='fig';tag.textContent='CAR 31';tag.style.cssText='top:6px;bottom:auto;left:6px;pointer-events:none;z-index:2';R.getElementById('vid2').appendChild(tag);
+  var v3=document.createElement('video');v3.loop=true;v3.muted=true;v3.playsInline=true;v3.controls=true;v3.preload='metadata';
+  var s3=document.createElement('source');s3.src=B+'video/upload/v1795684633/WhatsApp_Video_2026-11-26_at_2.46.40_PM_ybfxmf.mp4';v3.appendChild(s3);
+  R.getElementById('vid3').appendChild(v3);
+
+  /* Auto-play each driveline video when it scrolls into view; pause when it leaves */
+  [v,v2,v3].forEach(function(x){x.muted=true;x.setAttribute('muted','');x.setAttribute('playsinline','')});
+  if('IntersectionObserver' in window){
+    var dlVis=new IntersectionObserver(function(es){es.forEach(function(e){
+      var vid=e.target;
+      if(e.isIntersecting){var p=vid.play();if(p&&p.catch)p.catch(function(){})}
+      else vid.pause();
+    })},{threshold:.35});
+    [v,v2,v3].forEach(function(x){dlVis.observe(x)});
+  }
+})();
 
     var bk=R.getElementById('dlBackCta');
     if(bk)bk.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('driveline-back'))});
+  };
+})();
+</script>
+</div>
+<div id="tractorPane" role="tabpanel" aria-label="Why Does a Tractor’s Front Lift at the Bund? — Investigation">
+<style>
+#tractorPane{display:none}
+#tractorPane.is-on{display:block}
+</style>
+<div id="tractorHost"></div>
+<template id="tractorTpl"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:host{display:block;--fb:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--bg:#0A0C10;--surface:#111318;--border:#1E2229;--text:#F2F4F8;--sub:#9AA3B2;--muted:#6B7482;--accent:#f97316;--ok:#34d399;--warn:#E0A020;--danger:#ef4444;
+--cond:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Barlow",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+box-sizing:border-box;}
+.dl{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;min-height:100vh}
+.hero{max-width:760px;margin:0 auto;padding:56px 20px 28px;text-align:center}
+.chip{display:inline-block;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(249,115,22,.35);padding:5px 12px;border-radius:99px}
+h1{font:700 clamp(32px,8vw,56px)/1.05 var(--cond);margin:18px 0 12px;letter-spacing:-.3px}
+h1 em{font-style:normal;color:var(--accent)}
+.meta{font:400 11px var(--mono);color:var(--muted);line-height:1.9}
+.meta b{color:var(--sub);font-weight:500}
+.sub{color:var(--sub);margin-top:16px}
+.sub strong{color:var(--text)}
+main{max-width:760px;margin:0 auto;padding:0 16px 24px}
+.card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 20px;margin-top:16px}
+.card.d{border-left-color:var(--danger)}.card.i{border-left-color:var(--warn)}.card.s{border-left-color:var(--ok)}
+.sl{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sl span{color:var(--accent);margin-right:6px}
+h2{font:700 26px/1.15 var(--cond);margin:6px 0 10px}
+p{color:var(--sub);font-size:15px}p strong{color:var(--text)}
+.tl{border-left:2px solid var(--border);padding-left:22px;margin-left:6px}
+.tli{position:relative;padding:6px 0 26px}.tli .sl{margin-bottom:2px}.tli p{margin-top:4px}
+.tli::before{content:"";position:absolute;left:-29px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tli.d::before{background:var(--danger)}.tli.i::before{background:var(--warn)}.tli.s::before{background:var(--ok)}
+h4{font:600 17px var(--cond);letter-spacing:.02em}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px}
+.gth{position:relative;aspect-ratio:16/10;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#161a21;display:flex;align-items:center;justify-content:center;font:11px var(--mono);color:var(--muted);text-align:center}
+.gth img,.gth video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fig{position:absolute;left:6px;bottom:6px;font:500 9.5px var(--mono);background:rgba(0,0,0,.65);color:#fff;padding:2px 6px;border-radius:4px;letter-spacing:.06em}
+.hero-img{margin-top:22px;aspect-ratio:16/9}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+th{font:500 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td{color:var(--sub)}td.v{color:var(--ok)}
+.cb{margin-top:14px;border-radius:8px;padding:12px 14px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25)}
+.cb.ok{background:rgba(52,211,153,.07);border-color:rgba(52,211,153,.3)}
+.ct{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.cb.ok .ct{color:var(--ok)}.cx{color:var(--text);font-size:15px}
+.dl footer{max-width:760px;margin:24px auto 0;padding:20px 20px 36px;border-top:1px solid var(--border);text-align:center;font:10.5px/1.8 var(--mono);color:var(--muted)}
+footer strong{color:var(--text)}
+
+.cta-wrap{padding:8px 0 24px;display:flex;justify-content:center}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;padding:16px 36px;background:linear-gradient(135deg,var(--accent) 0%,#ea580c 100%);color:#fff;font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.04em;border-radius:10px;text-decoration:none;box-shadow:0 4px 24px rgba(249,115,22,.35);transition:transform .18s,filter .18s}
+.cta-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+
+/* type scale matched to the BAJA page */
+:root,:host{--cond:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--body:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--mono:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);--text:#FFFFFF;--sub:#8A8F9A;--muted:#8A8F9A;--border:#2A2F3A}
+.dl,body{line-height:1.5}
+.chip{font:500 12px/1.2 var(--body);letter-spacing:.18em}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;line-height:1.1;margin:28px 0 10px}
+.meta{font:400 12px/1.8 var(--body);letter-spacing:.03em}
+.sub{font-size:clamp(16px,2.2vw,18px);line-height:1.65;max-width:62ch;margin:16px auto 0}
+.sl{font:500 12px/1.2 var(--body);letter-spacing:.18em;margin-bottom:6px}
+h4{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+p{font-size:14px;line-height:1.5;max-width:60ch}
+.fig{font:500 12px/1.2 var(--body);letter-spacing:.06em}
+.gth{font-size:12px}
+footer,.dl footer{font:400 12px/1.8 var(--body)}
+.cta-btn{font-size:16px;font-weight:500}
+/* linkedin post card */
+.lip-h{max-width:760px;margin:0 auto;padding:8px 16px 0;position:relative;z-index:1;font-family:var(--cond);font-size:clamp(20px,4.5vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.2px;color:var(--text);text-align:center}
+.lip-wrap{max-width:760px;margin:0 auto;padding:0 16px 8px;position:relative;z-index:1;display:flex;justify-content:center}
+.li-post{--li-card:#1B1F23;--li-text:rgba(255,255,255,.9);--li-sec:rgba(255,255,255,.6);--li-line:#38434f;--li-blue:#70B5F9;width:100%;max-width:380px;display:flex;flex-direction:column;border:1px solid var(--li-line);border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:var(--li-card);font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:400;line-height:normal;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.li-post:hover,.li-post:focus-visible{transform:translateY(-4px);border-color:var(--li-blue);box-shadow:0 8px 18px rgba(112,181,249,.18);outline:none}
+.li-head{display:flex;gap:8px;padding:10px 10px 0;align-items:flex-start}
+.li-av{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex:none;background:#38434f}
+.li-who{min-width:0;flex:1}
+.li-name{font-size:14px;font-weight:600;line-height:1.25;color:var(--li-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-name i{font-style:normal;font-weight:400;font-size:11px;color:var(--li-sec)}
+.li-sub{font-size:11px;color:var(--li-sec);line-height:1.33;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-dots{color:var(--li-sec);font-size:16px;line-height:1;padding:2px 0 0 4px}
+.li-text{padding:6px 10px 8px;font-size:14px;line-height:20px;color:var(--li-text);min-height:48px}
+.li-clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.li-more{color:var(--li-sec)}
+.li-media{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#2b3238}
+.li-media img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.li-react{display:flex;align-items:center;gap:14px;padding:10px 10px 0;font-size:12.5px;color:var(--li-sec)}
+.li-react span{display:inline-flex;align-items:center;gap:6px}
+.li-react svg{width:18px;height:18px}
+.li-react b{font-weight:400}
+.li-impr{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 10px;font-size:12.5px;color:var(--li-text)}
+.li-impr span{display:inline-flex;align-items:center;gap:8px}
+.li-impr b{font-weight:600;color:var(--li-blue)}
+.li-post:hover .li-name{text-decoration:underline}
+
+.lip-h{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;font-family:var(--cond)}
+.liwrap{margin-top:8px}.liwrap .li-post{max-width:260px}.liwrap .li-text{font-size:12px;line-height:17px;min-height:0}.liwrap .li-name{font-size:12px}.liwrap .li-sub{font-size:10px}.liwrap .li-react,.liwrap .li-impr{font-size:11px}
+
+/* standalone page */
+.dl{overflow-x:hidden;-webkit-font-smoothing:antialiased}
+sub{font-size:.75em}
+.gth img{object-fit:contain;background:#0d1015}
+.gth video{object-fit:cover}
+.gg.w{grid-template-columns:repeat(2,1fr)}
+.gg.one{grid-template-columns:1fr}
+.gg.one .gth{aspect-ratio:16/9}
+.gg.pt{grid-template-columns:repeat(2,1fr);max-width:440px}
+.gg.pt .gth{aspect-ratio:3/4}
+.gg+.gg{margin-top:10px}
+td.vd{color:var(--danger);font-weight:600}
+td.mn,td.v{font-variant-numeric:tabular-nums}
+.tg{font:500 12px/1.2 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:20px 0 2px}
+.tli p+p{margin-top:8px}
+.tli table{margin-bottom:4px}
+.cb.d{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.3)}
+.cb.d .ct{color:var(--danger)}
+.tli .cb{max-width:60ch}
+a.lk{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(249,115,22,.35);transition:border-color .2s}
+a.lk:hover{border-bottom-color:var(--accent)}
+.lks{margin-top:10px;font-size:13px;line-height:1.9;color:var(--muted);max-width:none}
+.lks a{margin-right:14px;white-space:nowrap}
+.bl{list-style:none;margin-top:8px}
+.bl li{position:relative;padding-left:18px;margin-top:6px;color:var(--sub);font-size:14px;line-height:1.5}
+.bl li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:2px;background:var(--accent)}
+.bl strong{color:var(--text);font-weight:500}
+.st{position:relative;padding-left:32px;margin-top:14px}
+.st::before{content:attr(data-n);position:absolute;left:0;top:1px;font:500 12px/1.4 var(--body);letter-spacing:.14em;color:var(--accent)}
+.st p{margin-top:0}
+.st .gg{margin-top:8px}
+@media(max-width:520px){.gg.w{grid-template-columns:1fr}.hero{padding-top:40px}}
+</style>
+<div class="dl">
+<header class="hero">
+  <h1>Why Does a Tractor’s Front <em>Lift</em><br>at the Bund?</h1>
+  <div class="meta"><b>Arpit Malik</b> · Chief Design Engineer, Team Daedalus Racing · NSUT, Delhi<br>Front Axle Load Analysis · Completed July 2026</div>
+  <p class="sub">A simplified static model of rear-implement tractor behaviour during irrigation bund crossing. Front axle load drops <strong>66.6%</strong> (592 kg → 197 kg); a <strong>108 kg front ballast</strong> restores it to <strong>502 kg</strong>.</p>
+  <div class="gth hero-img" data-src="Model Used 265.png" data-t="i" data-label="FIG. 01" data-cap="Fig 1 — Tractor replica, reverse engineered from Mahindra 265"></div>
+</header>
+<main>
+  <div class="tl">
+
+    <div class="tli"><div class="sl"><span>01</span> Origin</div><h4>A childhood observation</h4>
+      <p>As a child, I often watched tractors working in paddy fields. A tractor carrying a rear-mounted rotavator could work normally inside the field, but while climbing over the irrigation bund to exit, <strong>the front suddenly became much lighter</strong>.</p>
+      <p>Recently, I came across a reel showing the same behaviour again. It reminded me of that childhood observation and made me ask: <strong>what actually changes at that instant?</strong></p></div>
+
+    <div class="tli d"><div class="sl"><span>02</span> Problem</div><h4>Front axle goes light at the bund</h4>
+      <p>A rear-mounted implement tractor carries its working load evenly across both axles inside the field. As the rear tyres climb the bund, the rear contact point shifts forward relative to the tractor’s centre of gravity.</p>
+      <p>Using moment equilibrium on a simplified static model, this study quantifies how that shift in rear tyre contact point, from field level to bund-top, redistributes load across the axles.</p>
+      <div class="cb"><div class="ct">▶ Key insight</div><div class="cx"><strong>The implement weight does not change. The tractor weight does not change.</strong> Only the geometry of contact does, and the front axle reaction drops sharply as a result.</div></div></div>
+
+    <div class="tli i"><div class="sl"><span>03</span> Field Note</div><h4>Seen across tractors</h4>
+      <p>Not a one-off. Four tractors, same behaviour. The study model is a fifth, the <strong>Mahindra 265 DI</strong>.</p>
+      <div class="gg w"><div class="gth" data-src="reel_observation.mp4" data-t="v" data-label="PASS 1" data-cap="Field reel — Swaraj 855"></div><div class="gth" data-src="reel_observation2.mp4" data-t="v" data-label="PASS 2" data-cap="Field reel — International"></div><div class="gth" data-src="reel_observation3.mp4" data-t="v" data-label="PASS 3" data-cap="Field reel — New Holland 3630"></div><div class="gth" data-src="reel_observation4.mp4" data-t="v" data-label="PASS 4" data-cap="Field reel — Swaraj 855 FE 4x4"></div></div>
+      <p class="lks"><a class="lk" href="https://www.instagram.com/p/DaAtiu3lmwy/" target="_blank" rel="noopener noreferrer">Swaraj 855 ↗</a><a class="lk" href="https://www.instagram.com/p/DaPdvB9RRoL/" target="_blank" rel="noopener noreferrer">International ↗</a><a class="lk" href="https://www.instagram.com/reel/DaPQWtzNrES/?utm_source=ig_web_copy_link&amp;igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">New Holland 3630 ↗</a><a class="lk" href="https://www.instagram.com/reel/DQVpGjLEuhJ/?utm_source=ig_web_copy_link&amp;igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">Swaraj 855 FE 4x4 ↗</a></p></div>
+
+    <div class="tli"><div class="sl"><span>04</span> Model Setup</div><h4>Geometry &amp; mass properties</h4>
+      <p>Replica reverse-engineered from the Mahindra 265. Its geometry (wheelbase, KPI, camber, scrub radius) comes from a separate <strong>reverse-engineering study</strong> using measured field data. <a class="lk" href="https://www.linkedin.com/posts/arpit-malik-bb6939303_vehicledynamics-steeringgeometry-reverseengineering-ugcPost-7469405123719417856-YUJ8/" target="_blank" rel="noopener noreferrer">View study on LinkedIn ↗</a></p>
+      <div class="tg">Tractor</div>
+      <table><thead><tr><th>Parameter</th><th>Value</th><th>Source</th></tr></thead><tbody><tr><td>Model reference</td><td>Mahindra 265 DI</td><td>Reference</td></tr><tr><td>Wheelbase (replica)</td><td>1880 mm</td><td>CAD</td></tr><tr><td>CG — longitudinal</td><td>40% of WB from rear axle</td><td>Assumed</td></tr><tr><td>CG height</td><td>750 mm</td><td>Assumed</td></tr></tbody></table>
+      <div class="cb"><div class="ct">▶ Why the CG sits rearward</div><div class="cx">In a 4×2 tractor, the gearbox and differential sit rearward, rear tyres are larger and heavier, and the engine is not fully forward, making the rear end heavier than the front. CG is therefore assumed <strong>closer to the rear axle</strong>.</div></div>
+      <div class="tg">Rotavator (implement)</div>
+      <table><thead><tr><th>Parameter</th><th>Value</th><th>Source</th></tr></thead><tbody><tr><td>Weight</td><td>201 kg</td><td>Indiamart</td></tr><tr><td>Width</td><td>4 ft</td><td>30 HP class</td></tr><tr><td>CG</td><td>Geometric centre</td><td>Assumed</td></tr></tbody></table>
+      <div class="gg w"><div class="gth" data-src="Rotavator.png" data-t="i" data-label="FIG. 02" data-cap="Fig 2 — Rotavator, CAD model"></div><div class="gth" data-src="Rotavator_Indiamart2.png" data-t="i" data-label="SPEC" data-cap="Spec sheet — 4 ft rotavator, 201 kg, rated for 30 HP tractors (Indiamart)"></div></div>
+      <div class="gg one"><div class="gth" data-src="Tractor+Rotavator_ASM.png" data-t="i" data-label="FIG. 03" data-cap="Fig 3 — Tractor + Rotavator, realistic linkage assembly"></div></div>
+      <div class="tg">Wheelbase verification</div>
+      <table><thead><tr><th>Parameter</th><th>Value</th></tr></thead><tbody><tr><td>Reference (tractorguru.in)</td><td>1830 mm</td></tr><tr><td>Replica (CAD)</td><td>1880 mm</td></tr><tr><td>Deviation</td><td>50 mm</td></tr></tbody></table>
+      <p style="margin-top:8px">Deviation of 50 mm accepted for this simplified static study.</p>
+      <div class="gg w"><div class="gth" data-src="CG and wheel base.png" data-t="i" data-label="FIG. 04" data-cap="Fig 4 — CG location and wheelbase measurement in CAD"></div><div class="gth" data-src="wheel base google.png" data-t="i" data-label="REF" data-cap="Google reference showing 1830 mm wheelbase"></div></div></div>
+
+    <div class="tli i"><div class="sl"><span>05</span> Loading Scenario</div><h4>Case 1: tyres on split surface</h4>
+      <p>Front tyres rest on the higher field surface while the rear tyres remain inside the paddy field. <strong>Determine:</strong> support reactions and front axle load, by moment equilibrium about the contact patch.</p>
+      <div class="gg w"><div class="gth" data-src="case_1_Scenerio.png" data-t="i" data-label="FIG. 05" data-cap="Fig 5 — Case 1: front tyres elevated, rear tyres in field"></div><div class="gth" data-src="Case 1 Moment_Solving.png" data-t="i" data-label="FIG. 06" data-cap="Fig 6 — Case 1: moment solving about the contact patch (tractor CG, implement CG, front axle reaction Nf)"></div></div>
+      <div class="gg pt"><div class="gth" data-src="Case 1 Nf Calculation Page 1.png" data-t="i" data-label="FIG. 07" data-cap="Fig 7 — Case 1: calculation of Nf (page 1 of 2)"></div><div class="gth" data-src="Case 1 Nf Calculation Page 2.png" data-t="i" data-label="FIG. 08" data-cap="Fig 8 — Case 1: calculation of Nf (page 2 of 2)"></div></div></div>
+
+    <div class="tli i"><div class="sl"><span>06</span> Loading Scenario</div><h4>Case 2: rear tyres on split surface</h4>
+      <p>The rear tyres climb onto the irrigation bund, shifting the rear support point <strong>421 mm forward</strong>. Same approach: moment equilibrium about the contact patch.</p>
+      <div class="gg w"><div class="gth" data-src="case_2_Scenerio.png" data-t="i" data-label="FIG. 09" data-cap="Fig 9 — Case 2: rear tyres elevated, front tyres in field"></div><div class="gth" data-src="Case 2 Moment_Solving.png" data-t="i" data-label="FIG. 10" data-cap="Fig 10 — Case 2: moment solving about the contact patch (tractor CG, implement CG, front axle reaction Nf)"></div></div>
+      <div class="gg pt"><div class="gth" data-src="Case 2 Nf Calculation Page 1.png" data-t="i" data-label="FIG. 11" data-cap="Fig 11 — Case 2: calculation of Nf"></div></div></div>
+
+    <div class="tli d"><div class="sl"><span>07</span> Comparison</div><h4>Case 1 vs Case 2: front axle load</h4>
+      <p>Shifting the rear support point from field level to the bund-top moves the rear contact point forward, <strong>reducing the restoring moment</strong> and sharply cutting the front axle reaction.</p>
+      <div class="gg one"><div class="gth" data-src="Case 1 vs Case 2.png" data-t="i" data-label="FIG. 12" data-cap="Fig 12 — Front axle load comparison, Case 1 vs Case 2"></div></div>
+      <table><thead><tr><th>Parameter</th><th>Case 1</th><th>Case 2</th></tr></thead><tbody><tr><td>Rear tyre position</td><td>Field level</td><td>Irrigation bund</td></tr><tr><td>Rear support point</td><td>Original</td><td>Shifted 421 mm forward</td></tr><tr><td>Front axle load</td><td>5807 N (592 kg)</td><td class="vd">1937 N (197 kg)</td></tr><tr><td>Change in front axle load</td><td>—</td><td class="vd">↓ 66.6%</td></tr></tbody></table></div>
+
+    <div class="tli s"><div class="sl"><span>08</span> Remedy</div><h4>Adding front ballast to the tractor</h4>
+      <p>Adding front ballast shifts the combined centre of gravity forward, increasing the restoring moment about the rear support point. This <strong>increases the front axle load</strong>, improving steering stability and reducing the tendency of the front end to lift.</p>
+      <p>Front ballast is added weight, usually cast iron blocks, bolted onto the front axle carrier ahead of the front wheels. It counteracts the weight transfer caused by a heavy rear-mounted implement, keeping enough load on the front axle for steering control.</p>
+      <div class="gg w"><div class="gth" data-src="Front_Ballast_JohnDeer.mp4" data-t="v" data-label="REF 1" data-cap="John Deere — front ballast with plough"></div><div class="gth" data-src="Front_Ballast_MasseyFurgusan.mp4" data-t="v" data-label="REF 2" data-cap="Massey Ferguson — front ballast with Super Seeder"></div></div></div>
+
+    <div class="tli"><div class="sl"><span>09</span> Verification</div><h4>Ballast workflow</h4>
+      <div class="st" data-n="01"><p>Create the front ballast CAD model along with the axle-mounted support bracket (on the Mahindra 265, front weights are supported by the front axle carrier rather than the chassis) and assign the actual material to obtain a realistic ballast mass.</p>
+        <div class="gg one"><div class="gth" data-src="ballast_assembly.png" data-t="i" data-label="FIG. 13" data-cap="Fig 13 — Assembled front ballast with axle-mounted support bracket"></div></div></div>
+      <div class="st" data-n="02"><p>Obtain the ballast CG from CAD.</p>
+        <div class="gg one"><div class="gth" data-src="ballast_cg_mass_property.png" data-t="i" data-label="FIG. 14" data-cap="Fig 14 — Ballast CG obtained via mass properties in CAD"></div></div></div>
+      <div class="st" data-n="03"><p>Calculate the combined CG of the tractor and front ballast.</p>
+        <div class="gg w"><div class="gth" data-src="combined_cg_cad.png" data-t="i" data-label="FIG. 15" data-cap="Fig 15 — CG shift illustrated on tractor CAD, before and after front ballast"></div><div class="gth" data-src="combined_cg_calculation.png" data-t="i" data-label="FIG. 16" data-cap="Fig 16 — Combined CG hand calculation, tractor + front ballast"></div></div></div>
+      <div class="st" data-n="04"><p>Recalculate the front axle reaction for Case 2 using the new combined CG.</p>
+        <div class="gg one"><div class="gth" data-src="case2_ballast_nf_calculation.png" data-t="i" data-label="FIG. 17" data-cap="Fig 17 — Front axle reaction (Nf), Case 2 with front ballast"></div></div></div>
+      <div class="st" data-n="05"><p>Compare results with and without ballast.</p></div></div>
+
+    <div class="tli s"><div class="sl"><span>10</span> Results</div><h4>Case 2 with 108 kg front ballast</h4>
+      <table><thead><tr><th>Configuration</th><th>Front axle load</th></tr></thead><tbody><tr><td>Without ballast</td><td>197 kg</td></tr><tr><td>With 108 kg ballast</td><td class="v">502 kg</td></tr></tbody></table>
+      <ul class="bl"><li>Front ballast mass: <strong>108 kg</strong></li><li>Front axle load increased from <strong>197 kg</strong> to <strong>502 kg</strong></li><li>Increase of <strong>305 kg (≈ 155%)</strong></li></ul>
+      <div class="cb ok"><div class="ct">◈ Takeaway</div><div class="cx">Adding a <strong>108 kg front ballast</strong> increased the front axle load from <strong>197 kg to 502 kg</strong>, restoring steering axle load by shifting the combined centre of gravity forward and increasing the restoring moment.</div></div>
+      <div class="cb d"><div class="ct">▶ Design trade-off</div><div class="cx">Front ballast improves front axle load and stability, but excessive ballast increases steering effort, front tyre wear, and front axle loading. Ballast should be <strong>optimised for the intended implement and operating conditions</strong>.</div></div></div>
+
+    <div class="tli s"><div class="sl"><span>11</span> Final Comparison</div><h4>Case 1 vs Case 2 vs Case 2 with ballast</h4>
+      <p>All three configurations together: the baseline, the bund-crossing drop, and the recovery achieved with front ballast.</p>
+      <div class="gg one"><div class="gth" data-src="Case_1_vs_Case_2_vs_Ballast.png" data-t="i" data-label="FIG. 18" data-cap="Fig 18 — Front axle load comparison, Case 1 vs Case 2 vs Case 2 with ballast"></div></div>
+      <table><thead><tr><th>Configuration</th><th>Front axle load</th></tr></thead><tbody><tr><td>Case 1: front on higher ground</td><td>5807 N (592 kg)</td></tr><tr><td>Case 2: rear on irrigation bund</td><td class="vd">1937 N (197 kg)</td></tr><tr><td>Case 2: with 108 kg front ballast</td><td class="v">4930 N (502 kg)</td></tr></tbody></table>
+      <p style="margin-top:12px">Front ballast recovers most of the front axle load lost during the bund crossing, from <strong>197 kg back up to 502 kg</strong>, an increase of <strong>2993 N (305 kg)</strong> over the original Case 2. Steering control is restored without fully eliminating the drop from the Case 1 baseline of 592 kg.</p></div>
+
+  </div>
+</main>
+
+<div class="cta-wrap"><a class="cta-btn" href="#" id="tlBackCta"><span>Explore More Projects</span><span>→</span></a></div>
+<footer>Static model · Simplified analysis · Dynamic effects excluded<br>Tractor–Implement System</footer>
+</div></template>
+<script>
+/* MediaKit — shared, professional media handling for case-study panes:
+   click-to-open lightbox (arrows / swipe / scroll / keys / dots), smooth loading,
+   videos autoplay only while visible and stop when the page/pane is left. */
+(function(){
+  if(window.MediaKit)return;
+  var ZOOM='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+  var CSS=[
+  '.gth.mk{cursor:pointer;background:linear-gradient(110deg,#141820 30%,#1d222c 50%,#141820 70%);background-size:200% 100%;animation:mkSh 1.4s linear infinite;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}',
+  '.gth.mk.is-ready{animation:none;background:#0d1015}',
+  '@keyframes mkSh{to{background-position:-200% 0}}',
+  '.gth.mk img,.gth.mk video{opacity:0;pointer-events:none;transition:opacity .55s ease,transform .6s cubic-bezier(.2,.7,.2,1)}',
+  '.gth.mk.is-ready img,.gth.mk.is-ready video{opacity:1}',
+  '.gth.mk:hover img,.gth.mk:hover video{transform:scale(1.035)}',
+  '.gth.mk:hover,.gth.mk:focus-visible{border-color:var(--accent,#f97316);box-shadow:0 10px 28px rgba(0,0,0,.45)}',
+  '.gth.mk:focus-visible{outline:2px solid var(--accent,#f97316);outline-offset:2px}',
+  '.gth.mk .mk-zoom{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:7px;background:rgba(10,12,16,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;opacity:0;transform:translateY(-3px);transition:opacity .2s,transform .2s;pointer-events:none;z-index:2}',
+  '.gth.mk:hover .mk-zoom,.gth.mk:focus-visible .mk-zoom{opacity:1;transform:none}',
+  '@media (hover:none){.gth.mk .mk-zoom{opacity:.85;transform:none}}',
+  '.gth.mk .fig{z-index:2}',
+  '.lb{position:fixed;inset:0;z-index:99999;background:rgba(6,8,12,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 64px 92px;color:#fff;font-family:var(--body,system-ui,sans-serif);animation:lbIn .25s ease}',
+  '.lb.closing{animation:lbOut .18s ease forwards}',
+  '@keyframes lbIn{from{opacity:0}to{opacity:1}}@keyframes lbOut{from{opacity:1}to{opacity:0}}',
+  '.lb-stage{position:relative;width:100%;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}',
+  '.lb-item{display:block;max-width:min(96vw,1180px);max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px);object-fit:contain;border-radius:8px;background:#000;box-shadow:0 30px 90px rgba(0,0,0,.7);animation:lbSlide .35s cubic-bezier(.2,.7,.2,1) both}',
+  '.lb-item.from-r{--dx:28px}.lb-item.from-l{--dx:-28px}',
+  '@keyframes lbSlide{from{opacity:0;transform:translateX(var(--dx,0)) scale(.985)}to{opacity:1;transform:none}}',
+  '.lb-spin{position:absolute;width:34px;height:34px;border:3px solid rgba(255,255,255,.18);border-top-color:var(--accent,#f97316);border-radius:50%;animation:lbSpin .8s linear infinite}',
+  '.lb-spin.off{display:none}@keyframes lbSpin{to{transform:rotate(360deg)}}',
+  '.lb-top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 16px}',
+  '.lb-count{font:500 12px/1 var(--body,system-ui,sans-serif);letter-spacing:.16em;color:rgba(255,255,255,.7)}',
+  '.lb-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}',
+  '.lb-btn:hover,.lb-btn:focus-visible{background:rgba(255,255,255,.2);outline:none}',
+  '.lb-p,.lb-n{position:absolute;top:50%;margin-top:-21px}.lb-p{left:14px}.lb-n{right:14px}',
+  '.lb-cap{margin-top:14px;font:400 13px/1.45 var(--body,system-ui,sans-serif);color:rgba(255,255,255,.75);text-align:center;max-width:70ch;min-height:19px}',
+  '.lb-dots{position:absolute;bottom:24px;left:0;right:0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:0 20px}',
+  '.lb-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.28);cursor:pointer;transition:background .2s,transform .2s}',
+  '.lb-dot.on{background:var(--accent,#f97316);transform:scale(1.4)}',
+  '@media(max-width:640px){.lb{padding:58px 10px 92px}.lb-p,.lb-n{top:auto;bottom:12px;margin-top:0;width:38px;height:38px}.lb-p{left:12px}.lb-n{right:12px}.lb-dots{bottom:26px;padding:0 64px}}',
+  '@media(prefers-reduced-motion:reduce){.lb,.lb-item,.gth.mk{animation:none!important}.gth.mk img,.gth.mk video{transition:none!important}}'
+  ].join('\n');
+
+  window.MediaKit=function(R,opts){
+    opts=opts||{};
+    var pane=opts.pane||null;
+    var st=document.createElement('style');st.textContent=CSS;R.appendChild(st);
+    var reg=[],vids=[],ov=null,cur=0,list=[],prevOverflow='',lastFocus=null,wheelT=0;
+    var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    function srcs(u){return Array.isArray(u)?u:[u]}
+    function paneOn(){return !pane||pane.classList.contains('is-on')}
+    function active(){return paneOn()&&!document.hidden&&!ov}
+    function play(v){try{var p=v.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+    function sync(v){if(v.__mkVis&&active())play(v);else v.pause()}
+    function syncAll(){vids.forEach(sync)}
+
+    var hasIO='IntersectionObserver' in window;
+    var vio=hasIO?new IntersectionObserver(function(es){es.forEach(function(e){e.target.__mkVis=e.isIntersecting;sync(e.target)})},{threshold:.4}):null;
+    var wio=hasIO?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.preload='auto';wio.unobserve(e.target)}})},{rootMargin:'400px 0px'}):null;
+
+    document.addEventListener('visibilitychange',syncAll);
+    window.addEventListener('pagehide',function(){vids.forEach(function(v){v.pause()})});
+    if(pane&&window.MutationObserver){
+      new MutationObserver(function(){syncAll();if(!paneOn()&&ov)closeLb(true)}).observe(pane,{attributes:true,attributeFilter:['class']});
+    }
+
+    function add(el,item){
+      el.classList.add('mk');
+      el.setAttribute('role','button');el.tabIndex=0;
+      el.setAttribute('aria-label','Open '+(item.t==='v'?'video':'image')+(item.c?': '+item.c:''));
+      var m;
+      function ready(){el.classList.add('is-ready')}
+      function bad(){if(m&&m.parentNode)m.parentNode.removeChild(m);el.classList.add('is-ready','bad');el.insertBefore(document.createTextNode('Media unavailable'),el.firstChild)}
+      if(item.t==='v'){
+        m=document.createElement('video');
+        m.loop=true;m.muted=true;m.defaultMuted=true;m.playsInline=true;m.controls=false;m.preload='metadata';
+        m.setAttribute('muted','');m.setAttribute('playsinline','');m.setAttribute('disablepictureinpicture','');
+        var us=srcs(item.u);
+        us.forEach(function(u,i){var s=document.createElement('source');s.src=u;if(i===us.length-1)s.addEventListener('error',bad);m.appendChild(s)});
+        m.addEventListener('loadeddata',ready);m.addEventListener('playing',ready);
+        vids.push(m);
+        if(vio){vio.observe(m);wio.observe(m)}else m.__mkVis=true;
+      }else{
+        m=document.createElement('img');
+        m.alt=item.c||'';m.decoding='async';m.loading='lazy';
+        m.onload=ready;m.onerror=bad;m.src=item.u;
+        if(m.complete&&m.naturalWidth)ready();
+      }
+      el.insertBefore(m,el.firstChild);
+      var z=document.createElement('span');z.className='mk-zoom';z.setAttribute('aria-hidden','true');z.innerHTML=ZOOM;el.appendChild(z);
+      el.addEventListener('click',function(){openLb(el)});
+      el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(el)}});
+      reg.push({el:el,item:item});
+      return m;
+    }
+
+    function ordered(){
+      return reg.filter(function(r){return r.el.isConnected}).sort(function(a,b){return (a.el.compareDocumentPosition(b.el)&4)?-1:1});
+    }
+    function render(dir){
+      var it=list[cur].item,stage=ov.querySelector('.lb-stage'),spin=ov.querySelector('.lb-spin');
+      [].slice.call(stage.querySelectorAll('.lb-item')).forEach(function(n){if(n.pause)n.pause();n.parentNode.removeChild(n)});
+      spin.classList.remove('off');
+      function done(){spin.classList.add('off')}
+      var m;
+      if(it.t==='v'){
+        m=document.createElement('video');
+        m.loop=true;m.muted=true;m.autoplay=true;m.playsInline=true;m.controls=true;m.preload='auto';
+        m.setAttribute('controlsList','nodownload');m.setAttribute('playsinline','');
+        srcs(it.u).forEach(function(u){var s=document.createElement('source');s.src=u;m.appendChild(s)});
+        m.addEventListener('loadeddata',function(){done();play(m)});
+        m.addEventListener('error',done,true);
+      }else{
+        m=document.createElement('img');m.alt=it.c||'';m.onload=done;m.onerror=done;m.src=it.u;
+      }
+      m.className='lb-item'+(dir>0?' from-r':dir<0?' from-l':'');
+      stage.appendChild(m);
+      ov.querySelector('.lb-count').textContent=(cur+1)+' / '+list.length;
+      ov.querySelector('.lb-cap').textContent=it.c||'';
+      [].forEach.call(ov.querySelectorAll('.lb-dot'),function(d,i){d.classList.toggle('on',i===cur);if(i===cur)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
+      [1,-1].forEach(function(k){var n=list[(cur+k+list.length)%list.length].item;if(n.t!=='v'){var im=new Image();im.src=n.u}});
+    }
+    function go(k){if(!ov||list.length<2)return;cur=(cur+k+list.length)%list.length;render(k)}
+    function jump(i){if(!ov||i===cur)return;var d=i>cur?1:-1;cur=i;render(d)}
+    function onKey(e){
+      if(!ov)return;
+      if(e.key==='Escape'){closeLb()}
+      else if(e.key==='ArrowRight'){e.preventDefault();go(1)}
+      else if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
+      else if(e.key==='Tab'){
+        var f=[].slice.call(ov.querySelectorAll('button')),a=(R.getRootNode?R.getRootNode():document).activeElement,i=f.indexOf(a);
+        e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus();
+      }
+    }
+    function btn(txt,cls,label,fn){var b=document.createElement('button');b.type='button';b.className='lb-btn '+cls;b.textContent=txt;b.setAttribute('aria-label',label);b.addEventListener('click',function(e){e.stopPropagation();fn()});return b}
+    function openLb(el){
+      closeLb(true);
+      list=ordered();cur=0;list.forEach(function(r,i){if(r.el===el)cur=i});
+      lastFocus=el;
+      ov=document.createElement('div');ov.className='lb';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Media viewer');
+      var top=document.createElement('div');top.className='lb-top';
+      var cnt=document.createElement('span');cnt.className='lb-count';
+      top.appendChild(cnt);top.appendChild(btn('✕','lb-x','Close',function(){closeLb()}));
+      var stage=document.createElement('div');stage.className='lb-stage';
+      var sp=document.createElement('div');sp.className='lb-spin';stage.appendChild(sp);
+      var cap=document.createElement('div');cap.className='lb-cap';
+      ov.appendChild(top);ov.appendChild(stage);ov.appendChild(cap);
+      if(list.length>1){
+        ov.appendChild(btn('‹','lb-p','Previous',function(){go(-1)}));
+        ov.appendChild(btn('›','lb-n','Next',function(){go(1)}));
+        var dots=document.createElement('div');dots.className='lb-dots';
+        list.forEach(function(r,i){var d=document.createElement('button');d.type='button';d.className='lb-dot';d.setAttribute('aria-label','Go to item '+(i+1));d.addEventListener('click',function(e){e.stopPropagation();jump(i)});dots.appendChild(d)});
+        ov.appendChild(dots);
+      }
+      ov.addEventListener('click',function(e){if(e.target===ov||e.target===stage)closeLb()});
+      ov.addEventListener('wheel',function(e){
+        e.preventDefault();
+        var d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY,now=Date.now();
+        if(Math.abs(d)<24||now-wheelT<380)return;
+        wheelT=now;go(d>0?1:-1);
+      },{passive:false});
+      var tx=null,ty=null;
+      ov.addEventListener('touchstart',function(e){if(e.target.tagName==='VIDEO'){tx=null;return}tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+      ov.addEventListener('touchend',function(e){
+        if(tx===null)return;
+        var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;
+        if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1);
+        else if(dy>110&&Math.abs(dy)>Math.abs(dx))closeLb();
+      });
+      prevOverflow=document.documentElement.style.overflow;
+      document.documentElement.style.overflow='hidden';
+      R.appendChild(ov);
+      document.addEventListener('keydown',onKey);
+      render(0);
+      syncAll();
+      var x=ov.querySelector('.lb-x');if(x)x.focus({preventScroll:true});
+    }
+    function closeLb(instant){
+      if(!ov)return;
+      var o=ov;ov=null;
+      document.removeEventListener('keydown',onKey);
+      document.documentElement.style.overflow=prevOverflow;
+      [].forEach.call(o.querySelectorAll('video'),function(v){v.pause()});
+      function rm(){if(o.parentNode)o.parentNode.removeChild(o)}
+      if(instant===true||reduce)rm();else{o.classList.add('closing');setTimeout(rm,190)}
+      if(lastFocus&&lastFocus.focus){try{lastFocus.focus({preventScroll:true})}catch(e){}}
+      syncAll();
+    }
+    return {add:add,close:function(){closeLb(true)},pauseAll:function(){vids.forEach(function(v){v.pause()})}};
+  };
+})();
+</script>
+<script>
+(function(){
+  var host=document.getElementById('tractorHost'),tpl=document.getElementById('tractorTpl'),pane=document.getElementById('tractorPane'),done=false;
+  /* study media (images + videos) is served from the study's own repo */
+  var BASE='https://arpitmalik711.github.io/Tractor_Front_Lift_Study/';
+  window.initTractorPane=function(){
+    if(done||!host||!host.attachShadow)return;done=true;
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+    var kit=window.MediaKit(R,{pane:pane});
+    [].forEach.call(R.querySelectorAll('.gth[data-src]'),function(b){
+      kit.add(b,{t:b.getAttribute('data-t'),u:BASE+encodeURI(b.getAttribute('data-src')),c:b.getAttribute('data-cap')||''});
+      var l=b.getAttribute('data-label');
+      if(l){var f=document.createElement('span');f.className='fig';f.textContent=l;b.appendChild(f)}
+    });
+    var bk=R.getElementById('tlBackCta');
+    if(bk)bk.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('tractor-back'))});
   };
 })();
 </script>
@@ -6645,7 +6900,24 @@ footer,.dl footer{font:400 12px/1.8 var(--body)}
 .lip-h{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em;font-family:var(--cond)}
 .liwrap{margin-top:8px}.liwrap .li-post{max-width:260px}.liwrap .li-text{font-size:12px;line-height:17px;min-height:0}.liwrap .li-name{font-size:12px}.liwrap .li-sub{font-size:10px}.liwrap .li-react,.liwrap .li-impr{font-size:11px}
 
+/* A-arm extras: clickable thumbs, video badge, lightbox */
+button.gth{appearance:none;-webkit-appearance:none;padding:0;cursor:pointer;color:inherit;transition:transform .18s,border-color .18s,box-shadow .18s}
+.gth:hover,.gth:focus-visible{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4);outline:none}
+.gth img,.gth video{pointer-events:none}
+.hero-img{cursor:default}.hero-img:hover{transform:none;box-shadow:none;border-color:var(--border)}
 td.vd{color:var(--danger);font-weight:600}
+.gth .vb{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
+.gth .vb::before{content:'';margin-left:2px;border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #0b0e14}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:900;background:rgba(5,7,12,.95);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 24px}
+.lb-stage{max-width:min(94vw,980px);max-height:74vh;display:flex;align-items:center;justify-content:center}
+.lb-stage img,.lb-stage video{max-width:100%;max-height:74vh;border-radius:6px;box-shadow:0 32px 96px rgba(0,0,0,.8);object-fit:contain;background:#000}
+.lb-cap{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--sub);letter-spacing:.06em;text-align:center}
+.lb-btn{position:fixed;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.16)}
+.lb-x{top:14px;right:14px}.lb-p{left:12px;top:50%;transform:translateY(-50%)}.lb-n{right:12px;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){.lb-p{left:4px}.lb-n{right:4px}.lb-btn{width:36px;height:36px}}
+
 </style>
 <div class="dl">
 <header class="hero">
@@ -6711,6 +6983,7 @@ td.vd{color:var(--danger);font-weight:600}
     if(done||!host||!host.attachShadow)return;done=true;
     var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
 
+    /* ── media (same assets as the BAJA page's Failure Investigation card) ── */
     var B='https://res.cloudinary.com/fvtkc10l/';
     function im(v,n){return {t:'i',u:B+'image/upload/v'+v+'/'+n+'.jpg'}}
     var MEDIA=[
@@ -6720,16 +6993,84 @@ td.vd{color:var(--danger);font-weight:600}
       {t:'v',u:[B+'video/upload/v1790887893/IMG_8043_hfajth.mp4',B+'video/upload/v1790887893/IMG_8043_hfajth.mov']},
       im('1795285408','8_t2ujyy'),im('1795285407','10_pxsix3')
     ];
-    MEDIA.forEach(function(m,i){m.c='Fig. '+String(i+1).padStart(2,'0')+' — Front upper A-arm failure'});
-    var kit=window.MediaKit(R,{pane:document.getElementById('armPane')});
-    function fig(b,i){var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+String(i+1).padStart(2,'0');b.appendChild(f)}
-    [].slice.call(R.querySelectorAll('[data-figs]')).forEach(function(g){
-      g.getAttribute('data-figs').split(',').forEach(function(n){
-        var i=+n-1,b=document.createElement('div');b.className='gth';g.appendChild(b);kit.add(b,MEDIA[i]);fig(b,i);
-      });
-    });
+    MEDIA.forEach(function(m,i){m.c='Fig. '+String(i+1).padStart(2,'0')+' — A-arm investigation'});
+
+    function mkVideo(m,controls){
+      var v=document.createElement('video');
+      v.loop=true;v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='metadata';v.controls=!!controls;
+      v.setAttribute('muted','');v.setAttribute('playsinline','');
+      m.u.forEach(function(u){var s=document.createElement('source');s.src=u;v.appendChild(s)});
+      return v;
+    }
+    function mkThumb(i){
+       var m=MEDIA[i];
+       var b=document.createElement('button');b.type='button';b.className='gth';b.setAttribute('aria-label',m.c);
+       var el;
+       if(m.t==='v'){el=mkVideo(m,false)}
+       else{el=document.createElement('img');el.src=m.u;el.alt=m.c;el.loading='lazy';
+         el.onerror=function(){b.classList.add('bad');b.textContent='Image unavailable'}}
+       b.appendChild(el);
+       if(m.t==='v'){var vb=document.createElement('span');vb.className='vb';b.appendChild(vb)}
+       var f=document.createElement('span');f.className='fig';f.textContent='FIG. '+String(i+1).padStart(2,'0');b.appendChild(f);
+       b.addEventListener('click',function(){openLb(i)});
+       return b;
+     }
+     [].slice.call(R.querySelectorAll('[data-figs]')).forEach(function(g){
+       g.getAttribute('data-figs').split(',').forEach(function(n){g.appendChild(mkThumb(+n-1))});
+     });
+
     var heroEl=R.querySelector('[data-hero]');
-    if(heroEl)kit.add(heroEl,{t:'i',u:B+'image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png',c:'Front upper A-arm failure after a shock swap'});
+    if(heroEl){var hi=document.createElement('img');hi.src=B+'image/upload/v1792656587/Front_suspension_failure_linkedin_cover_sgevxt.png';hi.alt='Front upper A-arm failure';hi.loading='lazy';heroEl.appendChild(hi)}
+
+    /* ── lightbox ── */
+    var ov=null,cur=0;
+    function renderLb(){
+      var m=MEDIA[cur],stage=ov.querySelector('.lb-stage');stage.innerHTML='';
+      var el;
+      if(m.t==='v'){el=mkVideo(m,true)}else{el=document.createElement('img');el.src=m.u;el.alt=m.c}
+      stage.appendChild(el);
+      ov.querySelector('.lb-cap').textContent=m.c+'  ·  '+(cur+1)+' / '+MEDIA.length;
+    }
+    function go(n){cur=(n+MEDIA.length)%MEDIA.length;renderLb()}
+    function closeLb(){if(ov){ov.remove();ov=null}document.removeEventListener('keydown',onKey)}
+    function onKey(e){if(e.key==='Escape')closeLb();else if(e.key==='ArrowRight')go(cur+1);else if(e.key==='ArrowLeft')go(cur-1)}
+    function btn(txt,cls,fn,label){var b=document.createElement('button');b.type='button';b.className='lb-btn '+cls;b.textContent=txt;b.setAttribute('aria-label',label);b.onclick=function(e){e.stopPropagation();fn()};return b}
+    function openLb(i){
+      closeLb();cur=i;
+      ov=document.createElement('div');ov.className='lb';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');
+      var st=document.createElement('div');st.className='lb-stage';st.onclick=function(e){e.stopPropagation()};
+      var cp=document.createElement('div');cp.className='lb-cap';
+      ov.appendChild(st);ov.appendChild(cp);
+      ov.appendChild(btn('✕','lb-x',closeLb,'Close'));
+      ov.appendChild(btn('‹','lb-p',function(){go(cur-1)},'Previous'));
+      ov.appendChild(btn('›','lb-n',function(){go(cur+1)},'Next'));
+      ov.onclick=closeLb;
+      R.appendChild(ov);renderLb();
+      document.addEventListener('keydown',onKey);
+      var tx=null;
+      ov.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+      ov.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>50)go(cur+(dx<0?1:-1))});
+    }
+
+    /* ── section nav ── */
+    var links=[].slice.call(R.querySelectorAll('.nav-link'));
+    links.forEach(function(l){l.addEventListener('click',function(){
+      var t=R.getElementById(l.getAttribute('data-target'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    })});
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('active',l.getAttribute('data-target')===e.target.id)});
+      })},{rootMargin:'-120px 0px -65% 0px'});
+      R.querySelectorAll('.nsm').forEach(function(s){io.observe(s)});
+    }
+
+    /* ── autoplay thumbnails only while visible ── */
+    if('IntersectionObserver' in window){
+      var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+        var p;if(e.isIntersecting){p=e.target.play();if(p&&p.catch)p.catch(function(){})}else e.target.pause();
+      })},{threshold:.25});
+      R.querySelectorAll('.gth video').forEach(function(v){vio.observe(v)});
+    }
 
     var bk=R.getElementById('armBackCta');
     if(bk)bk.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('arm-back'))});
@@ -6741,1041 +7082,181 @@ td.vd{color:var(--danger);font-weight:600}
 <style>
 #escooterPane{display:none}
 #escooterPane.is-on{display:block}
+.es-sec{padding:40px 6% 100px}
+@media(max-width:600px){.es-sec{padding:24px 5% 96px}}
 </style>
-<div id="escooterHost"></div>
+<section class="es-sec" aria-label="E-Scooter — electric mobility project"><div id="escooterHost"></div></section>
 <template id="escooterTpl"><style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:host {
-  display: block;
-  --black: #080808;
-  --white: #f2efe9;
-  --neon: #c6f135;
-  --muted: #3a3a3a;
-  --dim: #141414;
-  --pad: clamp(18px, 5vw, 44px);
-}
-
-
-.es {
-  background: var(--black);
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  overflow-x: hidden;
-}
-
-
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
-
-/* ── HERO ── */
-.hero {
-  position: relative;
-  min-height: calc(100svh - 64px);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 var(--pad) clamp(32px, 8vw, 72px);
-  overflow: hidden;
-}
-
-/* Hero background image */
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-}
-.hero-bg img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 45%;
-  display: block;
-}
-/* Multi-layer dark shade — heavier at bottom so text pops */
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(to bottom,
-      rgba(8,8,8,0.55) 0%,
-      rgba(8,8,8,0.45) 35%,
-      rgba(8,8,8,0.75) 65%,
-      rgba(8,8,8,0.97) 100%);
-}
-
-/* Subtle green glow at center */
-.hero-glow {
-  position: absolute; z-index: 1;
-  top: 42%; left: 50%; transform: translate(-50%, -50%);
-  width: min(700px, 120vw); height: 300px;
-  background: radial-gradient(ellipse, rgba(198,241,53,0.07) 0%, transparent 70%);
-  pointer-events: none; animation: glowPulse 4s ease-in-out infinite;
-}
-@keyframes glowPulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
-
-/* Hero content sits above the image */
-.hero-content { position: relative; z-index: 2; }
-
-.hero-tag {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.5rem, 1.8vw, 0.62rem);
-  letter-spacing: 0.45em; color: var(--neon);
-  text-transform: uppercase; margin-bottom: 18px;
-  opacity: 0; animation: up 0.9s ease 0.3s forwards;
-}
-
-/* ── HERO TITLE ── */
-.hero-title {
-  opacity: 0; animation: up 0.9s ease 0.5s forwards;
-  line-height: 1;
-}
-
-/* Row 1: "ELECTRIC" small label with line */
-.hero-title .label-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 6px;
-}
-.hero-title .label-row::after {
-  content: '';
-  flex: 1;
-  max-width: 80px;
-  height: 1px;
-  background: var(--neon);
-  opacity: 0.5;
-}
-.hero-title .label-text {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.5rem, 1.8vw, 0.68rem);
-  letter-spacing: 0.45em;
-  color: var(--neon);
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-/* Row 2: "E" huge black cutout box + "SCOOTER" */
-.hero-title .main-row {
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(8px, 2vw, 18px);
-  flex-wrap: nowrap;
-}
-
-/* The "E" badge — boxed in neon */
-.hero-title .badge-e {
-  font-family: 'Figtree', sans-serif;
-  font-weight: 900;
-  font-size: clamp(2.4rem, 9vw, 7rem);
-  line-height: 1;
-  color: var(--black);
-  background: var(--neon);
-  padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 18px);
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
-  /* drop a few px to align with SCOOTER baseline */
-  margin-bottom: 4px;
-}
-
-/* "SCOOTER" — massive italic, clipped two-tone */
-.hero-title .word-scooter {
-  font-family: 'Figtree', sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(3.4rem, 16vw, 13rem);
-  line-height: 0.88;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  /* two-tone: top half white, bottom half neon outline only */
-  color: var(--white);
-  -webkit-text-stroke: 0px transparent;
-  position: relative;
-}
-/* neon underline accent */
-.hero-title .word-scooter::after {
-  content: '';
-  display: block;
-  height: clamp(2px, 0.4vw, 4px);
-  width: 55%;
-  background: var(--neon);
-  margin-top: 6px;
-}
-
-.hero-subtitle {
-  margin-top: 16px;
-  font-size: clamp(0.85rem, 2.5vw, 1rem);
-  font-weight: 300; font-style: italic;
-  letter-spacing: 0.1em; color: rgba(242,239,233,0.35);
-  max-width: 400px; line-height: 1.7;
-  opacity: 0; animation: up 0.9s ease 0.7s forwards;
-}
-
-@keyframes up {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-
-/* Scroll cue */
-.scroll-cue {
-  position: absolute; bottom: clamp(20px, 5vw, 36px); right: var(--pad);
-  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: 0; animation: up 1s ease 1.1s forwards;
-}
-.scroll-cue span {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.48rem; letter-spacing: 0.4em; color: #333;
-  writing-mode: vertical-rl; text-transform: uppercase;
-}
-.scroll-cue-line {
-  width: 1px; height: 40px;
-  background: linear-gradient(to bottom, transparent, #333);
-}
-
-/* ── GALLERY ── */
-.gallery {
-  padding: clamp(32px, 8vw, 64px) var(--pad) 0;
-  display: grid;
-  grid-template-columns: 1.1fr 0.7fr;
-  grid-template-rows: auto auto;
-  gap: 8px;
-}
-.img-wrap {
-  overflow: hidden; position: relative; background: var(--dim);
-}
-.img-wrap.big { grid-row: 1 / 3; aspect-ratio: 3/4; }
-.img-wrap.small { aspect-ratio: 4/3; }
-.img-wrap img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: grayscale(15%) brightness(0.85);
-  transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.5s ease;
-}
-.img-wrap:hover img { transform: scale(1.05); filter: grayscale(0%) brightness(0.92); }
-.img-wrap.big::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 2px; background: var(--neon); z-index: 2;
-}
-.img-num {
-  position: absolute; bottom: 12px; right: 14px; z-index: 2;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.5rem; letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.25);
-}
-
-/* Mobile gallery: stack all vertically */
-@media(max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  .img-wrap.big { grid-row: auto; aspect-ratio: 4/3; }
-  .img-wrap.small { aspect-ratio: 16/9; }
-}
-
-/* ── COMING SOON ── */
-.soon-block {
-  padding: clamp(48px, 10vw, 80px) var(--pad) 0;
-  position: relative; overflow: hidden;
-  opacity: 0; animation: up 1s ease 1s forwards;
-}
-.soon-block::before {
-  content: '';
-  position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(900px, 160vw); height: 400px;
-  background: radial-gradient(ellipse at center,
-    rgba(198,241,53,0.09) 0%, rgba(198,241,53,0.03) 40%, transparent 70%);
-  pointer-events: none;
-  animation: blazePulse 3s ease-in-out infinite;
-}
-@keyframes blazePulse {
-  0%,100%{ opacity:0.7; transform:translate(-50%,-50%) scale(1); }
-  50%    { opacity:1;   transform:translate(-50%,-50%) scale(1.06); }
-}
-.soon-inner { position: relative; text-align: center; padding: 32px 0 16px; }
-.soon-eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.5rem, 1.6vw, 0.62rem);
-  letter-spacing: 0.55em; color: rgba(198,241,53,0.45);
-  text-transform: uppercase; margin-bottom: 12px;
-}
-.soon-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(5rem, 22vw, 20rem);
-  line-height: 0.82; letter-spacing: 0.03em; display: block;
-}
-.word-coming {
-  display: block; color: transparent;
-  -webkit-text-stroke: 1.5px rgba(242,239,233,0.15);
-}
-.word-soon {
-  display: block; color: var(--neon);
-  text-shadow: 0 0 40px rgba(198,241,53,0.6),
-               0 0 100px rgba(198,241,53,0.22),
-               0 0 200px rgba(198,241,53,0.08);
-  animation: heroFlicker 6s ease-in-out infinite, soonBlink 1.4s step-end infinite;
-}
-@keyframes heroFlicker {
-  0%,94%,100% {
-    text-shadow: 0 0 40px rgba(198,241,53,0.6),
-                 0 0 100px rgba(198,241,53,0.22),
-                 0 0 200px rgba(198,241,53,0.08);
-  }
-  95% { text-shadow: 0 0 15px rgba(198,241,53,0.3); }
-  96% { text-shadow: 0 0 60px rgba(198,241,53,0.9),
-                     0 0 140px rgba(198,241,53,0.4); }
-}
-@keyframes soonBlink {
-  0%, 48%, 52%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.soon-tagline {
-  display: flex; align-items: center; justify-content: center;
-  gap: 16px; margin-top: 24px;
-}
-.soon-tagline::before, .soon-tagline::after {
-  content: ''; flex: 1; max-width: 100px; height: 1px;
-  background: linear-gradient(to right, transparent, rgba(198,241,53,0.25));
-}
-.soon-tagline::after {
-  background: linear-gradient(to left, transparent, rgba(198,241,53,0.25));
-}
-.soon-tagline span {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.45rem, 1.4vw, 0.56rem);
-  letter-spacing: 0.4em; color: #3a3a3a;
-  text-transform: uppercase; white-space: nowrap;
-}
-.soon-desc {
-  margin-top: 16px;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
-  font-weight: 300; font-style: italic;
-  color: #333; letter-spacing: 0.1em; line-height: 1.8;
-}
-
-/* ── CONTACT STRIP ── */
-.contact-strip {
-  margin: clamp(28px, 6vw, 48px) var(--pad) 0;
-  display: flex; align-items: stretch;
-  border: 1px solid #1c1c1c;
-}
-.contact-item {
-  flex: 1; display: flex; align-items: center;
-  gap: 12px; padding: clamp(16px, 3vw, 22px) clamp(14px, 3vw, 28px);
-  text-decoration: none; color: var(--white);
-  transition: background 0.3s; position: relative; overflow: hidden;
-}
-.contact-item::after {
-  content: ''; position: absolute;
-  bottom: 0; left: 0; right: 0; height: 1px;
-  background: var(--neon); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
-}
-.contact-item:hover::after { transform: scaleX(1); }
-.contact-item:hover { background: rgba(198,241,53,0.03); }
-.contact-item:hover svg { stroke: var(--neon); }
-.contact-item:hover .contact-label { color: var(--neon); }
-.contact-item svg { stroke: #3a3a3a; flex-shrink: 0; transition: stroke 0.3s; }
-.contact-label {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.48rem, 1.4vw, 0.55rem);
-  letter-spacing: 0.3em; color: #3a3a3a;
-  text-transform: uppercase; transition: color 0.3s;
-}
-.contact-val {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(0.75rem, 2vw, 0.95rem);
-  font-weight: 300; letter-spacing: 0.06em;
-  color: #666; margin-left: auto;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.contact-sep { width: 1px; background: #1c1c1c; flex-shrink: 0; }
-
-/* Mobile: stack contact items */
-@media(max-width: 600px) {
-  .contact-strip { flex-direction: column; }
-  .contact-sep { width: 100%; height: 1px; }
-  .contact-val { display: none; }
-  .contact-item { padding: 18px 20px; }
-}
-@media(max-width: 860px) {
-  .contact-val { font-size: 0.72rem; }
-}
-
-/* ── DIVIDER ── */
-.divider {
-  margin: clamp(24px, 6vw, 48px) var(--pad) 0;
-  border: none; border-top: 1px solid #1c1c1c; position: relative;
-}
-.divider::after {
-  content: ''; position: absolute;
-  top: -1px; left: 0; width: 60px; height: 1px;
-  background: var(--neon);
-}
-
-/* ── NOTIFY ── */
-.notify {
-  padding: clamp(20px, 5vw, 36px) var(--pad) clamp(40px, 10vw, 64px);
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-}
-.notify-label {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.48rem, 1.5vw, 0.6rem);
-  letter-spacing: 0.3em; color: var(--muted);
-  text-transform: uppercase; white-space: nowrap;
-}
-.notify-input {
-  flex: 1; min-width: 160px;
-  background: transparent; border: none;
-  border-bottom: 1px solid #2a2a2a; outline: none;
-  color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(0.85rem, 2.5vw, 1rem);
-  letter-spacing: 0.1em; padding: 8px 0;
-  transition: border-color 0.3s;
-}
-.notify-input:focus { border-color: var(--neon); }
-.notify-input::placeholder { color: #2a2a2a; }
-.notify-btn {
-  background: transparent; border: 1px solid #2a2a2a;
-  color: var(--white);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  letter-spacing: 0.2em;
-  padding: 10px clamp(16px, 4vw, 28px);
-  cursor: pointer; transition: border-color 0.3s, color 0.3s; white-space: nowrap;
-}
-.notify-btn:hover { border-color: var(--neon); color: var(--neon); }
-
-/* Full width notify on very small screens */
-@media(max-width: 420px) {
-  .notify { flex-direction: column; align-items: flex-start; }
-  .notify-input { width: 100%; }
-  .notify-btn { width: 100%; text-align: center; }
-}
-
-/* ── FEATURED WORK ── */
-.featured {
-  padding: clamp(48px, 10vw, 80px) var(--pad) 0;
-}
-.featured-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: clamp(20px, 4vw, 36px); gap: 16px; flex-wrap: wrap;
-}
-.featured-title-group {}
-.featured-eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.45rem, 1.4vw, 0.56rem);
-  letter-spacing: 0.5em; color: var(--neon);
-  text-transform: uppercase; margin-bottom: 6px;
-  opacity: 0.7;
-}
-.featured-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.2rem, 7vw, 5rem);
-  line-height: 0.9; letter-spacing: 0.04em;
-  color: var(--white);
-}
-.featured-title span {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(242,239,233,0.2);
-}
-.featured-count {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.45rem, 1.3vw, 0.54rem);
-  letter-spacing: 0.3em; color: #2a2a2a;
-  text-transform: uppercase; white-space: nowrap;
-  align-self: flex-end;
-}
-
-/* Thumbnail grid */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
-  gap: clamp(6px, 1.5vw, 12px);
-}
-@media(min-width: 600px) {
-  .featured-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media(min-width: 900px) {
-  .featured-grid { grid-template-columns: repeat(4, 1fr); }
-}
-@media(min-width: 1200px) {
-  .featured-grid { grid-template-columns: repeat(5, 1fr); }
-}
-
-.thumb-card {
-  position: relative; overflow: hidden; cursor: pointer;
-  background: var(--dim); aspect-ratio: 3/4;
-  border: 1px solid #1a1a1a;
-  transition: border-color 0.3s, transform 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-.thumb-card:hover { border-color: rgba(198,241,53,0.3); transform: translateY(-3px); }
-.thumb-card:hover .thumb-overlay { opacity: 1; }
-.thumb-card:hover img { transform: scale(1.07); filter: brightness(0.75); }
-
-.thumb-card img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease;
-  filter: brightness(0.85) grayscale(10%);
-}
-
-.thumb-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 10px;
-  border: 1px dashed #222; color: #2a2a2a;
-}
-.thumb-placeholder svg { stroke: #2a2a2a; opacity: 0.5; }
-.thumb-placeholder span {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.42rem; letter-spacing: 0.35em;
-  text-transform: uppercase; opacity: 0.4;
-}
-
-.thumb-overlay {
-  position: absolute; inset: 0; opacity: 0;
-  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 60%);
-  display: flex; flex-direction: column;
-  justify-content: flex-end; padding: 12px;
-  transition: opacity 0.35s ease;
-}
-.thumb-num {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.44rem; letter-spacing: 0.4em;
-  color: var(--neon); margin-bottom: 4px; opacity: 0.7;
-}
-.thumb-view {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  letter-spacing: 0.18em; color: var(--white);
-}
-
-/* top neon accent */
-.thumb-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
-  background: var(--neon); z-index: 2;
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-.thumb-card:hover::before { transform: scaleX(1); }
-
-/* Upload CTA card */
-.thumb-add {
-  aspect-ratio: 3/4;
-  border: 1px dashed #1e1e1e; background: transparent;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 10px;
-  cursor: default;
-}
-.thumb-add svg { stroke: #2a2a2a; }
-.thumb-add span {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.4rem; letter-spacing: 0.4em;
-  color: #2a2a2a; text-transform: uppercase; text-align: center;
-  line-height: 1.8;
-}
-
-/* ── LIGHTBOX ── */
-.lightbox {
-  position: fixed; inset: 0; z-index: 500;
-  background: rgba(4,4,4,0.97);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.35s ease;
-}
-.lightbox.open { opacity: 1; pointer-events: all; }
-
-.lb-inner {
-  position: relative;
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
-
-/* Image track — horizontal slider */
-.lb-track {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
-  will-change: transform;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.lb-slide {
-  flex-shrink: 0;
-  width: 100vw; height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: clamp(60px, 10vw, 90px) clamp(60px, 10vw, 100px);
-}
-.lb-slide img {
-  max-width: 100%; max-height: 100%;
-  object-fit: contain; display: block;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
-  pointer-events: none;
-  -webkit-user-drag: none;
-}
-
-/* HUD */
-.lb-hud {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: clamp(14px, 3vw, 22px) clamp(14px, 4vw, 28px);
-  background: linear-gradient(to bottom, rgba(4,4,4,0.92) 0%, transparent 100%);
-}
-.lb-counter {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.5rem, 2vw, 0.6rem); letter-spacing: 0.4em;
-  color: rgba(242,239,233,0.55); text-transform: uppercase;
-}
-
-/* ── CLOSE BUTTON — always visible ── */
-.lb-close {
-  background: rgba(8,8,8,0.7);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 4px;
-  cursor: pointer;
-  color: var(--white);
-  padding: clamp(8px,2vw,11px) clamp(10px,2.5vw,16px);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
-  display: flex; align-items: center; gap: 8px;
-  min-width: 44px; min-height: 44px;   /* touch target */
-  justify-content: center;
-}
-.lb-close:hover,
-.lb-close:focus-visible {
-  border-color: var(--neon); color: var(--neon);
-  background: rgba(198,241,53,0.07);
-  outline: none;
-}
-.lb-close span {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.45rem, 1.5vw, 0.55rem); letter-spacing: 0.4em;
-  text-transform: uppercase;
-}
-.lb-close svg { flex-shrink: 0; }
-/* Hide text label on very small screens, keep icon */
-@media(max-width: 400px) {
-  .lb-close span { display: none; }
-}
-
-/* Arrow buttons */
-.lb-arrow {
-  position: absolute; top: 50%; z-index: 10;
-  transform: translateY(-50%);
-  background: rgba(8,8,8,0.6);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: var(--white); cursor: pointer;
-  padding: clamp(12px,2vw,16px) clamp(10px,1.5vw,14px);
-  transition: border-color 0.25s, color 0.25s, background 0.25s;
-  display: flex; align-items: center; justify-content: center;
-  min-width: 44px; min-height: 44px;   /* touch target */
-  border-radius: 4px;
-}
-.lb-arrow:hover,
-.lb-arrow:focus-visible {
-  border-color: var(--neon); color: var(--neon);
-  background: rgba(198,241,53,0.07); outline: none;
-}
-.lb-arrow.prev { left: clamp(10px, 3vw, 24px); }
-.lb-arrow.next { right: clamp(10px, 3vw, 24px); }
-
-/* Hide arrows on mobile — swipe is enough */
-@media(max-width: 480px) {
-  .lb-arrow { display: none; }
-}
-
-/* Dot strip */
-.lb-dots {
-  position: absolute; bottom: clamp(18px,4vw,28px); left: 50%; transform: translateX(-50%);
-  display: flex; gap: 10px; z-index: 10;
-}
-.lb-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(255,255,255,0.18); cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
-  /* larger tap target via padding trick */
-  padding: 0; box-shadow: 0 0 0 8px transparent;
-}
-.lb-dot:focus-visible { outline: 1px solid var(--neon); }
-.lb-dot.active { background: var(--neon); transform: scale(1.6); }
-
-/* touch/drag hint */
-.lb-hint {
-  position: absolute; bottom: clamp(48px,8vw,62px); left: 50%; transform: translateX(-50%);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.38rem; letter-spacing: 0.4em;
-  color: rgba(255,255,255,0.15); text-transform: uppercase; white-space: nowrap;
-  z-index: 10;
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: clamp(14px, 3vw, 20px) var(--pad);
-  display: flex; justify-content: space-between; align-items: center;
-  border-top: 1px solid #141414; flex-wrap: wrap; gap: 8px;
-}
-footer span {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.4rem, 1.3vw, 0.5rem);
-  letter-spacing: 0.25em; color: #222; text-transform: uppercase;
-}
+:host{display:block;--bg:#0A0C10;--text:#FFFFFF;--muted:#8A8F9A;--line:#2A2F3A;--card:#111318}
+*{box-sizing:border-box}
+.topbar{margin:0 0 4px;visibility:hidden}
+.bj{margin:0;color:var(--text);font-family:var(--fb,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif);line-height:1.5}
+.wrap{max-width:960px;margin:0 auto}
+.back{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap;transition:border-color .2s,color .2s}
+.back:hover{border-color:var(--text);color:var(--text)}
+button{font:inherit;color:var(--text);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;transition:border-color .2s}
+button:hover{border-color:var(--text)}
+.rt{margin-top:32px}
+.role-text{font-weight:400;font-size:clamp(16px,2.2vw,18px);line-height:1.65;margin:0 0 36px;max-width:62ch}
+.hero{margin-top:22px}
+.when{font-size:12px;color:var(--muted);letter-spacing:.03em;margin:8px 0 0}
+.tl{position:relative;padding-left:28px}
+.tl:before{content:"";position:absolute;left:5px;top:9px;bottom:9px;width:1px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:last-child{margin-bottom:0}
+.dot{position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;border:1px solid var(--muted);background:var(--bg)}
+.tl-item.now .dot{background:var(--text);border-color:var(--text)}
+.role{font-weight:500;font-size:clamp(17px,2.2vw,20px);line-height:1.3;letter-spacing:-.005em}
+.role.prev-role{font-weight:400;font-size:15px;color:var(--muted)}
+.tl .when{margin:4px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{border:1px solid var(--line);font-size:12px;padding:4px 12px;border-radius:999px;color:var(--muted)}
+h1{font-weight:300;font-size:clamp(32px,6vw,56px);letter-spacing:-.02em;margin:28px 0 6px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:46ch}
+section{margin-bottom:40px}
+h2{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;display:flex;justify-content:space-between;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;gap:10px}
+.frame{aspect-ratio:16/9;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+video{width:100%;height:100%;display:block;background:#000}
+.empty{color:var(--muted);font-size:13px}
+.title{width:100%;background:none;border:0;border-bottom:1px solid transparent;color:var(--text);font:inherit;font-size:15px;padding:2px 0}
+.title:focus{outline:none;border-bottom-color:var(--line)}
+.title::placeholder{color:var(--muted)}
+.actions{display:flex;gap:8px}
+.pair{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.wide{grid-column:1/-1;min-width:0}
+.wide .title{order:1}.wide .desc{order:2;max-width:none}
+.wide .gallery,.wide .pair{order:3;margin-top:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.gallery .frame,.pair .frame{aspect-ratio:4/3;cursor:zoom-in}
+.gallery video{object-fit:cover;pointer-events:none}
+#prev img,#proto img,#fea img{cursor:zoom-in}
+.grp{grid-column:1/-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:8px}
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);display:flex;flex-direction:column}
+.lbtrack{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.lbslide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:64px 12px}
+.lbslide img,.lbslide video{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;background:none}
+.lb button{color:#fff;border-color:#666;background:rgba(0,0,0,.5)}
+.lbx{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px}
+.lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);display:none;font-size:20px;padding:6px 16px}
+.lbp{left:14px}.lbn{right:14px}
+@media (min-width:641px){.lbp,.lbn{display:block}}
+.gallery img,.pair img{object-fit:cover}
+@media (max-width:640px){.gallery,.pair{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}.gallery .frame,.pair .frame{flex:0 0 78%;scroll-snap-align:start}#prev{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px}#prev .card{flex:0 0 78%;scroll-snap-align:start}}
+img{width:100%;height:100%;object-fit:contain;display:block}
+.desc{color:var(--muted);font-size:14px;margin:0;max-width:60ch}
+.inv-open{order:2;align-self:flex-start;margin-top:2px;border-color:#E0A020;color:#E0A020}
+.inv-open:hover{border-color:#fff;color:#fff}
 </style>
-<div class="es">
-<!-- HERO with background image -->
-<section class="hero">
 
-  <!-- Background image -->
-  <div class="hero-bg">
-    <!-- 
-    ====================================================
-    👇 REPLACE THIS with your image path or URL
-    Examples:
-      src="images/my-scooter.jpg"
-      src="C:/Users/YourName/Pictures/scooter.png"
-      src="./hero.jpg"
-    ==================================================== 
-  -->
-  <img
-    src="teaser.jpeg"
-    alt="E-Scooter Hero"
-  />
+<div class="bj"><div class="wrap">
+<div class="topbar"><a class="back" id="esBack" href="#projects">&larr; Projects</a></div>
+<div class="hero">
+  <div class="tl">
+    <div class="tl-item now">
+      <span class="dot"></span>
+      <div class="role">Electric Mobility Project</div>
+      <p class="when">In development</p>
+    </div>
   </div>
+  <div class="tags"><span>Chassis design</span><span>CAD</span><span>FEA</span></div>
+</div>
+<h2 class="rt"><span>Role in team</span></h2>
+<p class="role-text">Designing the chassis of an electric scooter, from rider ergonomics and feature calculations to the overall layout. Full details will be added as the project progresses.</p>
 
-  <!-- Center glow -->
-  <div class="hero-glow"></div>
-
-  <!-- Text content -->
-  <div class="hero-content">
-    <div class="hero-tag">// Classified Preview</div>
-    <h1 class="hero-title">
-      <div class="label-row">
-        <span class="label-text">Electric Mobility</span>
-      </div>
-      <div class="main-row">
-        <span class="badge-e">E</span>
-        <span class="word-scooter">Scooter</span>
-      </div>
-    </h1>
-    <p class="hero-subtitle">Something fast is coming. Something clean.<br>Something you've never ridden before.</p>
-  </div>
-
-  <!-- Scroll hint -->
-  <div class="scroll-cue">
-    <div class="scroll-cue-line"></div>
-    <span>Scroll</span>
-  </div>
-
+<section>
+  <h2><span>Design Preview</span></h2>
+  <div class="grid" id="prev"></div>
 </section>
-
-
-<!-- ══════════════════════════════════════════
-     FEATURED WORK  — replace the placeholder
-     <img> src attributes with your own file
-     paths, URLs, or data URIs.
-     Add / remove .thumb-card blocks freely.
-     ══════════════════════════════════════════ -->
-<section class="featured">
-
-  <div class="featured-header">
-    <div class="featured-title-group">
-      <div class="featured-eyebrow">// Design Preview</div>
-      <div class="featured-title">Featured <span>Work</span></div>
-    </div>
-    <span class="featured-count" id="thumbCount">— 03 shots</span>
-  </div>
-
-  <div class="featured-grid" id="featuredGrid">
-
-    <!-- ── CARD 1 — Ergonomics view ── -->
-    <div class="thumb-card" data-index="0">
-      <img src="escooter.img.ergono.jpeg" alt="E-Scooter Ergonomics View"
-           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
-      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>escooter.img.ergono.jpeg</span>
-      </div>
-      <div class="thumb-overlay">
-        <div class="thumb-num">01</div>
-        <div class="thumb-view">View</div>
-      </div>
-    </div>
-
-    <!-- ── CARD 2 — Feature calculations view ── -->
-    <div class="thumb-card" data-index="1">
-      <img src="escooter.img.feacalc.jpeg" alt="E-Scooter Feature Calculations"
-           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
-      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>escooter.img.feacalc.jpeg</span>
-      </div>
-      <div class="thumb-overlay">
-        <div class="thumb-num">02</div>
-        <div class="thumb-view">View</div>
-      </div>
-    </div>
-
-    <!-- ── CARD 3 — Top view ── -->
-    <div class="thumb-card" data-index="2">
-      <img src="escooter.img.topview.jpeg" alt="E-Scooter Top View"
-           onerror="this.parentElement.querySelector('.thumb-placeholder').style.display='flex'; this.style.display='none'"/>
-      <div class="thumb-placeholder" style="display:none; position:absolute; inset:0; background:var(--dim);">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>escooter.img.topview.jpeg</span>
-      </div>
-      <div class="thumb-overlay">
-        <div class="thumb-num">03</div>
-        <div class="thumb-view">View</div>
-      </div>
-    </div>
-
-  </div>
+<section>
+  <h2><span>Prototype Design &mdash; SolidWorks</span></h2>
+  <div class="grid"><div class="card wide" id="proto"></div></div>
 </section>
-
-<!-- ── LIGHTBOX ── -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lb-inner" id="lbInner">
-    <div class="lb-track" id="lbTrack"></div>
-    <div class="lb-hud">
-      <span class="lb-counter" id="lbCounter">01 / 06</span>
-      <button class="lb-close" id="lbClose" aria-label="Close lightbox">
-        <span>Close</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <button class="lb-arrow prev" id="lbPrev" aria-label="Previous">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="lb-arrow next" id="lbNext" aria-label="Next">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="lb-dots" id="lbDots"></div>
-    <div class="lb-hint">Swipe or use ← → keys</div>
-  </div>
+<section>
+  <h2><span>FEA Setup</span></h2>
+  <div class="grid"><div class="card wide" id="fea"></div></div>
+</section>
 </div>
-
-<!-- COMING SOON -->
-<div class="soon-block">
-  <div class="soon-inner">
-    <div class="soon-eyebrow">Prepare yourself</div>
-    <div class="soon-text">
-      <span class="word-coming">COMING</span>
-      <span class="word-soon">SOON</span>
-    </div>
-    <div class="soon-tagline">
-      <span>The ride of your life — launching 2025</span>
-    </div>
-    <p class="soon-desc">Details revealed on launch day.</p>
-  </div>
-</div>
-
-<div class="contact-strip">
-  <a href="https://linkedin.com/in/arpit-malik-bb6939303/" target="_blank" rel="noopener noreferrer" class="contact-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-      <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-    </svg>
-    <span class="contact-label">LinkedIn</span>
-    <span class="contact-val">linkedin.com/in/arpit-malik-bb6939303</span>
-  </a>
-  
-  <div class="contact-sep"></div>
-  
-  <a href="https://wa.me/917056470711" target="_blank" rel="noopener noreferrer" class="contact-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-    </svg>
-    <span class="contact-label">WhatsApp</span>
-    <span class="contact-val">+91 70564 70711</span>
-  </a>
-  
-  <div class="contact-sep"></div>
-  
-  <a href="mailto:arpit.malik.ug23@nsut.ac.in" class="contact-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-    <span class="contact-label">Email</span>
-    <span class="contact-val">arpit.malik.ug23@nsut.ac.in</span>
-  </a>
-</div>
-
-<hr class="divider"/>
-
-<!-- NOTIFY -->
-<div class="notify">
-  <span class="notify-label">Get notified</span>
-  <input class="notify-input" type="email" placeholder="your@email.com"/>
-  <button class="notify-btn" id="notifyBtn">Notify Me</button>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <span>© 2025 — All rights reserved</span>
-  <span>Confidential — Do not distribute</span>
-</footer>
 </div>
 </template>
 <script>
 (function(){
-  /* The page uses bare file names (teaser.jpeg, escooter.img.*.jpeg). They are resolved against this base.
-     If you copy those images next to index.html, set it to ''. */
+  /* images are stored next to the E-Scooter site; bare file names are resolved against this base */
   var ES_MEDIA='https://arpitmalik711.github.io/Escooter/';
   var host=document.getElementById('escooterHost'),tpl=document.getElementById('escooterTpl'),done=false;
   window.initEscooterPane=function(){
     if(done||!host||!host.attachShadow)return;done=true;
-    /* fonts: @font-face must live in the main document, not inside the shadow root */
-    if(!document.getElementById('esFonts')){var lk=document.createElement('link');lk.id='esFonts';lk.rel='stylesheet';lk.href='https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,900;1,900&family=Barlow+Condensed:ital,wght@0,300;0,400;1,300&family=Space+Mono&family=Bebas+Neue&display=swap';document.head.appendChild(lk)}
-    var R=host.attachShadow({mode:'open'}),frag=tpl.content.cloneNode(true);
-    frag.querySelectorAll('img[src]').forEach(function(m){
-      var s=m.getAttribute('src');
-      if(s&&!/^(https?:)?\/\/|^data:|^\//.test(s))m.setAttribute('src',ES_MEDIA+s);
+    var R=host.attachShadow({mode:'open'});R.appendChild(tpl.content.cloneNode(true));
+function imgFrame(u,a){
+  var fr=document.createElement('div');fr.className='frame';
+  var im=document.createElement('img');im.alt=a;im.src=u;
+  im.onerror=function(){
+    fr.innerHTML='';
+    var b=document.createElement('button');b.textContent='Upload image';
+    var inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.hidden=true;
+    b.onclick=function(){inp.click()};
+    inp.onchange=function(){if(!inp.files[0])return;var i2=document.createElement('img');i2.alt=a;i2.src=URL.createObjectURL(inp.files[0]);fr.innerHTML='';fr.appendChild(i2)};
+    fr.appendChild(b);fr.appendChild(inp);
+  };
+  fr.appendChild(im);return fr;
+}
+(function(){
+  var prev=R.getElementById('prev');
+  [['escooter.img.ergono.jpeg','Ergonomics view'],['escooter.img.feacalc.jpeg','Feature calculations'],['escooter.img.topview.jpeg','Top view']].forEach(function(x){
+    var c=document.createElement('div');c.className='card';
+    var t=document.createElement('div');t.className='title';t.textContent=x[1];
+    c.appendChild(imgFrame(ES_MEDIA+x[0],'E-Scooter '+x[1].toLowerCase()));c.appendChild(t);
+    prev.appendChild(c);
+  });
+})();
+(function(){
+  var f=R.getElementById('proto'),t=document.createElement('div');
+  t.className='title';t.textContent='Prototype design in SolidWorks';
+  f.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1795711118/1_osq4u7.png','E-Scooter prototype design in SolidWorks'));
+  f.appendChild(t);
+})();
+(function(){
+  var f=R.getElementById('fea'),t=document.createElement('div');
+  t.className='title';t.textContent='FEA setup';
+  var p=document.createElement('div');p.className='pair';
+  p.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1795711120/2_fvrjsg.png','E-Scooter FEA setup 1'));
+  p.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1795711123/3_cmomjw.png','E-Scooter FEA setup 2'));
+  p.appendChild(imgFrame('https://res.cloudinary.com/fvtkc10l/image/upload/v1795711128/4_cmkobc.png','E-Scooter FEA setup 3'));
+  f.appendChild(p);f.appendChild(t);
+})();
+(function(){
+  var ov,track,items;
+  function close(){if(ov){ov.remove();ov=null}document.removeEventListener('keydown',key)}
+  function cur(){return Math.round(track.scrollLeft/track.clientWidth)}
+  function go(n){n=Math.max(0,Math.min(items.length-1,n));track.scrollTo({left:n*track.clientWidth,behavior:'smooth'})}
+  function key(e){if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(cur()+1);else if(e.key==='ArrowLeft')go(cur()-1)}
+  function mk(txt,cls,fn){var b=document.createElement('button');b.textContent=txt;b.className=cls;b.onclick=function(e){e.stopPropagation();fn()};return b}
+  R.addEventListener('click',function(e){
+    var fr=e.target.closest('#prev .frame,#proto .frame,#fea .frame');
+    if(!fr||!fr.querySelector('img,video'))return;
+    items=[].filter.call(fr.closest('#prev,#proto,#fea').querySelectorAll('.frame'),function(x){return x.querySelector('img,video')});
+    var start=items.indexOf(fr);
+    ov=document.createElement('div');ov.className='lb';
+    track=document.createElement('div');track.className='lbtrack';
+    items.forEach(function(x){
+      var m=x.querySelector('img,video'),s=document.createElement('div'),c;s.className='lbslide';
+      c=document.createElement('img');c.alt=m.alt;
+      c.src=m.currentSrc||m.src;c.onclick=function(ev){ev.stopPropagation()};
+      s.onclick=close;s.appendChild(c);track.appendChild(s);
     });
-    R.appendChild(frag);
-
-/* ── LIGHTBOX ENGINE ── */
-(function() {
-  const lb        = R.getElementById('lightbox');
-  const lbTrack   = R.getElementById('lbTrack');
-  const lbCounter = R.getElementById('lbCounter');
-  const lbDots    = R.getElementById('lbDots');
-  const lbPrev    = R.getElementById('lbPrev');
-  const lbNext    = R.getElementById('lbNext');
-  const lbClose   = R.getElementById('lbClose');
-  const inner     = R.getElementById('lbInner');
-
-  const cards = Array.from(R.querySelectorAll('.thumb-card'));
-  const total  = cards.length;
-  let current  = 0;
-
-  /* ── Build slides & dots ── */
-  cards.forEach((card, i) => {
-    const img   = card.querySelector('img');
-    const slide = document.createElement('div');
-    slide.className = 'lb-slide';
-    const lbImg = document.createElement('img');
-    lbImg.src = img ? img.src : '';
-    lbImg.alt = img ? img.alt : '';
-    lbImg.draggable = false;
-    slide.appendChild(lbImg);
-    lbTrack.appendChild(slide);
-
-    const dot = document.createElement('button');
-    dot.className = 'lb-dot';
-    dot.setAttribute('aria-label', `Go to image ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    lbDots.appendChild(dot);
+    ov.appendChild(track);
+    ov.appendChild(mk('Close','lbx',close));
+    ov.appendChild(mk('\u2039','lbp',function(){go(cur()-1)}));
+    ov.appendChild(mk('\u203a','lbn',function(){go(cur()+1)}));
+    R.appendChild(ov);
+    track.scrollLeft=start*track.clientWidth;
+    document.addEventListener('keydown',key);
   });
-
-  function pad(n) { return String(n + 1).padStart(2, '0'); }
-
-  function goTo(idx, instant) {
-    current = ((idx % total) + total) % total;
-    lbTrack.style.transition = instant ? 'none' : 'transform 0.42s cubic-bezier(0.16,1,0.3,1)';
-    lbTrack.style.transform  = `translateX(calc(-${current} * 100vw))`;
-    lbCounter.textContent    = `${pad(current)} / ${pad(total - 1)}`;
-    R.querySelectorAll('.lb-dot').forEach((d, i) =>
-      d.classList.toggle('active', i === current));
-  }
-
-  function open(idx) {
-    goTo(idx, true);
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    /* focus close button for keyboard users */
-    setTimeout(() => lbClose.focus(), 50);
-  }
-
-  function close() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  /* ── Bind thumbnails ── */
-  cards.forEach((card, i) => {
-    card.addEventListener('click', () => open(i));
-    card.setAttribute('tabindex', '0');
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
-    });
-  });
-
-  lbClose.addEventListener('click', close);
-  if (lbPrev) lbPrev.addEventListener('click', () => goTo(current - 1));
-  if (lbNext) lbNext.addEventListener('click', () => goTo(current + 1));
-
-  /* ── Keyboard navigation ── */
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
-    if (e.key === 'Escape')     { e.preventDefault(); close(); }
-  });
-
-  /* ── Click dark backdrop to close ── */
-  lb.addEventListener('click', e => { if (e.target === lb) close(); });
-
-  /* ── Touch swipe ── */
-  let touchStartX = 0, touchStartY = 0, isDragging = false, dragDelta = 0;
-
-  inner.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isDragging  = false;
-    dragDelta   = 0;
-    lbTrack.style.transition = 'none';
-  }, { passive: true });
-
-  inner.addEventListener('touchmove', e => {
-    dragDelta   = e.touches[0].clientX - touchStartX;
-    const dy    = Math.abs(e.touches[0].clientY - touchStartY);
-    if (Math.abs(dragDelta) > dy + 5) {
-      isDragging = true;
-      lbTrack.style.transform = `translateX(calc(-${current} * 100vw + ${dragDelta}px))`;
-    }
-  }, { passive: true });
-
-  inner.addEventListener('touchend', () => {
-    if (isDragging && Math.abs(dragDelta) > 50) {
-      dragDelta < 0 ? goTo(current + 1) : goTo(current - 1);
-    } else {
-      goTo(current); /* snap back */
-    }
-    isDragging = false; dragDelta = 0;
-  });
-
-  /* ── Mouse drag (desktop) ── */
-  let mouseDown = false, mouseStartX = 0, mouseDelta = 0;
-
-  inner.addEventListener('mousedown', e => {
-    /* don't drag when clicking close / arrows / dots */
-    if (e.target.closest('.lb-close, .lb-arrow, .lb-dot')) return;
-    mouseDown   = true;
-    mouseStartX = e.clientX;
-    mouseDelta  = 0;
-    lbTrack.style.transition = 'none';
-    inner.style.cursor = 'grabbing';
-  });
-
-  inner.addEventListener('mousemove', e => {
-    if (!mouseDown) return;
-    mouseDelta = e.clientX - mouseStartX;
-    lbTrack.style.transform = `translateX(calc(-${current} * 100vw + ${mouseDelta}px))`;
-  });
-
-  function endMouseDrag(e) {
-    if (!mouseDown) return;
-    mouseDown = false;
-    inner.style.cursor = '';
-    if (Math.abs(mouseDelta) > 60) {
-      mouseDelta < 0 ? goTo(current + 1) : goTo(current - 1);
-    } else {
-      goTo(current);
-    }
-    mouseDelta = 0;
-  }
-  inner.addEventListener('mouseup',    endMouseDrag);
-  inner.addEventListener('mouseleave', endMouseDrag);
-
-  /* ── Init ── */
-  goTo(0, true);
 })();
 
+    var back=R.getElementById('esBack');
+    if(back)back.addEventListener('click',function(e){e.preventDefault();document.dispatchEvent(new CustomEvent('escooter-back'))});
   };
 })();
 </script>
@@ -8850,7 +8331,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   var mainP=document.getElementById('mainPane'),studiesP=document.getElementById('studiesPane'),aboutP=document.getElementById('aboutPane'),reelsP=document.getElementById('reelsPane'),liP=document.getElementById('linkedinPane'),
       csec=document.getElementById('casestudies'),aec=document.getElementById('about'),aAnchor=document.createElement('div'),dq=window.matchMedia('(min-width:601px)'),
       tm=document.getElementById('tabMain'),ts=document.getElementById('tabStudies'),tr=document.getElementById('tabReels'),tl=document.getElementById('tabLinkedin'),ta=document.getElementById('tabAbout');
-  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane'),avoreP=document.getElementById('avorePane'),chassisP=document.getElementById('chassisPane'),armP=document.getElementById('armPane'),dlP=document.getElementById('drivelinePane'),armFrom='studies';
+  var journeyP=document.getElementById('journeyPane'),tj=document.getElementById('tabJourney'),liSec=document.getElementById('linkedin-activity'),bajaP=document.getElementById('bajaPane'),duneP=document.getElementById('dunePane'),gridxP=document.getElementById('gridxPane'),escP=document.getElementById('escooterPane'),avoreP=document.getElementById('avorePane'),chassisP=document.getElementById('chassisPane'),armP=document.getElementById('armPane'),dlP=document.getElementById('drivelinePane'),tractorP=document.getElementById('tractorPane'),armFrom='studies';
   var NEW_KEY='dtNewSeen',newBadge=tl.querySelector('.tab-new');
   function markSeen(){try{localStorage.setItem(NEW_KEY,'1')}catch(e){}if(newBadge)newBadge.classList.add('gone')}
   try{if(localStorage.getItem(NEW_KEY)==='1'&&newBadge)newBadge.classList.add('gone')}catch(e){}
@@ -8861,7 +8342,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   pbBtn.addEventListener('click',function(){if(pbCur)document.dispatchEvent(new CustomEvent(pbCur+'-back'))});
   document.body.appendChild(pbBtn);
   function show(name,keepScroll){
-    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',av=name==='avore',ch=name==='chassis',ar=name==='arm',dv=name==='driveline',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es&&!av&&!ch&&!ar&&!dv;
+    var r=name==='reels',l=name==='linkedin',s=name==='studies',a=name==='about',j=name==='journey',b=name==='baja',d=name==='dune',g=name==='gridx',es=name==='escooter',av=name==='avore',ch=name==='chassis',ar=name==='arm',dv=name==='driveline',tf=name==='tractor',m=!r&&!l&&!s&&!a&&!j&&!b&&!d&&!g&&!es&&!av&&!ch&&!ar&&!dv&&!tf;
     if(b&&window.initBajaPane)window.initBajaPane();
     if(d&&window.initDunePane)window.initDunePane();
     if(g&&window.initGridxPane)window.initGridxPane();
@@ -8870,12 +8351,13 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     if(ch&&window.initChassisPane)window.initChassisPane();
     if(ar&&window.initArmPane)window.initArmPane();
     if(dv&&window.initDrivelinePane)window.initDrivelinePane();
+    if(tf&&window.initTractorPane)window.initTractorPane();
     if(l)markSeen();
     document.body.classList.toggle('not-main',!m);
-    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);avoreP.classList.toggle('is-on',av);chassisP.classList.toggle('is-on',ch);armP.classList.toggle('is-on',ar);dlP.classList.toggle('is-on',dv);
-    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':av?'avore':ch?'chassis':ar?'arm':dv?'driveline':null;pbBtn.classList.toggle('on',!!pbCur);
+    mainP.classList.toggle('is-off',!m);reelsP.classList.toggle('is-on',r);liP.classList.toggle('is-on',l);studiesP.classList.toggle('is-on',s);aboutP.classList.toggle('is-on',a);journeyP.classList.toggle('is-on',j);bajaP.classList.toggle('is-on',b);duneP.classList.toggle('is-on',d);gridxP.classList.toggle('is-on',g);escP.classList.toggle('is-on',es);avoreP.classList.toggle('is-on',av);chassisP.classList.toggle('is-on',ch);armP.classList.toggle('is-on',ar);dlP.classList.toggle('is-on',dv);tractorP.classList.toggle('is-on',tf);
+    pbCur=b?'baja':d?'dune':g?'gridx':es?'escooter':av?'avore':ch?'chassis':ar?'arm':dv?'driveline':tf?'tractor':null;pbBtn.classList.toggle('on',!!pbCur);
     [[tm,m],[tr,r],[tl,l],[tj,j],[ts,s],[ta,a]].forEach(function(x){x[0].classList.toggle('active',x[1]);x[0].setAttribute('aria-selected',String(x[1]))});
-    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':av?'#avore':ch?'#chassis':ar?'#arm':dv?'#driveline':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
+    try{history.replaceState(null,'',b?'#baja':d?'#dune':g?'#gridx':es?'#escooter':av?'#avore':ch?'#chassis':ar?'#arm':dv?'#driveline':tf?'#tractor':r?'#explanations':l?'#linkedin':j?'#journey':s?'#studies':a?'#about':location.pathname+location.search)}catch(e){}
     if(!keepScroll&&!m)window.scrollTo(0,0);
     else if(!keepScroll){var ref=r?reelsP:l?liP:j?journeyP:s?studiesP:a?aboutP:mainP,top=ref.getBoundingClientRect().top;if(top<64)window.scrollTo(0,window.pageYOffset+top-64)}
   }
@@ -8899,7 +8381,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   place();
   if(dq.addEventListener)dq.addEventListener('change',place);else dq.addListener(place);
   document.addEventListener('click',function(e){
-    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"],a[href="#avore"],a[href="#chassis"],a[href="#arm"],a[href="#driveline"]');
+    var pj=e.target.closest('a[href="#baja"],a[href="#dune"],a[href="#gridx"],a[href="#escooter"],a[href="#avore"],a[href="#chassis"],a[href="#arm"],a[href="#driveline"],a[href="#tractor"]');
     if(pj){e.preventDefault();e.stopPropagation();if(pj.getAttribute('href')==='#arm')armFrom='studies';show(pj.getAttribute('href').slice(1));return}
     var el=e.target.closest('a[href^="#"],.nav-cta');if(!el)return;
     var id=el.classList.contains('nav-cta')?'contact':el.getAttribute('href').slice(1);if(!id)return;
@@ -8910,7 +8392,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
     else if(aboutP.contains(t)&&!aboutP.classList.contains('is-on'))name='about';
     if(name){e.preventDefault();e.stopPropagation();show(name,true);setTimeout(function(){t.scrollIntoView({behavior:'smooth'})},60)}
   },true);
-  ['avore','chassis','driveline'].forEach(function(n){document.addEventListener(n+'-back',function(){show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
+  ['avore','chassis','driveline','tractor'].forEach(function(n){document.addEventListener(n+'-back',function(){show('studies',true);setTimeout(function(){var t=document.getElementById('casestudies');if(t)t.scrollIntoView({behavior:'smooth'})},60)})});
   /* A-arm investigation: reachable from the Investigations list and from the BAJA page; back returns to whichever opened it */
   document.addEventListener('open-arm',function(){armFrom='baja';show('arm')});
   document.addEventListener('arm-back',function(){
@@ -8938,6 +8420,7 @@ body.not-main .highlights-section{padding-top:64px;padding-bottom:0}
   else if(location.hash==='#chassis')show('chassis',true);
   else if(location.hash==='#arm')show('arm',true);
   else if(location.hash==='#driveline')show('driveline',true);
+  else if(location.hash==='#tractor')show('tractor',true);
   else if(location.hash==='#journey'&&window.matchMedia('(min-width:901px)').matches)show('journey',true);
   else if(location.hash==='#linkedin'||location.hash==='#linkedin-activity')show('linkedin',true);
 })();
